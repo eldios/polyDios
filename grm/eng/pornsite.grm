@@ -1,0 +1,31 @@
+I ::= "title:    Porn site URLs\n"
+    ^ "author:   Giop &lt;giop@giop.net&gt;, Marty &lt;gmanzone@dsi.unive.it&gt;"
+    			 ^ ", Sir &lt;gmarcon@dsi.unive.it&gt;\n"
+    ^ "language: english\n"
+    ^ "topic:    misc\n"
+    ^ "status:   refinable\n"
+    ^ "version:  pre(ss)Release@webb.it03\n"
+    ^ "audience: anyone who once visited" Link ^"\n"
+    ^ "created:  10/05/2003"
+;
+
+
+S ::= Link ;
+
+Link ::= (X := URL; "<a href=\"" ^ X ^ "\">" X "</a>") ;
+
+URL ::= "http://www." ^ ( It |+++ Org ) ;
+
+It ::= Verb ^ ".it";
+
+Org ::= Verb ( ^ Adj |---- _ ) ^ ".org";
+
+Verb ::= fuck[^ing] | lick[^ing] | cum[^ming] | rap^(e|ing) | penetrat^(e|ing)
+	  |  masturbat^(e|ing) | fist[^ing];
+
+Adj ::= Noun |+ Attribute ^ Noun |+ Noun ^ Attribute ;
+
+Noun ::= tit[^s] | puss^(y|ies) | tongue[^s] | dick[^s] | ass[^es] | cock[^s] | whore[^s]
+      |  celebrit^(y|ies) | animal[^s] | beauties | breast[^s] | boobs;
+
+Attribute ::= >> big | ( zoo | monster | lesbo | gay | interracial | homo | fetish) [^ sex] <<;

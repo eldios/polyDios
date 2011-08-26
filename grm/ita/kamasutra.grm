@@ -1,0 +1,420 @@
+I ::= "title:    Kamasutra\n"
+    ^ "author:   Er Poly &lt;mogkogk@hotmail.com&gt;\n"
+    ^ "language: italian\n"
+    ^ "status:   beta\n"
+    ^ "topic:    rieducascional\n"
+    ^ "audience: chi vuole farsi una posizione\n"
+    ^ "warning:  le <a href=\"http://images.google.it/images?q=kamasutra\" target=\"_blank\">figure</a> sono state censurate per evitare pericolosi tentativi di emulazione\n"
+    ^ "created:  03/12/2004"
+;
+
+S ::= \
+  Header.bold NL
+  [[ Variante.italic NL ]] NL
+  Descrizione P1
+;
+
+TAG  ::= ( raw: _ | bold: "<strong>"  | italic: "<em>"  | big: "<big>"  | small: "<small>"  );
+TAGc ::= ( raw: _ | bold: "</strong>" | italic: "</em>" | big: "</big>" | small: "</small>" );
+
+Header ::=
+  TAG
+  "#" ^ ( ( Cifra.nz | >( 1 | 2 | 3 | - 4 | -- 5 ) ^ Cifra ) [ ^ Cifra ] ).
+  " - " \ posizione \ NomePos
+  TAGc
+;
+
+Variante ::=
+    TAG
+    "( " ^
+    \ [[[ ( e' | si tratta di ) una ]]]
+      ( ([[ nota ]],_ variante _,[Fetish])
+      | versione ( alternativa | Fetish )
+      ) NomePos
+    ^ " )"
+    TAGc
+;
+
+Fetish ::=
+  sadomaso | fetish | estrema
+  | ( [ ben ] piu' | meno ) >( --- libidinosa | dolorosa | pericolosa | faticosa | casta | spirituale )
+;
+
+NomePos ::=
+  >>
+  ( del \
+    ( +++ missionario Pf.7.9.o
+    | ( campanaro | veterinario | sottosegretario | guerriero | sicario | dromedario | postino ) Pf.9.o
+    |   perito \agrario P.0.3.o
+    | ( cappellaio | pelliciaio | tabaccaio | calzolaio | pifferaio | benzinaio ) Pf.6.9.o
+    | ( cavallo | granchio | clitoride | gambero | caimano | + drago | fantino | baco \da \seta ) Pf.o
+    |   loto P.0.1.8.o
+    |   giunco P.0.1.4.5.o
+    | ( chiodo | bastone | pilastro | catamarano | (f|r)^uscello | cavatappi ) P.0.1.4.5.o
+    | --- presidente
+          ( \ operaio  <(_|"Per Un'Italia Che Lavora")
+          | \ chansonnier  <(_|"Per Un'Italia In Crociera")
+          | \ ottimista  <(_|"Per Un'Italia Che Guarda Al Futuro")
+          | --- _ )
+    )
+  | dell' ^ \
+    (   ombrellaio Pf.6.9.o
+    | ( arcobaleno | elefante | orso | asparago ) Pf.o
+    | ( antilope | aquila | ostrica | anguilla | amazzone ) Pf.a
+    )
+  | della \
+    ( ( cicala | formica | tigre | rana | puttana | farfalla | tartaruga | puledra | banana
+      | scimmia | rondine | velina ) Pf.a
+    | ( verga | quercia | tenaglia ) P.0.1.4.5.a
+    )
+  | dei \
+    ( ( gemelli | fringuelli | canguri | gabbiani | pesciolini ) Pf.5.i )
+  | degli \
+    ( ( angeli | eunuchi ) Pf.5.i )
+  )
+  <<
+;
+
+Pf ::= P.0.1.2.3.4 ;
+
+P ::= \
+  ( 0:    _
+  | 1: >( pel | ole | nod | odor ) ^ os O
+  | 2: >( gol | foc | vigor | gioc | fest | impetu ) ^ os O
+  | 3: >( sul \ramo | amorevole | ferit O | in \calore | incaprettat O | sudat O | volant E | stiti CO )
+  | 4: >( rovesciat O | di \smeraldo | in \fuorigioco | inca ^ ( str | + nt ) ^ at O | arcuat O | possent E
+        | sognant E | ben \bilanciat O )
+  | 5:  ( spaccat O | ( in | s ) ^ crociat O )
+  | 6:    matt O
+  | 7:    dimissionar IO
+  | 8:    alle \oto
+  | 9: >( vision | interplanet | usufruttu
+        | ottuagen | sanguin | bon | incendi ) ^ ar IO
+  )
+;
+
+Descrizione ::=
+  ++++
+  ( ( StandoM V Lui.art.uomodonna | Lui.art.uomodonna [[[V Bendat.o V]]] )
+    ReggeDonna e [V mentre lei (Gode|+GliSussurra) V lui] LaFaGodere.luilei )
+| ++
+  ( ( [StandoM e] ReggendoDonna.per.che. | ReggendoDonna.per. [e StandoM] )
+    V Lui.art.uomodonna LaFaGodere.luilei )
+|
+  ( Lei.art.uomodonna [[[V Bendat.a V]]] (e'|giace) PosizioneAssoluta.a
+    [(con le|a) (cosce|gambe) (aperte|spalancate|divaricate)]
+    P1 Lui.art.uomodonna
+    ( (sta|+++e'),V
+      ( PosizioneAssoluta.o
+      | Rannichiat.o (+++sopra|sotto|dietro) di lei
+      ) (++e LaFaGodere|P1 Finale),(V (Gode P1 Finale|LaFaGodere))
+    ).luilei )
+| +++
+  ( ( (StandoF V),_ Lei.art.uomodonna _,[[[V Bendat.a V]]] )
+    StringeUomo (+++V mentre|--P1 nel frattempo)
+    lui [[[V Bendat.o V]]] (+++Gode P1 Finale|LaFaGodere).luilei )
+|
+  ( Lui.art.uomodonna [[[V Bendat.o V]]] (e'|giace) PosizioneAssoluta.o  (e|P1)
+    Lei.art.uomodonna
+    ( (sta|+++e') ( PosizioneAssoluta.a | Rannichiat.a (+++sopra|sotto|dietro) di lui )
+    | [[[V Bendat.a V]]] gli si siede (+++++Cazzo.su|sulla faccia|in grembo)
+    ) P1 ( +++ mentre lui la scopa DiBrutto V lei Gode
+         | quando [poi] Lubrificazione i due amanti possono finalmente
+           (trombare|++scopare|copulare|limonare) DiBrutto ) )
+|
+  ( ( ( GliAmanti ( sono | ++ giacciono ) PosizioneCombinata.i P1 )
+  | ( ( StandoP V GliAmanti si ( ([dis^] pongono | mettono ) PosizioneReciproca | tengono per ParteAnatomica.p.art)
+      | tenendosi per ParteAnatomica.p.art [e StandoP] V GliAmanti si ( [dis^] pongono | mettono ) PosizioneReciproca
+      ) (e|P1) ) )
+  ( mentre lei (Gode|+GliSussurra) V lui LaTromba
+  | mentre lui le mostra Cazzo.artsuo [e Preliminari] V lei Gode P1 Finale.uomodonna.
+  | a questo punto lui LaFaGodere [P1 durante l'amplesso lei Gode]
+  | Finale
+  ).luilei )
+;
+
+Lui ::=
+    luilei: ( X: _ | art: _ | di: di | da: da | in: in | su: su di | artsuo: il suo | insuo: in ) lui
+  | uomodonna: ( L uomo | IL partner | IL maschio )
+;
+Lei ::=
+    luilei: ( X: _ | art: _ | di: di | da: da | in: in | su: su di | artsuo: la sua | insuo: in ) lei
+  | uomodonna: ( LA donna | LA partner )
+;
+
+SuoCompagno ::= IL (suo|+++++proprio) (compagno|Lui.X.uomodonna.);
+SuaCompagna ::= (LA [[propria]] (compagna|Lei.X.uomodonna.)|----------LA bambola gonfiabile);
+
+GliAmanti ::=
+    l'uomo e la donna | --- il principe e la sua sposa
+  | i [due] partner | ( gli | i due ) amanti
+;
+
+Rannichiat ::=
+      _ | rannicchiat O | distes O | sdraiat O | in piedi | ferm O | accoccolat O
+    | a cavalcioni | in agguato | in bilico ;
+
+Bendat ::=
+    +++++ bendat O | +++ legat O | incatenat O | eccitat O | sudatissim O | + voglios O
+    | vestit O | ----sconvolt O
+;
+
+StandoM ::= Stando.ms.mp.o;
+StandoF ::= Stando.fs.fp.a;
+StandoP ::= Stando.fs.fp.ms.mp.i;
+
+Stando ::=
+    >(++stando|rimanendo) PosizioneAssoluta
+  | stando attent O a non farsi male
+  | >(bilanciandosi|facendo leva) (con ParteAnatomica.art|ParteAnatomica.su).s.p
+  | aiutandosi con ParteAnatomica.art.(s|+++++p)
+  | inarcando ParteAnatomica.art.s.p
+  | --- (ancorandosi|puntellandosi) [saldamente] al suolo
+  | appoggiandosi (al muro|alla parete|ParteAnatomica.su.s.p)
+  | flettendo [un poco] (le gambe|++ParteAnatomica.art.s.p)
+;
+
+LaFaGodere ::= +++ LaTromba | Preliminari P1 Finale ;
+
+DiBrutto ::=
+  _ | definitivamente | senza se e senza ma | serenamente | platonicamente
+  | [senza sosta|ininterrottamente] per (due|tre|quattro|otto|dodici) ore [filate]
+;
+
+LaTromba ::=
+    (irrompe|si fa strada|penetra) ( (Fica.in),(Fica.insuo) con (Cazzo.artsuo),(Cazzo.art) )
+  | -- scavicchia ma non apre
+  | ( [se] la >(+++scopa|tromba|intoppa) | la penetra )
+    ( + DiBrutto | come una porca assassina | come uno spiedino [vivente|++gigante]
+    | come un >(mandrillo|porcone|procione|^o stantuffo) (invasato|imperioso|vivente|impazzito)
+    | come un (++ossesso|indemoniato) )
+  | le spezza i legamenti crociati [+con un intervento a gamba tesa|--con un colpo secco]
+  | la penetra ( con ([grande] vigore|dolcezza [infinita]|delicatezza)
+               | [in profondita'|profondamente|ritmicamente|lentamente] con Cazzo.artsuo
+               | proprio quando (non|meno) se l'aspetta
+               | [(lenta|delicata)^mente] [(inserendo|conducendo|spingendo)
+                   ( (Cazzo.artsuo),(Cazzo.art) (Fica.in),(Fica.insuo) )]
+               )
+  | ( la,_,_ (+++esplora|ispeziona|approccia|riempie)
+      (nelle parti intime),(Fica.art),(Fica.artsuo)
+        con (Cazzo.art),(Cazzo.artsuo),(Cazzo.art) ) V ma (delicatamente|senza esagerare)
+  | ( _,le (+++inserisce|infila|colloca) Cazzo.art (Fica.insuo),(Fica.in) )
+  | -- la (stimola|++soddisfa) (+sessualmente|oralmente)
+  | ---- la fa sentire donna
+  | ------ glielo mette in quel posto
+;
+
+Preliminari ::=
+    (la,le lubrifica [ansimando|sapientemente],(ParteAnatomicaF.art) )
+  | + (la,le cosparge _,ParteAnatomicaF.art)
+      di (+++\cointreau|aceto balsamico|polenta|panna|glassa|saliva|azoto liquido)
+  | le (passa un ghiacciolo|alita) ParteAnatomicaF.su
+  | le (mozzica|mordicchia) ParteAnatomicaF.art
+  | le abbassa le tasse
+  | le (stimola|cerca|tasta) il punto \(+++++g|jeeg)
+  | (le (arrostisce|brucia),stacca le piattole con (l'accendino),(una pinzetta))
+  | ++ (la,le (frusta|percuote|tocca|massaggia|accarezza|sfiora|gratta)
+       [(dolce|delicata)^mente|con [estrema] dolcezza] _,ParteAnatomicaF.art)
+;
+
+ReggendoDonna ::=
+  ([sor^]reggendo|tenendo [sollevata]),(tenendo ferma),(dopo aver pagato) SuaCompagna.art
+  (per ParteAnatomicaF.art),(per:_|che:V che intanto Gode),(+++in contanti|anticipatamente)
+;
+ReggeDonna ::=
+    ( ([sor^]regge),(tiene sollevata) SuaCompagna.art
+      [tenendola],_ per ParteAnatomicaF.art )
+  | ( tiene ferma,_ SuaCompagna.art _,(per ParteAnatomicaF.art) )
+;
+StringeUomo ::=
+  (+++stringe [forte|con forza] tra|cinge con|stritola fra|serra (tra|con)) le (gambe|cosce|mani)
+  ( SuoCompagno.art
+  | ++++ParteAnatomica.art.s.ms. SuoCompagno.di
+  | i >(+++lombi|glutei|++++fianchi) SuoCompagno.di
+  )
+;
+
+PosizioneCombinata ::=
+    ( { 1: PosizioneAssoluta }(1:(2:V)){ 2: PosizioneReciproca } ).(1|2).(1|2)
+;
+PosizioneAssoluta ::=
+   >( sdraiat O | distes O | coricat O | chin O )
+     ( su un fianco | sulla schiena | sul ventre | Altrove )
+  | appes O al ( soffitto | lampadario )
+  |>( in posizione >( distesa | supina | eretta | prona | fetale )
+    | in piedi | in ginocchio | genufless O
+    | sedut O | capovolt O | immobil E )
+    [ Altrove ]
+;
+PosizioneReciproca ::=
+    uno di fronte all'altra
+  | ( ortogonali | perpendicolari | paralleli | aggrovigliati ) tra di loro
+  | [ accatastati | rannicchiati | incuneati ]
+    ( ( pancia | schiena ) contro ( pancia | schiena )
+    | di schiena | di lato | faccia a faccia )
+;
+Altrove ::=
+    sul divano
+  | ++ (sul [[bordo del]]|---di fianco al|---sotto il) letto
+  | + sul pavimento
+  | --- sul pianerottolo
+  | --- dentro l'ascensore
+  | --- sul sedile (posteriore|anteriore)
+;
+
+Gode ::=
+   >( gode | geme | vomita | rantola ) [ come ( mai prima d'ora | ++ un animale [ferito] ) ]
+  | emette ( gemiti | latrati | ululati | grugniti | rantoli ) di [ intenso ]
+    ( piacere | godimento [ clitorideo | vaginale | anale ] )
+  | chiede aiuto | implora pieta' | muore (felice|venendo)
+  | si droga | si depila | (chiama il|telefona al) pronto soccorso
+  | guida a tutta velocita' | ( +++ ansima | ulula ) [ forte | di gusto ]
+  | respira piano senza far rumore [ e si addormenta di sera e si risveglia col sole ]
+  | legge il giornale | guarda dal buco della serratura
+  | ( sfoglia | guarda ) i giornaletti (++zozzi|porno)
+  | ( pensa al^ | telefona al^ | chatta con )
+     ( le puttane | la segretaria | la portinaia | la vicina di casa
+     | lo psichiatra | la stagista | l'assistente sociale
+     | la signora del ( primo | secondo | terzo | quarto | quinto ) piano )
+  | si abbandona al ( piacere | godimento | ^ la goduria | ^le porcate )
+  | (simula|raggiunge) l'orgasmo | gioca con la \play \station
+  | propone [impaziente] di provare ( (anche la),(subito una nuova) posizione _,((+++V tipo|e di fare) quella) NomePos)
+  | si lascia sfuggire (un [sonoro] peto|una puzzetta [fetente]) [[proprio] sul piu' bello]
+  | collega la webcam | visita i siti porno | si masterizza l'evento | s'impettina tipo caimano
+  | rimpiange di non avere ( le emorroidi | lo scolo | l'encefalopatia spongiforme | la sifilide
+                           | il varicocele | il morbo di "Creutzfeldt-Jacob" | la gastroenterite
+                           | l'herpes | l'esofagite da reflusso | l'alitosi | l'ernia [ iatale ] )
+;
+
+ParteAnatomicaM ::= ParteAnatomica.s.p.ms.mp ;
+ParteAnatomicaF ::= ParteAnatomica.s.p.fs.fp ;
+
+ParteAnatomica ::=
+     s: IL >( braccio | ginocchio | polso | piede | gluteo | polpaccio | gomito ) ( sinistro | destro )
+  |  s: IL dito [ indice | medio | anulare | mignolo ]
+  |  s: IL >( + bacino | collo | ++ culo | mento | + naso | petto )
+  |  s: L >( addome | alluce | avambraccio | ombellico )
+  |  s: LA >( gamba | coscia | mano | natica | spalla ) ( sinistra | destra )
+  |  s: LA >( bocca | colonna vertebrale | gobba | lingua | nuca | pancia | panza | + schiena | + testa )
+  |  s: LA parte ( anteriore | posteriore ) del corpo
+  | ms: IL >( coso | glande | portafoglio | prepuzio | membro )
+  | fs: IL >( clitoride | seno )
+  |  p: II >( ++ capezzoli | denti | +++ fianchi | genitali | glutei | lombi | capelli | maniglioni antipanico | pollici )
+  |  p: LE >( + braccia | caviglie | chiappe | ++ cosce | costole | dita [ dei piedi ] | + gambe | maniglie dell'amore )
+  |  p: LE >( ginocchia | mutande | narici | natiche | orecchie | parti ( intime | umide ) | sopracciglia )
+  |  p: GLI alluci
+  | mp: LE reni
+  | mp: GLI >( zebedei | attributi )
+  | mp: II testicoli
+  | fp: II seni
+  | fp: LE >( mammelle | tette | zinne | [[grandi]] labbra )
+;
+
+Cazzo ::=
+    IL [ [ -- \sacro | \turgido | \maestoso ] ]
+    >( \bastone | \serpente | \cobra | \pilone | \pistone | \pennone | \merolone )
+      ( \dorato | \di \giada | \di \fuoco )
+  | LA \picca \di \giada
+  | LA [ [ -- \sacra | \turgida | \maestosa ] ] \spada ( \di \fuoco | \infuocata )
+  | LA \verga [ +++ \dorata | \di \giada | \di \fuoco ]
+  | LA [ \turgida | \possente ] \colonna ( +++ \dorata | \di \giada | \di \alabastro  )
+  | ( IL \turgido | LO ) >( \scettro \imperiale | \stecco \ducale | \stelo \di \giada )
+  | IL \maglio \perforante
+  | IL \missile \centrale
+  | >( LA \trivella | L \alabarda ) \spaziale
+  | LA \bacchetta \magica
+  | L \uccello ( \dorato | \di \fuoco )
+  | L ( \organo [\maestoso] | organo di riproduzione )
+  | ------ IL >( cazzo | pene | \coso | membro [ virile ] )
+;
+
+Fica ::=
+    IL [ \dolce ] >( \giardino | \pertugio ) \segreto
+  | IL condotto uterino
+  | LA \caverna >( \di \fuoco | \misteriosa | \muschiosa | \ombrosa )
+  | LA \foresta \oscura
+  | LA >( \dolce | \calda | \sacra | _ ) \fessura
+  | LA [calda[e umida]|morbida|misteriosa] cavita' vaginale
+  | --- L \apposito \vano
+  | L \abisso [ \profondo | \senza \fine ]
+  | --- LA >( vagina | vulva | \cosina | \ciccina | patat[^in]^a )
+;
+
+Trombano ::=
+    Lui.art LaTromba
+  | i due ( +++ amanti | +++ partner | suini | erotomani | maiali | zozzoni )
+   >( (++++scopano [insieme]|copulano|si accoppiano)
+    | si mettono a limonare
+    ) ( DiBrutto | come due (ossessi | >(procioni|ricci) (+invasati|impazziti|indemoniati)) )
+;
+
+Lubrificazione ::=
+  ( _,(e' stato raggiunto) il _,giusto grado di lubrificazione (ha raggiunto il suo valore ottimale),_ )
+;
+
+Finale ::=
+  ( -- una volta
+   >( --------- sbrigate le solite formalita'
+    | che Lubrificazione
+    | completati ([[tutti]] i [[[soliti]]] (++++++_|noiosi|faticosi)) preliminari
+    ) finalmente Trombano
+  | quando
+   >( Lei.art (finalmente e'|si sente) pronta
+    | i capezzoli Lei.di sono sufficientemente (induriti|puntuti)
+    | Lubrificazione
+    | i genitori Lei.di escono [di casa] e il lettone e' finalmente libero
+    ) allora ( Lui.art capisce che e' (tempo|[quello] il momento)
+               di (++++agire|entrare in azione) e LaTromba
+             | Trombano )
+  | al momento (+++opportuno|giusto) Trombano
+  | una volta raggiunta [faticosamente] l'erezione V Lui.art LaTromba
+  )
+;
+
+GliSussurra ::=
+  gli (+++sussurra|urla)
+  ( porcate [irripetibili|indicibili] nell'orecchio
+  | [ansimando] Va
+    >( + ["si'!!!"] dimmi che sono (una|+++la tua)
+       (stronza|lesbica in calore|donna di facili costumi|mucca pazza|vacca) P3
+     | "no martini? no party!"
+     | metti lo diavolo tuo ne lo mio inferno P3
+     | welcome to paradise P3
+     | [mmmh P3] ti prego V dimmi che sei (gay|frocio) P3
+     | ( fammi tua | prendimi | aprimi ) ESCL qui ESCL ora ESCL
+     | all you need is love P3
+     | adesso spogliati come sai fare tu [ma non illuderti io non ci casco piu'] P3
+     | --- corri ragazzo laggiu' [vola tra lampi di blu] ESCL
+     | in realta' sono un uomo P3
+     | - dammi una lametta che mi taglio le vene P3
+     | -- ho le mie cose P3
+     | rompimi piano P3
+     | - gia' fatto ^ "?"
+     ) Vc
+  )
+;
+
+O  ::= ^ ( o:  o | a:  a | i:  i | e:   e );
+CO ::= ^ ( o: co | a: ca | i: ci | e: che );
+IO ::= ^ ( o: io | a: ia | i:  i | e:  ie );
+E  ::= ^ ( o:  e | a:  e | i:  i | e:   i );
+
+P1  ::= ^"."\;
+P3  ::= ^"..."\;
+DP  ::= ^": " ;
+NL  ::= ^"\n"^\ ;
+NL2 ::= NL NL ;
+V   ::= ^",";
+Va  ::= "<em>\"..."^ ;
+Vc  ::= ^"\"</em>" ;
+ESCL::= ^"!" ;
+
+IL  ::= ( X: _ | art: il  | di: del    | da: dal    | in: nel    | su: sul    | artsuo: il suo | insuo: nel suo    );
+LO  ::= ( X: _ | art: lo  | di: dello  | da: dallo  | in: nello  | su: sullo  | artsuo: il suo | insuo: nel suo    );
+LA  ::= ( X: _ | art: la  | di: della  | da: dalla  | in: nella  | su: sulla  | artsuo: la sua | insuo: nella sua  );
+L   ::= ( X: _ | art: l'^ | di: dell'^ | da: dall'^ | in: nell'^ | su: sull'^ | artsuo: l'^    | insuo: nell'^     );
+II  ::= ( X: _ | art: i   | di: dei    | da: dai    | in: nei    | su: sui    | artsuo: i suoi | insuo: fra i suoi );
+GLI ::= ( X: _ | art: gli | di: degli  | da: dagli  | in: negli  | su: sugli  | artsuo: i suoi | insuo: fra i suoi );
+LE  ::= ( X: _ | art: le  | di: delle  | da: dalle  | in: nelle  | su: sulle  | artsuo: le sue | insuo: fra le sue );
+
+Cifra ::= z: 0 | nz: >( 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 ) ;

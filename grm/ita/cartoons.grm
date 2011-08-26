@@ -1,0 +1,176 @@
+
+I ::=   "title:    Cartoni Unimati Giapponesi\n"
+      ^ "author:   CUG &lt;cug@telcanet.it&gt;\n"
+      ^ "language: italian\n"
+      ^ "status:   larval\n"
+      ^ "topic:    popculture of the 80s\n"
+      ^ "audience: un po' tutti, ma soprattutto Alessandra" {\va^(l|n)}^eri {\ma^(l|n)}^er[^(i|b)]^a ^"\n"
+      ^ "disclaim: Cristina d'Avena non ancora implementata\n"
+      ^ "created:  27/10/2004"
+;
+
+
+S::= \ Cartone ;
+
+Cartone ::= \(Nome Mestiere.Art [Aggettivo]).(M|F)
+	  | \Nome.M (^","|il) Nobiliare,>(Mestiere.NoArt.M | ragazzo) Diche2,Diche
+	  | \Sdolcinerie Nome.F
+	  | \(Incantesimo.Art Participio).(M|F) Luogo DelLuogo [per Nome]
+	  | (A:=Aggettivo.F; \A A Nome.F)
+	  | \Gerundio Luogo DelLuogo
+	  | \(che Campioni Nome.M e Nome.M ^"!" | Nome.M e Nome.M^"," due Campioni)
+	  | \{Nome.M} e {Nome.F}^"," due Cuori Sport.Nel
+	  | \Nome.F (e le ragazze | e i Campioni) Sport.Del
+	  | \(Nome ^"," Campione).(M|F) Sport.Del
+	  | Nome Caratteristiche
+	  | (N:=Nome; [N^","] Incorreggibile N )
+	  | (Nome.M|"Gigi") Appellativo
+	  | \e' (Avverbio | un po' di) Incantesimo.F (^","|per) (Nome.M | Nome.F e Nome.F)
+	  | Pokemon ^"," Animale Aggettivo.M
+	  | \PotPourri di avventure per ((Nome [[^","] Mestiere.Art]).(M|F) | Nome  [Caratteristiche] )
+	  | Nome.F e la Incantesimo.F,Sfida di,della (OggettoTira DiCosa),Incantesimo.F
+	  | Nome.F ^"," OggettoTira (tira | dopo) l'altro
+	  | \[super] Robot ("-" (l'uomo | cuore | robot) DiCosa | "-" il robot Aggettivo.M)
+	  | Nome.M Frazione
+	  | Pokemon ;
+	  
+
+
+
+Nome ::=>> M: \( holly | benji | johnny | ken | sampei 
+	     | nino | shiro | carletto | franco
+	     | ubaldo | tommaso | beppe | ernesto
+	     | asdrubale | gigi) 
+      |  F: \( candy | georgie | sakura | emi | mila 
+	     | creamy | ann(^a|^ette) | bia | filippa
+	     | mirella | cristina | pina | susanna
+	     | mariangela)
+      | ---"Helder" <<
+      ;
+
+
+Mestiere ::=(Art: (M:il | F:la) | NoArt: _) 
+	    (M: ( guerriero | pescatore | calciatore | cavernicolo 
+	         | mago	| mafioso | viados | ninja  ) |
+             F: ( guerriera | strega | maga | pizzaiola 
+		 | segretaria | massaggiatrice  | "drag-queen" ))     
+	     ;
+
+Prepos ::= la' | qua | qui | su | giu' ;
+
+Diche ::= del cosmo | del futuro ;
+
+Diche2 ::= >> dei mostri | dei mongoli 
+	| dei ladri | dei negri | degli zingari 
+	| degli ebrei | degli omosessuali | Diche << ;
+
+Sdolcinerie ::= kiss me | love me | fuck me | cara dolce ;
+
+Incorreggibile ::= l'incorreggibile | l'insopportabile  
+		| l'irrevocabile | l'irreprensibile ;
+
+PotPourri ::= un alveare | un canile | un letamaio | una stalla
+	   | un acquario | un serraglio | una fogna | un calderone
+	   | una fossa biologica ;	  
+
+Nobiliare ::= re | principe | duca | marchese | barone 
+	    | cavaliere | conte 
+	    | presidente
+	    ;
+
+Avverbio ::= quasi | alquanto | decisamente | leggermente ;
+
+Sfida ::= (++++++++++++++++++++++++++++s^|------------------------_)figa | sfida | figlia | biglia | triglia ;
+
+Incantesimo ::= M:((Art:un|NoArt:_) ( incantesimo | malocchio | finocchio
+				     | prurito )) |
+		F:((Art:una|NoArt:_) ( magia | poesia |  filosofia 
+				     | fobia | dendrofilia )) ;
+
+Appellativo ::= la trottola | la piattola | la nottola 
+	     | la bettola | la caccola | la pallottola
+	     | la pentola | la zoccola | la fiaccola
+	     | la fecola | la tombola | la bubbola
+	     | la pustola | la frottola ;
+
+Luogo ::= nei giardini | ---nelle latrine | nei labirinti 
+	| nei meandri | nelle caverne | tra i baffi | sui monti 
+	| nel mare | nei cessi | nel bosco 
+	;
+
+Caratteristiche ::= dai,dalle Cuori.M,Cuori.F AggettiviPl.M,AggettiviPl.F;
+
+DelLuogo ::= del naso | del sole | del tempo |  dello spazio 
+	  | dell'ospizio | -------------"di Cinisello Balsamo" ;
+
+Aggettivo ::= magic(M:^o|F:^a) | mitic(M:^o|F:^a) | tragic(M:^o|F:^a) 
+	   | spastic(M:^o|F:^a) | sadic(M:^o|F:^a)  | flaccid(M:^o|F:^a) 
+	   | sapid(M:^o|F:^a) | cinic(M:^o|F:^a) | turgid(M:^o|F:^a) 
+	   | stupid(M:^o|F:^a) | cosmic(M:^o|F:^a) | magnetic(M:^o|F:^a)
+   	   | ispid(M:^o|F:^a) 
+	   ;
+
+Gerundio ::= passeggiando | scorreggiando | sporcando
+	  | orinando | scartavetrando | pasturando 
+	  | stravaccando | tergiversando  ;
+
+Animale ::= cane | ornitorinco | porco | cavallo | pesce 
+	 | criceto | porro ;
+
+Campione ::= M: (il campione | l'imbecille | il fuoriclasse ) |
+	     F: (la campionessa | la ragazza | la fuoriclasse 
+		 | la stella)
+	     ;
+
+OggettoTira ::=  un rutto | un peto | un polpo
+	     | uno starnuto | un Animale ;
+	     
+Cuori ::= M: ( reni | fegati | pubi 
+	| fianchi | piedi | polsi | -----diti 
+	| follicoli | brufoli | polmoni | capelli 
+	| denti | gomiti | mignoli | pollici ) |
+	  F : (ascelle | verruche | unghie | dita
+	| orecchie | narici | dentiere | meningi )
+	;
+
+DiCosa ::= di balsa | di pane | tonnato
+	| di cobalto | ----di merda | d'acciaio | di ferro 
+	| di ghisa | inox | di rame
+	;
+
+
+AggettiviPl ::= [g^]ross(M:^i|F:^e) | sporch(M:^i|F:^e) | cellulitic(M:^i|F:^he) 
+	     | flaccid(M:^i|F:^e) | cott(M:^i|F:^e) | marc(M:^i|F:^e) | rott(M:^i|F:^e) ;
+
+Sport ::= (Del:del | Nel:nel | No:_) calcio | (Del:del | Nel:nel | No:_) basket | 
+	   (Del:della | Nel:nella | No:_) pallavolo |  (Del:dello | Nel:nello | No:_) sci [di fondo] | 
+	   (Del:dell'^ | Nel:nell'^ | No:_) hockey | (Del:del | Nel:nel | No:_) rugby | 
+	   (Del:del | Nel:nel | No:_) ciclismo | (Del:del | Nel:nel | No:_) baseball | 
+	   (Del:del | Nel:nel | No:_) nuoto [sincronizzato] | (Del:del | Nel:nel | No:_) tiro al piattello | 
+	   (Del:del | Nel:nel | No:_) lancio del peso;
+
+Campioni ::= campioni | fuoriclasse | rimbambiti 
+	  | ritardati | rincretiniti | dementi ;
+
+Participio ::= dischius(M:^o|F:^a) | nascost(M:^o|F:^a) | occlus(M:^o|F:^a) 
+	     | inclus(M:^o|F:^a) | reclus(M:^o|F:^a) | incastonat(M:^o|F:^a) ;
+
+Robot ::= \RobPrefix ^ RobMid [^RobPost] [\Lettera]; 
+
+RobPrefix ::= go[^t] | vol | ge[^t] | gol | star | ma | ga[^i] | me | tri | hel | gun;
+RobMid ::= zing | tron | t | ter | don | chan | der | dam;
+RobPost ::= er | a | "" ;
+
+Pokemon ::= \ P^Voc^K^Voc^mon[^d];
+P::= [s^]p | d | r ;
+Voc ::= o | i | y | e;
+K::= k | g | kk | l | rc | pp | ra | ld ;
+
+Lettera ::= x|z|t|h|g|3|n|"GT" ;
+
+Frazione ::=Numero^"/"^Numero;
+
+Numero ::=1|2|3|4|5|6|7|8|9|10|11|12|13|14|15;
+
+
+	

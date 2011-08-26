@@ -1,0 +1,43 @@
+I ::=   "title:    DjFrancesco\n"
+      ^ "author:   Denis e Laura &lt;laura@micionline.com&gt;\n"
+      ^ "language: italian\n"
+      ^ "status:   refinable\n"
+      ^ "topic:    misc\n"
+      ^ "audience: Sanremo\n"
+      ^ "created:  marzo 2005"
+;
+
+S ::= Strofa  Strofa "\n" Ponte "\n" Ritornello  Ritornello "\n"
+;
+Strofa::= "Francesca" che mangia una pesca dal ramo "\n" e il lago che lei preferisce e' quello di "Como" "\n"|"Francesca" e' davvero una forza della "Natura" "\n"
+"Francesca" che c'ha il reggiseno di sesta misura "\n"|"Francesca" che sta alla finestra nel mese di maggio "\n"
+"Francesca" che sopra alla testa si e' fatta un tatuaggio "\n" |"Francesca" che beve acqua fresca sul melo "\n"
+"Francesca" che perde il vizio ma mai il pelo "\n" | "Francesca" che guida la vespa e non ha paura "\n"
+e il piatto che lei preferisce e' la verdura "\n" | "Francesca" che ha dato una festa giu' nel cortile "\n"
+e il mese che lei preferisce e' il mese d'Aprile "\n" | "Francesca" respira aria fresca nel mese di agosto "\n"
+e il piatto che lei preferisce e' l'anatra arrosto "\n"
+;
+Ponte::= ^"Francesca" stringe (i denti | i pugni | gli occhi ) e stringili anche tu "\n"
+ed entra nel mio mondo e avrai toccato proprio il fondo "\n"
+;
+Ritornello::= "Anche" se ( sembra | a volte e' | spesso e' ) Qualita "\n"
+"Francesca" e' Difetto ("Francesca" e' | e pure ) Difetto "\n" | "Anche" se ( sembra | a volte e' | spesso e' ) Pregio "\n"
+"Francesca" e' Malattia ("Francesca" e' | e pure ) Malattia "\n" | "Anche" se ( sembra | a volte e' | spesso e' ) Colpa "\n"
+"Francesca" Verbo "Francesca" Verbo "\n" | "Anche" se fa (lo scientifico | il liceo classico | matematica) "\n"
+"Francesca" e' un'asina ("Francesca" e' | e pure ) stupida "\n" | "Anche" se ( prende l'Activia | non sembra gravida | mangia la rucola | sembra bulimica ) "\n"
+"Francesca" vomita "Francesca" e' stitica "\n" | "Anche" se prende la pillola  "\n"
+"Francesca" e' vergine "Francesca" e' lesbica "\n"
+;
+
+Qualita::= un po' timida | un po' anemica | simpatica | ridicola | un po' comica |  buonissima | un po' un'ebete
+;
+Difetto::= zoccola | squallida | lurida | perfida | trucida | cupida | avida | fetida | sudicia | sordida | insipida
+;
+Pregio::= ricchissima | fantastica | sanissima | bellissima | fortissima | romantica | incantevole
+;
+Malattia::=  povera | vedova | tisica | miope | presbite | nubile | asmatica | debole | anemica | misera | gracile | esile | invalida
+;
+Colpa::= una chiavica | malefica | antipatica | diabetica | anoressica | una zoccola | patetica | nevrotica | cianotica | lunatica | una pecora
+;
+Verbo::= mi eccita | stuzzica | stimola | mi agita | e' unica | e' musica | zoppica | ansima | cigola | mugola | rantola | pungola | gongola | giubila | sibila | scalpita | ruzzola
+;

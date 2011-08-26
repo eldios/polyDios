@@ -1,0 +1,264 @@
+
+I ::=   "title:    Dialoghi di film d'azione\n"
+      ^ "author:   Manta\n"
+      ^ "language: italian\n"
+      ^ "status:   mature\n"
+      ^ "topic:    misc\n"
+      ^ "audience: anybody\n"
+      ^ "disclaim:" {che Razza dica [solo [una montagna di]] Stronzate}
+                    {e' solamente un (luogo comune | cliche')} ^ "\n"
+      ^ "created:  23/03/2003"
+;
+
+S ::= (Q1 := "<I>" \P.art "</I>:"\ ;
+	   Q2 := "<I>" \P.art "</I>:"\ ;
+	   Q3 := "<I>" \P.art "</I>:"\ ;
+	   QE := ^"\n"^ ;
+	   B1 ::= Q1 Dial1 [Dial1] QE ;
+	   B2 ::= Q2 Dial2 QE ;
+	   B3 ::= Q3 Dial3 QE ;
+
+	   	B1 B2 [[B1 | B3] B2] B1).(negro|NOnegro)
+;
+
+P ::= Titolo Cognome | Nome | Razza
+;
+
+Titolo ::= (art: il | di: del) (tenente | sergente | maggiore | capitano)
+;
+
+Nome ::= (art: _ | di: di) ("John" | "Jack" | "Joe" | "Jay" | "Frank" | "Ray")
+;
+
+Cognome ::= (art: _ | di: di) ("Johnson" | "Smith" | "Jefferson" | "Williams" | "Simons")
+;
+
+Razza ::= negro: (art: il | di: del) negro
+	   |  NOnegro: (art: il | di: del) (++ muso giallo | cinese)
+	   |  NOnegro: (art: l'^ | di: dell'^) ispanico
+;
+
+PM ::= ^"."\
+;
+PPPM ::= ^"..."\
+;
+EM ::= ^"!"\
+;
+EEM ::= ^"!!"\
+;
+QM ::= ^"?"\
+;
+QEM ::= ^"!?"\
+;
+
+Dial1 ::= {{siamo ( in (una [Fottuta] montagna | un [Fottuto] mare) di [Fottuta] merda [del cazzo]
+                  | nella merda [fino al collo]
+                  )}
+           {[questa volta]} [^"," Amico] EM}
+       |  {e' tutto inutile [^"," Amico] EM} {capisci QM}
+       |  (Hey | Dannazione) [^"," Amico] EM
+          [e] {(quello | quella Cosa) [laggiu' | lassu']} {che diavolo (e' | era)} QM
+	   |  (ma | Hey EM) (cosa | che) diav^ (PPPM | olo (e' successo | succede) [qui]) QM
+	   |  qualcosa mi dice che
+          >([qui | li'] (e' successo | sta succedendo) qualcosa
+          				| abbiamo un [Fottuto] problema [del cazzo]
+          				) PM
+	   |  [Dannazione EM] non (ce la faccio | ci riesco) [^"," Amico] EM
+       |  [Dannazione EM] e' tutto inutile [^"," Amico] EM
+       |  Hey EM [Amico^","] questi Bastardi vogliono farci la festa EM
+       |  [Hey^","] (mi e' parso | giurerei) di aver
+          (sentito un rumore | visto qualcosa [muoversi]) laggiu' [^"," Amico] PPPM
+       |  Dannazione [^"," Amico] EM ce li abbiamo alle (costole | calcagna) EM
+       |  [Dannazione EM] {Amico}^"," {guardati le spalle [^"," Bastardo]} EM
+;
+
+Dial2 ::= (che Stronzata | SonoStronzate) [^"," Amico] EM [SonoStronzate EM]
+       |  Hey {[^"," Amico]} {^"," non (fare | dire) Stronzate} EM
+          [(va bene | d'accordo | intesi) QM]
+       |  Hey EM (tutto (bene | ok) | sei tutto intero) [^"," Amico] QM
+       |  (c'e' | hai) (qualche | un) problema ^"," Amico QM
+       |  [Dannazione EM] [non e' possibile EM] ci dev'essere UnModo EM
+          [c'e' sempre UnModo EM]
+       |  Hey^"," [Amico^","] questo non e' un problema [tuo | mio] EM
+       |  [Hey^","] rilassati ^"," Amico PPPM
+          >[VaBene | sono io^"," non mi riconosci QM]
+       |  [Dannazione EM] siamo fottuti [^"," Amico] EM
+          [(creperemo | moriremo) tutti] EM
+       |  Hey {[^"," Amico]} {^"," (stai dicendo | dici) a me [per caso]} QM
+       |  [Hey^","] [Amico^","] non ho tempo per (le tue | queste) Stronzate [adesso | ora] EM
+       |  ([Dannazione EM] tutto questo | [Hey^","] [Amico^","] quello che dici)
+          non ha senso EM
+       |  [hey^","] Sicuro [^"," Amico] EM [Sicuro PM]
+       |  Hey {[^"," Amico]} {^"," ti (- si e' fottuto | e' andato di volta | sei bevuto) il cervello} QM
+       |  Hey^"," [[Amico^","] non so te^"," ma]
+          io ci tengo alla (pelle | mia pelle di negro [del cazzo]) [^"," Amico] EM
+       |  c'avrei (giurato | scommesso) ^"," Amico EM
+       |  [Presto EM] portiamo (le chiappe | i nostri culi | il culo) fuori di qui [^"," Amico] EM
+	   |  [Hey^","] {sai (cosa | che) ti dico} ^"," {Amico} QM Dial2
+	   |  [Hey^","] [Amico^","] fanculo^"," cazzo EM [VaBene]
+       |  >DialA [DialA]
+;
+
+Dial3 ::= [Amico^","] (non ne posso piu' | sono stufo | ne ho le palle piene)
+          (di [tutte] queste | delle tue) Stronzate EM
+       |  [Hey^","] [Amico^","] piantala con [tutte] queste Stronzate EM [VaBene]
+       |  [Presto [^"," Amico] EM | Amico^","] {possiamo ancora farcela EM} {[VaBene]}
+       |  Presto EM dobbiamo farcela [ad ogni costo | a tutti i costi] [^"," Dannazione] EM
+       |  [ma] [allora] (quello e' | tu sei | sei stato tu a | quella Cosa era) PPPM EM
+       |  [(si' | no | Sicuro) [^"," Amico] PM] {sei tu} {il [mio] problema} EM
+       |  [no^"," ] sei tu (che hai | ad avere) un problema [^"," Amico] EM
+       |  Presto [^"," Amico] EM (andiamocene | dividiamoci) [[EM e] alla svelta] EM
+       |  [beh^","] {[allora]} {ti consiglio di pensare [Fottutamente] (in fretta | alla svelta)}
+          [^"," Amico] EM
+       |  lascia (perdere | fare a me) [^"," Amico] EM
+       |  sei solo un Fottuto (muso giallo |+ negro) [di merda | del cazzo] EM
+       |  va^(' | i) al (diavolo | ^l'inferno) [^"," Bastardo] EM
+       |  (([spero | mi auguro] che tu possa | ti auguro di) bruciare | brucia)
+          all'inferno [^"," Bastardo] EM
+       |  ( leva il tuo [brutto | Fottuto] culo (+ negro | giallo) [del cazzo]
+          | {(tieni | ti conviene tenere) {chiuso} {il [tuo Fottuto] becco}} ^"," {Amico}
+          )
+          (prima che | se non vuoi che | o)
+          ti (faccio saltare le cervella | spedisco [dritto [dritto]] all'inferno) EM
+       |  Sicuro [^"," Amico] EM [Sicuro PM]
+       |  [Hey] Amico^"," nessuno mi ha mai detto Bastardo PM
+       |  tieniti forte ^"," Amico^":"
+          ( si (parte |+ balla)
+          | {lo spettacolo | la festa} {(comincia | inizia) | sta per (cominciare | iniziare)}
+          ) EM
+       |  di' le [tue] ultime preghiere [^"," Amico] EM
+       |  questo (e' | deve essere) il (mio | tuo) giorno fortunato [^"," Amico] PPPM
+       |  {(ti conviene (parlare | cantare) | e' meglio che (canti | parli))
+           (subito | ora)} ^","
+          {se ci tieni alla (pelle | tua pell^(accia | e) (nera | di negro [del cazzo]))} EM
+       |  [Presto EM] (ti ho | ce li abbiamo) in pugno [^"," Amico] EM
+       |  ((M: il sacrificio | F: la morte) di P.di non puo' essere stat^(M: o | F: a)
+          inutile EM).(M|F)
+       |  [(Presto | Dannazione) EM] dobbiamo restare (calmi | uniti) EM
+       |  >DialB [DialB]
+       |  >DialC
+;
+
+DialA ::= non ce la farete mai se rimango con voi PPPM
+       |  siamo (fregati | fottuti) ^"," Amico EM
+       |  andate avanti senza di me PPPM
+       |  andremo avanti senza di (te | me) EM
+       |  non pensate a me PPPM
+       |  (potrebbe essere | e') una trappola EM
+       |  [Presto EM] tagliamo la corda EM
+       |  sono dappertutto EM
+       |  [Dannazione EM] non siamo soli (in questo posto | qui) EM
+       |  tutti fuori di qui EM
+       |  abbandoniamo questo Fottuto posto EM
+       |  e' la fine EM
+       |  non c'e' [altra] via di (uscita |- scampo) EM
+       |  {non abbiamo scampo} {[questa volta]} PPPM
+       |  tutti per di qua EM [(e alla svelta | presto) EM]
+       |  {Presto EM} {da questa parte EM}
+       |  (assaggi^(S: (a | erai) | P: (ate | erete)) (questo | il mio) piombo
+       	  ^"," (S: Bastardo | P: Bastardi) EM).(S|P)
+;
+
+DialB ::= no EM non mollare EM
+       |  puoi farcela EM
+       |  (chi ci dice che | non) possiamo fidarci
+          [di (questo Bastardo | te)] [^"," Amico] EM
+       |  Dannazione EM chi ci dice che stia dicendo la verita' QM
+       |  [vedrai che] andra' tutto bene (PPPM | [^"," te lo prometto | Sicuro] ^"," ok QM)
+       |  {[Sicuro PM]} {{torneremo a casa sani e salvi} {[anche questa volta]} PM}
+       |  ci deve essere una altra uscita EM
+       |  non possiamo lasciarti qui [^"," Amico] EM
+       |  [Dannazione EM] non puoi lasciarci cosi' EM
+       |  torneremo a prenderti [^"," Amico] EM [Sicuro EM]
+       |  >(ti vendichero' | li faro' fuori tutti) [^"," Amico] EM
+          [fosse [anche] l'ultima Cosa che faccio PPPM]
+       |  non puoi farcela da solo EM
+       |  [ti prometto che] ce la faremo PPPM [VaBene]
+       |  [Dannazione EM] te ne pentirai [^"," Amico] EM
+       |  non cantiamo vittoria [troppo facilmente] EM
+       |  [Presto EM] non e' ancora detta l'ultima parola [^"," Amico] EM
+       |  hai capito"," Amico QM
+       |  [Hey^","] ce l'abbiamo sempre fatta [^"," Amico]
+          [^":" [vedrai che] (ci riusciremo | ce la faremo) anche questa volta] EM
+       |  e va bene Bastardi EM ritirata EM [ritirata EM]
+	   |  [Dannazione EM] spara[^te] [^"," Bastardi] EEM [spara[^te] EEM]
+	   |  (falli | facciamoli) saltare ^"," Amico EM
+	   |  ce l'avevamo quasi fatta"," Amico PPPM
+;
+
+DialC ::= adesso smettetela [voi due] EM
+       |  chi [diavolo [ti]] credi di essere per dare ordini [a me | qui] QM
+       |  (questa e' | adesso siamo al^) la resa dei conti [^"," Amico] EM
+       |  [questa volta] non hai [piu'] scampo [ormai] EM
+       |  sei [proprio] (uguale a | [proprio] come) tuo (+ padre | fratello |- nonno |-- zio) PM
+       |  questo lo dici tu [^"," Amico] EM
+       |  [povero] (illuso | sciocco) EM non ce la farai mai EM
+       |  Bastardo EM hai ucciso (mia madre | mio padre | mia sorella | mio fratello) EM
+       |  ([e'] inutile | non serve [a nulla]) avere rimpianti adesso EM
+       |  piantala EM e' ora di muoversi EM
+       |  non e' rimasto piu' nulla da fare qui PPPM
+       |  [Hey EM] che diavolo stai dicendo"," Amico QM
+       |  {tieni {chiuso} {il [tuo Fottuto] becco}} ^"," {[Hey^","] Amico} EM
+;
+
+(* espressioni comuni *)
+
+Cosa ::= [Fottuta] (cosa |- roba) [di merda | del cazzo]
+;
+
+Sicuro ::= sicuro | (ci puoi scommettere | puoi scommetterci) [le palle]
+        |  ci puoi contare
+;
+
+VaBene ::= (e' tutto (ok | a posto | finito) | va tutto bene) (^"," (ok | va bene |- intesi) QM | EM)
+           [ci sono {[qua | qui]} {io} [con te] PPPM [Dannazione EM]]
+;
+
+Stronzata ::= [grossissima | >Fottuta] stronzata [del cazzo]
+;
+
+Stronzate ::= [grossissime | >Fottute] stronzate [del cazzo]
+;
+
+
+SonoStronzate ::= [sono [tutte | solo [un (mucchio | sacco) di]]] Stronzate
+;
+
+UnModo ::= un [Fottuto] modo | una [Fottuta] soluzione [logica | razionale]
+;
+
+Amico ::= amico | negro: fratello [ne[^g]^ro] |- bello
+;
+
+Hey ::= hey | >Dannazione
+;
+
+Dannazione ::= dannazione | maledizione |- merda | "Cristo" ["Santo"]
+;
+
+Presto ::= presto | forza | svelto
+;
+
+Fottut ::= (++ fottut | dannat | maledett | lurid) (_ |+ ^issim)
+           ^ (M: (S: o | P: i) | F: (S: a | P: e))
+;
+Fottuto ::= Fottut.M.S ;
+Fottuta ::= Fottut.F.S ;
+Fottuti ::= Fottut.M.P ;
+Fottute ::= Fottut.F.P ;
+
+Fottutamente ::= fottutamente | maledettamente | dannatamente
+;
+
+Bastard ::= [Fottut]
+		    ( >(++ bastard | stronz) ^ (M: (S: o | P: i) | F: (S: a | P: e))
+            | figli (M: (S: ^o | P: _) | F: ^(S: a | P: e)) di puttana
+            | pezz ^ (M: (S: o | P: i) | F: (S: a | P: e)) di merda
+            | vigliacc ^ (M: (S: o | P: hi) | F: (S: a | P: he))
+            )
+            [di merda | del cazzo]
+;
+Bastardo ::= Bastard.M.S
+;
+Bastardi ::= Bastard.M.P
+;

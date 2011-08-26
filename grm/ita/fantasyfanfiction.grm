@@ -1,0 +1,100 @@
+I ::= (T ::= un AGGETTIVO2.S racconto fantasy scritto da fan sfigati che cercano di emulare "Tolkien" e nel tempo libero si vestono da PROTAGONISTA;
+
+        "title:   "\T ^"\n"
+      ^ "author:   CUG &lt;cug@telcanet.it&gt;\n"
+      ^ "language: italian\n"
+      ^ "status:   mature\n"
+      ^ "topic:    misc\n"
+      ^ "created:  06/04/2004"
+      )
+;
+
+S ::= "\n\n" ILTITOLO "\n\n" PROLOGO c'era un PROTAGONISTA di nome NOME [^"," TITOLO del [magico | ^l'incantato] regno di REGNO^]"." DESCRAMICO^""(ALLEGRIA^".\n "\[MISFATTO^".\n "\cosi']|[\ma MISFATTO^".\n "\cosi'])^QUEST [ADV] MISF2^"." URLO^".\n" VENDETTA2 OUTCOME [REMEMBER] "\n" OUT2;
+
+DESCRAMICO ::= ("Era sempre seguito dal suo" | "Insieme a lui era solito" (cazzeggiare | combattere | avventurarsi | scaccolarsi | fare onanismo) il suo| "Con lui gironzolava sempre il suo" ) AMICO^"," [un [AGGETTIVO2.S] PROTAGONISTA] (chiamato | che si spacciava per | noto come | conosciuto come | che tutti conoscevano come) NOME ^"," il quale [pro^]veniva dalle [lontane| puzzolenti| remote| ignobili| inutili| anali| ridicole] (lande | terre) di REGNO^".\n" ;
+
+PROLOGO ::= ("In un tempo" | "In un luogo" | "In un mondo" | "In un posto" | "Tanto tempo fa" [^"," in un una galassia lontana lontana]) (senza tempo | dimenticato dai piu' | a noi ormai estraneo) ;
+
+QUANDO ::= (un bel (T:tragico|N:_) giorno | una (T:tragica|N:_) mattina | una (T:tragica|N:_) notte [di mezza estate | d'autunno | d'inverno] | in un (T:tragico|N:_) giorno (particolare | che non ricordo)) ;
+
+REGNO ::= ( "B"^[l]^"ash" | "Trog" | "Zwol" | "Mop" | "Yon" | "Wos" | "Zlom" | "Krol" | "Prot" ) ^ ( dor | tor | yor | zor | for | por ) ;
+
+PROTAGONISTA ::= >(orco | nano | coboldo | elfo [oscuro] ) [guerriero] [mago] [pastore] [ninja] [assassino];
+
+NOME ::= ("Zyor" | "Thran" | "Grun" | "Krul"[^de] | "Thyu" | "Frun" | "Brod" | "Skorg" | "Zun") ^ (far | zar | par | grar | yop | gyap | zyp | dar | bus | dun | o[^lo]^k) ;
+
+AMICO ::= [migliore | piu' fido] >( amico | conoscente | partner | amante [gay] | compagno di ( bevute | battaglie | gare di rutti | onanismo | stupri));
+
+OGGETTO ::= ARTEFATTO2.M | ARTEFATTO2.F ;
+
+OGGETTO2 ::= ARTEFATTO5.M | ARTEFATTO5.F ;
+
+ARTEFATTO1 ::= (((M:_ |F: ^la)("Mistic" | "Magic" | "Mitic" | "Vituperat" )(M:^o | F: ^a)) | (^"l'Incommensurabile" | ^"l'Inutile" | ^"l'Invincibile" | ^"l'Incantat"(M:^o | F: ^a))) ;
+
+ARTEFATTO2 ::=  (M: ARTEFATTO1.M ARTEFATTO3.M | F: ARTEFATTO1.F ARTEFATTO3.F )  di (REGNO | NOME) ;
+
+ARTEFATTO3 ::=  M:("Goldone" | "Assorbente" | "Calice" | "Ano" [bronzeo | aureo] ) | F: ("Ascia" | "Lancia" | "Spada" | "Verga" | "Motozappa") ;
+
+ARTEFATTO4 ::= (((M:il |F:la )("Mistic" | "Magic" | "Mitic" | "Vituperat" )(M:^o | F: ^a)) | ("l'Incommensurabile" | "l'Inutile" | "l'Invincibile" | "l'Incantat"(M:^o | F: ^a))) ;
+
+ARTEFATTO5 ::=  (M: ARTEFATTO4.M ARTEFATTO3.M | F: ARTEFATTO4.F ARTEFATTO3.F )  di (REGNO | NOME) ;
+
+MESTIERE ::= l'usuraio | lo strozzino | il pappone | il boss mafioso | il camorrista | il carrozziere | il dentista | il commercialista | l'avvocato | il bagnino | l'operatore ecologico | il petoforo | il geometra ;
+
+TRIBUTO ::= (un tributo | un conto | una parcella | un pizzo | una tassa) di CIFRA ^ CIFRA [^CIFRA] [^CIFRA] MONETE ;
+
+MONETE ::=( dobloni | umberti d'oro | pezzi da otto | pezzi d'oro | ubaldi | culi di bronzo | sesterzi ) ; 
+
+MOTIVO ::= (un rito di "Preparazione H" | un'operazione di cambio di sesso | la cromatura (delle spade | degli escrementi | delle interiora) | la rimozione de (^lla prostata | ^lle verruche | ^lla sifilide | ^l colon | ^ll'esofago)) che aveva (eseguito | fatto loro) CIFRA[^CIFRA] UNITA prima ;
+
+UNITA ::= anni | giorni | mesi | lustri | ore | minuti | ere ;
+
+CIFRA ::=  ( 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9) ; 
+
+TITOLO ::= cavaliere | difensore | capitano [dei cavalieri | delle guardie] | giullare di corte | ammaestratore di BESTIA.P ;
+
+BESTIA ::= (or(^co|^to) | crito | oclo | bruto | porro | irco | zompo | vacco | cato) ^ (potam(S:^o|P:^i) | ca[^ta][^rr(S:^o|P:^i)] | porc(S:^o|P:^i) | lu[^pe]^nt(S:^e|P:^i) | blep(S:^a|P:^i)) ;
+
+ALLEGRIA ::= "I due" (si amavano | combattevano [insieme] | si divertivano | stupravano | ruttavano | si ubriacavano | rumoreggiavano esalando gas corporei) [a destra e a manca] con [molto | simpatia e | onanismo e | gusto e | estremo | veemente | gagliardo] (divertimento | dileggio | impegno | ardore | fetore) e (tutto | ogni cosa ) sembrava andare (bene | per il meglio | liscio come l'olio) finche' (non accadde | non avvenne | la festa non fu rovinata) da >(un [AGGETTIVO2.S] misfatto | una tragedia | un [gran] bel [fottutissimo] casino) ;
+
+MISFATTO ::= (QUANDO.T i due (chiedendo il conto [in banca] | guardando nella borsa | cercando in un baule) videro che mancavano CIFRA ^ CIFRA [^CIFRA] [^CIFRA] MONETE | QUANDO.T i due (aprendo la porta | gironzolando) trovarono (alle loro calcagna | mentre cercava di sodomizzarli) AGGETTIVO1 ":" MESTIERE PROTAGONISTA NOME di REGNO) "." [ESCLAMAZIONE esclamarono i due];
+
+ESCLAMAZIONE ::= "''"(\per (le bretelle | le mutande | la barba | lo scroto | il cerume) di | \che (NOME|REGNO) (maledica | bandisca) | \([che gli]venisse | che gli pigli) [dunque] (un bruciaculo | un attacco di (emorroidi | caghetto | peste [bubbonica] | ernia anale | colera | omosessualita' | coprofagia )) a  quel BESTIA.S di ) NOME "!! ''";
+
+AGGETTIVO1 ::= \il \terribile | \l'\orribile | \il \supremo | \il \pederasta | \l'\anale | \l'\onanista ;
+
+AGGETTIVO2 ::= puzzolent(S:^e|P:^i) | orribil(S:^e|P:^i) | pederast(S:^a|P:^i) | anal(S:^e|P:^i) | onanist(S:^a|P:^i) | coprofag(S:^o|P:^i) | pelos(S:^o|P:^i) | odoros(S:^o|P:^i) | insopportabil(S:^e|P:^i) ;
+
+QUEST ::= QUANDO.N i due ((decisero di mettersi alla ricerca | iniziarono a vagare per le lande di REGNO in cerca | vagarono per monti e per mari alla ricerca) del OGGETTO | (decisero di andare a cercar fortuna (nel dungeon |nelle caverne) di | si recarono al torrione solitario di | entrarono nel castello diroccato di) REGNO^"," notoriamente infestato da  AGGETTIVO2.P BESTIA.P | decisero di [andare a] salvare la principessa NOME^"," (figlia | moglie | nipote | zia | madre | suocera | concubina | oggetto di piacere | puttana) di NOME MESTIERE di REGNO^"," tenuta prigioniera da un AGGETTIVO2.S BESTIA.S)^"," poiche' NOME MESTIERE [AGGETTIVO2.S] di REGNO (voleva | esigeva) dai due TRIBUTO per MOTIVO^".\n";
+
+ADV ::= \(durante il loro peregrinare | durante le loro avventure | girovagando qua e la' | combattendo e ammazzando) >(i nostri eroi | i due (amici | amanti | compagni)| i due AGGETTIVO2.P) incontrarono CIFRA^CIFRA BESTIA.P ^"," CIFRA^CIFRA BESTIA.P ^", e infine" CIFRA^CIFRA BESTIA.P ^"." (ESCLAMAZIONE urlavano mentre |\)con (AGGETTIVO2.P | veementi | forti | vigorosi | taglienti) colpi di (spada | ascia | lancia | mazza | culo) maciullavano bestie orrende  come BESTIA.P^", " BESTIA.P^", e soprattutto gli spaventosi," AGGETTIVO2.P BESTIA.P ^".\n";
+
+MISF2 ::= \(successivamente | purtroppo | sfigatamente | grazie al cielo | per qualche strano caso | incredibilmente) durante (lo scontro | la battaglia | l'orgia [gay] | la sessione di onanismo | il download di materiale porno | la scureggia) NOME [di REGNO] fu (colpito | picchiato | sfiorato | inculato | preso a calci | sodomizzato | inchiavardato | impalato) da (un AGGETTIVO2.S BESTIA.S | un'orda di AGGETTIVO2.P BESTIA.P)^"." \il (colpo | dolore | godimento) fu AGGETTIVO2.S ^"." [\ EPI] ;
+
+WIS ::= "''"^\[amico mio ^","[ ricordati che]] (la vita | la nostra esistenza | la sorte | la morte | la cacca) [e' come una ELEM ":"] (piu' | meno | se) la (mangi | eviti | conosci | interpreti | onanizzi | inchiavardi | sventri | caghi) (piu' | meno | meglio) la (mangi | eviti | conosci | interpreti | onanizzi | inchiavardi | sventri | caghi) ^"."\ricordalo (la prossima volta | ogni volta) che (vedrai | inculerai | userai | ti pulirai [il culo] con ) (la mia ELEM | OGGETTO2 )^"''." ;
+
+WISP2 ::= \detto questo^"," (spiro' | mori' | vomito' | cago' | scorreggio' | onanizzo' | si autoinculo' | si iscrisse (al fan club dei \lunapop | al circolo BESTIA.P AGGETTIVO2.P  | all'arcigay) | fu catturato (dai militanti | dagli sgherri | dagli armigeri | dagli amichetti) (della societa' segreta chiamata | della fratellanza nota come | del partito politico filo^"-"^AGGETTIVO2.S noto come )LETTERA ^LETTERA ^LETTERA [^LETTERA] [^LETTERA] [^LETTERA] [^LETTERA] [^LETTERA] [^LETTERA] del noto (dittatore | stregone |assassino)NOME di REGNO detto "''"^\MESTIERE^"''");
+
+ELEM ::= morte | vita | spada | merda | lancia | diarrea ;
+
+EPI ::= GER e GER ^"," NOME >(pronuncio' le sue [ultime] volonta' | disse cose senza senso | disse una sequela di (stronzate | minchiate | idiozie | merdate))^": \n " WIS WISP2 ;
+
+LETTERA ::= "A"|"B"|"C"|"D"|"E"|"F"|"G"|"H"|"I"|"J"|"K"|"L"|"M"|"N"|"O"|"P"|"Q"|"R"|"S"|"T"|"U"|"V"|"W"|"X"|"Y"|"Z";
+
+GER ::= rantolando | morendo | vomitando | scagazzando [in giro] | ruttando | scorreggiando;
+
+GER2 ::= GER | urlando | agitando (l'arma | l'artefatto | la fungia);
+
+URLO ::= \(l'urlo | l'onanismo | il rutto | il peto | il discorso) di NOME fu AGGETTIVO2.S ^\"." ESCLAMAZIONE   disse VENDETTA ;
+
+VENDETTA ::= "''"^NOME^"," (ti vendichero' | ti uccidero' | ti faro' mia | ti onanizzero' | ti faro' in pezzi | ti sodomizzero')^"!''";
+
+VENDETTA2 ::= \(e cosi' | e fu cosi' che | ordunque | [e] allora) NOME (mise mano al | pose la mano all'elsa del | si impossesso' del) OGGETTO e GER2 e GER2^"," (ammazzo' | fece fuori | uccise | strangolo' | maciullo' | onanizzo' | inchiappetto' | divoro' | amo') i CIFRA^CIFRA[^CIFRA][^CIFRA] AGGETTIVO2.P ^"," AGGETTIVO2.P BESTIA.P che avevano  (ammazzato | fatto fuori | catturato | strangolato | inchiappettato | onanizzato | amato) il suo AMICO NOME [di REGNO]\".\n";
+
+OUTCOME ::= \(finita | alla fine del^ | al termine del^ ) (^l'orgia | la battaglia | la sessione di onanismo | l'ammucchiata) NOME (ripose | rinfodero' | si infilo' (in culo | nel naso) | inalo') OGGETTO2 ^".";
+
+REMEMBER ::= \(le parole | le stronzate | il cumulo di idiozie | le [commoventi | toccanti] frasi | le cazzate) di NOME risuonarono (nella mente | nella testa | nelle orecchie | nel culo) di NOME con la stessa (omosessualita' | forza | veemenza | tristezza | coprofagia) di una ELEM ^":" WIS;
+
+OUT2 ::= \GER2^", " NOME (si allontano' | spari' | si levo' dai coglioni | scomparve | si vaporizzo') [per sempre] dalle [lontane| puzzolenti| remote| ignobili| inutili| anali| ridicole] (lande | terre) di REGNO^".\n" \(c'e' chi crede | si dice | narrano le cronache | mi ha detto mio cugino) che ora (abbia messo insieme CIFRA^CIFRA[^CIFRA][^CIFRA] MONETE e (si sia ritirato a vita privata | sia stato divorato da un BESTIA.S | sia diventato un noto AGGETTIVO2.S | sia diventato MESTIERE di fiducia di NOME di REGNO)| sia diventato MESTIERE (piu' | meno) AGGETTIVO2.S delle lande di REGNO | sia (morto | basito | transmogrifato | impazzito | diventato (AGGETTIVO2.S | gay)) | abbia fatto troppo onanismo e sia diventato (sordo | cieco | muto | AGGETTIVO2.S) | che abbia rubato OGGETTO2 e (sia finito in galera | si sia arricchito (all'inverosimile | in maniera (ridicola | scandalosa | onanista | spaventosa | offensiva))) ) ^"," ma certo e' che (un eroe | un guerriero | un onanista | un PROTAGONISTA) cosi' AGGETTIVO2.S non lo vedremo mai piu'^"." [\(ci mancherai | non ti dimenticheremo | sarai sempre il migliore | non sarai dimenticato | --vaffanculo)^"," NOME^"."] ;
+
+ILTITOLO ::= \(il \sigillo | la \morte | il \signore | l'\anello | la \vendetta | il \re | la \regina | la \spada | l'\ascia | la \battaglia | l'\elfo) >(del \demone | del \drago | dell'\anello | dell'\elfo | del \re | dei \draghi | di REGNO) ;

@@ -1,0 +1,45 @@
+I ::=   "title:    Omaggi al Governatore delle Banca d'Italia\n"
+      ^ "author:   Cima &lt;lordcima@gmail.com.it&gt;\n"
+      ^ "language: italian\n"
+      ^ "status:   refinable\n"
+      ^ "topic:    misc\n"
+      ^ "audience: anybody\n"
+      ^ "note:     l'originale si trova <a href=\"http://www.repubblica.it/2005/g/sezioni/economia/banche7/telefonate/telefonate.html\">qui</a>\n"
+      ^ "created:  28/07/2005"
+;
+
+
+
+
+S ::= "Ah..." Governatore^"," io sono Aggettivo^"," con Malattia^"." \ Verbo1^"..." ti darei un Complementoggetto in questo Tempo^"," sul Partedelcorpo ma non posso farlo^"..." \ so quanto Verbodolore^"," credimi^"..." Verbo3 Mezzoditrasporto e Verbo4 da te in questo momento se Verbo5^"..." ;
+
+Governatore ::= "Tonino" | "Antonio" | "Anto'" | "Toto'" | "Ciccio" | "Pruvulo'" ;
+
+Aggettivo ::= commosso | estasiato |  esilarato | ai tuoi piedi | contrito | deliziato | squagliato ;
+
+Malattia ::= la pelle d'oca | la pellagra | un calo del desiderio | un erezione | la lingua dolente | i brividi blu ;
+
+Verbo1 ::= guarda | vedi | tocca | ascolta | senti ;
+
+Complementoggetto ::= bacio | ganascino | ^o sputo | ^o sganassone | ^a maniata | ^a slinguazzata | toccatina ;
+
+Tempo ::= momento | istante | attimo | frangente ;
+
+Partedelcorpo ::= ^la fronte | ^la guancia | ^la pacca | coggige | metatarso | buchino del culo | capezzolo | prepuzio ;
+
+Verbodolore ::= hai sofferto | mi hai aiutato | ti sei dedicato | hai goduto | hai tramestato ;
+
+Verbo3 ::= "Prenderei" | "Monterei su" ;
+
+Mezzoditrasporto ::= l'aereo | un mulo | la barca | la slitta | l'elicottero ;
+
+Verbo4 ::= verrei | correrei in ginocchio | salterei | monterei | mi spoglierei ;
+
+Verbo5 ::= potessi | ce la facessi| non fossi pedinato | non fossimo spiati ;
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+I ::=   "title:    Lettere d'amore\n"
+      ^ "author:   Alan aka ^anakin^ &lt;alanzap@email.it&gt;\n"
+      ^ "language: italian\n"
+      ^ "status:   complete\n"
+      ^ "audience: romantici\n"
+      ^ "comment:  dedicato a tutte le frequentatrici di polygen.org\n"
+      ^ "created:  7/9/2004";
+
+(*********************************************************************)
+(***                                                              ****)
+(***                        ATTENZIONE                            ****)
+(***                                                              ****)
+(***   E' vietata la copia anche parziale di questa grammatica    ****)
+(***                                                              ****)
+(***              Copyright (c) ^anakin^ 1980-2004                ****)
+(***                                                              ****)
+(*********************************************************************)
+
+S ::= a|m|o|r|e;

@@ -1,0 +1,307 @@
+
+I ::=   "title:    Portrait of the author" as a (young |- ^n old | dead) "man\n"
+      ^ "author:   Manta\n"
+      ^ "status:   mature\n"
+      ^ "language: english\n"
+      ^ "topic:    misc\n"
+      ^ "audience: anybody\n"
+      ^ "created:  30/08/2002"
+;
+
+S ::= "Alvise Spano'" Birth Childhood ^"."\
+      Study1 [and Study2] ^"."\
+      Affection ^"."\
+      Change (^"," (but | [al^]though) Death | ^"," and Life) ^"."
+;
+
+Birth ::= was born in Place on Date and
+       |  ^"," born in Place on Date^","
+;
+
+Place ::= Town (in [Card] State | "("^State^")")
+;
+
+Card ::= northern | southern | eastern | western
+;
+
+Childhood ::= spent [all] his (childhood | tender years) in Place until Year
+;
+
+Study1 ::= after the  Event ^"," he decided to Action.inf
+           ^"," while studying Subject
+        |  he [first] studied Subject ^"," but after the Event
+           ^"," decided to Action.inf
+;
+
+Study2 ::= in Year ^"," Age ^"," got a diploma in Diploma
+           [and attended the university of Place at the department of Faculty
+	        [^"," [eventually | at last] (graduating | receiving a master)
+             in Faculty in Year]]
+;
+
+Affection ::= ( definitely | particularly | rather | unbelievably
+              | unexplicably
+              )
+              [un^](successful | lucky) in
+              (affection | love | sentimental) (affairs | bonds) ^","
+              (Age^"," | in Year) he met
+              ( the (woman | girl) of his [whole] life
+              | a [young [and beautiful]] [Num^"-years-old"] Nationality
+                (woman | girl) [from Town]
+              ) ^","
+              ( who ( ^m he would marry InMonth
+                    | taught him (the true love | what true love is)
+                    | (introduced him to | carried him into) Activity
+                    | ^m he abducted and deported Location
+                    )
+              | with who he
+                (moved | went [and lived] | escaped | withdrew | retired | ran away)
+                (to Place | Location)
+              )
+              [and ( with who he [eventually] gave Child to light
+                   | who [eventually] gave him Child
+                   ) [InMonth | in Year]
+               [^"," [then] followed by Child too [InMonth | in Year]]]
+           |  [having] discovered himself [to be] (homosexual | gay) Age [^"," in Year]
+              ^"," [after a (painful | ^n anguishful | distressful) inner conflict]
+              he (escaped | ran away) from (home | his [beloved] Town
+              [^"," where he used to lived together with Relative^","])
+              and (withdrew | moved | retired) Location
+              [along with a (man | boy) [he had met InMonth
+                (during his journey to State | Where)]]
+;
+
+Where ::= at >( the >( sea | cinema | disco | circus | station | university
+                     | mass | oratory
+                     )
+             | a [birthday] party
+             | school
+             )
+       |  on >(the bus | the internet | [a chat] line)
+       |  in a bar
+;
+
+Child ::= a son | a daughter | a baby | Num twins
+;
+
+Change ::= his life [finally] changed as he (decided | began) to Action.inf
+	       [and to (fulfill his dream of | achieve) Action.ing]
+        |  his dream of Action.ing has been fulfilled [only]
+            as he (decided | began) to Action.inf
+            [and finally (was able | managed) to Action.inf]
+        |  not before Year [^"," Age^","] he [finally] (began | managed) to Action
+           [and [eventually] (fulfill his dream of | achieve) Action.ing]
+;
+
+Death ::= ^"," (carried off | beated | hit | stroken) by Illness ^","
+	      he [tragically] (died | defuncted) on Date^"," Age
+          [ ^"," and is [now[^adays] | still] buried at the Saint (cemetery | church yard) in Place
+          | ^"," [alone and] late lamented by (everyone | nobody | few | many | his Relative [only])
+          ]
+       |  [no one heard from him since]
+          ^"," [tragically | mysteriously | under unknown circumstanes]
+          (missing since Month Year | (vanished | lost) InMonth) Location ^","
+          he has never ((come | got) back | returned) to his [home in] Town
+          [ and his (body | corpse) has never been (found | recovered)
+          | ^"," where Relative [and Relative] were waiting for him
+          ]
+       |  InMonth his (corpse | body) has [tragically] been (recovered | discovered | found)
+          (unarmed | immobile | lifeless | inanimate | mummified | [already] decomposing)
+          Location
+          [and (has [then] been buried | lies now) by the (cemetery | church yard)
+           in his [beloved] Town]
+;
+
+InMonth ::= in Month Year
+;
+
+Location ::= in the ( sea | woods | forest | fields | hills | jungle | desert
+                    | ices | glaciers | snows | steppe | tajga | mount[^ain]^s
+                    | marshals | muds | savannah | prairies | waters
+                    )
+             (far off | of) [Card] State [nearby Town]
+;
+
+Life ::= [now[^adays] | today] he [is still unable to rest and]
+         ( has no residence yet
+           [and ( splits between State [^"," State] and State
+                | wanders [on his [trusted] Vehicle]
+                | spends the rest of his life
+                ) Location [together with Relative [and Relative]]]
+         | [still] lives (in | by) Place [together with Relative [and Relative]]
+         )
+;
+
+Relative ::= his >( [grand^] >(children | son[^s] | daughter[^s] | father | mother | parents)
+                  | ["ex-"]wife | uncle[^s] | aunt[^s] | cousin[^s] | sister | brother
+                  ) [^"-in-law"]
+          |  (some [trusted] friends | a [trusted] friend) [of his]
+          |  "Helder"
+;
+
+Age ::= [just] at the age of Num
+     |  when [he was [just]] Num years old
+     |  as a Num^"-years-old" (young | old) (man | boy | child)
+;
+
+Town ::= "Rome" | "Treviso" | "Venice" | "Tripoli" | "Mexico City" | "Santiago of Chile" | "Calcutta"
+       |  ["New"] "Delhi" | "Teheran" | "Timbuctu" | "Katmandu" | "Montevideo" | "Pozzuoli" | "Carbonera"
+       |  "Porcellengo" | "Oriago" | "Varsawia" | "Berlin" | "Reikjavik" | "Helsinki" | "Sparta" | "Rhode"
+       |  "Mileto" | "Santorini" | "Pantelleria" | "Roncade" | "Abbiategrasso" | "Frascati"
+       |  "Ostia" ["lido"] | "Vulci" | "Urbino" | "Melfi" | "San Gimignano"
+;
+
+State ::= "Italy" | "Thailandia" | "Germany" | "Holland" | "Rwanda" | "Chile" | "Uganda" | "Ciad" | "Sudan" | "Mexico"
+       |  "Turkey" | "Turkmenistan" | "Azerbaijan" | "Burundi" | "Tibet" | "San Marino" | "Vatican"
+       |  "Lichtenstein" | "Luxemburg" | "Monaco Principality" | "Slovenia" | "Ecuador" | "Uruguay" | "Paraguay"
+       |  "Dalmatia" | "Moldavia" | "Macedonia" | "Kurdistan" | "Malta" | "Argentina" | "Etruria"
+       |  "Kamcatka"
+;
+
+Date ::= Month the [(1 | 2)^] (1st | 2nd | 3rd | >(4 | 5 | 6 | 7 | 8 | 9)^th) Year
+;
+
+Month ::= "January" | "February" | "March" | "April" | "May" | "June" | "July" | "August"
+	   | "September" | "October" | "November" | "December"
+;
+
+Year ::= 19 ^ Digit ^ Digit
+;
+
+Num ::= Digit.nz ^ Digit
+;
+
+Digit ::= z: 0 | nz: >(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)
+;
+
+Event ::= [sudden | unexpected | tragic]
+          fall of the
+		  >( "Berlin" wall
+		   | >( ("Eastern" | "Western") "Roman" |"Ictysh" | "Macedonian" | "Mongolian"
+		      | "Chinese" | "Persian"
+              ) empire
+		   | >( "Ming" | "Huan" | "Carolingian" | "Stuart" | "Tudor" | "Windsor"
+              | "Borbon"
+              ) dinasty
+		   | "Eiffel" tower | "Chinese Great Wall"  | "Arc of Triumph" | "Pisa" tower
+		   | >(austrohungarian | borbon | castrist | norman | saracyn) regime
+		   )
+        | loss of
+          >( his virginity | his hair | his [pet] Animal AnimalName | the Cup by the Team team
+           | his beauty | his >(pubis | pectoral | armpit | dorsal | ingrown) (coat | fur)
+           )
+        | breaking
+          >( off with his ["ex-"^] (wife | girlfriend)
+		   | of his >( >(bath | living | bed)^room heating pipes
+		             | bike | car | chariot | wheelbarrow | motorcycle
+                     | moneybox | piggy bank
+                    )
+           )
+;
+
+Animal ::= cat | hamster | dog | canary | fish | chameleon | seagull | python | furret | otter
+        |  gnu | yacc | yeti
+;
+
+AnimalName ::= ("F" | "B" | "D" | "J" | "K") ^ (i | o | e) ^ (d | b | d | f | p) ^ (ie | y)
+;
+
+Cup ::= champions league | >(world | european | "Sans Souci") cup
+;
+
+Team ::= "Milan" | "Juventus" | "Real Madrid" | "Arsenal"
+;
+
+Subject ::= shorthand writing | typing | economics | marketing | web design | surgery | first aid
+;
+
+Diploma ::= >(commercial | industrial | turistic) techniques | electronics | informatics
+         |  humanistics | literature | linguistics | "socio-psycho-pedagogy" | artistics
+;
+
+Faculty ::= laws
+         |  >(ancient | modern | foreign) (languages | literature)
+         |  >( communication | educational | political | forestal | environmental
+             | matter | civil | pollution | artistic | linguistic | computer
+             | informatic | electronic | humanistic | turistic | commercial | industrial
+	         ) (science | engeneering)
+	     |+ Discipline
+;
+
+Action ::= ( (dedicat ^ (inf:e | ing:ing) | devot ^ (inf:e | ing:ing))
+             (himself | his [whole] life) to [the art of]
+	       | (enter (ing:^ing | inf: _) | get (ing:^ting | inf: _)) into the world of
+	       | cultivat ^ (inf:e | ing:ing) his [strong] interest for [the art of]
+	       ) Activity
+;
+
+Discipline ::= ( porno | idro | pyro | copro | logo | phylo | phago | geo | aero | astro
+               | tele | homo | ethero | psycho | socio | pedo | omni | poly | agro | steno
+               | holi | holo | phobo | hemo | gastro | morpho | radio | megalo | stereo | mono
+               | photo | audio | video | theo
+               )
+               ^ ( logy | gogy | piry | phily | mania | phagy | sophy | graphy | phoby
+                 | scopy | nomy | cracy
+                 )
+;
+
+Activity ::= Vegetable [intensive] (farming | cultivation)
+	      |  (stamp | butterly | toy soldier | tin) collectionism
+          |  ( jazz | hardcore | classical | baroque | medieval | rinaissance | provence
+	         | [(prog | death | black | street | heavy | gothic) ^ "-" ^]
+               (rap | rock | metal | pop)
+             | [Nationality] (folk | popular)
+	         ) music
+          |  Fish (fishing | poaching) | Game (hunting | poaching) | tantra
+          |  gardening | ["hand-"^]sewning [and needleworking] | safari | alpinism
+          |  [hitch] hiking | Vehicle (piloting | driving) | the "Web"
+          |  occultism | (textile | metallurgic) industry | adventure | sex [magick]
+          |++ Discipline
+;
+
+Nationality ::= bulgarian | iranian | romena | chinese | paraguayan | uruguayan
+             |  swiss | nipponic | aboriginal | tibetan | turkish | polish
+	         |  hugandian | pakistan | siberian | etrurian | russian | lappon
+	         |  (nuit | eskimish) | costarican | portorican | peruvian | maltish
+	         |  sardinian | lucan | calabrian | sicilian | chilian | micronesian
+;
+
+Vehicle ::= [omni^] bus | camper | roulotte | car | tractor | (bi | motor | mono | tri)^cycle
+         |  yacht | [air^]plane | ship | panzer | lorry | van | [wind^]surf
+;
+
+Fish ::= mackerel | prawn | scampi | shrimp | lobster | mussel | mollusc | protozoa | plankton
+      |  [pearl] oyster | clam
+;
+
+Game ::= chick | hog | deer | fox | wolf | [brown | while] bear | cat | butterfly
+;
+
+Vegetable ::= pulse | corn | hydrangea | bean | pea | pistachio | tuber | potato
+;
+
+
+Illness ::= a [^n acute | fulminating]
+            >( cold | chill | herpes
+		     | (apopleptic | sun | oar | heat) stroke | fit of coughing
+		     | abscess | (haematoma | bruise) [on the BodyPart]
+		     | gengivitis | conjunctivitis | polio [^myelitis] | micosis | indigestion
+             | decay | (injury | wound) [on the BodyPart]
+             )
+         |  the >( measles | smallpox | tapeworm | chickenpox | leprosy | plague
+                 | diarrhoea | mumps
+                 )
+	     | baldness | dandruff | dysentery | dental plaque | spasms on the BodyPart
+	     | haemorrhoids | piles | verrucas | warts | blisters [on the BodyPart]
+	     | stigmata [on the BodyPart] | anal polyps | pimples | spots | acne
+;
+
+BodyPart ::= [right | left]
+             >( buttock | shoulder | thigh | ankle |  meminx | temple
+              | arm | elbow| knee | foot | finger | toe | lobe
+			  )
+	      |  mandible | jaws | back | gum | dentures | pectorals
+;
+
+Saint ::= "Saint" ("Mark" | "Anthony" | "Matthew" | "Joseph" | "Catherin" | "Mary")
+;

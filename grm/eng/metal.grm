@@ -1,0 +1,85 @@
+
+I ::=   "title:    Metal band names\n"
+      ^ "author:   Manta, Obeso &lt;fabiobortolotti@fastwebnet.it&gt;\n"
+      ^ "language: english\n"
+      ^ "status:   mature\n"
+      ^ "topic:    misc\n"
+      ^ "audience: anybody\n"
+      ^ "created:  11/01/2003"
+;
+
+S ::= \Group "-" \Title
+;
+
+Group ::= (--Prefix^ | _) >(Adj.(++NOa|a) \Noun | [Noun\ | Adj.NOa\] Adj.a)
+       |  (Noun.(pre|post).S \Verb.er [^s] | Verb.er [^s] of \Noun)
+       |  Noun of \Noun
+       |  Prefix ^ Noun
+       |  Noun.pre.S ^ Noun.(+post|pre).(S|P)
+;
+
+Title ::= [[Adj.NOa] Noun in] Place
+       |  in Place
+       |  (Noun.P and Noun.P).(pre|post)
+       |  the Noun.P.(pre|post) of Noun
+       |  [Adj.NOa] Noun.P.(pre|post) (from | across | to) Where
+;
+
+Prefix ::= + necro |+ anti |+ neo | phylo |- intra | mega | mano
+;
+
+Adj ::= NOa: >( impaled | immortal | bastard | northern | grim | brutal | anal | sodomized
+              | infernal | frostbitten | rotting | cannibal | lusty | dark | enchanted
+              | dethroned | painful | inverted | [un^]holy | black | transylvanian | carpathian
+              | damned | elven | insane
+              )
+     |  >( semitic | apocalyptic | antarctic | ar[^c]^tic | metallic | diabolic | nordic
+         | maniac | necrotic | romantic | androgyn | virgin | (c | k)^eltic | phobic
+         | mysantropic | satanic | erotic | gothic | [neo^]lithic | heretic | sybillic
+         ) (a: ^a | NOa: [^al | ^ous])
+     |  >( transylvan | carphath | amorph | androgyn | malevolent | perfyd | urban
+         | christian | obscur | sybillin | ap^[h^]ost^[h^]ol | arcan | ultracorp | chron
+         )
+         (a: ^(ia | a | ica) | NOa: ^([i^]ous | is | ic[^al]))
+;
+
+Verb ::= >( slay | sodomiz | trash | tortur | grind | kill | reap | steal | butch | murder
+          | burn | fight | destroy | masturbat | summon | push | worshipp
+          ) (er: ^er)
+      |  >(tortur | sepultur | muratur | mutilator) (er: ^er | a: ^a)
+      |  inf: >(dig | rip | rule)
+      |  er: >(digger | ripper | ruler)
+;
+
+Noun ::= post: >( lord | cathedral | darkness | mud | massacre
+                | blood | frost | annihilation | suffocation | christ | devastation | men
+                | legacy | dissection | fatality | summoning | defecation | mutilation | gore
+                | victory | damnation | violence | sodomy | erection | faith | devotion
+                | >( grave | whore | cradle | sword | cunt | craft | pentagram | guardian
+                   | gate | king | corpse | house | forest | wizard | warrior | carcass (S: _ | P: ^e)
+                   | crown | beast | land | funeral | triumph | god | throne | dawn | bell
+                   | cage | tale | chronicle
+                   ) (S: _ | P: ^s)
+                )
+      |  pre: >( steel | dark | power | death | cross | porn | shit | void | pain
+               | rage | fire  | doom | satan | hate | cynic | black | creation
+               | silver | other
+               | >( stone | dragon | guard | night | [twi^]light | shadow | rune
+                  | tomb | winter | autumn | war | battle | hell | soul | devil | d^[a^]emon
+                  ) (S: _ | P: ^s)
+               )
+;
+
+Place ::= "Hell" | "Norway" | the sky | "Valhalla"
+       |  the >( + land | forest | valley | hills | wood | waste | desert | mountains | peak
+               | shadow[^s] | island | isle[^s] | house
+               )
+          of >( [im^]mortals | "Satan" | porn | lore | imagination | sodomy | violence
+              | "Death" | perversion | massacre | the king[^s] | the "Beast" | [the] elves
+              | "Hell" | "Chaos" | [the] "Helder" | doom
+              )
+;
+
+Where ::= Place | (no | else)^where
+       |  (another |+++ the Noun.pre.S) (side | world | dimension)
+;

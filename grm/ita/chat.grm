@@ -1,0 +1,324 @@
+I ::=   "title:    Chat\n"
+      ^ "author:   Alan aka ^anakin^ &lt;alanzap@email.it&gt;\n"
+      ^ "language: italian\n"
+      ^ "status:   refinable\n"
+      ^ "topic:    chat\n"
+      ^ "audience: chatters\n"
+      ^ "comment:  lo scopo sarebbe quello di creare un log di una chat in cui i personaggi dai nick improbabili ed inquietanti: fanno annunci (<i>grammatica ANNUNCI di Sandolo</i>); ascoltano metal (<i>grammatica METAL di Manta e Obeso</i>); incollano link inutili (<i>dedicato a [nichel]</i>)\n"
+      ^ "created:  4/9/2004";
+
+S ::= (C:=Canale; N:="&lt;"^Nick^"&gt "; "<font color=red>* Now talking in" C "</font><br><font color=black>" N ^Saluto Smile^"</font><br><font color=red>"
+      ^((((((( 
+        +++("* "^Nick^(AzioneNick C|" has Quit IRC (Quit: )"|+" is now known as "^Nick|-NP) 
+            |---(Domanda|+Link|Chan|Annuncio) 
+           ))))^"<br>"^)+)+)+)+
+      ^"</font><font color=black>" 
+      N (ma andate[tutti](affanculo|a farvi fottere)|fottetevi|addio|adieu|-ciao|-alla pro^(x|ssima)|-notte|-nuit|-bye)[(stronzi|minkioni|coglioni|teste di (kazzo|minkia))] [Smile]
+        [^"<br>"N^" "^[io](stacco|vado|esco|chiudo|quitto) [Smile]]
+        [^"<br>"N^" "^(^"per fortuna che ci sei tu " Nick|"salutatemi " Nick^" "^("se rientra"|"se si ricollega") | 
+         Saluto^" ..."^Nick^" "^["e" Nick^" "^](un bacio[^ne]|":"^("*"^)+)| Nick^", per piacere se rientra " Nick^" "^(avvertimi|digli che si fotta|digli che vada affanculo)) [Smile]]
+      "<br></font><font color=red>* Disconnected</font>");
+
+Saluto ::= (sera|ciao|salve|ciau|ciaz)[a tutti];
+
+Smile    ::= [Cappello^]Occhi^Naso^[("'"^)+]^Bocca;
+Cappello ::= "*<|" | "<|";
+Occhi    ::= ":" | 8 | ";" | "B" | "="; 
+Naso     ::= +"-" | -_ | "o";
+Bocca    ::= ")" | "(" | "D" | "/" | "|" | "O" | "0" | "]" | "[" | "{" | "}";
+
+Canale ::= "#"^[(solo|only|["A"^]tutto|mega|nonsolo|tuttipazziper)]^(Parola)^[^\(mania|italia|urlante|maniacs|sud|nord|"40_60"|"chatD`elite"|".it"|".com")];
+
+Parola ::= \(tuonick^"|"^Numero|brutal|dark|lady|suicide|death|holocaust|metal|kavallett MF|pulcin MF|angel^(o|us)[^"Of"^Parola]|duranduran|
+             suicide|spiral|dirty|corgan[^MF]|zwan|bad|sad|satana|len|daemoni MF|demone|
+             mort MF|depress MF|dekadente|baby|killer|heavy|hard|tomb|forgotten|shit|
+             molk MF|brian|minki MF|sabry|zero|gay|anti[^"-"]^Parola|(mani|testa|occhi|labbra|corna|ali|viso|sguardo|piedi)^"_di_"^Parola|
+             total|antichrist|marylin|manson|heart|love|suicid MF|konigliett MF|sex[^"y"]|fetish|fuck|black|
+             maynard|"dontCry"|ville|valo|korn [MF]|guardianOf^Parola|warrior|vampir MF|
+             dracula|darkness|cyborg|"HIM"|kazzo[^ne]|minkione|god|[dont^]("Trust"|"Believe")^"In"^Parola|bush|darcy|berluska|diBr^(u^)+tto|
+             [super^]tettona|[(super|mini)^]dotato|fic MF|b^(e^)+ll MF|br^(u^)+tt MF|Numero^("cm"|"m"|"kg"|"gr")^|mici[^n^] MF|uccello|cipp MF|
+             (toscano|trentino|romano)[^Numero]|stronz MF|"CAM"|(("F"|"M"|"CAM"|"GAY"|"TRANS")^"x"^("F"|"M"|"CAM"|"GAY"|"TRANS"))|maschio|trans|trav|bsx|cerco|offro|
+             ("666"^)+|(("six"^)+)+|(("69"^)+)+|g^((("r"^)+)+)+^l|
+             Noun|Verb|  (* METAL.grm   *)
+             Soggetto    (* ANNUNCI.grm *)
+             );    
+
+MF := ^(+++a|+++o|---uccio|---uccia)^;
+
+AzioneNick ::= ^" "^(has (joined|left));
+
+Nick ::= \(Pezzo)+[(^"["^Stato^"]"|^"{"^Stato^"}")+];
+
+Pezzo ::= Accessori^Parola^Accessori;
+
+Accessori ::= ( ("^"^ | "_"^ | "`"^) | +++_)^;
+
+Cifra ::= (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9);
+
+Numero ::= (Cifra^)+; 
+
+Stato ::= (away|studying|studi MF|cod^(ing|MF)|doccia|guitar|out|tv|divx|buaAlPancino|triste|
+          nopvt|si\^(veste|trucca|spoglia)|gnam|magn MF|papp MF|work[^ing]|"nonc`e"|pigiama|film|
+          watching^Parola|pensa|happy|felice|depress MF|(zZz^)+|sleeping|"pipi`"|
+          bagno|aDopo|photoshop|dreamweaver|disegn MF|cant MF|suon MF|prot|web|navig MF|
+          (cs|quake|doom|ut|tetris|arkanoid|larrySuite|colin|fifa|worms)^Numero|pipp MF|sigaretta|lecc MF[^Parola]|mare|piscina|spiaggia|
+          inCentro|cinema|stupr MF|dying|rolling|canna|fum MF|uncinetto|canasta|poker|briscola|
+          sega|pompino|pompa|mtv|forum|bocce|tennis|volano|pingpong|cucina|in^("Bagno"|"Cucina"|"Soggiorno"|"Garage"|"Cantina"|"SalaDaPranzo")|
+          rubaMazzetto|scarabeo|ippica|melrosePlace|beverlyHills|"GF"|puffi|costanzoShow|portaAPorta|Parola);
+
+InizioFrase ::= "<font color=black>&lt;"^Nick^"&gt ";
+
+FineFrase   ::= [Smile] "</font>";
+
+Domanda ::= InizioFrase(
+             [ma] "nessuno" (parla|chatta|scrive|"e' vivo"|risponde)^"?"|"chi chatta con me?"|"c'e'" (qualcuno|nessuno|anima viva)"?"
+             |("avete visto"|"qualcuno conosce"|"conoscete"|"e' entrato"|"e' uscito"|"e' quittato")^" "^Nick^"?"|"che" (palle|noia|coglioni|(merda|cesso|schifo) di canale)
+             |Nick^" "^[rispondi al]^" PVT"|[chi mi spiega](come si cambia|come si registra un) "nick?"|Nick^" ci sei?"["ti va di chattare?"|"da dv dgt?"|"km t km?"|"sei m o f?"]
+             |"siete tutti bot?"|"ci sono"(fighe|gnocche|donne|femmine|f|maschioni|effeminati|gay|trans|trav)^"?"
+             |(attenti|attenzione)^", "^Nick^" "^(si spaccia per|finge di essere|[non] credo sia)^" "^(+Nick|f|m)|Nick^", perche' non" [mi] "rispondi?"
+             |+"cerco" Cerca
+            )FineFrase;
+
+Link ::= InizioFrase( 
+          R:=(Parola|Stato|Soggetto)[-^"+"^(Parola|Stato|Soggetto)^];
+          L:=(++"http://www.google.it/search?hl=it&q="^R^"&meta=&btnI=on"
+             |--"http://images.google.it/images?q="^R^"&hl=it" 
+             );
+          "<a target=_blank href="^L^">"^("www."^(Parola^)+^"."^(it|com|net|org))^"</a>"
+         )FineFrase;
+
+Chan ::= InizioFrase
+         [(venite su|accorrete su|entrate in|vi aspetto su)] Canale
+         FineFrase;
+
+
+
+
+
+(*******************************************************)
+(********** grammatica METAL di Manta e Obeso **********)
+(*******************************************************)
+
+NP ::= " np" \Group "-" Cifra "-" \Title "["^Numero^" kbps |" (mono|stereo|dolby[digital])^"]"
+;
+
+Group ::= (--Prefix^ | _) >(Adj.(++NOa|a) \Noun | [Noun\ | Adj.NOa\] Adj.a)
+       |  (Noun.(pre|post).S \Verb.er [^s] | Verb.er [^s] of \Noun)
+       |  Noun of \Noun
+       |  Prefix ^ Noun
+       |  Noun.pre.S ^ Noun.(+post|pre).(S|P)
+;
+
+Title ::= [[Adj.NOa] Noun in] Place
+       |  in Place
+       |  (Noun.P and Noun.P).(pre|post)
+       |  the Noun.P.(pre|post) of Noun
+       |  [Adj.NOa] Noun.P.(pre|post) (from | across | to) Where
+;
+
+Prefix ::= + necro |+ anti |+ neo | phylo |- intra | mega | mano
+;
+
+Adj ::= NOa: >( impaled | immortal | bastard | northern | grim | brutal | anal | sodomized
+              | infernal | frostbitten | rotting | cannibal | lusty | dark | enchanted
+              | dethroned | painful | inverted | [un^]holy | black | transylvanian | carpathian
+              | damned | elven | insane
+              )
+     |  >( semitic | apocalyptic | antarctic | ar[^c]^tic | metallic | diabolic | nordic
+         | maniac | necrotic | romantic | androgyn | virgin | (c | k)^eltic | phobic
+         | mysantropic | satanic | erotic | gothic | [neo^]lithic | heretic | sybillic
+         ) (a: ^a | NOa: [^al | ^ous])
+     |  >( transylvan | carphath | amorph | androgyn | malevolent | perfyd | urban
+         | christian | obscur | sybillin | ap^[h^]ost^[h^]ol | arcan | ultracorp | chron
+         )
+         (a: ^(ia | a | ica) | NOa: ^([i^]ous | is | ic[^al]))
+;
+
+Verb ::= >( slay | sodomiz | trash | tortur | grind | kill | reap | steal | butch | murder
+          | burn | fight | destroy | masturbat | summon | push | worshipp
+          ) (er: ^er)
+      |  >(tortur | sepultur | muratur | mutilator) (er: ^er | a: ^a)
+      |  inf: >(dig | rip | rule)
+      |  er: >(digger | ripper | ruler)
+;
+
+Noun ::= post: >( lord | cathedral | darkness | mud | massacre
+                | blood | frost | annihilation | suffocation | christ | devastation | men
+                | legacy | dissection | fatality | summoning | defecation | mutilation | gore
+                | victory | damnation | violence | sodomy | erection | faith | devotion
+                | >( grave | whore | cradle | sword | cunt | craft | pentagram | guardian
+                   | gate | king | corpse | house | forest | wizard | warrior | carcass (S: _ | P: ^e)
+                   | crown | beast | land | funeral | triumph | god | throne | dawn | bell
+                   | cage | tale | chronicle
+                   ) (S: _ | P: ^s)
+                )
+      |  pre: >( steel | dark | power | death | cross | porn | shit | void | pain
+               | rage | fire  | doom | satan | hate | cynic | black | creation
+               | silver | other
+               | >( stone | dragon | guard | night | [twi^]light | shadow | rune
+                  | tomb | winter | autumn | war | battle | hell | soul | devil | d^[a^]emon
+                  ) (S: _ | P: ^s)
+               )
+;
+
+Place ::= "Hell" | "Norway" | the sky | "Valhalla"
+       |  the >( + land | forest | valley | hills | wood | waste | desert | mountains | peak
+               | shadow[^s] | island | isle[^s] | house
+               )
+          of >( [im^]mortals | "Satan" | porn | lore | imagination | sodomy | violence
+              | "Death" | perversion | massacre | the king[^s] | the "Beast" | [the] elves
+              | "Hell" | "Chaos" | [the] "Helder" | doom
+              )
+;
+
+Where ::= Place | (no | else)^where
+       |  (another |+++ the Noun.pre.S) (side | world | dimension)
+;
+
+
+
+
+
+(*******************************************************)
+(************ grammatica ANNUNCI di Sandolo ************)
+(*******************************************************)
+
+(* Il 99% del testo di questo sottostante delirio e' stato preso da una mail *)
+(* di "Fabio Calissi" <perno@NOSPAMdada.it> (cut&paste della mail), postata  *)
+(* sul newsgroup it.hobby.umorismo. Io (sand) ho aggiunto qualcosina, ho     *)
+(* messo il tutto in formato grammaticaPerPolygen, poi qualcuno come _lobo   *)
+(* mi ha suggerito qualche correzione :P -sand                               *)
+
+Annuncio ::= InizioFrase
+             (Gh Soggetto | Soggetto Gh) [^"," (Male|Amante) ^"," ]
+	     ((Cosa Azione) | (cerca|offre) Cerca Per) ^"."\
+	     [(astenersi | no) Finale ^"."\ [si Finale ^"."]]
+             \ (chi e' interessato (mi queri|"in PVT")
+               |[a chi] "interessa?"
+               |(qualcuno|nessuno) (interessato|disponibile)^"?"
+               |querami
+               )
+             FineFrase
+;
+
+(* soggetto godrebbe guardando (condizionale, gerundio) *)
+Cosa ::= coronerebbe sogno | godrebbe | si sentirebbe realizzato | eiacula |
+	saltella di gioia | si convertirebbe al >(cristianesimo | buddismo |
+	ateismo | fancazzismo | masochismo | fanatismo religioso |
+	travestitismo | polimorfismo) | sorseggierebbe >(ambrosia | nettare |
+	sperma | vino novello | coca cola | fanta | orina | melma | lava) |
+	si impiccherebbe | passerebbe al >(^la (cocaina | speed | ketamina |
+	novalgina) | ^l'eroina) | racconterebbe propria vita a "Maria De"
+	"Filippi" | esploderebbe | distruggerebbe presepi |
+	impersonerebbe "Maga Mago'"
+;
+
+Soggetto ::= pensionato | boscaiolo | metronotte | uomo | baffo | muratore |
+	palestrato | monaco | nano | arrotino | monarca | nazista |
+	cantastorie | ruttatore | palombaro | barbone | fotografo |
+	operaio | professore | pugile | prete | gigolo' | faraone |
+	pifferaio | maniscalco | spazzacamino | pagliaccio
+;
+
+Gh ::= rumeno | intrepido | 40enne | sorridente |
+	tetraplegico | esuberante | acrobata | arrendevole |
+	dolcissimo | incoerente | giovane | abile | edonista | ciclista |
+	menomato | attempato | focomelico | barese | diabetico | alcolizzato |
+	mutilato | ceruleo
+;
+
+Male ::= privo degli arti | bisessuale | fine esteta |
+	vittimista | ex cameriera | barba petto villoso | fisico asciutto |
+	amante passeggiate (lago | discarica | cimitero) |
+	amante frittate di merdura | amante travestimento |
+	sabaudo | segreto esoterista | amante giochi telefonici |
+	miope | ottima famiglia | affetto vertigini |
+	(lieve | grave ) difetto fisico | cartomante esperto | passivo |
+	ossessionato findus
+;
+
+Azione ::= officiando rito orgiastico sabbatico [Con] | +se Soggetto Gh mi
+	Mi [recitando (ricette di sughi | la divina commedia | l'amleto)] |
+	masturbandosi ferocemente assistendo
+	sevizia propio clone su sedia a dondolo da parte di Soggetto Male |
+	dipingendo ad aerografo col culo | pigolando con indosso sandali e
+	bermuda verso masculo 30enne Gh | conoscendo Male con problemi
+	prostata | appellandosi santa inquisizione causa ossessione ragadi |
+	invitando coppia buttafuori effemminati a escursione casa mia |
+	conoscendo burattinaio Male per notti all'insegna del comando |
+	trovando pollastrina con intensa ovulazione che gli cachi nel piatto
+	a scopo alimentare | cedendo colf ermafrodita zoppa in cambio di un
+	tavolino a 3 piedi [anche traballante] | confezionando pratici
+	astucci penici illustranti racconti celebri figure di merda |
+	trovando orsacchiotto autoritario per essere iniziato ai piaceri
+	della passivita' | trovando nano da lancio per serate sportive
+	all'insegna della gommapiuma | trovando difensore ufficio Male |
+	abdicando scopo amicizia in favore di [grottesco] Soggetto bendato |
+	cambiando sesso scopo propria elezione a papessa col nome "Cinzia I" |
+	conoscendo scopo tortura incompetente studentessa obesa soggiogata
+	"TV" | trovando impiego tuttofare
+;
+
+(*Mi ...*)
+Mi ::= irrora di pioggia dorata | (caga | vomita )
+	sul >(petto | volto | ^l'addome | ventre | ^le (gambe | braccia) |
+	divano | ritratto di famiglia | busto del "Duce" | ^la porta di casa |
+	^l'orologio | menisco | ^l'ombelico | ^la stampante | ^la tastiera |
+	frigorifero | computatore | modem | ^le scarpe | ^lo stereo |
+	^la madre | ^l'obelisco egiziano | feticcio di "Berlusconi" |
+	^l'artefatto >(africano | mongolo | zelota | cristiano | turco |
+	neozelandese) | mondo) | pota le aiuole | presenta "Topo Gigio" |
+	regala gardenia rampicante [transgenica]
+;
+
+Con ::= con (coppia di nani (mutilati | sordi | zoppi) | "Sbirulino" e "Dodo'" |
+	"Maurizio Costanzo" | il "Gabibbo" | "Satana" | Amante |
+	Soggetto (Gh | Male))
+;
+
+Finale ::= (pelo sintetico | gas | colori ad olio | chemioterapia |
+	odontoiatri | "Capitan Hook" | mercenari | "HIV" negativo |
+	comunella | torquemada | cotto montecchi | omicidio | cuoio |
+	faraone | fagiane | superquark | blackEdecker | frusta |
+	azzeccagarbugli | problemi statura | allergia ebano | manette di pelo |
+	scarpe | lingua | rap | figli | trans | froci)
+;
+
+Cerca ::= arto (ortopedico | mutilato | uncinato) con (fallo | vagina | utero |
+	santino di "Jovanotti") vibrante | [interessante] incarico come
+	betoniera e Amante | propio clone | sella e morso equini |
+	Soggetto Male | manganello nero | "Zyklon-B" | gemelli siamesi |
+	capretto mentulato [modello chiazzato] | nani di gesso |
+	cucciolo tipo "Bambi" | esperto palafitte [Amante] | galante garzone
+	tuttofare "part-time" Male | coppie | grosso pesce |
+	proseliti adoranti idolo feticcio raffigurante incastro orrendi nani
+	alati privi arti |
+	coppia con figlio deforme | gatto delle nevi [cingolatissimo
+	pluriaccessoriato]
+;
+
+(* fare Cerca AGgettivi plurali *)
+
+Amante ::= amante >(clisteri di ghiaia | deposizione uova in bocca | sacrifici
+	(umani | di >(anziani |  bambini | donne [pregne] | animali
+	[(vivi | morti)] | pontefici)) | pratiche sadomaso multicinghia |
+	fisting (vaginale | anale) | religioni dimenticate | lingue morte |
+	scherzi da prete | bigiotteria slava | percosse da "Hooligan"
+	ubriaco | comignoli | febbre del sabato sera | feticci "Mara Venier" |
+	scarpe usate | zuppa del casale | confessioni | pratiche orali |
+	guerra "Vietnam" | sudore della fronte | feti morti | fellatio su
+	cadaveri | cunnilingus estremo | feci colorate | clisteri zuavi)
+;
+
+Per ::= per >(partite a (solitario | rubamazzo | tresette | scopa) |
+	trarre ispirazione | essere iniziato ai piaceri della passivita' |
+	battute di caccia | "week-end" palustri tra canne^"," rane e serate
+	limacciose | trenino dell'amore | addestramento supino |
+	interessante capriccio scientifico | esperimenti gravitazione
+	universale | matrimonio | ballo liscio | scalata colline |
+	pic nic all'insegna della coprofagia) |
+	scopo >(amore platonico | amicizia (senza fine | duratura) | elezione
+	a presidente del consiglio | amore di gruppo | invenzione acqua calda |
+	conquista globo terrestre a risiko | esorcismo)
+;
+

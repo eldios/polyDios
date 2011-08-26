@@ -1,0 +1,239 @@
+I ::=
+      "title:    Recensioni Libri\n"
+    ^ "author:   N-Joy + DHS\n"
+    ^ "language: italian\n"
+    ^ "status:   beta\n"
+    ^ "topic:    misc\n"
+    ^ "audience: anybody\n"
+    ^ "created:  02/09/2004"
+;
+
+S ::= (
+       TITOLO"\n"^"\""^\CORPO^"\"" "\n-"(\NOMI \COGNOMI | GIORNALI)^"\n"
+      )
+;
+
+CORPO ::= vorrei [davvero] essere (capace|in grado) di scrivere io TIPO cosi' | 
+il libro che avrei voluto scrivere io | 
+vi terra' inchiodati alla poltrona | 
+[(davvero|finalmente)] una boccata d'aria fresca nel panorama letterario NAZIONE | 
+dall'autore di TITOLO^"," TIPO che (vi terra' col fiato sospeso|vi sorprendera'|vi terrorizzera'|vi paralizzera' dal terrore|vi terra' inchiodati alla poltrona) |
+mai esordio fu piu' AGGETTIVO^"."\AGGETTIVO|
+il suo COMPARATIVO libro fino ad oggi |
+la nuova dimensione GENERE |
+una [nuova] (AGGETTIVO|AGGETTIVOFEMALE) (storia|vicenda|prova)^"," AGGDESCR e AGGDESCR^"," [dal maestro indiscusso del GENERESEMPLICE] |
+quanto e' bello^"!" |
+quanto e' bravo questo \NOMI \COGNOMI^"!" |
+una AGGFEMACCR GENFEM ESAG |
+TIPO di AGGESAG attualita' |
+TIPO AGGETTIVO che ti trascina dentro e non ti (molla|lascia andare) [piu'] fino (alla fine|all'ultima pagina|al suo AGGETTIVOMALE epilogo) |
+una miscela AGGFEMACCR di INGREDIENTI (AGGPLURALIM|AGGPLURALIN), INGREDIENTI (AGGPLURALIM|AGGPLURALIN) e INGREDIENTI (AGGPLURALIM|AGGPLURALIN)|
+la nuova^"," attesissima prova di un maestro del GENERESEMPLICE |
+lotta per LOTTAPER^"," lobby LOBBYDEL^"," PICCANTI^":" questi ingredienti fanno di questo seguito di TITOLO non solo un GENERESEMPLICE DIAGG^"," ma anche un ritratto impietoso RITRATTI NAZIONE e TIPO DIAGG |
+TIPO di TRENDNEGATIVO^"," di TRENDNEGATIVO^"," di TRENDNEGATIVO^"," di TRENDNEGATIVO e di TRENDNEGATIVO^"." |
+TIPO che e' insieme GENERI2^"," GENERI2^"," GENERI2 e GENERI2 |
+TIPO di enorme potenza e di grande atmosfera^"," ESAG |
+INGREDIENTI (AGGPLURALIM|AGGPLURALIN) e INGREDIENTI (AGGPLURALIM|AGGPLURALIN) in un GENERESEMPLICE ESAG |
+una storia sconvolgente^"," ESAG |
+GENERESEMPLICE senza fine|
+quelli di \COGNOMI sono thriller con l'anima [come (lui solo|lei sola) sa fare]|
+l'inventore del LEGAL thriller^"," lo scrittore piu' letto al mondo |
+uno AGGETTIVO GENERESEMPLICE nella migliore tradizione di \NOMI \COGNOMI |
+se TITOLO vi ha fatto paura^"," non leggete questo libro^"!" |
+quel genere di libro che i lettori cercano sempre^"," ma che raramente riescono a trovare^":" avvincente^"," corposo^"," DA|
+un romanzo affascinante (come|ne^"'"piu^"'"ne^"'"meno di|alla stregua di) TITOLO^"." \vi fara' trattenere il fiato ad ogni pagina |
+un ottimo romanzo^"," cupo ed entusiasmante^"," ricco di eventi inquietanti e personaggi singolari |
+TIPO meraviglioso^"," con un'atmosfera che coinvolge completamente il lettore |
+(non mi perdo mai|sarebbe una follia perdersi|non manco mai|non mi lascio mai sfuggire) un libro di \NOMI \COGNOMI |
+con questo GENERESEMPLICE^"," \NOMI \COGNOMI SILENZIO [e lo fa] presentandoci TIPO ESAG|
+[\da non credere^":"|\incredibile^":"|--\che sorpresa^":"]ogni libro (di|della) \COGNOMI e' migliore del precedente|
+TIPO che esisteva solo nei nostri sogni piu' arditi[^":" grazie \COGNOMI^"!"]|
+[--c'e'poco da fare^":"] dopo TITOLO^"," \COGNOMI ha partorito (l'ennesimo|un altro|un nuovo) capolavoro|
+\un romanzo di \NOMI \COGNOMI^"," dal tocco ilare e corrosivo
+;
+
+ESAG ::=
+((che sfida il| al di la' del) (tempo|confine del tempo e dello spazio) | come non se ne leggevano da tempo | magistralmente (costruito|congegnato|ideato|cesellato)^"," che schiude al lettore le porte del mistero e dell'ignoto annidati ai confini della realta^"'")
+;
+
+SILENZIO::=
+rompe il silenzio|interrompe un silenzio durato ANNI
+;
+
+ANNI::=
+cinque anni|tre anni|otto anni|piu^"'" di dieci anni|venticinque anni|quasi quarant^"'"anni
+;
+
+DA::=
+da divorare fino all'ultima pagina|da leggere tutto di un fiato|da prendere e non mollare fino alla fine|da assaporare lentamente|da gustare con calma
+;
+LEGAL ::=
+legal|medical
+;
+
+GENERI2::=
+romanzo d'avventura|autobiografia|racconto di viaggio|reportage|inchiesta giornalistica|ricerca di se'|novella fantastica|romanzo picaresco|saggio psicologico
+;
+
+TRENDNEGATIVO::=
+vite quotidiane|noia|fatica|adrenalina|violenza|coscienza|scoperta di se'|passioni|entusiasmi|disillusioni|pessimismo|fastidio|malattie dell'anima|piccoli piaceri perduti|cose semplici|sorrisi stentati|lacrime di gioia|pene|lavoro duro|incoscienza|silenzi|incomunicabilita'|ignoranza|degrado|coscienze perdute|amori perduti|strazio
+;
+
+LOTTAPER::=
+la presidenza|la candidatura|il potere|la supremazia|il successo
+;
+
+LOBBYDEL::=
+dell'industria delle armi|dell'industria militare|della mafia (sportiva|edilizia|industriale|del terziario avanzato|politicizzata|informatica)|dell'informazione globale|delle telecomunicazioni|della politica estera|della globalizzazione|dell'antiamericanismo|del terrorismo internazionale|repubblicane|democratiche
+;
+
+PICCANTI::=
+grande tensione|perversioni e debolezze umane|scandali familiari|incesti nascosti|provocante sensualita'|scambio di coppia|pruriti erotici|tradimenti insospettabili|ninfomania|legami spezzati
+;
+
+RITRATTI::=
+dei vertici del potere|dei gruppi di potere|delle minoranze etniche|delle lobby clientelari|del machismo imperante|del clientelismo|del nepotismo|della corruzione dell'ambiente|dell'ecosistema|dell'uomo politico medio
+;
+
+DIAGG::=
+di forte impatto emotivo|di scottante attualita'|di sensazionale interesse|di immensa risonanza|di straordinaria modernita'
+;
+
+INGREDIENTI::=
+buoni sentimenti|emozioni|personaggi|passioni|ossessioni|eventi|personaggi
+;
+
+INGREDIENTE::=
+erotismo|suspance|amore|introspezione
+; 
+
+AGGPLURALIM::=
+perfettamente cesellati|magistralmente tracciati|fortemente caratterizzati|scolpiti nella memoria|credibili[^ssimi]
+;
+
+AGGPLURALIF::=
+perfettamente cesellate|magistralmente tracciate|fortemente caratterizzate|scolpite nella memoria|credibili[^ssime]
+;
+
+AGGPLURALIN::=
+indimenticabili|inquietanti|surreali|singolari|sconcertanti|affascinanti|coinvolgenti|magistrali|impareggiabili|agghiaccianti|terrificanti|inarrivabili|inimitabili
+;
+
+AGGSINGOLAREM::=
+indimenticabile|inquietante|surreale|singolare|perfettamente cesellato|magistralmente tracciato|scolpito nella memoria|sconcertante|credibilissimo|affascinante|coinvolgente|magistrale|impareggiabile|agghiacciante|terrificante|inarrivabile|inimitabile
+;
+
+AGGFEMACCR ::=
+straordinaria|grande|immensa|epica|vincente|esplosiva|incandescente
+;
+
+AGGESAG ::=
+sconvolgente|drammatica|intensa|scottante|incredibile
+;
+
+GENFEM ::=
+storia d'amore|epopea|saga familiare|narrazione
+;
+
+AGGDESCR ::=
+romantica|sensuale|passionale|travolgente|avvincente|avvolgente
+;
+
+COMPARATIVO ::=
+miglior|>(piu' AGGETTIVO)
+;
+
+GENERESEMPLICE ::=
+giallo|thriller|horror|fantasy|terrore
+;
+
+GENERE ::=
+della paura|del terrore|della passione|del thriller|dell^"'"eros
+;
+
+TIPO ::=
+una storia|un racconto|un libro|un romanzo|un saggio|un'opera
+;
+
+COGNOMI ::=
+cook | king | harris | zimmer \bradley | follett | sheldon | harvey | highsmith | deaver | koontz | smith | clancy | silva | taibo "II" | brooks | cornwell | connelly | cook | grisham | craven | campbell | davidson
+;
+
+NOMI ::=
+thomas | robert | marion | ken | sydney | "p.j." | patricia | jeffery | dean | wilbur | tom | daniel | paco \ignacio | terry | tabitha | michael | robin | john | wes | ramsey | lionel
+;
+
+GIORNALI ::= (\GIORNALI1 \GIORNALI2 | \GIORNALITALIANI);
+
+GIORNALI1 ::=
+the \wednesday | the \new \york | the \los \angeles | literary | the \seattle | the \washington | publishers | reader's
+;
+
+GIORNALI2 ::=
+observer | enquirer | bulletin | writer | post | times | harald | reporter | tattler | digest | weekly
+;
+
+GIORNALITALIANI ::=
+panorama | l^"'"^\espresso | la \stampa | tutto\libri | the \times 
+;
+
+NAZIONE ::= italiano | venezuelano | spagnolo | austriaco | tedesco | inglese | afroamericano | latino | americano | camerunense | asiatico | mondiale | internazionale | lettone | estone | lituano | slovacco | rumeno
+;
+
+AGGETTIVO ::= convincente|entusiasmante|straziante|straniante|dolce|appassionante|sconvolgente
+;
+
+AGGETTIVOMALE ::= delicato|azzeccato|intenso|riuscito|ipnotico
+;
+
+AGGETTIVOFEMALE ::= delicata|azzeccata|intensa|riuscita
+;
+
+TITOLO ::=
+"'"^([\un|\il] \Nomemale (-\[--Pm] \Agg ^ o | \Aggneutro) | [\una|\la]\Nomefemale (-\[--Pf] \Agg ^ a | \Aggneutro))^"'"
+;
+
+Nomemale ::= lamento | sciacallo | elefante | martirio | aereo | uomo | maschio | alluce | piede | paranco | universo | pianeta | satellite | recinto
+	| castello | cestello | ortaggio | salume | mistero | segreto | labirinto | mondo | amante | [il] \prete | gioco | dilemma | enigma
+	| insetto | cristallo | progetto | protocollo | grimorio | computer | armadio | prigioniero | panfilo | killer | esperimento
+	| il \codice | dolore | corpo | sonetto | amico | nemico | ricordo | capezzolo | seno | oggetto | delta | sesso | profumo
+	| elemento | scheletro | cespuglio | insegnante | stregone | cavaliere | templare | barbaro | principe | guerriero | drago
+	| antico | animale | cammello | storico | netturbino | tassista | cranio | teschio | fallo | membro | calciatore | ereditiere
+	| coprofago | mandingo | superdotato | genio | professore | analista | dottore | nano | centometrista | tossico
+	| (caporale | tenente | generale | maresciallo | soldato | [sub^]comandante) | rivoluzionario | ladro | banchiere | milionario
+	| carisma | sogno | desiderio | costumista | planetario | museo | grattacielo | cancelliere | clitoride | altipiano | nomade
+	| grido | fagiano | cosacco | giornalista | massaggiatore
+;
+Nomefemale ::= odissea | puttana | origine | donna | femmina | latrina | citta' | nazione | amante | [la] \suora | olimpiade | crisalide
+	| nave | penisola | capanna | spada | catena | macchina | cantante | prigioniera | amazzone | cortigiana | principessa | contessa
+	| fiammiferaia | assassina | infermiera | scelta | spiritualita' | fiamma |prima \indagine | ombra | dimensione | guerra | indagine
+	| poesia | morte | vita | vendetta | nostalgia | patata | musica | proiezione | casa | nudita' | coscia | gamba | nuca | pelata
+	| strega | fata | regina | subalterna | soldatessa | insegnante | parrucchiera | assistente | vagina | caviglia | assemblea
+	| arteria | vena | pelle | pelliccia | pasta | bistecca | nomade | comunista | impiegata | operaia | sfiga | passeggiatrice
+	| peripatetica | religiosa | carcerata | condannata | esteta | odontoiatra
+;
+Agg ::= punit | stort | maial | bastard | infinit | maledett | astut | rott | spezzat | lucidat | incanalat | misterios | eretic | erotic | nebbios
+	| laconic | eclettic | illuminat | sodomit | crocifiss | inalberat | obbligat | occult | perfett | malfatt | magic | ner | esterefatt
+	| cocciut | ostinat | perpless | incendiari | malavitos | mafios | politic | infinit | colorat | dorat | dolcissim | magnetic
+	| muscolos | plastic | odios | assurd | incenerit | stranier | compaesan | campagnol | italian | pericolos | venezian | partigian
+	| oscur | pettinat | scollacciat | umid | secc | mort | viv | calamitat | allungat | accorciat | estes | malvestit | sicilian
+	| adornat | lavorat | scardinat | cattolic | metallar | paninar | egocentric | allunat | allupat | selvaggi | educat
+	| malat | san | zombizzat | sodomizzat | inesplorat | invasiv | indebitat | polverizzat | scompost | rallentat | acellerat
+	| muschiat | depilat | scorticat | disossat | disotterrat | congelat | surgelat | amalgamat | scuoiat | allampanat | fecondat
+	| smemorat | prodigios | sant | miracolos | attempat | esplosiv | dinamitard | terrorist | scroccon | profumat | antidiluvian
+	| primitiv | futur | ammazzat | assassinat | colombian | rastafarian | caleidoscopic | dardeggiat | stupid | scem | archeologic
+	| marpion | cuccat | scaricat | rubat | sottratt | limitrof | gaglioff | lesbic | padan | incendiat | infiammat
+;
+Aggneutro ::= infernale | epocale | trash | dandy | universale | del \paradiso | assorbente | nel buio | di luce | nella \nebbia | di \shannara
+	| della \paura | in \catene | degli \ombrelli | di \marte | da \mangiare | degli \dei | sopra \il \cielo | sa \tutto | del \vento
+	| boreale | nel \tempo | inesorabile | senza \paura | in \famiglia | di \piacere | d'^\oriente | fa \schifo | del \dolore | del \piacere
+	| ^":" \poemi | di \venere | di \guerra | senza \nome | in \trappola | a \beverly \hills | a \hollywood | a \bagdad | in \croce
+	| ^":" \il \ritorno | di \ilse | da \possedere | di \carta | infallibile | inarrestbile | difficile | inaffidabile | del buio
+	| assiale | dell'^\aria | sessuale | anale | di \pietra | d'^\acciaio | invernale | primaverile | splendente | maleodorante
+	| ambientale | kitch | calabrese | buddista | new \wave | della \trancia | di \medellin | dei \miei \(primi|ultimi) (10|20|30|40|50|60|70|80) \anni
+	| dell'^\amore | della \specie | ^":" \la \rivolta | del \dubbio
+;
+Pm ::= bello | tutto | alquanto | stranamente | assurdamemte | parzialmente | laconicamente | crudelmente | brutto | piuttosto | fortemente
+;
+Pf ::= bella | tutta | alquanto | stranamente | assurdamente | parzialmente | laconicamente | crudelmente | brutta | piuttosto | fortemente
+;

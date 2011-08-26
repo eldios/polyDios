@@ -1,0 +1,55 @@
+I ::=   "title:    Melissa P.\n"
+      ^ "author:   CUG &lt;cug@telcanet.it&gt;\n"
+      ^ "language: italian\n"
+      ^ "status:   mature\n"
+      ^ "topic:    misc\n"
+      ^ "disc:     fermo restando che a Helder non gliela da'\n"
+      ^ "comment:  il diario di Melissa P. detto anche il manuale delle giovani mignotte. Noi adepti del Polygen che siamo fichi sappiamo che questo diario e' completamente generabile. L'unica cosa che non possiamo generare e' una raccomandazione da Maurizio \"Kiss me Licio\" Costanzo.\n"
+      ^ "created:  28/5/2004"
+;
+
+S::=  \ [[QUANDO] PARTE1] (X ::= {PARTE2} {PARTE3} {PARTE4} {PARTE5}; X (+ X [X] | _)) [PARTE6];
+
+QUANDO ::= oggi | ieri | la notte scorsa  ;
+
+PARTE1 ::= (NOME e' arrivato a casa mia | sono andata a casa di NOME | mi sono trovata con NOME in una stanza [d'albergo | di un motel [a ore]]) (SEGNO.PU2 | perche') lui MESTIERE SEGNO.PU1;
+
+MESTIERE ::= e' il (mio | nostro) (medico | dentista | podologo | ginecologo | idraulico | psichiatra | proctologo) [di fiducia] | mi da' lezioni private  ;
+
+PARTE2 ::= [vedo che| noto che | mi accorgo che ] NOME (ha qualcosa di STRANO.M | e' particolarmente STRANO.M | mi guarda in modo STRANO.M) (SEGNO.V | SEGNO.PU2) (((lo vedo | posso notarlo | me ne accorgo ) da molte cose SEGNO.PU2 (ATTREZZO SEGNO.V)+ ma soprattutto ATTREZZO) | ( mi sta (guardando|fissando) OGGETTO con (sguardo | occhio) STRANO.M da piu' di (mezz'ora | un'ora | due ore | tre ore) | (tenendo in mano ATTREZZO mi sussurra cose come ""SEGNO.VT^(AGGETTIVO SEGNO.V)+ AGGETTIVO SEGNO.PUE SEGNO.VT))) SEGNO.PU1 ;
+
+PARTE4 ::= NOME {SEGNO.V con ATTREZZO SEGNO.V} {AZIONE} OGGETTO SEGNO.PU2 COMPLIMENTO (mi dice | mi sussurra | mormora) [SEGNO.V e io sono (AGG2 SEGNO.V)+ e AGGETTIVO] SEGNO.PU2 ATTREZZO AZIONE OGGETTO SEGNO.PU1;
+
+PARTE5 ::= \(all'improvviso | improvvisamente | poi ) sento CIFRA (mani | piedi | bocche | nasi | orecchie ) (strisciarsi contro | accarezzare | toccare | penetrare | saggiare ) OGGETTO e (capisco | mi rendo conto | mi accorgo | comprendo) che [anche] NOMEN si e' unito a (noi | me e a NOME) SEGNO.PU3 COMPLIMENTO mi (sussurrano | dicono | sospirano | urlano) SEGNO.PU3 [RISPOSTA ho detto io SEGNO.PU1];
+
+PARTE6 ::= (RUTTI SEGNO.V)+ e RUTTI SEGNO.PU1 sono [gia'] le CIFRA di mattina SEGNO.PU3 ;
+
+CIFRA ::= 2|3|4|5|6|7|8|9 ;
+
+PARTE3 ::= [STRANO.F SEGNO.V] ho (osservato | guardato | immaginato | contemplato | ammirato) NOME SEGNO.PU3 AZIONE2 (AGG2 SEGNO.V)+ e AGGETTIVO SEGNO.PU3 ;
+
+STRANO ::= stran^(M:o|F:ita) | curios^(M:o|F:a) | arrapat^(M:o|F:a) | voglios^(M:o|F:a) | bavos^(M:o|F:a) | spaventat^(M:o|F:a) | mordace | nichilista ;
+
+NOME := NOMEN;
+
+NOMEN ::= \[gian^|pier^](ubaldo | ernesto | b^(a|o)^rtolo[^meo] | helder | salvatore | carmine | carmelo | vespasiano);
+
+AZIONE ::= mi sfiora | mi tocca | mi lecca | mi tasta | mi sente | mi saggia | mi penetra;
+
+AZIONE2 ::= mi vedo | mi guardo SEGNO.PU2 sono | mi penso | mi immagino ;
+
+ATTREZZO ::= la [sua] (sigaretta | carrucola | lingua | testa | barba) | il [suo] (cric | naso | (guerriero | coso | \gian^\(battista|tommaso) | sesso) | dito alluce | dito indice | dito medio | dito anulare | dito mignolo | piede );
+
+OGGETTO ::= il sesso | il \segreto | il \mistero | la mia intimita' | il mio culo | le mie cosce | il mio seno ;
+
+COMPLIMENTO ::= " "SEGNO.VT^ \[(wow|accidenti|cazzarola|sticazzi|anvedi|li mortacci|porcoddue) SEGNO.V] ((come sei | sembri | sei proprio | se sei mai ) AGGETTIVO SEGNO.PUE  | che bel (culo | ^le tette) SEGNO.PU3 posso (mordere | leccare | assaggiare | toccare | penetrare) SEGNO.PUI  ) SEGNO.VT;
+
+AGGETTIVO ::= gnocca | porca | vacca | zoccola | topa | calda | fredda | frigida | puzzolente | inutile | maiala | stronza | troia | mignotta  ;
+
+AGG2::= nuda | legata | bendata | sdraiata | spogliata | sporca | sudata | arrapata ;
+
+SEGNO ::= (PU0: ^".\n\n"^\ | PU1:^".\n"^\ | PU2: ^":" |  PU3: ^"."\ | PUE: ^"!"\ | V: ^"," | VT: ^"\""\ | PUI: ^"?"\ );
+
+RISPOSTA ::= " "SEGNO.VT^ \(fallo | tocca | mordi | lecca | usa | prendi | spingi | parla) (pure SEGNO.V ma con (giudizio | giustezza) | e basta) SEGNO.VT;
+
+RUTTI ::= sospiri | lamenti | grugniti | lacrime [silenziose] | --rutti | gemiti | godimento | urli ;

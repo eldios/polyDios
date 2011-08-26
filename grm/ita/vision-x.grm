@@ -1,0 +1,30 @@
+
+I ::=   "title:    Storpiature storiche di Vision-X\n"
+      ^ "author:   Manta\n"
+      ^ "language: italian\n"
+      ^ "status:   mature\n"
+      ^ "topic:    misc\n"
+      ^ "audience:" soprattutto {"Helder"}^, ma soprattutto {tutti | "Vision-X"} ^"\n"
+      ^ "comment:  fermo restando che" ("Helder" | "Vision-X") e' un (gay | down | coglione) ^"\n"
+      ^ "created:  05/07/2003"
+;
+
+S ::= \ ( Vision ^ "-" ^ \ >> Helder | X <<
+		| Helder (_ |++ ^ "-" ^ \X)
+		|-- Vision ^ "-" ^ \Helder ^ "-" ^ \X
+		)
+;
+
+Vision ::= vision (^e |++ _)
+;
+
+X ::= + x | y | z | q | t | g | f | 3 | 4 | 5 | 7 | 8 | bello
+;
+
+Helder ::= >> + helder | heldo | hell3 | [h^]ester | (web | wap)^ster | ebeter | inebetiter
+            | beppe[^r] | aldo | pester | western | [h^]ezechieler | downer | gay | gaio
+            | ezio | puzzer | gamber | helter [^skelter] | webber | wapper | camper
+            | cipster | berzhelder | lamer | rapper | mezzhelder | bello
+            | qua^(j | gli)^otter | helderer | herpes
+           <<
+;

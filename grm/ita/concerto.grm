@@ -1,0 +1,88 @@
+I ::= (T ::= un AGGETTIVO.S racconto di vita vera scritto da una musicista esule invano innamorata di AMICO1 "(" ^VEZZO.S ^")" ;
+
+        "title:   "\T ^"\n"
+      ^ "author:   Auletride\n"
+      ^ "language: italian\n"
+      ^ "status:   mature\n"
+      ^ "topic:    misc\n"
+      ^ "created:  18/10/2004"
+      )
+;
+
+S ::="\n" TITOLO "\n\n" INIZIO "\n" PARTENZA "\n" CONFESSIO "\n" ARRIVO "\n" PROVA "\n" CONCERTO "\n" DOPOCONC "\n" EPILOGO ;
+
+
+TITOLO ::= (\avventure | \meraviglie | \melodie | \armonie | \tragedie | \ripicche) (musicali | barocche | melodiose | armoniose | avventurose | tragiche | dispettose) nella REGIONE  ;
+
+INIZIO ::= \eravamo stati (ingaggiati | chiamati | pagati | minacciati) perche' (ci esibissimo | suonassimo | intrattenessimo la gente | perdessimo tempo) a PAESE ^"," un (^'inutile | ^a ridente | ^a simpatica | ^a ridicola | ^' inattesa) frazione poco distante dalle ( malsane | ammorbanti | fosforescenti | verdeggianti | profumate | inattese) (paludi | risaie | torbiere | fabbriche di automobili | piantagioni di (ananas | manghi | banane)) di ALTROPAESE  [^";" il capoluogo era peraltro ben visibile (sul ciglio del burrone | in mezzo alla foresta | in fondo alla vallata | in cima allo strapiombo) [e (comodamente | facilmente | prontamente) raggiungibile seguendo la (sterrata | proviciale | statale | mulattiera | ferrovia) [ per CIFRA chilometri]]] ^"." ;
+
+PROVA ::= \gia' durante le prove non (ci aveva convinto l | ci era piaciuta l | eravamo stati soddisfatti dall) (^'acustica | ^'atmosfera | ^a temperatura) della sala a noi destinata all'interno del (convento | monastero | municipio | ^l'oratorio | teatro | centro sociale | dopolavoro ferroviario) ^"," ma non riuscimmo a SFORZO il nostro EMOZIONE ^"," anche perche' tutta (l'indignazione | l'attenzione | la meraviglia | la confusione) venne (attirata | provocata | suscitata | scatenata) da due di noi che AGGETTIVO.P (discutevano | litigavano | urlavano | battibeccavano | si ringraziavano | si congratulavano | scherzavano) ^"." "\n" \infatti AMICO aveva (fregato | prestato | salvato | rovinato) il OGGETTO a AMICO [e questi si era messo a (piangere | invocare (pieta' | perdono) | vantarsi | concionare la folla | menare le mani | stuzzicare tutti | sghignazzare come un asino | cercare consensi)] ^"." ["\n" \io (mi alzai | uscii | sospirai | mi allontanai | frugai nella [mia] borsa) per (indossare il costume | mangiare la focaccia | far finta di non conoscerli | preparare gli strumenti) ^"." ] ["\n" \quando andai nel (retro| ^lo spogliatoio) e FANTA ] ;
+
+FANTA ::= (vidi | osservai | potei ammirare) il caro AMICO1 (in mutande [e cannottiera] | che si cambiava | con indosso solo l'intimo coordinato | che annaspava tra tutti gli oggetti che doveva preparare) ^"," (ebbi | fui visitata | concepii) una (malsana | eccitante | fastidiosa | insolita | morbosa | maliziosa) fantasia ^":" immaginai di
+ (BACIO | GRIDO) prima che lui potesse (chiedere aiuto a | correre a rintanarsi con i | ricordare i | respingermi per restare fedele a)  ^l suo unico [possibile | vero] amore ^"," cioe' la (dulciana | musica | \civica di \milano) ^"."    ;
+
+BACIO ::=  (dirgli | sussurrargli | chiedergli | ordinargli) ^":" "''" (^\baciami | ^\abbracciami | ^\stringimi | ^\palpami) VEZZO.S ^"!" ^"''" e di (violentarlo | assalirlo | molestarlo | saltargli addosso) li' per li'  ;
+
+GRIDO ::= (spintonarlo | sbeffeggiarlo | nascondergli qualcosa | fargli suonare il telefonino ) ;
+
+SFORZO ::= (comunicare | manifestare | sottolineare | trasmettere | sfogare | far capire | far comprendere | sbollire) ;
+
+REGIONE ::= (zona | regione | valle | provincia | landa) de (^i laghi | ^i fiumi | ^lle solfatare | ^i soffioni boraciferi | ^lle nebbie | ^lle sabbie mobili |^i funghi)  ;
+
+CONCERTO ::= \CONG quando fu l'ora di (iniziare | suonare) (scoprimmo | ci accorgemmo | ci fecero sapere) che (l'impianto > (amplificatore | dell'aria condizionata | delle luci) | il pavimento) (si era rotto | non era mai esistito | non era adeguato | era stato portato via [per sbaglio]) e AMICO divenne (decisamente | intensamente | furiosamente) AGGETTIVO.S [ma (trattenne | ingoio') il suo EMOZIONE] ^"." "\n" "<font color=red>" "LO SPETTACOLO DEVE CONTINUARE!" "</font>" "\n" \facemmo CONG del nostro (peggio | meglio) (sebbene | nonostante) in prima fila il PERSONAGGIO  ^"," che pure era (tornato |giunto) di corsa da ALTROPAESE ["(" ^dove era andato a (prendere suo nipote in piscina | firmare per la liberta' condizionata | mangiare i ravioli da sua (sorella | cognata)) ^")"] apposta per sentirci ^"," (morisse d'invidia per la nostra (eleganza | bellezza | bravura) | russasse rumorosamente | continuasse a parlare coi vicini | leggesse il giornale | berciasse incessantemente al cellulare [facendo casino]) ^"."  ;
+
+PAESE := ( "Torci" | "Trucca" | "Schifi" | "Sputa" | "Cerco" | "Mulo" | "Macche" | "Sgorbi" | "Vomi" | "Caco" | "Scacco" | "Frego" | "Pievo" | "Mummi" | "Blo" ) ^ ( top | snacc | frott | brocc |rezz | zzecc | gorg | fan | trem | scat | blag | cul | cucc | pien | tter ) ^ ( oli | onia | ate | asco | agni | enga | engo | irello | eschi | ola | ano | oria | elli | agna | ecchia ) ;
+
+AMICO1 := ("Gae" | "Gio" | "E" | "Emi" | "Ga" | "Ve" | "Gi" | "Vi" | "Ro" | "Au" | "Pao" | "Pa" ) ^ [ ta | mi | re | ber | tto | nan ] ^ ( no | gio | lio | lo | to | rio | zio ) ;
+
+AMICO ::= ("Gae" | "Gio" | "E" | "Emi" | "Ga" | "Ve" | "Gi" | "Vi" | "Ro" | "Au" | "Pao" | "Pa" ) ^ [ ta | mi | re | ber | tto | nan ] ^ ( no | gio | lio | lo | to | rio | zio ) ;
+
+ALTROPAESE ::= ( "Torci" | "Trucca" | "Schifi" | "Sputa" | "Cerco" | "Mulo" | "Macche" | "Sgorbi" | "Vomi" | "Caco" ) ^ ( zzecc | gorg | cicc | fan | trem | scat | blag | cul | pien | tter ) ^ ( oli | onia | ate | asco | eschi | ola | ano | oria | elli | agna ) ;
+
+OGGETTO ::= flauto [tenore | soprano | contralto | basso] | clavicembalo | salvagente a forma di papera | leggio | quaderno degli spartiti | costume da clown | portafoglio | reggiseno [ nero | a fiori | coi pizzi ] | diapason | basso tuba | programma del concerto | cannello per l'ancia | tamburo ;
+
+AGGETTIVO ::= ilar(S:^e|P:^i) | sospettos(S:^o|P:^i) | furibond(S:^o|P:^i) | allegr(S:^o|P:^i) | fiducios(S:^o|P:^i) | calm(S:^o|P:^i) | perpless(S:^o|P:^i) | cordial(S:^e|P:^i) | fals(S:^o|P:^i) | controproducent(S:^e|P:^i) | accomodant(S:^e|P:^i) | condiscendent(S:^e|P:^i) | misterios(S:^o|P:^i) | ostil(S:^e|P:^i) | imbronciat(S:^o|P:^i) | solar(S:^e|P:^i) | rigid(S:^o|P:^i) | seren(S:^o|P:^i) | soddisfatt(S:^o|P:^i) | umiliat(S:^o|P:^i) | delus(S:^o|P:^i) | vergognos(S:^o|P:^i) | meravigliat(S:^o|P:^i) | fiss(S:^o|P:^i) | rimbambit(S:^o|P:^i) | attiv(S:^o|P:^i) | vigil(S:^e|P:^i) | mit(S:^e|P:^i) | adorabil(S:^e|P:^i) | effervescent(S:^e|P:^i) | deficient(S:^e|P:^i) | volgar(S:^e|P:^i) | turbat (S:^o|P:^i) | bell (S:^o|P:^i)| brutt (S:^o|P:^i) | cortes (S:^e|P:^i) | maleducat (S:^o|P:^i)  ;
+
+VEZZO ::= ( amor(S:^e|P:^i) m(S:^io|P:^iei) [ car(S:^o|P:^i) | predilett(S:^o|P:^i)] [ adorat(S:^o|P:^i) | prezios(S:^o|P:^i) ] | zuccherin(S:^o|P:^i) | luc(S:^e|P:^i) dei miei occhi | ciccin(S:^o|P:^i) | puccipucci | tesor(S:^o|P:^i) [m(S:^io|P:^iei)] [ car(S:^o|P:^i) | predilett(S:^o|P:^i)] [  adorat(S:^o|P:^i) | prezios(S:^o|P:^i) ]  | trottolin(S:^o|P:^i) amoros(S:^o|P:^i) | dolcezz(S:^a|P:^e) ) ;
+
+CONG ::= ( cosi' | percio' | nonostante (questo | cio') | nondimeno | tuttavia | allora | quindi ) ;
+
+EMOZIONE ::= ( smarrimento | contraccolpo emotivo | disgusto | piagnisteo | attacco di risa | deliquio | estraniamento | entusiasmo | sconcerto | fraintendimento | dolore | scontento | pentimento ) ;
+
+PERSONAGGIO ::= ( sindaco | parroco | consigliere comunale | priore della confraternita | metronotte | conestabile | vigile urbano | netturbino capo) ;
+
+UNITA ::= anni | giorni | mesi | ore | minuti ;
+
+CIFRA ::=  ( 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9) ; 
+
+QUANDO ::= (ieri [notte | mattina | pomeriggio] | nel giorno >  (di \natale | del mio compleanno | di \pasqua | del mio onomastico | di \capodanno ) | quest > ( ^o inverno | ^a estate | ^a primavera | ^o autunno)) ;
+
+PARLA ::= disse | racconto' | confido' | confesso' | strillo' | fece sapere | ringhio' | urlo' | singhiozzo' | sghignazzo' | sbraito' | sussurro' | mormoro' | parlo' | esplose | rise | farnetico';
+
+PARLA2 ::=  parlo' | racconto' | strillo' | ringhio' | urlo' | singhiozzo' | sghignazzo' | sbraito' | esplose | rise | farnetico' | sussurro' | confesso' | mormoro' ;
+
+ATTIVITA ::= ( facevo surf | guardavo la televisione | mi lavavo | spiavo donne nude | prendevo lezioni di volo | scrivevo lettere | pattinavo | andavo in bici | facevo parapendio | ammiravo il panorama | mi facevo la barba ) ;
+
+INCIDENTE ::= ( ho inciampato | ho perso l'equilibrio | mi sono distratto | ho dovuto rispondere al cellulare | mi scappava la pipi' | ho avuto un capogiro ) ;
+
+PARTENZA ::= \eravamo partiti tutti (puntuali | in orario) tranne AMICO che aveva dovuto (portare | accompagnare) sua (nonna | mamma | zia) a (comprare | vendere | noleggiare ) (una casa | un'automobile | dei mobili | una barca | una moto | un vestito da sposa) [e si era fatto (attendere | aspettare) per CIFRA [^CIFRA] minuti] ^"." ;
+
+CONFESSIO ::= \durante il viaggio AMICO1 "(" ^che da sempre e' considerato il nostro { [rompiglioni | carismatico | casinista | problematico | schizofrenico] capo } ^")" PARLA AGGETTIVO.S ^":" "''" ^\sapete ^"," VEZZO.P ^","QUANDO ^ "," mentre ATTIVITA^ "," INCIDENTE e (ho buttato | mi e' caduto | ho lanciato | ho perso | mi hanno rubato) il OGGETTO (in mare | nel lavandino | nella vasca | nel tombino | nel fiume | in un vulcano | nella pattumiera) e si e' (rotto [in CIFRA [^CIFRA] pezzi] | sfasciato [in CIFRA [^CIFRA] pezzi] | sfracellato | ammaccato | scheggiato | incrinato | scollato) ^"!" \ma [ per fortuna] l'ho [subito] (recuperato | ripescato | ripreso | sciacquato | ripulito) da (^ll'acqua salata | ^ll'acqua insaponata | ^i liquami | ^l fango | ^lla tasca del furbo di turno | ^lla lava incandescente) e l'ho (riparato | riattaccato | aggiustato | rimesso insieme) con (la colla | una molletta da bucato | CIFRA [^CIFRA] pezzi di scotch | lo sputo) ^"!" \CONG [non] (picchiatemi | baciatemi | ringraziatemi | adoratemi | linciatemi | insultatemi) ^":" tra CIFRA UNITA (si rompera' di | ne comprero' uno | sara' come) nuovo^ "!!!" ^"''" ["\n" \allora AMICO smise di (fumare [il sigaro] | grattarsi (l'orecchio | il naso | una gamba)| frugare nel cruscotto) e PARLA ^"," AGGETTIVO.S come (mai | raramente | [troppo] spesso | talvolta) l'avevo visto ^":" ' ^IMPRECAZIONE ^"!" ^"''"] ;
+
+ANEDD ::= AMICO si guardava intorno AGGETTIVO.S ^"," infine PARLA2 ^":" "''" ^\qui' e' dove ATTIVITA nella mia (stupida | insulsa | ormai lontana | malinconica) (infanzia | giovinezza) ^"!" ^"''" [\CONG PARLA che a ALTROPAESE ^"," a soli CIFRA [^CIFRA] chilometri da dove ci trovavamo ^"," (suo fratello | suo padre | suo nonno | un suo caro amico | lui stesso | il figlio del (panettiere | droghiere | macellaio | salumiere) | un tizio a lui del tutto sconosciuto) aveva (fatto il militare | trascorso le vacanze | seguito un corso di aggiornamento | partecipato a una maratona nudista) e ^"," in quei memorabili CIFRA [^CIFRA] (giorni|mesi) ^"," suscitando l (^'ira | ^a stizza | ^'ilarita' | ^o sdegno | ^a simpatia | ^'interesse) de (^lla moglie | ^l capufficio | ^i compagni | ^lla polizia locale) aveva (trovato | perso | restituito | rubato) un (cane [bassotto | dalmata] | aquilone a forma di drago | reperto archeologico | mucchio di legna da ardere | ^a jeep | ^a scatola di preservativi | paio di scarpe quasi nuove) finendo per (ricevere | meritare | prendere) (encomi | rimproveri | ringraziamenti | un sacco di botte) per questo ^"."  [ "\n" (\la (storia | notizia | confessione | stupida tiritera | confidenza) | \il (racconto | ricordo | balordo sermone | riassunto | prezioso aneddoto | resoconto)) lascio' AMICO (molto | poco) AGGETTIVO.S ^"."]] ;
+
+ARRIVO ::= \quando (finalmente | fortunosamente | disgraziatamente | di corsa) (giungemmo a | entrammo in | ci presentammo a) PAESE con CIFRA [^CIFRA] UNITA di (ritardo | anticipo) ^"," (davanti | dietro | di fianco) al (convento | monastero | municipio | ^l'oratorio | teatro | centro sociale | dopolavoro ferroviario) ci (aspettava | venne incontro | derise | accolse [freddamente | con calore] | infastidi') (un gruppo di (magrebini | suore | scolari | zingari | croati | ciclisti) | il PERSONAGGIO del paese ^"," gia' piuttosto AGGETTIVO.S) ^"." "\n" ANEDD "\n" \in (effetti | realta') PAESE era meglio nota per essere il luogo in cui era (nato | morto [ammazzato]) un ( famigerato | illustre | benvoluto | oscuro) (garibaldino | brigatista | \papa | ministro) ^"." ;
+
+IMPRECAZIONE ::= (\mapporcaccia | \all'anima | \per le budella | \per il grugno idiota | \per il sedere arrossato | \per le zampe sbilenche | \per i quarti posteriori) di una (lepre | capra | pecora | scolopendra | murena | bertuccia | quaglia | foca) (incoronata | scuoiata | ustionata | spiaccicata | imbalsamata | congestionata | sdraiata | incespicata | appestata | irsuta) ;
+
+DOPOCONC ::= [AMICO (si era strappato (le calze | i pantaloni | il mantello | il berretto | la giacca) | aveva rotto CIFRA (ance | corde della viola)) [^"," (ma | ed) era AGGETTIVO.S (lo stesso | come non mai | ugualmente)] ^"."] [AMICO1 aveva perso (meta' | un quarto | due terzi | un terzo | la maggior parte) degli spartiti e si agitava con grande EMOZIONE ^"."] [AMICO aveva (strappato | stracciato) CIFRA pagine in faccia a AMICO1 per SFORZO il suo EMOZIONE ^"."] [AMICO  si era addormentato sul OGGETTO ^"."]  \per il resto tutto era andato bene ^"." "\n" \CONG AMICO1 PARLA2 col cuore in mano ^"." "\n" "''" ^\la nostra (musica | viola da gamba | esibizione | intonazione | presunzione | educazione) e' stata (pessima | buona | scordata | migliorabile | labile |disgustosa) ^"," VEZZO.P  ^":" (meno | piu') la (curiamo | inseguiamo | cerchiamo | ignoriamo | studiamo | pensiamo) (meglio | peggio) e' ^"!" ^"''" 
+"\n" \il nostro EMOZIONE per le sue parole ci lascio' tutti  AGGETTIVO.P ^"." "\n" "''" ^IMPRECAZIONE ^"!" ^"''" PARLA allora AMICO "''" ^\ma la (finisci | pianti | smetti) di (parlare | esprimerti) come un (deficiente | bambino piccolo | buliccio | belinone) ^"!?" \mi mandi fuori di (zucca | testa | melone) coi tuoi  ' ^VEZZO.S ^' ^"!" \sembri (un maniaco sessuale [gay] | mia figlia adolescente | \gollum del \signore degli \anelli | mia bisnonna con l'^\alzheimer) ^"!"IMPRECAZIONE ^"!" ^"''" ["\n" \CONG anche AMICO  PARLA2 ^"," (grandemente | leggermente | un po' | abbastanza) AGGETTIVO.S ^"." "\n" "''" ^IMPRECAZIONE lo dico io ^"!" \da quando vi conosco non ho passato altro che pomeriggi AGGETTIVO.P ^"!" [ \che (congrega | comitiva | compagnia | accozzaglia) di (ignoranti | cretini | perdigiorno | mattacchioni) AGGETTIVO.P ^"!"] [ \lo dico a vostro (padre | nonno | fratello) ^"!" ] [ \vi faccio (pestare | baciare) da mia (sorella | suocera | cugina) ^"!"] [ \non ne posso piu' ^"!" | \mi sento sempre (piu' | meno) AGGETTIVO.S ^"!" ] ^"''" ] "\n" AMICO1 tenne il broncio per un bel po' ^":" "''" ^\ce l'avete con me solo perche' INCIDENTE ^"!" ^"''" (piagnucolava | sospirava | borbottava) ^"." [FUGA] ; 
+
+EPILOGO ::= \il fatto che la nostra (brutta | bella) figura [non] fosse stata (ignorata | derisa | ammirata | osservata | valutata | dimenticata) da tutto PAESE era senza dubbio un evento AGGETTIVO.S ^"."  "\n" \CONG spuntava (il sole | la luna | ^no le stelle | ^no nuvoloni carichi di pioggia | il PERSONAGGIO ancor piu' AGGETTIVO.S  di prima) e venivamo invitati a (cena | un brindisi | toglierci di torno (subito | immantinente | il prima possibile) | tornare al piu' presto) ^"." \risalivamo in macchina AGGETTIVO.P (sperando in | temendo) un prossimo ingaggio anche a ALTROPAESE per il mese successivo ^"." \ma era poco probabile ^"." \nella REGIONE non saremmo tornati  (tanto presto | tanto volentieri | [tanto] facilmente | mai piu') ^"." "\n"  (\va' in malora | \addio | \ci mancherai | \non ti scorderemo) ^"," PAESE ^"!" ;
+
+FUGA ::= "\n" \in quest (^a confusione | ^o bailamme) nessuno noto' AMICO che (si defilava | fuggiva | si dava malato | arretrava) ((pensando | cercando | sperando | tentando) di trovare un angolino per (fumare | mangiare le paste | nascondersi con l'incasso) | intenzionato a percorrere nonostante il (buio | bosco) i CIFRA [chilo ^] metri che ci separavano da ALTROPAESE  per (cercare (lavoro | moglie) | rifarsi una vita | darsi alla macchia | aprire una ( lavanderia | pizzeria | spaghetteria)) laggiu') ^"." \la sua avventura fu tuttavia di breve durata ^":" venne infatti (sedotto | investito | arrestato | fatto ragionare) da un (affascinante | brutale | insonnolito | esperto) (camionista | autista d'autobus | guardiaboschi | autostoppista) che ce lo riporto' indietro ^"." ;
+
+
+
+
+

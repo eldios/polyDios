@@ -1,0 +1,155 @@
+I ::= (T ::= i racconti del "<i>"\necronomicon "</i>";
+
+        "title:   "\T ^"\n"
+      ^ "author:   Auletride &lt;laroccar@libero.it;&gt;\n"
+      ^ "language: italian\n"
+      ^ "status:   refinable\n"
+      ^ "topic:    misc\n"
+      ^ "disclaim: Ispirato a H. P. Lovecraft\n"
+      ^ "created:  aprile 2005\n"
+      )
+;
+
+S ::=  TITOLO "\n\n" INCIPIT "\n"
+\((a|per le strade di|verso) CITTA ^"," QUALITA |(percorrendo la |scendendo
+verso una|aspettando nella|dormendo nella|nel cuore della) POSTO|DOVE) ^","
+UNO \ [DUE \] [TRE ]  "\n"
+ESITA "\n"
+\(avevamo risvegliato|devo dire a mio figlio cio' che vidi ^":"|voltandomi indietro vidi)
+ AGG ESSERE ^"," MOSTRI ^"," MOSTRI e MOSTRI ^"." "\n"
+\ [allora ^","] tra COSE e COSE ^"," un GENTE AZIONE e AZIONE ^"," (ripetendo|sussurando|intonando|invocando)^":" "\n"
+"<i>" FRASE ["\n" FRASE] "</i>" "\n"
+FINE  ;
+
+
+TITOLO ::= \ (il caso|il discendente|il cane|l'^orrore|la montagna|colui|l'^ombra|il sogno|la citta'|il richiamo|il cancello)
+[della chiave|della follia|di \dunwich|che sussurrava|di \cthulhu|di argilla]
+(d'^argento|dal tempo|senza nome|nel buio|nella casa stregata|di \charles \dexter \ward|dal mare) ;
+
+
+INCIPIT ::= \ (quando giunsi vicino alla citta' senza nome ^"," capii che era maledetta|
+nelle mie orecchie torturate risuona incessante un frullare e un battere d'ali da incubo ^","
+e un abbaiare tenue e lontano come di un cane gigantesco|ero lontano da casa e subivo l'^incanto
+del mare orientale|scrivendo in quello che il dottore dice sara' il mio letto di morte ^","
+la mia paura piu' grande e' che quell'uomo si sbagli|credo che la cosa piu' pietosa al mondo
+sia l'incapacita' della mente umana di correlare tutto cio' che contiene|da una clinica privata
+per malattie nervose vicino \providence ^"," \rhode \island ^"," e' di recente scomparsa una
+persona estremamente singolare|sia ben chiaro che alla fine non sperimentai alcun reale orrore
+visivo|sono costretto a parlare perche' uomini di scienza hanno rifiutato di seguire il mio
+consiglio senza conoscerne il motivo|se fossero stati i sogni a portare la febbre ^"," o la febbre
+a portare i sogni ^"," \walter \gilman non lo sapeva|i miei ricordi sono molto confusi|\marinus \bicknell \
+willett non spera che questa storia venga creduta tranne forse da alcuni amici comprensivi|quando mi abbattei
+nell'orrore ero da solo ^"," e finora non l'ho detto ad alcuno) ^"." ;
+
+DOVE ::= vicino al nero fiume oleoso dove sempre vortica la nebbia|sulle colline al crepuscolo|nel bel mezzo della notte|lontano nella nera boscaglia|lungo il fiume e
+su per la collina|sulla malfamata isola sul fiume|nel solaio sigillato da tempo immemorabile ;
+
+CITTA ::= \(sardath la dannata|ib|kadath nella \fredda \landa|arkham|dunwich|leng|r'lyeh|yhe)  ;
+
+QUALITA ::= che si levava nella terra di \mnar quando l'uomo era giovane|scolpita nella pietra
+grigia prima dell'esistenza dell'uomo|la citta' blasfema del miraggio ^"," in una realta' cruda
+^"," oggettiva e ineluttabile|infestata di leggende|scomparsa nel \pacifico|fatiscente e ossessionata
+di dicerie|inaccessibile nell'^\asia \centrale|irta di cupole e guglie|inghirlandata di alghe e conchiglie ;
+
+AGG ::= l'^(empio|abominevole|osceno|innominabile|incommensurabile|eterno|orrendo)|
+il (blasfemo|demoniaco|malvagio|sacrilego|detestabile|disgustoso|mostruoso) ;
+
+POSTO ::= vecchia casa della strega|caverna interna dietro la \tana del \serpente|ampia stanza
+con le pareti tappezzate di arazzi stranamente figurati|vasta sponda fungosa|ripida fuga
+di scalini|regione di paludi e lagune a sud della citta'|misteriosa costruzione di pietra|
+fattoria maledetta|biblioteca segreta|torre sigillata|profonda citta' gelata|galleria disgustosamente
+scolpita|terra rustica e spettrale|titanica rampa di pietra|fattoria oppressa dalla morbosita'|
+infernale cripta di basalto ;
+
+FRASE ::= \(cthulhu fhtagn|y'ai 'ng'ngah ^"," ogthrod ai'f|yog^"-"^\sothoth geb'l^"-"ee'h|
+uaaah zhro|ygnaniih|tekeli^"-"^li) ^"!" ;
+
+ESITA ::= \ (e' solo con esitazione e ripugnanza che la mia mente torna al campo di \lake e a
+quello che realmente vi trovammo ^"," e a quell'altra cosa oltre le montagne della follia|
+mi trovo ora a un punto in cui la tentazione di esitare ^"," o di alludere piuttosto che
+esprimere ^"," e' molto forte|ci sono persone che diranno che \danforth e io eravamo
+completamente pazzi|gia' una volta sono arrivato a un punto in cui era molto difficile
+procedere|provo tuttora quasi timore a parlare della natura dei sogni e delle impressioni
+che crescevano in modo tanto importuno|vengo ora alla parte cruciale e piu' difficoltosa del
+mio racconto|sono restio a giurare su quello che udii o su quale fenomeno realmente ebbe luogo
+davanti a me|l'orrore supremo avvenne quella stessa notte|l'ombra della paura senza nome aleggiava
+sempre intorno alle botole sigillate ^"," e alle buie ^"," antiche torri senza finestre|mai piu'
+in seguito potei vedere il mondo come l'avevo conosciuto) ^"." ;
+
+GENTE ::= (dottore|vecchio capitano|ispettore|giovane|uomo morto con la maschera barbuta in
+mano|gigante nudo|corpo deforme e carbonizzato|marinaio norvegese|^o studioso|geologo|
+vecchio canuto e malrasato|bibliotecario|polacco|riparatore di telai|negro enorme con un tabarro);
+
+COSE ::= infinite distese di roccia incrostata di verde|una maculata luna fungoide|alberi deformi|
+radici contorte|titanici blocchi limacciosi|onnipresenti giardini quasi terrificanti nella
+loro stranezza|un pozzo cilindrico rivestito di mattoni|simboli mistici e formule rozzamente intagliate
+nella pietra liscia|un mondo di orrori sotterranei|usci cadenti|una donna albina dai capelli crespi|
+una vecchia megera|orribili cilindri e macchine|strani corpi nei corsi d'acqua in piena|mostruose forme rosa
+spiate nel folto degli alberi|pinnacoli rocciosi|un cerchio druidico di pietre verticali|verdi picchi e
+precipizi coperti di boschi neri|terribili razze nascoste di trogloditi e scavatori|macabre creature a
+forma di granchio|una luce crepuscolare inesplicabilmente colorata|una malefica luce viola|ponti tubolari|
+sculture turpi|obelischi con strani rigonfiamenti bulbosi|formazioni di cubi regolari|coni tronchi sormontati
+da pozzi cilindrici|montagne di follia crivellate dai vermi|macabre case marroni|una massa di bolle|
+protoplasmi informi|un criptico mondo di morte gelata|mostruosi scorci di paesaggio|una spaventosa razza
+cosmica|baluardi bassi e verticali|sferoidi gommosi|viscosi agglutinamenti di cellule ribollenti|spazi
+vuoti popolati di orrori galleggianti ;
+
+MOSTRI ::= fronte smisurata e protuberante|mandibola da alligatore|piedi palmati|ali membranose|
+testa polposa e tentacolata|corpo grottesco e squamoso|ali rudimentali|artigli lunghi e ricurvi|
+testa come quella di una piovra|testa da cefalopode|faccia caprina e senza mento|tentacoli flaccidi
+dotati di rosse bocche a ventosa|una mezza faccia d'uomo|un corpo fatto tutto di funi attorcigliate|
+dozzine di gambe come barili|grandi occhi sporgenti dappertutto|ali sgraziate ma possenti|struttura
+fungoide|un torso a forma di barile|cinque sistemi di bracci|collo tozzo e bulboso|testa giallastra a
+forma di stella marina|braccia coriacee|zampe palmate|midiadi di occhi temporanei|grosse chele ;
+
+RUMORE ::= folli grida e urli strazianti|uno sconosciuto fetore|cantilene da gelare l'anima|
+deliranti fiamme demoniache| un fetore come di mille tombe scoperchiate| una nube verde acre e accecante|
+uno spettrale vorticare nei liquidi gorghi dell'infinito|vertiginose corse fra universi roteanti
+a cavallo di una cometa|isterici tuffi dall'abisso alla luna|cori di sguaiate risa degli antichi
+dei [ilari e distorti]|strani bagliori|odori chimici|borbottii e sussurri di negri|una serie
+sconvolgente di grida|grida convulse|una risata diabolica e isterica|monotoni mugolii di acquiescenza|
+gemiti di supplica|boccheggianti ansiti di impazienza|[stridule] conversazioni immaginarie
+con voci contraffatte|forti schianti e rimbombi da sottoterra|un selvaggio abbaiare di cani|un sinistro
+sgocciolare di lontane e invisibili acque|un sibilo musicale su una vasta gamma di note|voci ronzanti|
+il grido rauco di un pinguino|l'esile ^"," monotono suono di un flauto invisibile|uno scricchiolio
+di travi nascoste|tuffi in abissi senza limiti|un vortice demoniaco di suono disgustoso  ;
+
+ESSERE ::= \shoggoth|\cthulhu|\yog^"-"\^sothoth|\tsathoggua|\nyarlathotep|\shub \niggurath|grottesco
+rettile|ibrido essere alato|\azathoth|ibrido blasfemo|animaletto peloso con le zanne bianche|cilindro
+senza nome|amorfo essere dall'aspetto di un rospo ;
+
+UNO ::= (RUMORE e RUMORE attirarono facce assonate a ogni finestra|c'erano stati RUMORE e RUMORE
+e la gente non ne poteva piu') ^"." ;
+
+DUE ::= un GENTE (viveva|aveva preso alloggio|era scomparso) nella POSTO ^";"era infatti (tormentato|
+perseguitato) da sogni in cui (si trovava in una POSTO|era circondato da creature dotate di MOSTRI|c'erano
+RUMORE e RUMORE|vedeva COSE) [e (si trovava in una POSTO|era circondato da creature dotate di MOSTRI|
+c'erano RUMORE e RUMORE|vedeva COSE)] ^".";
+
+TRE ::= mentre studiavo ((un (testo oscuramente misterioso|libro apertamente orribile) da me (rinvenuto|sottratto) nella POSTO)
+|((una scrittura contorta ^"," illeggibile e dall'aspetto arcaico|iscrizioni in un linguaggio sconosciuto e primitivo|
+leggende ancestrali) nella POSTO attorniata da COSE)) ^"," (appresi|indovinai|vidi chiaramente)
+(il segreto che si cela dietro le >(nubi di \magellano|le nebulose globulari)|la tenebrosa verita' rivelata
+dall'immemoriale allegoria del \tao|da dove venne AGG ESSERE|la leggenda di CITTA|la natura di COSE che avevo visto in
+sogno) ^"." ;
+
+AZIONE ::= alzo' le braccia|si rotolo' disperatamente|striscio'|si graffio' le mani sulle pietre
+grezze e sconnesse|batte' la testa contro le colonne|impazzi'|svenne|rivolse un discorso incoerente a
+un gruppo di sfaccendati|si aggrappo' alla ringhiera di ferro|si sveglio' nel suo letto|urlo' a piena voce ;
+
+FINE ::= \(venni precipitato nell'oscurita' delle viscere della terra scavate dall'orrore|
+grandi buchi vengono scavati in segreto ^"," dove i pori della terra dovrebbero bastare ^","
+e cose che dovrebbero strisciare hanno appreso a camminare|se non dovessi sopravvivere a
+questo manoscritto ^","prego che i miei esecutori testamentari antepongano la prudenza all'audacia ^","
+e badino a che nessun altro occhio possa vederlo|adesso \joseph \curwen giaceva sparso sul
+pavimento come un sottile strato di fine polvere grigioazzurra|erano la faccia e le mani di
+\henry \wentworth \akeley|l'abominio attende e sogna nel profondo ^"," e la decomposizione
+dilaga sulle vacillanti citta' dell'uomo|fu quello ^"," senza dubbio ^"," l'evento che spalanco'
+il pozzo senza fondo di tante nere visioni|da quando siamo tornati abbiamo lavorato tutti costantemente
+per scoraggiare l'esplorazione antartica ^"," e abbiamo conservato per noi stessi dubbi e congetture
+con magnifica unita' e fedelta') ^"."  ;
+
+
+
+
+

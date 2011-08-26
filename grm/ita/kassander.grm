@@ -1,0 +1,387 @@
+I ::=   "title:      Cronichles of Kassander, detto anche"NICKNAME"\n"
+      ^ "author:     Thzak - webmaster@procionegobbo.it\n"
+      ^ "language:   italian\n"
+      ^ "status:     final(?)\n"
+      ^ "topic:      fantasy story\n"
+      ^ "audience:   La Compagnia del Girfalco\n"
+      ^ "thanks to:  CUG (per "^(l'i^|la)"spirante grammatica FantasyFiction)\n"
+;
+
+
+S::=STORIA"\n";
+
+STORIA ::=
+    Incipit ^".\n<br>"
+    Incipit2 ^".\n<br>"
+    \nato QUANDO.T nella AggTerra TipoTerra
+    di \REGNO^
+    [(^"," venne adottato da una coppia di|da genitori)SPECIALpx. ["," madre ARMA1.f e padre SPECIAL1]]
+    ^",\n"
+    crebbe tra (SPECIAL2x|SPECIALpx. e SPECIALpx.) ^"," somigliando[^", pero',"]sempre piu' ad un 
+    (bellissimo|orrendo|ributtante|attraente) (+++RAZZA2|ARMA2.m) ^".\n<br>"
+
+    LAVORO ^".\n<br>"
+    EPICA ^".\n<br>"
+    EPICA2 ^".\n<br>"
+        \([in seguito ad DELUSIONE|a causa di DELUSIONE]AZIONEVILE)
+    (
+        ((un|il suo [stesso]|qualche|mezzo|tre quarti di|un [gran][bel]pezzo di) (ARMA2 [ARMA1]|+[ARMA1] ARMA2)).m
+        |
+        ((una|la sua [stessa]|qualche|mezza|tre quarti di|un [gran][bel]pezzo di) (ARMA2 [ARMA1]|+[ARMA1] ARMA2)).f
+        |
+        ((un|il suo [stesso]|qualche|mezzo|tre quarti di|un [gran][bel]pezzo di) (RAZZA2|AGGETTIVO1))
+    )
+    [ma fu' VERBO da(^SPECIAL2x|CIFRA SPECIALpx.|un gruppo di SPECIALpx.)]
+    e >(fuggi'|si rifugio'|si trasferi'|emigro'|fu VERBO) nelle 
+    AggTerre [(nonche'|e) AggTerre] TipoTerre di \REGNO
+    dove QUANDO.N decise di (MISSIONE|MISSIONEp1^si) ", in questo," 
+    fu (aiutato|incoraggiato|ostacolato|bloccato) da un SPECIAL1[armato con (un ARMA.m|una ARMA.f)] e DECISIONE".\n<br>"
+    \con la sua unica arma^"," (un ARMA2.m|una ARMA2.f)^"," si libero' di(INQUANTI|tutti i)nemici [e (INQUANTI|tutti gli) amici[^", tutti quelli che aveva,"^]] 
+    
+    cercando di MISSIONEp1^e (un ARMA2.m|una ARMA2.f|+un [feroce] RAZZA2|SPECIAL2x) ".\n<br>"
+    \TRASC ben CIFRA UNITA [a \REGNO]^"," in compagnia di un [RAZZA2] AGGETTIVO1 SPECIAL1 di nome NomeAmico e 
+    (visto|deciso|scoperto|appurato)
+    che somigliavano entrambi a de^SPECIAL2x
+    ((
+        (
+            (divennero|si scoprirono)pure|
+            (furono (additati come|chiamati|conosciuti come) )|
+            (si (DISPREZZO.lo|videro anche) come)
+        )
+        SPECIALpx. ^[","appena prima di MISSIONEp1^(e (un ARMA2.m|una ARMA2.f)|si)]
+    )
+    |
+        (si DISPREZZO (allegramente|con rammarico|tristemente|con amore))
+    )
+    ^".\n<br>"
+    \erano ormai (sulla lista nera de|odiati da|cacciati da)^SPECIAL2x 
+    [perche' avevano VERBO >(una coppia di SPECIALpx.|++INQUANTI SPECIALpx.|tutti SPECIAL2)]".\n<br>"
+    \per loro [s^]fortuna avevano le schiere de^SPECIAL2 a difenderli e (scortarli|deportarli|esiliarli)
+    (a|nella AggTerra TipoTerra di)\REGNO".\n<br>"
+    \purtroppo il posto era (in subbuglio|sotto assedio|nel caos totale) e re \azun^RE chiese loro di difendere il trono^".\n<br>"
+    NomeEroe^" "^era armato con (un ARMA.m|una ARMA.f) e il suo compagno NomeAmico^"  "^impugnava (un ARMA.m|una ARMA.f)^".\n<br>"
+    \alla guida di (una DimEsercito.f|un DimEsercito.m) di SPECIALpx. si lanciarono contro l'esercito de^
+    (SPECIAL2x invasori|
+    gli invasori"," che per la cronaca erano quasi tutti SPECIALpx.
+    )
+    ^".\n<br>"
+    \NomeAmico cadde' nella battaglia VERBO da un RAZZA2 SPECIAL1 di nome NomeNemico^"," capo (della DimEsercito.f nemica|del DimEsercito.m nemico)^".\n<br>"
+    \l'urlo di NomeEroe echeggio' nella battaglia"," si lancio' contro NomeNemico 
+    e lo AZIONEVILE.z con (una ARMA2.f[^ta]|un 
+    ARMA2.m) stordendolo".\n<br>"
+    "Al che il fellone urlo':\""^FRASENEMICO^"\"<br>"
+    \i due nemici lottarono per CIFRA UNITA senza fermarsi 
+    (fino a quando | "," NomeEroe (aveva quasi VERBO|era stato quasi VERBO da) NomeNemico quando)
+    (molti[^ssimi]|migliaia[di coppie di]|Cifretta.nz[coppie di]) SPECIALpx. (in fuga|di passaggio|locali|illusori)^"," 
+    [[in^]seguiti da (un ARMA2.m|una AggTerra ARMA2.f|un [feroce] RAZZA2)^","]
+    [(si fermarono[improvvisamente]|li videro|li bloccarono)e]
+    li DISPREZZO.lo [senza (preavviso|pieta')|simpaticamente|per il gusto di dare fastidio]^".\n<br>"
+    \da allora NomeEroe cerca vendetta e la sua (ARMA1.f|AggTerra) ira non si plachera' fino a quando non avra' VERBO NomeNemico
+    ", solo allora potra' dedicarsi al suo sogno:" MISSIONE".\n<br><br>"
+"CONTINUA..."
+PulsanteAncora
+;
+
+(*---------------------------------------------------------------------------------------------------------*)
+(*Simboli per la gestione HTML*)
+(*---------------------------------------------------------------------------------------------------------*)
+(*Bottone di reload della pagina*)
+(*PulsanteAncora :="<INPUT onclick=javascript:location.reload(); type=button value=\"Generane un'altra!\"><br>";*)
+(*Commentare la riga sopra e decommentare quella sotto per eliminare il bottone*)
+PulsanteAncora :=_;
+
+(*extented version con google search dei mostri*)
+(*SPECIAL2x ::= (Mostr := SPECIAL2;"<a href=\"http://www.google.com/images?q="^Mostr^"\" target=_new>" ^Mostr^ "</a>");*)
+(*SPECIALpx ::= (Mostr := SPECIALp.;"<a href=\"http://www.google.com/images?q="^Mostr^"\" target=_new>" ^Mostr^ "</a>");*)
+(*per rimovere commentare le righe qui sopra e decommentare le due qui sotto*)
+SPECIAL2x ::= SPECIAL2;
+SPECIALpx ::= SPECIALp.;
+(*---------------------------------------------------------------------------------------------------------*)
+    
+    
+    
+NomeEroe := "<b>"\(++k|c)^PARTE^(PARTE^)+" "[COGNOME]"</b>";
+NomeAmico := "<b>"\PARTE(^PARTE)+([di]\REGNO|COGNOME)"</b>";
+NomeNemico := "<b>"\PARTE(^PARTE)+[di]\REGNO"</b>";
+    
+PARTE ::= ass|and|er|og|ol|or|ach;
+COGNOME ::= -[\de|de]\(r|t|p|s|d|f|g|l|z|c|v|m)^PARTE2^(PARTE2^)+ ^VOC" ";    
+PARTE2 ::= VOC^ss|VOC^nd|VOC^r|VOC^g|VOC^l|VOC^r|VOC^ch|VOC^n|VOC^f|VOC^d|VOC^r|VOC^c|VOC^p|VOC^nd|VOC^n|i^VOC;
+VOC ::= (a|e|+i|+o|u|-y);
+NICKNAME :=  
+            ----(figlio di \(PARTE^PARTE [\COGNOME]))
+            |
+            \[ARMA1.m] \(AGGETTIVO1|CLASSE|RAZZA2)
+;
+
+
+RAZZA ::= [mezz^]elfo [[poco|molto|leggermente|troppo|quasi|apparentemente]oscuro];
+
+
+CLASSE ::= ["finto-"^] guerriero|mago|pastore[ di SPECIALp.]|
+            ninja|assassino|ladro|traditore|ranger|cacciatore|cabarettista|
+            terrorista|prete|addestratore[ di SPECIALp.]|chirurgo[plastico]|ginecologo|-SPECIAL1|
+            pilota[di(\f1|rally|caccia|linea|tricicli)|spaziale]|contadino|minatore|erborista|spacciatore|frate[francescano|domenicano|gesuita|eretico]|
+            monaco[shintoista|buddista]|eremita;
+            
+SPECIAL1 ::= cieco|sordo|muto|[falso] \dio [del (male|bene)] [in incognito]|morto|demente|falso|
+            comico|saggio|valoroso|peloso|superdotato|corto|cretino|pelato|dilatato|
+            metereopatico|scureggiante;
+            
+
+
+
+SPECIAL2 ::= i SPECIALp.ii | gli SPECIALp.gli ;
+SPECIALp ::= 
+            ii:(
+                mangiatori di SPECIALp.|ciechi|sordi|muti|falsi dei[del (male|bene)][in incognito]|
+                ["non-"^]morti|comici|tennisti|koboldi|cocomeri|tennisti|gay|
+                golem|
+                chierici[de^SPECIAL2]|
+                lombrichi|pelati|
+                capelloni|+(cavalieri [di \solamnia|di talos|neri|bianchi])|
+                ladri|bardi|presentatori televisivi|\sith|colleghi|pelati|pelosi|
+                (servi|fedeli|sudditi|succubi) de^SPECIAL2|ladri|
+                guerrieri|re magi|maghi[neri|rossi|bianchi|verdi|del caos|reali]|
+                draghi[rossi|verdi|neri|blu|d'oro|d'argento|bianchi]|
+                gorilla[bianchi|nella nebbia]|
+                demoni|baatezu|pit fiend|basilischi|pipistrelli|vampiri|beholder|
+                bugbear|gatti|leoni|leprotti|leopardi|giaguari|
+                centauri|ciclopi|giganti[delle colline|delle tempeste|dei ghiacci|del fuoco|delle montagne]|
+                (lupi|cinghiali|corvi|pipistrelli|ratti)[mannari]|
+                cani|delfini|maiali[^ni]|funghi|gargoyle|goblin|
+                golem[d'osso|di ferro|di pietra|di carne|d'ambra]|
+                gremlin|[demi^]lich|marinai|minotauri|mostri|
+                cavalli|pony|rugginofaghi|tanar'ri|tarrasque|titani|trogloditi|tritoni|troll|
+                vermi[iena]
+            )|
+            gli:(
+                autisti[
+                    di>(
+                        camion|
+                        bighe|
+                        pullman|
+                        autobus|
+                        tandem|
+                        [moto^]taxi|
+                        riscio')
+                    |^ci]|
+                umani|elfi [oscuri]|gnoll|jedi|stupidi|anarchici|astrofisici|
+                +(amici|amanti|adoratori|schiavi) de^SPECIAL2|sfigati|
+                elementali[del fuoco|della terra|dell'acqua|dell'aria]|
+                \antichi|orsi|insetti|efreeti|elementali[dell'aria|dell'acqua|del fuoco|della terra]|
+                elfi[alti|dei boschi|silvani|marini|marinati|drow|grigi]|
+                ettin|halfling|hobbit|ippocampi|umani|illithid|ogre|orchi|
+                scorpioni|scheletri|slaad|spettatori|stegosauri|unicorni|yugoloth|yeti|zombi|
+                \dei [infami] [del (male|bene)] [in incognito]|
+                "NPC"
+            );
+                
+            
+MISSIONE ::= (farsi MISSIONEp1^e da MISSIONEp2)|(MISSIONEp1^"e " MISSIONEp2)[^", senza riuscirci"];
+MISSIONEp1 ::= avvelenar|uccider|sterminar|spiar|schiacciar|
+                disperder|derubar|cromar|baciar|aiutar|combatter|
+                catturar|mangiar|disossar|affilar|arruolar|reclutar|incasinar|trombar|
+                sodomizzar|far|convertir|processar|giudicar|[s^]verniciar;
+MISSIONEp2 ::= 
+    COMPAGNIA|
+    (tutto il|mezzo|parte del|un) mondo|
+    qualcuno [a caso]|
+    ["tutti "] ^>SPECIAL2|
+    il bene|il male|
+    se stesso|
+    LOCANDA|[tutto] il \toril|
+    nessuno
+    ;
+    
+CIFRA ::= Cifretta.nz | CIFRA.nz [^CIFRA.] ;
+Cifretta ::= z: 0 | nu:1 | nz: ( 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9) ;
+    
+ARMA1 ::= f:(poderosa|grande|magnifica|divina|porca|sodomizzante|piccola|minuscola|autentica|incrinata|finta|micidiale)|
+          m:(poderoso|grande|magnifico|divino|porco|sodomizzante|piccolo|minuscolo|autentico|incrinato|finto|micidiale)
+;
+
+ARMA2 ::= f:(
+        spada[bastarda|lunga|corta|cortissima]|daga|ascia[bipenne]|porta|caccola|--narice|marmitta|finestra|lancia|verga|sedia|---merda|marmotta|
+        moneta|--capocciata|[brutta]pecora[nuda]|[brutta]gallina[spennata]|scarica elettrica|--preghiera|palla|racchetta|bottiglia|gatta[nuda]|
+        (mano|-merda|caccola|--narice|clavicola|--alitata|cornea|rotula|gamba) ["("^di CLASSE^")"] |
+        vanga|spazzola|tastiera|cornetta|frizione|-"X-BOX"|-\playstation[CIFRA]|
+        -"ADSL"|tosse|mazza[da baseball]|incudine|[brutta]ragazza[nuda]|[brutta]prostituta[nuda]|
+        [brutta]fruttivendola[nuda]|mela|pera|--alitata|lettera [di dimissioni|di raccomandazione]|
+        [brutta]cameriera[nuda]|[brutta]sorella[nuda]|[brutta]suora[nuda]|freccia|cazzuola|corda|gomena|pagaia|unghia|cappella|persiana[bipenne]|
+        granata|granita|alabarda|barda|[penna a]sfera[rossa|nera|blu|-verde]|pinza|pinzetta|rete|
+        bacchetta|asta|paletta
+        )|
+        m:(spadone|pugnale|arco[(corto|lungo)[composito]]|portone|naso|bastone|coltello|
+        gatto|cane[idrofobo]|ariete[a CIFRA corna]|gallo|fulmine|siluro|dardo|giavellotto|
+        (gomito|teschio|dente|alluce|dito[pollice|indice|medio|anulare|mignolo]|occhio|fegato|stronzo)["("^di CLASSE^")"]|
+        scolapiatti|frullatore|mouse[wireless]|telefono[cordless]|martello[pneumatico]|parrucchiere|pony|sputo|
+        fratello[minore|maggiore]|frate[francescano|domenicano|gesuita|eretico]|
+        scalpello|scalpo|rampino|remo|pene["("^di CLASSE^")"]|telefonino["TAC"|"GMS"|"UMTS"|satellitare]|dado|
+        bisturi|divaricatore|rasoio[elettrico|(bi|tri|quadri)^lama]|cuscino|cerchione|
+        forcone|tridente|piccone|shuriken|semaforo|chiodo
+        )
+        ;
+ARMA3 ::= --[a (2|--Cifretta.nz) mani] 
+    (della (+distruzione|creazione|fusione[mentale])|
+        intelligente|puzzolente|--deficiente|avvelenante|intossicante|del terrore|
+        vorpal|d'osso [di RAZZA2]|di cristallo ["Swarowsky\169"]|di gomma|
+        con dentro un (dio|demone|fallo di gomma)|
+        d'ebano|di merda|laser[di \shpalman]
+    ) (+ _ | [da CLASSE]);
+
+ARMA ::= (f:[ARMA1.f] ARMA2.f|m:[ARMA1.m] ARMA2.m) ARMA3;
+
+
+INQUANTI ::= (tanti|molti|pochi)[^ssimi]|CIFRA;
+
+
+
+
+
+RE ::= PARTE^PARTE[ il SPECIAL1];
+REGNO ::=(
+    (( b^[l]^ash | trog | zwol | mop | yon | wos | zlom | krol | prot | dor | tor | yor | zor | for | por )^)+ 
+    )" "
+;
+
+FU ::= divenne|fu conosciuto come|venne soprannominato \|si [auto^]proclamo';
+AGGETTIVO1 ::= >(re|principe|falso|coraggioso|((dio|demone|paladino|fabbro|re|schiavo) [ (della [\]morte|del [\]male|del [\]bene|del [\]pene|dei [\]peti|de^SPECIAL2)]) | cavaliere | difensore [de^SPECIAL2]| capitano [(dei cavalieri | delle guardie)[\REGNO]] | giullare di corte |ammaestratore di SPECIALp. |RAZZA2) ;
+
+QUANDO ::= (un bel (T:tragico|N:_) giorno | una (T:tragica|N:_) mattina | una (T:tragica|N:_) notte [di mezza estate | d'autunno | d'inverno] | in un (T:tragico|N:_) giorno (particolare | che non ricordo)) ;
+
+
+UNITA ::= anni|giorni|mesi|lustri|ore|minuti|ere|settimane|[(micro|pico|femto|nano)^]secondi ;
+
+TRASC ::= passo'|trascorse|si>(masturbo'|strappo' peli|scaccolo'|addormento'|schiaccio' brufoli) per|
+            dormi'|vagabondo'|governo'|studio'|perse tempo|
+            abito' in (una locanda|una baracca|un castello|una caverna|un bordello)|
+            ((lavoro'|si guadagno' da vivere|sopravvisse)[(in una locanda|++in un bordello|in una stalla|in una fattoria)]);
+
+DECISIONE ::= (dovette|(fu (costretto|convinto|deciso) a)|rinuncio' a|(decise|accetto'|smise)di ) MISSIONEp1 ^(lo|si);
+
+VERBO ::= ucciso|violentato|derubato|sventrato|demolito|raggirato|picchiato|deriso|
+        azzoppato|ignorato|mangiato|sodomizzato|sporcato|unto|bagnato|ubriacato|
+        scaricato|visto|leccato|dilatato|studiato|preso|cromato|schiacciato|
+        imbottigliato|pugnalato|appeso[per(le palle|i pollici)]|impalato|
+        invitato(a pranzo|a cena|ad andarsene [affanculo])|svuotato delle interiora|
+        travestito da RAZZA2|curato|teletrasportato|esiliato|[s^]verniciato
+        ;
+
+AZIONEVILE ::=  >(nz:colpi'["("con (una ARMA.f|un ARMA.m) ")"]|
+                z:>(prese|persuase|rapi'|rubo'|stupro'|mangio'|bastono'[a morte|a sangue]|vendette|fotografo'|
+                truffo'|mise all'asta|sposo'|incendio' [accidentalmente]|cucino'|seppelli'));
+        
+DISPREZZO ::=   gli:>(
+                    ruppero(i denti|la testa|le gambe|le braccia|il naso|il culo)|
+                    sputarono|regalarono (un ARMA2.m|una ARMA2.f)|pisciarono in testa|insegnarono le buone maniere|
+                    sequestrarono (la sua ARMA2.f|il suo ARMA2.m)|
+                    appiccicarono delle caccole(sui denti|in testa|sulle gambe|sulle braccia|nel naso|nel culo)|
+                    bucarono le gomme(della moto|del motorino|della macchina|del camion|della biga|
+                        del pullman|dell'autobus|del tandem|del riscio'|del carro)
+                )
+                |
+                lo:>(
+                    disprezzarono|bastonarono|sodomizzarono|masticarono|[s^]verniciarono|
+                    invidiarono|bruciarono|cosparsero di(pece|benzina|merda|incenso|olio)|
+                    ignorarono|violentarono|azzopparono|svuotarono delle interiora|schiacciarono|
+                    travestirono da RAZZA2|invitarono(a pranzo|a cena|ad andarsene [affanculo])|
+                    amarono|odiarono|leccarono|baciarono|calpestarono|divisero|cromarono|
+                    crocifissero|impalarono|vivisezionarono|appesero[per(le palle|i pollici)]|
+                    imbottigliarono|processarono|cucinarono(al forno|in brodo|a vapore)
+                )
+                ;
+
+RAZZA2 ::= --RAZZA | nano | -halfling["(hobbit senza copyright)"] | 
+            elfo [dei boschi|alto] | gnomo | CLASSE | umano | goblin | koboldo |
+            drago[nero|rosso|verde|d'oro|blu|bianco]|vampiro|
+            gigante[delle colline|delle tempeste|dei ghiacci]|
+            fantasma|demone|baatezu|beholder|centauro|dinosauro|tirannosauro|
+            brontosauro|diplodoco|velociraptor|[demi^]lich|
+            ciclope|fungo|golem[d'osso|di ferro|di pietra|di carne|d'ambra]|grifone|fifone|
+            (lupo|cinghiale|corvo|orso|pipistrello|ratto)[mannaro]|
+            orco|scorpione|scheletro|serpente|tarrasque|titano|troglodita|troll|
+            hacker|impiegato|collega|barbone|poraccio|tritone|unicorno|
+            verme[iena]|yugoloth|+procione[gobbo];
+
+TipoTerra ::=(+terra|spiaggia|valle|steppa|palude|citta'[sotterranea]|[pen^]isola|periferia);
+TipoTerre ::=(+terre|spiagge|valli|steppe|paludi|citta'[sotterranee]|[pen^]isole|periferie);
+
+AggTerre ::=(giovani|verdi|aride|schiumose|umide|paludose|deserte|
+            affollate|ventose|putride|ripide|unte|erotiche|puzzolenti|
+            molliccie|lontane|vicine|distrutte|leggendarie|gioviali|
+            allegre|bucoliche|lontane|oscure);
+AggTerra ::=(giovane|verde|arida|schiumosa|umida|paludosa|deserta|
+            affollata|ventosa|putrida|ripida|unta|erotica|puzzolente|
+            molliccia|lontana|vicina|distrutta|leggendaria|gioviale|
+            allegra|bucolica|lontana|oscura|ARMA1.f);
+
+
+
+Incipit ::= 
+    \c'era una volta un [SPECIAL1] RAZZA di nome NomeEroe|
+    \il suo nome era NomeEroe ^"," ed era un [SPECIAL1] RAZZA|
+    \quando ancora il mondo era giovane^"," il mondo conobbe NomeEroe figlio di \p^^REGNO ^"," un [SPECIAL1] RAZZA;
+    
+Incipit2 ::=\questa e' la storia di come egli (riscatto'|si guadagno'|reclamo'|riscosse|---AZIONEVILE) (un RAZZA2|il suo (destino|ARMA.m)|la sua (ARMA2.f|(arma|eredita')^"," il "'"^ARMA.m^"'"));
+    
+DimEsercito ::=f:[ARMA1.f](guarnigione|legione|pattuglia|divisione|banda)|m:[ARMA1.m](esercito|gruppo|commando|manipolo);
+
+FRASENEMICO ::=
+    ("Ti"MINACCIA^"o'"(NomeEroe|NICKNAME)^[","bastardo di un RAZZA2^]"!!!")|
+    ("Io ti maledico"(NomeEroe|NICKNAME)^"!!!")|
+    ("Ti si possa rompere"(una ARMA2.f|un ARMA2.m)[in testa|nel culo|sui denti|in bocca]^"!!!")|
+    ("I miei"([in]fedeli|luridi|ignobili|putridi)SPECIALpx. ti MINACCIA^"anno dolorosamente!!!")|
+    ("Ti avverto"(NomeEroe|NICKNAME)^", prima ti faro'"MISSIONEp1. ^"e dai miei"([in]fedeli|luridi|ignobili|putridi)SPECIALp.
+    "poi ti" MINACCIA^"o' con"(la mia [stessa] ARMA.f|il mio [stesso] ARMA.m)^"!!!")|
+    ("Se mi lascerai andare ti regalero'" ((una|la mia) ARMA.f|(un|il mio) ARMA.m)"!!!")|
+    ("Stronzo!")
+;
+
+MINACCIA ::= avvelener|uccider|sterminer|spier|disperder|deruber|cromer|bacer|aiuter|combatter|
+                catturer|manger|disosser|affiler|arruoler|recluter|incasiner|tromber|sodomizzer|far|
+                minaccer|sterilizzer|disinfetter|acciaccher|sputer|incedier|[s^]vernicer|
+                schiaccer;
+
+
+DELUSIONE ::=
+    un due di picche|una delusione|una truffa|una [improvvisa|involontaria]sodomia|
+    una punizione[divina|corporale|simbolica]|una festa|un ricevimento|
+    una sessione di (tortura|gioco di ruolo|psicanalisi)|una doccia(bollente|gelida)|
+    un attacco(di diarrea|di cuore|epilettico|di SPECIALp.)
+;
+
+LOCANDA := "\n<a href='http://www.procionegobbo.it'>La Locanda del Procione Gobbo</a>\n";
+COMPAGNIA := "\n<a href='http://www.procionegobbo.it/default.asp?id=2&mnu=2'>la Compagnia" [del \girfalco]"</a>";
+
+LAVORO ::=\(
+    (
+        anche se[non] era [un] SPECIAL1 (amava|odiava) il suo lavoro di CLASSE[CLASSE]", "
+        nonostante (INQUANTI SPECIALpx.|tutti[SPECIAL2]) lo (considerassero|credessero)
+        (
+            un|(solo[" un"]|troppo[" poco"])
+        ) SPECIAL1 [e (un|(solo[" un"]|troppo[" poco"])) SPECIAL1]
+    )
+    |
+    (a dispetto de|grazie a)^lla sua [in^]naturale (inclinazione|voglia|necessita'|abitudine)
+    di MISSIONEp1^e i suoi clienti[SPECIALpx.]
+    (imparo' [presto|tardi] il mestiere di|ebbe fortuna come|miglioro' la sua abilita' di)CLASSE[CLASSE]
+    durante (la sua gioventu'|i suoi primi CIFRA anni)
+    |
+    >(poco|troppo[poco]) SPECIAL1 per lavorare come CLASSE[CLASSE] dedico' (la sua gioventu'|i suoi primi CIFRA anni)
+    a MISSIONEp1^e la sua abilita' di CLASSE[CLASSE]
+);
+    
+EPICA ::=
+    \[[CIFRA] UNITA] dopo aver VERBO un CLASSE FU "\""^NICKNAME^"\"" e 
+    (tutti|+_)(_|
+        i suoi(amici|nemici) [SPECIALpx.]|
+        SPECIAL2x
+    )
+    >(lo DISPREZZO.lo|gli DISPREZZO.gli)
+;
+EPICA2 ::= \compi' altre [grandi] imprese^":\n"
+    (MISSIONEp1^(e|si)(SPECIAL2|un RAZZA2))(^","MISSIONEp1^(e|si)(SPECIAL2|un RAZZA2))+^";\n"
+    (anche se|ma|poi|tuttavia)(tutti|+_)(_|i suoi(amici|nemici) [SPECIALpx.]|SPECIAL2x)
+    >(lo DISPREZZO.lo|gli DISPREZZO.gli)
+;

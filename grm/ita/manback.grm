@@ -1,0 +1,60 @@
+I ::=   "title:    Message to Harry Manback\n"
+      ^ "author:   Alan aka ^anakin^ &lt;alanzap@freemail.it&gt;\n"
+      ^ "language: italian and english\n"
+      ^ "status:   mature\n"
+      ^ "topic:    misc\n"
+      ^ "audience: Maynard e i suoi amici\n"
+      ^ "comment:  questa grammatica e' ispirata al brano <I>Message to Harry Manback</I> che si trova sul disco <I>Aenima</I> del gruppo prog rock <I>Tool</I>\n"
+	  ^ "created:  23/10/2004"
+;
+
+S ::= M ^"\n"^ "<embed src=\"/gs/grm/site/ita/manback.mid\" width=145 height=60>" ;
+
+M ::= \ Bla Bla Bla Bla Bla Bla [Bla] [Bla] Insulto^( "." | "!" );
+
+Bla ::= (Domanda | Insulto^Punteggiatura);
+
+Insulto ::= (  "figlio di puttana"
+             | "when you kicked out people your house I tell you this, one of three" [fucking] "Americans die of cancer, you know? You're gonna be one of those" Could
+             | "asshole"
+             | "I don't have the courage to kick your" [fucking] "ass directly, don't have enough" [fucking] "courage for that"
+             | "fuck you"
+             | "die"
+             | "bastard"
+             | "if I ever see your fucking face around, in Europe or" ("Italy" | "Zagarolo" | "Piazzola" | "San Culamo Terme") ^", well I'll that time I'm gonna kick your" (balls|ass) Could
+             | "fucking Americans" [^", Yankee"]
+             | "you're gonna die outta cancer, I promise"
+             | "no one does what you did to me"
+             | "I want your" [fucking] (balls|ass) "smashed"
+             | "eat shit"
+             | "pezzo di merda"
+             | "figlio di puttana"
+             | "I hope somebody in your family dies" [outta cancer] "soon"
+             | "crepa"
+             | "vai a sucare cazzi su un aereo"
+             | "stronzo"^[( _ | " di merda" | " bastardo")]
+             | "I'm trying to take a nup but I couldn't sleep overnight because of" (you |+ "your" [fucking] "ugly face")
+             | ("ugh" | "oh")^( _ | hh | hhh | hhhh)^", you really" [really] "hurted me"
+             | "talk to me" 
+             | [mi] "fai" [proprio] "schifo"
+             | "quanto mi fai schifo" [^"," [mi] "fai" [proprio] "schifo"]
+             | "my heart beats too fast because I'm thinking of your" [fucking] "ugly face"
+             | "you suck"
+             | "vaffanculo" [va]
+             | "w"^(o|ooo|ooooo)^"w" 
+            );
+
+Domanda ::= (  [lo] "sai che" [tu] "sei" ("un pezzo di merda" | "uno stronzo") [bastardo] ^"?" Know
+             | "you think you're" [so] [fucking] "cool, hm?" 
+             | "you know you're gonna have another accident?" Know
+             | "you know I'm involved with black magic?" Know
+             | "you wanna know something?"
+             | "when I was high, you called me an asshole?"
+             | "have you ever been trying to take a nup?"
+            )\;         
+
+Punteggiatura ::= ( "," | "."\ | "..." | "!"[+_|^"!"]\ | " ..hm?"\);
+
+Could ::= ^", I could" [+^", you know"][^", I promise"];
+
+Know ::= [--"...you know?"];

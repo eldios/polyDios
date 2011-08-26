@@ -1,0 +1,464 @@
+I ::= "title:    Prontuario Farmaceutico\n"
+    ^ "author:   E.R. Poly &lt;mogkogk@hotmail.com&gt;\n"
+    ^ "language: italian\n"
+    ^ "status:   gentalyn beta\n"
+    ^ "topic:    salute\n"
+    ^ "disclaim: approvato dall'Associazione Italiana Medici" \
+                 (dent|+naz|estet|pod|+tass|fasc|budd|alcol|+nud
+                 |+esorc|call|gomm|+tepp|ottim|radiotelegraf)^isti "\n"
+    ^ "warning:  prima dell'uso leggere attentamente il foglietto illustrativo\n"
+    ^ "created:  24/10/2004"
+;
+
+S ::= ST.html ;  (* output html -- codice su singola riga *)
+
+T ::= ST.text ;  (* output plain text formattato -- polygen farmagen.grm -S T *)
+
+
+ST ::=
+    FarmacoT.reg.type NL2
+    Descrizione NL2
+    ComposizioneT NL2
+    AvvertenzeT NL2
+;
+
+
+
+ (* output dei soli farmaci *)
+
+Farmaco     ::= FarmacoT.text.noreg.type.;     (* ES: Defloril forte *)
+FarmacoHtml ::= FarmacoT.html.noreg.type.;     (* ES: <span ...> Defloril </span> <span ...> forte </span> *)
+NomeFarmaco ::= FarmacoT.text.noreg.notype.;   (* ES: Defloril *)
+
+
+
+ (* gestione CSS *)
+
+BIG  ::= ( text: _ | html: "<span style=\"font-family:Arial,Helvetica,Sans-Serif;color:#000;font-size:140%;line-height:140%;font-weight:bold;\">" ^ ) ;
+BIGc ::= ( text: _ | html: ^"</span>" ) ;
+
+MED  ::= ( text: _ | html: "<span style=\"font-family:Arial,Helvetica,Sans-Serif;color:#000;font-size:110%;font-weight:bold;\">" ^ ) ;
+MEDc ::= ( text: _ | html: ^"</span>" ) ;
+
+SERIF  ::= ( text: _ | html: "<span style=\"font-family:Georgia,Serif;\">" ) ;
+SERIFc ::= ( text: _ | html: "</span>" ) ;
+
+SMALL  ::= ( text: _ | html: "<span style=\"font-size:90%;\">" ^ ) ;
+SMALLc ::= ( text: _ | html: ^"</span>" ) ;
+
+BOLD  ::= ( text:   _  | html: "<strong>" ^ ) ;
+BOLDc ::= ( text: ^":" | html: ^"</strong><br>" \ ) ;
+
+REG ::= (noreg:_ | reg: ( text: _ (*"(R)"*) | html: "<sup>&reg;</sup>" ) );
+
+
+
+
+
+
+
+
+Descrizione ::= SERIF \
+    ( ( -- preparat O | [ psico ^ ]farmac HO | medicin ^ (o:ale|a:a|i:ali|e:e) | -- placebo
+      | ----- ( lass | sed ) ^ ativ O | --- stupefacent E | -- vaccin ^ (o:o|a:o|i:i|e:i) [antinfluenzal E])
+      ( Antiallergico | Analgesico [ Antiallergico ] )
+    | Analgesico [ Antiallergico ]
+    ).o P NL \
+    ( util ^ ( e | issimo )
+      ( -------------- nel doping
+      | ( nel trattamento | nella cura ) (de ^ Patologia.prep | di molte (_|----psico^)patologie V DaA)
+      )
+    | ( combatte | contrasta | debella )
+      ( Patologia.art [ V ma anche Patologia.no Patologia.cong ]
+      | Patologia.art e Patologia.art
+      | [ varie forme di ] Patologia.no V Patologia.no [ V Patologia.no ] Patologia.cong
+      | un ^ ( a vasta | 'ampia ) gamma di (_|----psico^)patologie V DaA
+      )
+    | ----- favorisce ( la diuresi | l'eiaculazione | la ricrescita dei cape^(zzo|l)^li )
+    )
+    P SERIFc
+;
+DaA ::=
+      tra cui Patologia.art e [persino] Patologia.art
+    | da ^ Patologia.prep a ^ Patologia.prep [ V cura,utile ( anche | persino )
+      ( Patologia.art ),( ( in ( [alcune] forme | casi ) [ gravi ] di Patologia.no | nel trattamento de ^ Patologia.prep ) ) ]
+;
+AvvertenzeT ::=
+    SMALL
+    ( --- BOLD \ avvertenze ^ BOLDc
+      ( ( q: PuoProvocare P (w:NL \) ) ( w: NonSomministrare P ) ).( q | w ).( q | w )
+    | BOLD \ ( effetti >( +++ collaterali | indesiderati ) ) ^ BOLDc
+      ( ------------------- [ tuttora ] ( sconosciuti | ignoti )
+      | ( secchezza delle ( feci | ++++ fauci ) | +++++ Patologia.no )
+        [ V Patologia.no ]  [ V ( _ | ---- episodi acuti di ) Patologia.no ] [ V Talora ]
+      ) P
+    )
+    SMALLc
+;
+Talora ::=
+    ( talora | talvolta | meno spesso | di rado | quasi mai | +++ ( rara | occasional ) ^ mente )
+    ( Patologia.art
+    | ( l'atrofizzazione | ---- la frammentazione
+      | il distacco [ improvviso | violento | temporaneo ]
+      | >( la caduta | --- l'esplosione ) [ improvvisa ]
+      | lo schiacciamento | --- la combustione spontanea )
+      del ( sacco scrotale | tronco encefalico | sistema nervoso centrale | ^ la retina
+          | ( testicolo | braccio ) ( destro | sinistro ) | pene | clitoride | ^ la calotta cranica
+          | ^ l'ampolla rettale | ^ la colonna vertebrale | cuoio capelluto | ^ la chiostra dentaria
+          | glande | prepuzio | ^ la spina dorsale )
+    )
+;
+PuoProvocare ::=
+    [ in ( soggetti | pazienti )
+      ( [ particolarmente ] ( cirrotici | allergici | anziani | omosessuali
+                            | impressionabili | borderline | psichiatrici )
+      | con Patologia.no
+      | affetti da ^ Patologia.prep )
+    | in alcuni ( casi | pazienti ) | durante la gravidanza [ e l'allattamento ] ]
+    pu ^ OC ( provocare | causare )
+    ( [ forme [ leggere ] di ] Patologia.no [V Patologia.no] Patologia.cong
+                     [ o anche ( _ | ---- episodi acuti di ) Patologia.no ]
+    | ( un  [ fort ^ ( e | issimo ) ] ( ++ aumento | abbassamento )
+      | una [ fort ^ ( e | issima ) ] ( +++ diminuzione | alterazione )
+      ) de ^ ( ll'ematocrito | ++ l quoziente intellettivo | lla libido
+           | lla pressione ( arteriosa | intraoculare | intestinale )
+           | i gas ( intestinali | esofagei ) | lla capacit ^ AC cranica
+           | l cerume | l colesterolo | lla gittata eiaculospermatica
+           )
+    | la completa ( +++ occlus | ostruz ) ^ ione
+      del ( ^ la trachea | ^ l'esofago | duodeno | colon | ^ la vagina | ^ l'intestino )
+    | il ( blocco | riavvio ) del sistema operativo
+    )
+    [ V Talora ]
+;
+NonSomministrare ::=
+      + non somministrare a ( bambini | ^ d anziani | ---- ^ d adulti )
+       ( sotto | sopra | di et ^ AC ( sup | inf ) ^ eriore a ^ ) i
+       ( ------- _ | (1|2|3|4|5|6|7|9) ^ )(2|3|4|+5|6|7|9) anni
+    | evitare l'uso prolungato [ V pu ^ OC dare assuefazione ]
+    | + aerare il locale prima di soggiornarvi
+    | non EC un medicinale V non usare con cautela (* creditz: Francesco Salvi *)
+    | --- se applicato nella zona pubica favorisce
+      ( le piattole | la [ perdita della ] verginit ^ AC | i parassiti
+      | la flora [ e la fauna ] batterica | le mestruazioni [ maschili ]
+      | l'inversione sessuale | l'orgasmo | l'onanismo )
+    | in caso di ( contatto | in[^di]^gestione ) consultare un
+      ( +++ medico | esorcista | medium | impresario delle pompe funebri )
+    | pu ^ OC talora  ( violare i principi della bioetica
+                      | far acquisire immunodeficienza
+                      | alterare il patrimonio genetico
+                      )
+    | ( non somministrare | da non impiegarsi | somministrare con cautela ) in
+      ( caso di Patologia.no
+      | associazione con altri Analgesico.i "(" ^ Farmaco in particolare ^ ")"
+      )
+;
+Analgesico ::=
+     >( >( analges | anestet | ansiolit ) ^ ic HO
+      | anabolizzant E | afrodisiac HO
+      | anti ^
+        >( ( artrit | asmat | psicot | batter | diarro | elmint | malar
+           | micot | piret | reumat | sett | biot | stamin | dolorif ) ^ ic HO
+         | >( congestionant | ossidant | viral | concezional ) E
+         | depressiv O | nfiammator IO
+         )
+      )
+   | >( corticosteroide O | decongestionant E
+      | disinfettant E | emollient E
+      | >( diuret | mucolit | cardioton ) ^ ic HO
+      | (vaso|ano)^dilata TORE
+      )
+   | >( steroide O
+      | stimolant E
+      )
+;
+Antiallergico ::=
+      anti ^ >( allergic HO | aggregant E | emorroidal E )
+    | >( dermato | gineco | uro ) ^ logic HO
+    | >( galen | immunoterap | piastrin | tricicl | omeopat | ayurved ) ^ ic HO
+    | reidratant E | allucinogen O
+    | ad azione >( centrale | locale | prolungata | rapida | irreversibile )
+    | per >( le mani | la vagina | la zona lombare | clisteri | l'igiene intima )
+    | intestinal E | vaginal E | anal E | rettal E
+    | [ per ( uso | il trattamento [ orale e ] ) ] >( intestinale | vaginale | anale | rettale )
+    | per uso >( + ludico | ++ topico | locale | ginecologico | esterno | sistemico )
+    | a base di Sostanza.
+;
+
+O  ::= ^ ( o: o  | a: a  | i: i | e: e  );
+HO ::= ^ ( o: o  | a: a  | i: i | e: he );
+E  ::= ^ ( o: e  | a: e  | i: i | e: i  );
+IO ::= ^ ( o: io | a: ia | i: i | e: ie );
+
+TORE ::= ^ ( o: tore | a: trice | i: tori | e: trici );
+
+FarmacoT ::= BIG \
+    ( >( antor | pentoth | emmenth | e ^ ( s | x ) ^ pettor | immor | sexor | odor | perfor | folgor | catarr | guatem | crot | scand | vand | seborr ) ^ al ( + FF.11 | FQ.2.3.4.5.6.7.9.10.18.20.22.23.24.25 )
+    | >( tachi | citro | entero | cimurro | neuro | anti | sburo ) ^ ( sod | ( +++ g | v ) ^ erm | pir | - sturb | - pomp ) ^ ina ( FQ.1.5.7.9.10.12.15.18.22.23.25 )
+    | >( cocco ^ ( b | dr ) | ( a | i ) ^ mbec | accattatev | dimagr | lubrif | extas | ( flui | liso | sper | ( n | c ) ^ itro | trombo | oftal | gluco | sburo ) ^ muc | fiumic | bruciap | deflor | mucor | cimurr | pho ^ ( r | s ) ^ phor ) ^ il ( + FF.6.11.20.24.25 | FQ.0.1.2.3.4.5.7.8.9.10.12.14.18.22.23 )
+    |  [ [ in ^ ]t ^ ]imidazyl ( + FF.4.10 | FQ.0.1.2.3.5.6.7.9.11.20.23.24.25.32 )
+    | >( acut | argut | fegat | doncam | armad | inut | cicut | bisest | erett | coprof ) ^ il ( +++ FF.26 | FQ.0.1.2.3.4.5.6.7.8.9.10.11.12.14.18.20.22.23.24.32.33 )
+    | >( phito | rido | vagi | citro | rinfro | sebo | muco | scroto | gastro ) ^ ( pil | sil | xyl | zyl | cil | ril ) ( FQ.0.1.2.3.4.5.6.7.8.9.10.11.12.13.14.18.20.21.22.23.24.25.26 )
+    | >( [ "La-La-Lalla-La-La-" ^ \ ]laso | ona | [ rin ^ ]giova | buso | flumaze | anafra | [ rin ^ ]coglio | citro | gastro | neuro | sclero ) ^ nil ( + FF.6.20.21 | FQ.0.1.2.3.4.5.7.9.10.11.22.23.24.25.26.32 )
+    | >( mu[ ^ s ] ^ co | freno | prosta | gluco | sclero ) [ ^ ( p | t | f ) ] ^ ri[ ^ ( n | d | z | s ) ^ ( i | y ) ] ^ l ( FQ.0.1.2.3.5.6.7.8.9.10.11.12.13.14.18.20.22.23.24.25.26 )
+    | >( dia | pira | broma | clona | pra[ ^ e ] | nitra | flori | sburo | citro | gastro | neuro | sclero ) ^ ze ^ ( pam | ( la | [ t ^ ]ra ) ^ ( m | n ) ) ( FQ.0.1.2.3.4.5.6.7.8.9.10.11.12.13.14.15.23.24.25.27 )
+    | >( tope | compae | tocca | ( n | c ) ^ itro | rinfor | cape | sclero | iodo | odio ) ^ ( s | - x | z ) ^ an ( FQ.0.1.2.3.4.5.6.7.9.10.11.13.14.18.20.23.24.25.26.27.32 )
+    |  effer[ ^ ver ] ^ al ^ ( gan | tram ) ( FQ.0.1.2.3.4.5.6.7.8.9.10.11.13.14.18.20.22.23.24.25.27.32 )
+    | >( kedolor | marlbor | voltron | daitarn [ 3 ] | vultus 5 | zambot 3 ) ( FF.14.1 | FQ.4.25 )
+    | >( emic | sebo | pho ^ ( r | s ) ^ pho | cyclo[ ^ vi ] | fidepu ) ^ ( ran | tan ) ( FQ.0.1.2.3.4.5.7.9.10.11.13.14.15.18.20.22.23.24.25.27.32 )
+    |  ( m | ++ b ) ^ u ^ [ s ^ ]co ^ ( pan | par ) ( FQ.0.1.2.3.4.5.7.9.10.11.13.14.15.20.22.23.24.25.27.32 )
+    | >( nimesul | circonc | aracn | tirann | dilap | clitor | stillic ) ^ id ( FQ.0.1.2.3.4.5.6.7.9.10.11.12.13.14.15.18.20.22.23.24.25.26.27.32 )
+    | >( te | bi | [ s ^ ]pro | [ s ^ ]pre | zi | i | ti | te | [ s ^ ]pa | [ s ^ ]pe | [ s ^ ]pu | ca | vi | ve | fra | ma | ci ) ^ ( nac | [ r ^ ]sul | - [ r ^ ]senn | [ m ^ ]puls | [ n ^ ]cul | ( x | zz ) ^ ul | rmic | tric | truc | flacc | [ r ^ ]conc | tox | muc ) ^ id ( FQ.0.1.2.3.4.5.6.7.9.10.11.12.13.14.15.18.20.22.23.24.25.26.27 )
+    | >( >( cheto | tora ) ^ dol | >( stompom | resuscit ) ^ al | [ in ^ ]findivit | mal ^ >( depanz | ditest | dident ) ) ( FQ.0.1.2.3.4.5.6.7.8.9.10.11.12.14.18.20.22.23.24.25.32 )
+    | >( gentalyn | analfa | ecatom | catacom | soccom ) \beta FN
+    | >( viv | strav | perd | retroced )^in \c FN
+    |  [ op ^ ]tal ^ ( e | i ) ^ ban ( FQ.0.1.2.3.4.5.6.7.8.9.10.11.12.13.14.15.18.20.22.23.24.25.26.27.32 )
+    |  [ una ^ \ ]tantum \( m | v ) ^ erde FN
+    | >( fastum | pattum | cerum | frantum ) \( verde | ++gel ) FN
+    |  la \dolce \( euche | to | dio ) ^ ssina FN
+    | >( rani | mino | citro | gastro | uro | trombo ) ^ xid ^ ( i | y ) ^ l ( FQ.0.1.2.3.5.6.7.8.9.10.11.12.13.14.18.20.22.23.24.25.26.27 )
+    |  ( r | b ) ^ ( i | u ) ^ solvon ( +++++ FF.28 | FF.24.25 | FQ.0.1.2.3.4.5.6.7.8.9.10.11.12.13.14.15.18.20.22.23 )
+    | >( >( mega | cata | caga | mela | prosta | vari | uri | bena | bibi | sbura ) ^ ton | >( cipoll | pisol | berlusc | psycot[ ^ r ] | bever | digim | pokem | piramid ) ^ on ) ( ++ FF.28 | FF.24.25 | FQ.0.1.2.3.4.5.6.7.8.9.10.11.12.13.14.15.18.20.22.23.33 )
+    | >( bena | optali | naftali | oftalmi | peri | sclero ) ^ don ( FQ.0.1.2.3.4.5.6.7.8.9.10.11.12.13.14.15.18.20.22.23.24.25.27.28.32.33 )
+    |  [ in ^ | ef ^ ]fervor ( FF.2.11.12.13.21 | FQ.0.1.3.4.5.6.8.9.10.14.18.20.22.23.24.25 )
+    |  bidonvil ( FQ.0.1.2.3.4.5.6.7.8.9.10.11.12.13.14.15.18.20.22.23.24.25.26 )
+    | >( _ | mano ^ | demoti ^ | carne ^ | "Pump-up-the-"\ ^ ) valium FN
+    | >( linoleum | [ r ^ ]im ^ ( e | o ) ^ dium | motilium ) ( FQ.0.1.2.3.4.5.6.7.8.9.10.11.12.13.14.15.18.20.22.23.24.25.32 )
+    |  ( musco | poly | varico | sofar | dulco | evan | masturbo ) ^ gel ( FQ.0.1.6.7.20.22.24 )
+    | >( pancre | pol | seren | sfren | dimagr | masturb | sbur | brufol ) ^ ase ( FQ.0.1.2.4.7.8.10.12.13.14.15.21.22.23.24.25.27.32 )
+    | >( _ | o ^ | u ^ | lat ^ )rinazina ( +++++++ FF.22.29 | FQ.0.1.7.9.10.12.14.23.24 )
+    | >( risat | sbara ^ ( x | zz ) | ramanz | amuk | ( c | k ) ^ aspiter | ( c | k ) ^ arnefiz | naftal | cresc | toraz ) ^ ina ( ++++++++++++++++++ FF.29 | FQ.0.1.7.9.10.12.14.22.23.24 )
+    |  rinazista FF.29
+    |  [ tr ^ ]aspirina FQ.1.7.12.29.30
+    |  vegetal ^ ( b | l ) ^ umina FQ.0.1.15
+    | >( nofa | mosto | cago ) ^ ben ( FQ.0.1.2.3.4.6.9.10.11.12.14.15.18.20.22.23.24.25.27.32 )
+    |  catoble ^ ( x | pa | n ) ( FQ.0.1.2.3.4.5.6.7.8.9.10.11.12.13.14.15.20.22.24.25.27.32 )
+    |  cebion ( FQ.0.1.5.7.12 )
+    |  ( \ fave,( schiave | slave | ++ bave | + rape ) di \ ( luca | + fuga | ++ fica ),fuca ) FN
+    |  [ twin\ ]tavor FN
+    | >( xylo | cimurro | ( n | c ) ^ itro | gastro | phito | prosta | scroto | sebo | uro ) ^ caina ( FQ.0.1.3.4.5.7.9.10.18.22.24.27.32.33 )
+    | >( entero | gluco | muco | neuro | oftalmo | prosta | sebo | spermo | uro | vagi | varico | vermi | anti | sclero ) ^ trombina ( FQ.0.1.3.4.5.7.9.10.18.22.24.27.32 )
+    | >( [ neo ^ ]ciba | nova | chiava | sbava | stravo | nevra | sbura ) ^ lgina ( FQ.0.1.3.4.5.7.9.10.18.22.24.27.32 )
+    |  ( [ s ^ [ tra ^ ] | disin ^ ],_ vol ^ t,g ^ aren ) ( +++ FF.31 | FQ.0.6.7.15.20.23 )
+    | >( e | depre | ce | fe | sco ) ^ ssaven ( FF.15 | FQ.0.1.2.3.4.6.9.10.11.12.14.18.20.22.23.24.25.27.33 )
+    | >( baclo | ( n | c ) ^ itro | gastro | gluco | sebo | muco | neuro | pho ^ ( r | s ) ^ pho | prosta ) ^ ( fen | [ f ^ ]ren | prazen | derm ) ( FQ.0.1.6.15.20.23.27.33 )
+    | >( phito | tromba | uro | vagi | varico | brufo ) ^ derm ( FF.15 | FQ.0.1.6.20.23.27.33 )
+    | >( deterr | dissent | avantr | dimagr | dilatr ) ^ en FG2
+    | >( testo | proto | citro | muco | gastro | trombo | stronzo ) ^ vi ^ ( s | t ) ( FF.2.7.11.12.13.21 | FQ.0.1.3.4.5.6.8.9.10.14.18.20.23.24.26.32 )
+    | >( b | g | r ) ^ u ^ ( s | t ) ^ talax ( FQ.0.1.2.6.7.9.10.11.12.13.14.15.18.20.22.23.24.25.32.33 )
+    |  ( _ | antip ^ | "L'Incredibile"\ ) ulcex FN
+    | >( dulco | turco | phospho | muco | gastro | [ s ^ ]vermi | ofta | [ [ ma ^ ]s ^ ]turbo | brufo | stronzo ) ^ lax ( FQ.0.1.2.6.7.9.10.18.20.23.25.32.33 )
+    | >( pancre | anan | xan | esent | catarr | satan | sputtan | svetr ) ^ ax ( FQ.0.1.2.6.7.9.10.18.20.23.25.32.33 )
+    | >( proz | stro ^ ( z | n ) ^ z | zant | spruzz ) ^ ac ( FQ.7.8.23.33 )
+    | >( zylor | orasept | abul | acet | asmat ) ^ ic ( FQ.0.1.9.27.32.33 )
+    | >( [ di ^ ]synf | genuf | dis | cata ) ^ lex ( FQ.0.1.2.4.5.6.7.9.10.11.12.13.14.15.18.20.22.23.24.25.26.27.32.33 )
+    | >( maal | solidarn | ortod | overd | permal | acet | stet | tromb | animal | barb | morb | psic | narc | muc | zim | ammal | m ^ ( e | i ) ^ fa[ ^ mpo ] ^ mal ) ^ ox ( FQ.0.1.2.8.9.10.24.25 )
+    | >( gine | tuber | mandra | mazzan | bena | kera | auto ) ^ gol ( FF.14.24.25 | FQ.0.1.4.8.9.10.18.22.23.33 )
+    | >( tegret | metab | mo ^ ( m | r ) ^ end | antid | turand | krimin | endocrin | contr | pervas ) ^ ol ( FQ.0.1.2.3.4.5.6.7.8.9.10.11.12.14.18.22.23.24.25 )
+    | >( s[ ^ t ] ^ upra | rauce | lampa | bigo | biliar | lavan | [ im ^ ]putri | stronz[ ^ i ] ^ o ) ^ d ^ ( i | ++++ y ) ^ n FG
+    | >( napro | entero | sebo | kato | ci ^ ( p | t ) ^ r ^ ( a | o ) ) ^ ( x | s | z )[ ^ id ] ^ ( i | ++++ y ) ^ n FG
+    |  lapisla ^ ( x | zz ) ^ ul ^ ( i | y ) ^ n FG
+    | >( [ sorpre ^ | pave ^ ]sine | gine ) ^ cod ( FF.14.24.25 | FQ.0.1.4.8.9.10.18.22.23.33 )
+    | >( _ | alle ^ | antidilu ^ | coadiu ^ | de ^ | ferro ^ | fuor ^ | ravvi ^ | smuo ^ | solle ^ ) viagra ( FQ.0.1.2.4.7.8.9.10.13.14.15.18.22.23.32 )
+    |  viacard ( FQ.0.1.2.4.7.8.9.10.13.14.15.18.22.23.32 )
+    | >( [ s ^ ]tim | bruf | afr | gastr | muc | pancre | scler | scrot | seb | sperm | vulv | sbur ) ^ odor[ ^ e ] ( FF.22 | FQ.0.1.2.3.4.6.7.14.18.20.25.21.27.32 )
+    | >( mom | sgom | pol | mor ) ^ ent ( FQ.0.1.7.8.18.32 )
+    | >( >( fev | zet | vit | citr | fent ) ^ ( X: a | Y: _ ) | >( benz | rib | ansi | citr | pho ^ ( r | s ) ^ ph | gastr | phit | scrot | tromb | scler | bruf | stronz ) ^ ( X: o | Y: _ ) ) ^ ( X: ( m ^ ( u | i ) ^ cin | ( l | r ) ^ i ^ ( n | m ) ) | Y: algin ) FG2
+    ).( X | Y )
+;
+FG ::= FQ.0.1.2.3.4.5.6.7.8.9.10.11.12.13.14.15.18.20.21.22.23.24.25.26.27.32.33;
+FG2::= FQ.0.1.2.3.4.6.9.10.11.12.14.15.18.20.22.23.24.25.27.32.33;
+FF ::= BIGc REG ( notype: _ | type: MED Plus MEDc ) ;
+FQ ::= BIGc REG [ notype: _ | type: MED Plus MEDc ] ;
+FN ::= BIGc REG ;
+
+
+Plus ::=
+      0: ( 3 | 9 | 10 | 20 | 30 | 60 ) ^ 0
+    | 1: ( forte | fast | complex | -- retard )
+    | 2: bustine | 3: capsule | 4: collirio
+    | 5: compresse | 6: crema | 7: effervescente
+    | 8: endovena | 9: fiale | 10: gocce | 11: gola
+    | 12: granulare | 13: integratore | 14: nebulizzatore
+    | 15: [ "oral-"^ | "anal-"^ | emul^ ] ( gel | spray )
+    | 18: pasti ^ ( gli | cch ) ^ e
+    | 20: pomata | 21: sport
+    | 22: spray  ( _ | nasale | --- anale )
+    | 23: supposte | 24: tosse | 25: sciroppo
+    | 26: ((++++f|b)^osforo | forfora )
+    | 27: lozione | 28: ( ++++linct | cact | actar ) ^ us
+    | 29: spray nasale | 30: ( "03" | "05" )
+    | 31: emulgel | 32: pillole | 33: plus
+;
+
+Patologia ::=
+      ( no: _ | art: il | prep: l | cong: e )
+       >( mal di ( denti | gola | testa | mare ) | diastema | coma | glaucoma | +++++ priapismo
+        | sanguinamento rettale | varicocele | raffreddore | pallore | diabete
+        | carbonchio | morbillo | tifo | torcicollo | vaiolo | nervosismo
+        | rachitismo | tetano | +++ tartaro | ++++ catarro | +++ vomito | +++++ prurito [ ( vagi | a ) ^ nale ]
+        | singhiozzo | + delirium tremens | +++++ meteorismo | +++ [rin^]frocismo
+        | morbo ( di \alzheimer | di \parkinson | della mucca pazza | di "Creutzfeldt-Jacob" )
+        )
+    | ( no: _ | art: lo | prep: llo | cong: e )
+       >( ( scl | x ) ^ eroderma >( pilare | ++ pigmentoso | ++++ spaventoso )
+        | scolo | scorbuto
+        )
+    | ( no: _ | art: la | prep: lla | cong: e )
+       >( [ bronco ^ ]polmonite | ( sec | fiac | stiti | stan ) ^ chezza delle fauci
+        | >( flaccid | rigid | frigid | sord | senil | steril | sieropositiv ) ^ it ^ AC
+        | gastrite | cefalea | ++++ >( dia | sebo | logo | pio | gono ) ^ rrea
+        | nausea | + scabbia | claustrofobia | tachicardia | +++ >( nec | cop ) ^ rofagia
+        | >( lomb | nevr ) ^ algia | letargia | +++ follia | rosolia | setticemia
+        | bulimia | +++ cacosmia | +++++ schizofrenia | ++++ >( frena | nevra ) ^ stenia
+        | + catatonia | paranoia | miopia | + licantropia | malaria | "SARS"
+        | ritenzione ( idrica | urinaria ) | carie [ dentaria ] | +++++ dissenteria
+        | porfiria | dispepsia | ++ ( cata | narco | dis ) ^ lessia | presbiacusia
+        | +++++ >( tossico | ninfo | tricotillo | piro | mito | clepto ) ^ mania
+        | +++++ psicopatia | +++ pederastia | ++ pazzia | varicella | mucca pazza
+        | -- > ( bronch | [ trombo ^ ]fleb | broncopolmon | cellul | col | rin | congiuntiv
+               | faring | gastr | gastroenter | gengiv | laring | mening | tendin | trache ) ^ ite
+        | +++++ >( sonnol | flatul | dem ) ^ enza | ( can | calv ) ^ izie precoce
+        | cataratta | + confusione mentale | --- depressione | --- febbre
+        | gastrite | gotta | + lebbra | menopausa | +++++ pellagra | + coccidiosi
+        | pertosse | + peste [ bubbonica ] | raucedine | rigidit ^ AC muscolare
+        | scarlattina | ++++ sciolta | + sifilide | sincope | stitichezza | tosse
+        | vertigine | visione offuscata | paresi | stipsi
+        | -- >( tromb | chetoacid | lord | leptospir | cif
+               | tubercol | nevr | cirr | [ cifo ^ ]scoli ) ^ osi
+        )
+    | ( no: _ | art: l' ^ | prep: ll' ^ | cong: ed )
+       >( (* M *) enfisema | +++++ eczema | asma | "HIV"
+        | acne | "AIDS" | +++ ermafroditismo | + esaurimento nervoso | + herpes
+        | (* F *) ( iper | ipo ) ^ tensione  ( arteriosa | ortostatica )
+        | >( iperacid | omosessual | irritabil | ipersensibil | obes | iperemotiv ) ^ it ^ AC
+        | acidit ^ AC gastrica | alopecia | ( onico | aero ) ^ fagia | + anencefalia
+        | anemia | + ( a | ipo ) ^ spermia | emicrania | ebefrenia | artrite
+        | + androginia | insonnia | ++++ orticaria | ipocondria | otite
+        | isteria | euforia | >( afa | idropi | epiles | anores | ipoacu ) ^ sia
+        | ansia | apatia | ulcera [ duodenale ] | ++++ incontinenza
+        | +++ ( onni | im ) ^ potenza | irrequietezza | ++++ inversione sessuale
+        | ipersudorazione [ ascellare ] | ++ orchite | ( arteri | ot ) ^ osclerosi
+        | +++++ esofagite da reflusso | +++++ alitosi | +++ ipertrofia prostatica
+        | +++++ eiaculazione ( precoce | -- improvvisa | -- facciale | eccessiva )
+        | + ostruzione intestinale | ernia [ iatale ] | +++ encefalopatia spongiforme
+        )
+    | ( no: _ | art: i | prep: i | cong: e )
+       >( ++ tic | ++++ tremori | brividi | ++ foruncoli | ++++ bubboni
+        | dolori ( muscolari | addominali ) | ++++ rutti compulsivi
+        | reumatismi | disturbi ( della ( sessu | person ) ^ alit ^ AC
+        | vegetativi | mentali | [ gastro ^ ]intestinali )
+        )
+    | ( no: _ | art: gli | prep: gli | cong: ed )
+       >( ++++ attacchi di ( m | p ) ^ anico  (* creditz: Sconsolata *)
+        | orecchioni | eritemi | ++ inestetismi della pelle
+        | ++++ ematomi [ ( vagi | a ) ^ nali ]
+        )
+    | ( no: _ | art: gli | prep: gli | cong: e )
+       >( spasmi | ++ stati ( confusionali | maniacali | comatosi )
+        )
+    | ( no: _ | art: le | prep: lle | cong: ed )
+       >( amnesie | +++ eruzioni cutanee | adenoidi | ++++++ emorroidi [ facciali ]
+        | abrasioni | ustioni | escoriazioni | ++++ allucinazioni | infezioni
+        | +++++ erezioni [ improvvise | frequenti ] | emiparesi
+        | ++ alterazioni della coscienza | +++ ascelle muschiate
+        | irregolarit ^ AC ( del ciclo | mestruali )
+        )
+    | ( no: _ | art: le | prep: lle | cong: e )
+       >( pustole | ++++ polluzioni ( di | ++ nott ) ^ urne | + vene varicose | ++++ ragadi
+        | palpitazioni | ++++ turbe >( visive | + psichiche | [ gastro ^ ]intestinali )
+        | convulsioni | ++++ contrazioni vaginali | +++ scorregge [ ( di | ++ nott ) ^ urne ]
+        | ++++ >( tumefaz | les ) ^ ioni ( vagin | an | rett ) ^ ali
+        )
+;
+ComposizioneT ::=
+    SMALL
+    BOLD \composizione ^ BOLDc
+    ( ------------------------------ ( sconosciuta | ignota )
+    | ( Sostanza
+        ( A: ( { V Sostanza.B } { { V Sostanza.C } { [ V Sostanza.D ] } } ).
+        | B: ( { V Sostanza.C } { { V Sostanza.D } { [ V Sostanza.A ] } } ).
+        | C: ( { V Sostanza.D } { { V Sostanza.A } { [ V Sostanza.B ] } } ).
+        | D: ( { V Sostanza.A } { { V Sostanza.B } { [ V Sostanza.C ] } } ).
+        )
+      ).( --- A | - B | ++ C | ++ D )
+    )
+    P
+    SMALLc
+;
+Sostanza ::=
+    ( A:  ( eritro | pancreo | strepto | [ pi ^ ]retro | carbo | iso | tetra | ++ sterco | vaso
+          | uro | [ cole ^ ]cisto | [ s ^ ]cortico | immuno | gamma | benzo | + cefalo | somato
+          )
+          ^ ( mic | poiet | stat | ciste | brom | fosf | zim | plasm | cicl | chin
+           | globul | diazep | spor | stam | guan | cill | lanol | gall ) ^ ina
+    | B:  ( ( ( bi | idr ) ^ ossido | ( epic | spergi | sil | iod ) ^ uro | ipoclorito
+            | [ ( dime | ace[ ^ gen ] ) ^ til ^ | tetra ^ ]cloruro ) di Sodio
+          | cidoduro di minchia | --- particella di sodio | cantaride
+          | -- Sodio ( [ feno ^ ]fosf | polisorb | ( mono | [ di ^ ]clor ) ^ idr
+                     | citr | solf | permangan | [ bi ^ ]carbon | percol
+                     | [ idrossi ^ ]( benzo | sbur ) | gluttamm | mentol ) ^ ato
+                     [ [ mono ^ ]( basico | s ^ ( a | o ) ^ dico ) ]
+          | -- aglio V olio V peperoncino | creatina | "LSD"
+          | olio ( di canfora | vegetale [ idrogenato ] )
+          | olii ( esausti | essenziali ) | alcol [ m ^ ]etilico
+          | vaselina ( bianca [ filante ] | superfluida | dolce )
+          | gas ( esilarant ^ ( e | i ) | intestinali ) | bromuro
+          | vetriolo | rabarbaro | pappa reale | ginseng
+          )
+    | C:  ( antrace | protossido d'azoto | cianuro | sale V pepe
+          | codeina | morfina | eroina | marijuana | canapa indiana | mescalina
+          | >( metad | progester | cortis ) ^ one
+          | >( mela[ ^ to ] ^ n | stricn | seroton | atrop | epar | efedr
+             | [ nitro ^ ]glicer | papaver | emolis | eritros | peps
+             | trips | dioss | uva sultan | font | paraff ) ^ ina
+          | >( [ mentolo ] eucalip | sorbi | manni | tri ) ^ tolo
+          | >( [ f ^ ]rutt | [ d ^ ]estr | disastr | gluc | latt | lard | - merd ) ^ osio
+             [ V >( --- [ dis ^ ]gust | appiccic | zaccher | saccar | -- sacerd | paolobr ) ^ osio ]
+          | --- acido >( acetilsalicil | ascorb | citr | ialuron | nitr | lesb | fol
+                       | latt | solfor | muriat | liserg | [ [ dist ^ ]orto ^ ]fosfor
+                       | [ a ^ ]crit | a[ ^ s ] ^ cet | asiat | cianidr | cirill
+                       | cl[^it]^oridr | eufor | fall | fluoridr | folclor | sforast ) ^ ico
+          | uranio impoverito | plutonio | stronzio | ( scorie,isotopi radioattiv ^ e,i )
+          | kolla vinilika
+          )
+    | D:  ( kriptonite | nutella | \( coca | pepsi ) \cola
+          | >( lido | xilo | benzo | co ) ^ caina
+          | ( ossitoc | ranitid | fenolftale | formal | ptial
+            | adrenal | acetilcol | tubercol | peldivag | insul
+            | catecolam | scopolam | fentolam | dopam | prolatt
+            | toraz | cariatid | fetid | trement | putrid ) ^ ina
+          | [ pro ^ ]vitamina\( a | b1 | b12 | b6 | c | d2 | e ) | nandrolone
+          | gomma arabica | amido di mais | cicuta | saliva | formaldeide
+          | acqua ( ^ ragia | distillata | di rose | minerale
+                  | santa | ossigenata | passata | liscia | frizzante )
+          | forfora | [ mono e ] digliceridi | sali minerali | cheratina
+          | aromi [ naturali ] | collagen ^ ( e | asi ) | sperma | idrocarburi
+          | gasolio | nafta[ ^ lina ] | benzina | ali di pipistrello
+          | tutti i minerali dalla "A" allo "Zinco"
+          | >( acidific | [ anti ^ ]agglomer | edulcor | color ) ^ anti
+          | bromuro | bismuto | cadmio | cloroformio | aspartame
+          | talco mentolato | testosterone [ equino ]
+          | guano [ +++ liquido | in polvere ] | urina | letame
+          | ( escre | fer ) ^ menti [ profi ^ ]lattici [ vivi ]
+          | beta ^ ( carot | +++ keros ) ^ ene | estrogeni
+          | essenza di ( lavanda | bergamotto | comino | geranio
+                       | ++ timo | gelsomino | rosmarino | salvia )
+          )
+    )
+;
+Sodio ::=
+    ++ sodio | vinile | calcio | + magnesio | fosforo | [m^]etile
+    | + potassio | --- litio | --- manganese | +++++ stronzio
+;
+
+
+AC ::= ( text: a' | html: "&agrave;" ) ;
+EC ::= ( text: e' | html: "&egrave;" ) ;
+OC ::= ( text: o' | html: "&ograve;" ) ;
+
+NL ::= ^ ( text: "\n" | html: "<br> " ) ^ ;
+
+NL2 ::= NL NL ;
+P ::= ^ "."\ ;
+V := ^ ",";

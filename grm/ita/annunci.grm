@@ -1,0 +1,140 @@
+I ::=   "title:    Annunci\n"
+      ^ "author:   Sandolo &lt;sandman@paranoici.org&gt;\n"
+      ^ "language: italian\n"
+      ^ "status:   mature\n"
+      ^ "topic:    misc\n"
+      ^ "audience: anybody\n"
+      ^ "created:  9/12/2002"
+;
+
+(* Il 99% del testo di questo sottostante delirio e' stato preso da una mail *)
+(* di "Fabio Calissi" <perno@NOSPAMdada.it> (cut&paste della mail), postata  *)
+(* sul newsgroup it.hobby.umorismo. Io (sand) ho aggiunto qualcosina, ho     *)
+(* messo il tutto in formato grammaticaPerPolygen, poi qualcuno come _lobo   *)
+(* mi ha suggerito qualche correzione :P -sand                               *)
+
+S ::= \ (Gh Soggetto | Soggetto Gh) [^"," (Male|Amante) ^"," ]
+	    ((Cosa Azione) | (cerca|offre) Cerca Per) ^"."\
+	    [(astenersi | no) Finale ^"."\ [si Finale ^"."]]
+;
+
+(* soggetto godrebbe guardando (condizionale, gerundio) *)
+Cosa ::= coronerebbe sogno | godrebbe | si sentirebbe realizzato | eiacula |
+	saltella di gioia | si convertirebbe al >(cristianesimo | buddismo |
+	ateismo | fancazzismo | masochismo | fanatismo religioso |
+	travestitismo | polimorfismo) | sorseggierebbe >(ambrosia | nettare |
+	sperma | vino novello | coca cola | fanta | orina | melma | lava) |
+	si impiccherebbe | passerebbe al >(^la (cocaina | speed | ketamina |
+	novalgina) | ^l'eroina) | racconterebbe propria vita a "Maria De"
+	"Filippi" | esploderebbe | distruggerebbe presepi |
+	impersonerebbe "Maga Mago'"
+;
+
+Soggetto ::= pensionato | boscaiolo | metronotte | uomo | baffo | muratore |
+	palestrato | monaco | nano | arrotino | monarca | nazista |
+	cantastorie | ruttatore | palombaro | barbone | fotografo |
+	operaio | professore | pugile | prete | gigolo' | faraone |
+	pifferaio | maniscalco | spazzacamino | pagliaccio
+;
+
+Gh ::= rumeno | intrepido | 40enne | sorridente |
+	tetraplegico | esuberante | acrobata | arrendevole |
+	dolcissimo | incoerente | giovane | abile | edonista | ciclista |
+	menomato | attempato | focomelico | barese | diabetico | alcolizzato |
+	mutilato | ceruleo
+;
+
+Male ::= privo degli arti | bisessuale | fine esteta |
+	vittimista | ex cameriera | barba petto villoso | fisico asciutto |
+	amante passeggiate (lago | discarica | cimitero) |
+	amante frittate di merdura | amante travestimento |
+	sabaudo | segreto esoterista | amante giochi telefonici |
+	miope | ottima famiglia | affetto vertigini |
+	(lieve | grave ) difetto fisico | cartomante esperto | passivo |
+	ossessionato findus
+;
+
+Azione ::= officiando rito orgiastico sabbatico [Con] | +se Soggetto Gh mi
+	Mi [recitando (ricette di sughi | la divina commedia | l'amleto)] |
+	masturbandosi ferocemente assistendo
+	sevizia propio clone su sedia a dondolo da parte di Soggetto Male |
+	dipingendo ad aerografo col culo | pigolando con indosso sandali e
+	bermuda verso masculo 30enne Gh | conoscendo Male con problemi
+	prostata | appellandosi santa inquisizione causa ossessione ragadi |
+	invitando coppia buttafuori effemminati a escursione casa mia |
+	conoscendo burattinaio Male per notti all'insegna del comando |
+	trovando pollastrina con intensa ovulazione che gli cachi nel piatto
+	a scopo alimentare | cedendo colf ermafrodita zoppa in cambio di un
+	tavolino a 3 piedi [anche traballante] | confezionando pratici
+	astucci penici illustranti racconti celebri figure di merda |
+	trovando orsacchiotto autoritario per essere iniziato ai piaceri
+	della passivita' | trovando nano da lancio per serate sportive
+	all'insegna della gommapiuma | trovando difensore ufficio Male |
+	abdicando scopo amicizia in favore di [grottesco] Soggetto bendato |
+	cambiando sesso scopo propria elezione a papessa col nome "Cinzia I" |
+	conoscendo scopo tortura incompetente studentessa obesa soggiogata
+	"TV" | trovando impiego tuttofare
+;
+
+(*Mi ...*)
+Mi ::= irrora di pioggia dorata | (caga | vomita )
+	sul >(petto | volto | ^l'addome | ventre | ^le (gambe | braccia) |
+	divano | ritratto di famiglia | busto del "Duce" | ^la porta di casa |
+	^l'orologio | menisco | ^l'ombelico | ^la stampante | ^la tastiera |
+	frigorifero | computatore | modem | ^le scarpe | ^lo stereo |
+	^la madre | ^l'obelisco egiziano | feticcio di "Berlusconi" |
+	^l'artefatto >(africano | mongolo | zelota | cristiano | turco |
+	neozelandese) | mondo) | pota le aiuole | presenta "Topo Gigio" |
+	regala gardenia rampicante [transgenica]
+;
+
+Con ::= con (coppia di nani (mutilati | sordi | zoppi) | "Sbirulino" e "Dodo'" |
+	"Maurizio Costanzo" | il "Gabibbo" | "Satana" | Amante |
+	Soggetto (Gh | Male))
+;
+
+Finale ::= (pelo sintetico | gas | colori ad olio | chemioterapia |
+	odontoiatri | "Capitan Hook" | mercenari | "HIV" negativo |
+	comunella | torquemada | cotto montecchi | omicidio | cuoio |
+	faraone | fagiane | superquark | blackEdecker | frusta |
+	azzeccagarbugli | problemi statura | allergia ebano | manette di pelo |
+	scarpe | lingua | rap | figli | trans | froci)
+;
+
+Cerca ::= arto (ortopedico | mutilato | uncinato) con (fallo | vagina | utero |
+	santino di "Jovanotti") vibrante | [interessante] incarico come
+	betoniera e Amante | propio clone | sella e morso equini |
+	Soggetto Male | manganello nero | "Zyklon-B" | gemelli siamesi |
+	capretto mentulato [modello chiazzato] | nani di gesso |
+	cucciolo tipo "Bambi" | esperto palafitte [Amante] | galante garzone
+	tuttofare "part-time" Male | coppie | grosso pesce |
+	proseliti adoranti idolo feticcio raffigurante incastro orrendi nani
+	alati privi arti |
+	coppia con figlio deforme | gatto delle nevi [cingolatissimo
+	pluriaccessoriato]
+;
+
+(* fare Cerca AGgettivi plurali *)
+
+Amante ::= amante >(clisteri di ghiaia | deposizione uova in bocca | sacrifici
+	(umani | di >(anziani |  bambini | donne [pregne] | animali
+	[(vivi | morti)] | pontefici)) | pratiche sadomaso multicinghia |
+	fisting (vaginale | anale) | religioni dimenticate | lingue morte |
+	scherzi da prete | bigiotteria slava | percosse da "Hooligan"
+	ubriaco | comignoli | febbre del sabato sera | feticci "Mara Venier" |
+	scarpe usate | zuppa del casale | confessioni | pratiche orali |
+	guerra "Vietnam" | sudore della fronte | feti morti | fellatio su
+	cadaveri | cunnilingus estremo | feci colorate | clisteri zuavi)
+;
+
+Per ::= per >(partite a (solitario | rubamazzo | tresette | scopa) |
+	trarre ispirazione | essere iniziato ai piaceri della passivita' |
+	battute di caccia | "week-end" palustri tra canne^"," rane e serate
+	limacciose | trenino dell'amore | addestramento supino |
+	interessante capriccio scientifico | esperimenti gravitazione
+	universale | matrimonio | ballo liscio | scalata colline |
+	pic nic all'insegna della coprofagia) |
+	scopo >(amore platonico | amicizia (senza fine | duratura) | elezione
+	a presidente del consiglio | amore di gruppo | invenzione acqua calda |
+	conquista globo terrestre a risiko | esorcismo)
+;

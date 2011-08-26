@@ -1,0 +1,90 @@
+I ::= "title:    Trame romantiche\n"
+    ^ "author:   Lapo Luchini &lt;lapo@lapo.it&gt;\n"
+    ^ "language: italian\n"
+    ^ "status:   newborn\n"
+    ^ "topic:    romance\n"
+    ^ "audience: tutti\n"
+    ^ "comment:  no\n"
+    ^ "created:  2005/08/21";
+
+S ::= Storia;
+
+Storia ::= (Init ::= "<!--" (NomeParente1 RuoloIndParente1).(M|F) "-->";
+    \(ci ritroviamo in|la nostra storia ha inizio presso|la cornice della nostra storia "&egrave;")
+    (Luogo Distanza).(M|F) ^";"
+    (NomeEroe1 ^"," Parentela).(M|F) NomeParente1 ^"," Amore
+    (NomeEroe2 "che," [pur] essendo Parentela (NomeParente2.) ^","
+    Consequenza (condividere|apprezzare|rassegnarsi al^) la cosa).(M|F)
+    ^".\n"^\
+    (contrariamente a quanto potremmo pensare|prevedibilmente|stranamente|
+        per la legge del taglione|per vendetta|casualmente|incredibilmente|
+        senza particolari motivi|di conseguenza|irrazionalmente|inaspettatamente)
+    (NomeParente1 ^"," che (segretamente|come tutti tranne (NomeEroe1|NomeEroe2) sanno)
+    "&egrave;" Ind Ruolo).(M|F) ^","
+    Azione (NomeParente2 che Consequenza (diventare|smettere di essere|trasformarsi in) Ruolo).(M|F) ^";"
+    i due ((parlano|discutono) [a lungo]|si fronteggiano|vanno a nuotare assieme|
+        combattono [duramente|all'ultimo sangue|per ore]|si abbracciano [con slancio]|
+        si denudano [[quasi] totalmente]|
+        superano (i confini|i propri limiti|le inibizioni))
+    e [subito|immediatamente] (decidono|pensano|progettano|ipotizzano|accarezzano l'idea) di
+    (vivere assieme|uccidere Nome|sposarsi|>(andare alla festa|tradire la fiducia) ParentelaDi Nome)
+    ^"."\
+    (contemporaneamente|nel frattempo|di "l&igrave;" a poco|a breve)
+    si scopre che NomeParente3 ^"," Parentela (NomeEroe1|NomeEroe2) "nonch&eacute;" Ruolo ^","
+    "&egrave;" (un (maschio|ragazzo|uomo|idiota|pazzo omicida)|una (femmina|ragazza|donna|puttana)|frutto di un incesto)
+    ^".\n"^\
+    (scatta la faida familiare|"&Egrave;" >(subito guerra|una catastrofe|terribile)) ^":"
+    come (salvare >(il mondo|la pelle)|(migliorare|peggiorare|appianare|inasprire) la situazione) ^"?"\
+    (interviene|arriva|ci pensa|appare) NomeEroe1 che ^"," pur essendo Ind not^T AggettivoEroe1 ^"," ha il cuore AggettivoCuore
+    e ^"," (durante un Durata [e strappalacrime|ed esilarante] flashback|
+        con una battuta (terribile|divertente|patetica|emozionante)) ^","
+    risolve il problema ^".");
+
+T ::= M:o|F:a;
+Ind ::= M:un|F:una;
+
+Luogo ::= M:un (parchetto|viale)|F:una (scuola|galassia);
+Distanza ::= (lontan^T)+|remot^T|dietro casa|irraggiungibile|che conosci|
+    a (secondi|minuti|^d anni) luce da qua|in un'altra "realt&agrave;";
+
+Nome ::= M:\(johnny|bruce|jack|luke|ben|will|julian|ryo)|
+         F:\(leilha|maria|julia|mary|jessy|ryoko|meg|nancy);
+
+Amore ::= [non] >(ama|odia|sopporta)|si >(innamora|invaghisce) di|
+    si allontana da|prova [una certa [qual]] (attrazione|repulsione) per;
+
+Azione ::= infierisce su|sgrida|bacia|guarda|tenta di (uccidere|eliminare|ammazzare|far fuori)|
+    beve un (^a >(birra|vodka|tequila)|cuba libre|rum|bloody mary|succo) con;
+
+Parentela ::= (>(figli|-nonn|-portinai|fidanzat|ragazz)^T|(M:fratello|F:sorella)|
+    (cugin^T|F:zia) [di Grado grado]|(M:p|F:m)^adre|nipote|
+    (M:marito|F: moglie)) (ParentelaDi.);
+ParentelaDi ::= di|del Parentela.M|della Parentela.F;
+Grado ::= secondo|terzo|quarto;
+
+Consequenza := "non pu&ograve; che"|("&egrave;"|si (vede|ritrova)) costrett^T a|deve [proprio|assolutamente|quindi];
+
+Ruolo ::= (M: (paladino|cavaliere|eroe|difensore|scudiero|fautore|teorico)|
+        F: (paladina|eroina|fautrice|amazzone)|
+        apprendista)
+    IdealeDi [[^"," IdealeDi] e IdealeDi];
+IdealeDi ::= del >(bene|male|terrore|regime|sole)|
+    dello stato|
+    dell'^>(incoerenza|ingiustizia|onanismo|impotenza|oroscopo|astratto|azione|apocalisse)|
+    della >((volgarit|verginit|onest|realt|falsit|sessualit|periodicit)^"&agrave;"|
+        simpatia|giustizia|malattia|tracotanza|[com^]passione|
+        (musica|melodia|sinfonia)|magia|melanina|luna)|
+    delle (stelle|((5|7|12) (case|costellazioni|leggi|"realt&agrave;"|nazioni)));
+
+AggettivoEroe1 ::= >(pedo|necro|porno|audio|geronto)^fil^T|idiota|bastard^T;
+AggettivoCuore ::= tenero|duro|di cioccolata|di panna|funzionante|debole|da ciclista|palpitante;
+Durata ::= cortissimo|corto|lungo|lunghissimo|estremamente lungo;
+
+(*TODO: convincere parenti e ruoli ad avere sessi associati anche in frasi diverse*)
+NomeEroe1 := Nome;
+NomeEroe2 := Nome;
+NomeParente1 := Nome;
+NomeParente2 := Nome;
+NomeParente3 := Nome;
+RuoloIndParente1 := Ind Ruolo;
+

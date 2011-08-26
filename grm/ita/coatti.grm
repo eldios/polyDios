@@ -1,0 +1,666 @@
+I ::=
+      "title:    Coatti\n"
+    ^ "author:   Er Poly\n"
+    ^ "language: italian\n"
+    ^ "status:   beta\n"
+    ^ "topic:    misc\n"
+    ^ "audience: anybody\n"
+    ^ "disclaim: "
+      ^ ( +ma ddeche' aho' Q3
+        | ++chi s'estragna da'a lotta e' 'n gran fijo de' 'na mignotta
+        | se 'na matina te sveji che c'hai quattro palle P3 er nemico ce l'hai alle spalle
+        | +me pari er cane de mustafa' che oo pija ar culo e dice che sta a scopa'
+        | P3 e si mi' nonno c'aveva cinque palle era 'n flipper
+        | te c'hanno mai mannato a quer paese Q
+        )
+      ^ "\n"
+    ^ "created:  26/08/2004"
+;
+
+S ::= \  [ CIAO (++_ | >NUNCECREDERETE V)  MOVERICCONTO NL2 ]
+      LARTROGGGIORNO MENTRECHEANNAVO P3 (>VADOASBATTE | >NCONTRO) FINE
+;
+
+NCONTRO ::= chi te (vedooo | ^'ncontrooo) Q3 SOSP (ERCOSO|++NAFICA) ;
+
+VADOASBATTE ::= aho' P3  [ a'n certo punto P3 ] (>NUMMEVADO | >NUNTEVADO) ;
+
+CIAO ::= (+++_ | +aho')  [s^]ciao RAGA P3  (+++_ |  [ allora Q ] come  >(ve butta | --v'arza)  Q NL2)  ;
+
+RAGA ::= _ | ++rega' | -pischelli |  [ a'^ ] >(++++belli | -trucidi)  | a'^ >(---rintronati | --pezzi de fango) ;
+
+NUNCECREDERETE ::= nun (c | --m) ^e crederete | me pozzino cecamme | da nun crede;
+
+MOVERICCONTO ::=
+    [ state a senti' P3 ]
+    ( mo ve r^ (++i | a) ^cconto (++l'urtima  [ che m'e' successa ] | 'sta cosa )
+    | questa ve la devo  [ popo ]  [ da ] r^ (++i | a) ^cconta'
+    | sapete che m'e' successo Q3
+    |  [ m'^ ] e' successo 'n casino)
+    [ P3 (+++un maciello | 'na cambogia) ] [ P3 'n'apocalisseee ] ESCL
+;
+
+LARTROGGGIORNO ::= stamatina |  >(l'artr ^ (++ o ggiorno | a sera | --a notte) )  | ieri  [ sera ] | prima V;
+
+MENTRECHEANNAVO ::= (MENTRECHE (ANNAVO | >COREVO | >FACEVO) COAMACHINA).(A | +B) ;
+
+MENTRECHE ::= A: mentre che (_ | -io)   |  B: (_ | -NASCENA) (_ | --io) stavo a;
+
+NASCENA ::= (oh | giuro)  V 'na scena  [ troppo ] da PANICO ESCL (_ | -- [ popo ] la fine der monno ESCL)  NL2;
+
+PANICO ::= +pa^ (u^ | uu^ (u^) +) ra | panico | --url^ (o^ | oo^ (o^) +) ;
+
+ANNAVO ::= (A: annavo | B: anna') (---- (pe li (fatti | +cazzi) mia)  | >APALLA) ;
+
+COREVO ::= (A: corevo | B: (core | sfreccia') ) APALLA | (A: sgommavo | B: sgomma')
+           [debbrutto] [popo co li razzi ar culo] ;
+
+FACEVO ::=
+    (A: facevo | B: fa')
+    (  >( ++li testacoda | le derapate | +le sgommate | 'n sorpasso
+       | -inversione | -'o splendido | ----'o sgargiulo )  APALLA
+    | -li sorchi (per tera | sull'asfarto) )
+;
+
+COAMACHINA ::=
+    { (--_ | co (++^'a machina (_ | --nova)  | ^'a moto | +^r motorino (_ | modificato | --'ngolfato) ) >DEMIFRATELLO) }
+    { (_ | --contromano)
+      [ su ( +'a tangenziale | 'a tiburtina | --'a prenestina | ---'a laurentina | -^r l'aurelia | --^r raccordo anulare) ] }
+;
+
+DEMIFRATELLO ::= de mi'^ (+++fratello | cuggino | padre | zzio) ;
+
+NUMMEVADO ::=
+    nun MEVADOASBATTE (_ | --- ({ [ dritto ] }{ [ de testa | dritto ] }) )  contro
+    ARGARDREIL (_ | demmerda | der cazzo) Q3 ESCL ESCL
+    (+++_ | NACRACCA)  POZZINAMMAZZA NL2
+    [ (poi | +allora)  V [ gnente P3 ] ]   mentre (_ | +++che)  stavo la'
+     [ a ( +metteme 'a giacchetta fosforescente | cerca' er triangolo
+       | ++++riccojeme li (pezzi | --brandelli  [ de (++carne | --cervello  [ spappato ] ) ] ) ) ]
+    V  [ tutto ] mezzo rin^ (cojonito (+++_ | V che me sentivo come 'n ovo de pasqua sotto
+    l'arbero de natale)  | torcinato) P3
+    (_ | ++popo)  in quer momento (chi tte passa Q3 | +++passa)
+    (++_ | NANDO) er COSO P3 che SEMETTEARIDE
+    ( {io  [ V sempre piu' ncazzato V ] } {allora} )
+    (je dico | ++j'ho detto) AV ( SEIPOPO | +MHAIPOPO )  ESCL CHETEFACCIO CV NL2
+    aho' P3 (ha smesso subbito de ride | s'e'zittito | nun ha riso piu')  ESCL
+    SELESQUAIATA
+;
+
+NUNTEVADO ::=
+    nun (  [ te ] (vado | so' annato) a sbatte co
+         [ ^ntro er
+            >(+furgone | ++camio | -caro funebre | motocaro | motorino | motoscutere)
+           d^ [ e NANDO ] ] er COSO
+       ) Q3^ESCL^ESCL
+    (+++_ | NACRACCA)  [ POZZINAMMAZZA ] NL2
+     [ e ] ({allora} { [ io ] })   [ V 'ncazzato (++nero | come 'na jena | come 'n assassino)  V ]
+    je (dico | strillo) AV CHETEFACCIO CV NL2 aho' P3 SELESQUAIATA
+;
+
+SELESQUAIATA ::=
+     [ ha sgranato j'occhi e ] s'e' (scacato |  >(-l'e' fatta | +cacato)  >(sotto | 'n mano | nei carzoni | ne'e mutanne) )
+    [ (pe | da) ^'a strizza  [ che j'ho messo ] ]  ESCL NL2
+    ha detto 'na cosa tipo AV MAVAMORIAMMAZZATO CV
+    " ("^ eh eh V (+_ | (--ma tanto | e)  che nun  [ ce ] lo so che)  era la paura
+    a fallo parla' V 'sto ('mpunito | burino | +++cojone)  P3 ^") "
+    poi  [ se l'e' squajata P3 ] e' ripartito
+    a (++palla [ de foco ] | cannonella |  [ tutta ] piottella | +tutta sgommella)
+    (++_ | V tipo da zero a cento in ddu  [ micro^ ] secondi)  ESCL NL2
+    nzomma so' troppo bullo [ V aho' ] P3 so' er (++mej^ (o | oo^ (o^) +)  | piu')  ESCL
+;
+
+SEMETTEARIDE ::=
+    [ (_ | ----me) se ferma P3 ] [ (s'affaccia dar | ++abbassa er)  finestrino P3 ] (me,_ guarda _, ('a scena) )  e
+    ( (me se mette) , ( [ me ] (comincia | ++se mette) )  a ride
+       [ 'nfaccia ] , [ come 'n  >(++deficiente | -subbnormale | cretino | demente | ++^a testa de cazzo) ]
+    ) ^"!"\ NL2
+     [ bada P3 ] nun (l'avesse mai fatto | c'ho visto piu')  ESCL ESCL NL2
+    [ ( ({ [ ho sbroccato ESCL ESCL ] } {so' partito de (c^ [ ap^ ] occia | cranio)  ESCL ESCL ESCL})
+     | (-m'e' partita 'a brocca ESCL ESCL ESCL)
+     )  NL2 ]
+    j'ho (strillato | detto)  DP AV MACCHETTERIDI CV NL2 (ma | e)  questo continuava  [ a ride ] P3
+    ( s'asganasciava
+    | +se scompisciava
+    | ++se stava a  >(spacca' | sgara' | scompiscia' | stucca') da le risate
+    )  ESCL NL2
+;
+
+MEVADOASBATTE ::=
+       >(me _,ne (vado | +++so' annato) (a SDRAIA^') ,_)
+    |  >( (_ | te) ,_ (vado | ++so' annato)  (_ | +a sbatte) , (a SDRAIA^mme) )
+;
+
+SDRAIA ::= ++++sdraia | ++stampa | +++^'nfrocia | ----sparma | --cappotta | --spiaccica | --sfracella | sfragna;
+
+ARGARDREIL ::= ( (er | ar | 'r) gardreil | 'n arbero | -'n cartellone | -'n paletto | -'na frattina) ;
+
+NAFICA ::= NUNVARRAPATE  SOANNATO  MEDICE  SOERMEJO;
+
+NUNVARRAPATE ::=
+     [ nun v'arrapate V eh P3 ]
+    ( ++un pezzo de (fica | fregna)
+    | 'na  >( +sorc^ [ on^ ] a | +strappona | sbrindellona | smandra^ (pp | cchi) ^ona)
+    )   [ sdraiacazzi ]  [ d'antologia ]
+    V che (nun ve  [ la ] potete  [ popo ] immaggina' | me la sogno la notte | nun se po' descrive pe' quanto era bbona)  ESCL
+    (MACHEVELODICOAFFA NL2 vabbe'nzomma V  [ fatto sta' che ] | ma)  poi l'ho riconosciuta [ V no ] P3
+     [ m'e' preso  [ quasi ] 'n coccolone ESCL ] era la cuggina  [ V quella famosa V ] de NANDO er COSO P3
+    oh raga' V questa
+    [ e' una che
+      ( (la da' via | te'a tira appresso)  come
+         >( ++++ [ fosse ] 'n frisbee | ++l'ossi a li cani | -er mangime a li pescetti | ----er pane )
+      | lecca pure la padella
+      | fa la sarta P3 si' V sarta da 'n cazzo a 'n artro
+      | se va dar l'orologiaio se lo fa mette un'ora avanti e un'ora a'ndietro
+      )  ESCL SOSP  [ c'ha 'n gratta^"&"^vinci dentro le mutanne ESCL SOSP ] ]
+    c'ha ( (S: 'n culo | P: ddu (bocce | cosce | zinne) )
+           (che (url^ (S: a | P: eno)  | parl^ (S: a da solo | P: eno) )  | da (paura | panico | urlo | 'nfarto) )  ).(S | ++P)  ESCL NL2
+     [ me pija troppo ESCL ] (++m'acchiappa | m'aralla | +++m'attizza) ('na cifra | n'casino)  ESCL
+    [ (je sto a rota | so' popo cucinato)  ESCL ] NL2
+;
+
+SOANNATO ::=
+    [ ( [ sia chiaro V ] nun so' tipo che  [ di solito ] )
+      va a fa' er (++grezzo | --mandrillo)  ma quanno la voja de 'nzuppa' (l'agnello | er biscotto)
+      e'  [ popo ] troppa V nun (+c'e' (cristo | santi)  | resisto | c'aa faccio  [ a resiste ] ) P3 NL2 ]
+    allora  [ me so' (+auscurtato la salubbrita' | fatto er checkkup)  der (cavo orale | l'ascella  [ muschiata | commossa ] )  V poi ]
+    so' annato la'  [ V tutto (splendido | sgargiulo) V ] e j'ho detto
+    AV  [ ah fat^ (a^) + ESCL ] ah bella fat^ (a | aaa)  ESCL
+    [ [ s^ ] ci^ (a | aaa) ^o V ] (li mortacci  [ tua ] | ammazza [ ^te ] )  quanto sei  >(++++bbona | fica | sorca | ++fregna)  ESCL
+     [ me fai  [ s^ ] batte er core (+++_ | a cannonella | a piottella | +a dducento)  ESCL ]  [ dai V ] (se famo | s'annamo a fa')  n'giro Q
+    [ [ voi 'na guida turistica Q ] te faccio vede' (er mejo obelisco | a' mejo cappella)  de \roma P3
+     (++++_ | a (puledra | cavallona)  V sciaqqua [ ^te ] la sella che stasera se cavarca ESCL) ]
+     [ eh Q c'hai er ragazzo ^"!?"\ be' (++nun e' ora che te fai | che aspetti a fatte | nun vedi che qua ce sta')  n'omo Q3 ]
+    [ [ nun per vantarmi ma ] 'o sai che  [ ar quartiere mio ] me chiameno
+      [ \er ] \ (treppiede | siluro | pilone | pennone) P3  [ modestamente P3 ]
+      (_ | +si tte 'o metto 'n spalla V artro che via crucise ESCL
+         | si me sdraio cinque minuti all'aperto V l'aquile me ce (vanno a fa'|fanno) er nido) ]
+     CV NL2
+;
+
+MEDICE ::=
+    (lei | --questa qua)   [ se vorta V ] me guarda  [ V co 'na dorcezza (+immenza | grande) dentro a j'occhi  [ de smerardo ] V ]
+    e me (dice | fa' | risponne)  P3 AV MACCHITTE CV NL2
+;
+
+SOERMEJO ::=
+    ( [ [ ah ah P3 a me 'ste cose  [ popo ] m'arimbarzano V anzi ]
+      [ state a senti' (er playboy | ++uno che s'anintende)  P3 ]
+      (se | quanno)  le DONNE ve tratteno male P3 (significa | +vor di' |  [ potete scommette ] dieci sacchi)  che
+      (ce stanno | e' fatta)   [ V  [ ma ] [ e' solo che ] nun ve (^'o) ,_ vonno fa' capi' _, (quanto so' (attizzate | +arapate)
+      [ pe' nun (da' l'idea de esse | favve pensa' che so')  mignotte  [ affamate de cazzo ] ] ) ] ESCL NL ]
+      [ inzomma ] questa  [ popo ] se vedeva che (stava gia'  [ flesciata ] perza der sottoscritto | j'arisurtavo gia' 'na cifra)
+      P3
+    | a quer punto  [ V praticamente ]  [ V aho' V ] me ne so' venuto (_ |  [ li' ] sur posto | (nei | dentro ai)  carzoni)
+      [ [ popo ] senza ritegno ] come
+      ('n regazzino | +'n tubbetto de dentifriscio | ++'n barile de birra | ++++'na bottija de spumante | +'na bomb'atomica)
+      ESCL NL
+      (boh V  |  [ oh V ] nun lo so V ma)  a me ( V quanno  [ che ] le DONNE | le DONNE che)  me tratteno male V me fanno mori' P3 NL2
+    )
+    che volete  [ da ] fa' P3 [ [ am^ ] modestamente ] 'so  [ popo ]
+    ( 'n  >(omo | ganzo | mandrillo)  CORFASCINO
+    | er _,_,mejo maschio ( (predatore | dominante)   [ CORFASCINO ] ) , (nummero uno  [ de roma ] ) , (de roma)  )
+;
+
+CORFASCINO ::= cor fascino der (latrin | latin | land) ^ (lover | loden | rover | power) ;
+
+DONNE ::= (+donne | --pischelle | -tipe | ----rigazze | fiche) ;
+
+MACHEVELODICOAFFA ::=
+    ma che ve lo dico a fa' P3 che tanto voi
+    ( siete  [ tutti  [ quanti ] ]  'na (banda | ++manica | massa)  de
+      (+++froci | +recchioni | finocchi | ++'mpotenti | (' | ri) ^nfrociti | ghei | rottinculi)   [ demmerda ]
+    | V (_ | ---me sa' V avete visto piu' comete che fregne P3)
+      pe' quante seghe ve fate  [ ogni ggiorno ] V
+      ormai ( +++c'avete er cazzo coll'impugnatura anatomica
+            | +annate in giro cor bastone bianco
+            | ve c'e' cresciuto er prato inglese su'a mano )
+    )  ESCL
+;
+
+MACCHITTE ::=
+    (_ |  ++ma chi tte (conosce | --s'ha'nculato mai)  Q3 (a STRONZO)  ESCL
+        (_ | ----te manno a fanculo cor l'elastichetto cosi' quanno retorni te ce rimanno  [ n'artra vorta ] ESCL)
+      | (mazza | anvedi)  che (homo tisico | fisico)   [ V aoh ] ESCL
+        ( me pari 'n domatore de vongole
+        | sei tarmente secco che
+          >( +quanno te fai la doccia devi centra' li schizzi
+          | +er pigiama tuo c'ha 'na stricia sola
+          | ++le radiografie te'e fanno co 'a candel^ (a | ina der compleanno)
+          | si tte casca addosso 'n'inferriata nun te fai gnente
+          | si tte vede la morte V (++se gratta | + [ se scusa e ] te paga er copirait | te denuncia pe' concorenza sleale)
+          )
+        )  P3 [ (++aripijateee | ariponiteee)  ESCL ]
+      )
+    (  [ >MATTESEIVISTO ] >SEITARMENTEBRUTTO
+    | ma vedi d'annattene va P3
+    | >MAVAMORIAMMAZZATO P3 )
+     [ CHAINFIATO ]  [ anvedi (questo | 'sto STRONZO)  P3 ]
+    nun (t'avvicina' | ce prova' co' me) che  [ tte pijo e ] >TECORCO1 >TECORCO2
+;
+
+CHAINFIATO ::=
+    (+_ | senza conta' che | e)  poi c'hai
+    ( (+++'n fiato | 'na fiat^ [ ell^ ] a)  che
+      ( si me aliti'n faccia me fai li corpi de sole
+      | si te sente er sindaco aripristina subbito 'e targhe arterne )
+    | 'n alito che e' peggio de la fogna de carcutta
+    )  ESCL
+    ma che te sei
+    ( +++magnato V
+      (-quarcosa de triste |
+      >( (S: un sorcio | P:  >(--'na grijata | 'na callara | 'na carovana) de sorci)
+        (mort^ (S:o | P:i)  | 'mpestat^ (S:o | P:i) demmerda)
+       ).(S | +P) )
+    | (scolato | bevuto)  V
+      ('n fiasco | 'na tanica | 'n serbatoio)  de (^mmerda | +sciorda)
+    )  Q3
+    [ me sa che sei tarmente zozzo che
+      ( +'e mosche pe' statte sopra devono pia' er numeretto
+      | +ace gentile nun te fa gnente P3 te ce vo' ace 'ncazzato
+      | +quanno entri (dentro | 'n)  casa V er cane se va a mette subbito er collare antipurci
+      | li francobolli de merda (ner | ar)  culo
+      ) ESCL ]
+;
+
+SEITARMENTEBRUTTO ::=
+    ( (sei (+tarmente | cosi') brutto | fai tarmente schifo)
+      che >SUCCEDESESEIBRUTTO  >( ++_ | -DNA | CHAILACAPOCCIA | CHENASCA )
+      (_ | + (nun | 'an^) 'te se po' guarda' ESCL | ---me pari 'na sarsiccia che 'e braccia)
+    | ----sei arto 'n cazzo e ddu barattoli V con 'no sputo t'affoghi
+      [ ESCL sei (+tarmente | cosi')  basso che
+        ( c'hai le scarpe zozze de gel
+        | --si tte vedono quelli der l'\anas te ficcheno 'n pennello tra le chiappe e t'assumono pe' disegna' le stricie per tera
+        | +si ({scureggi} {'n spiaggia})  te va 'a sabbia dentro l'occhi
+        | la matina devi fa er ("bungee-jumping" | parapendio)  pe' scenne dar letto
+        ) ]
+    )  ESCL
+;
+
+SUCCEDESESEIBRUTTO ::=
+    ( - (nun te vonno soride manco li sofficini | ++manco li sofficini te vonno soride)
+    | +si lanci 'n boomerang P3 quello ce pensa du' vorte prima de tornatte 'ndietro
+    | +++che quanno tu' madre stava pe' partoritte l'ostetrica j'ha detto DP no signo' V a caca' ce va dopo
+    | come anticoncezzionale nun te serve er preservativo DP te  [ ab^ ] basta de tene' 'a luce accesa
+    | -si te mena "Tyson" poi solo  [ che ] mijora'
+    | +su'a carta d'identita' c'e' scritto aprire con cautela
+    | +che dovresti abbracciatte 'r cesso e cantaje nun so' degno de te
+    | ---li pidocchi tua se butteno de sotto p'ammazzasse
+    | ar firmino der battesimo tu' padre c'ha messo la colonna sonora de (++"X-Files" | "Alien")
+    | -quanno hai chiamato li pompieri pe' segnala' 'na catastrofe V hanno portato via a te
+    | quanno te fai 'na fototessera la macchinetta te rida' li sordi
+    | +l'ostetrica V quanno sei nato V 'nvece de da' 'no schiaffo a te V l'ha dato a tu' madre
+    | -tu' madre ( - (ha denunciato 'a | +voleva spara' a la)  cicogna
+      | V pe la vergogna te portava ('ngiro | a spasso)
+        ( (M:cor passeggino | F:co'a carozzella) telecomandat^ (M:o | F:a) ).(++M | F))
+    )  ESCL
+;
+
+DNA ::=
+    ma  [ dimme P3 ]
+    ar posto der "DNA" che c'hai Q P3'na catenella der cesso arotolata Q3
+    [ ( me pari 'n bucio de culo co' 'a dentiera
+    | si tte vede 'a merda s'aripija
+    | si (acciacchi | tte caschi su | tte sdrai su) 'na merda fai scopa
+    | (nu | ') ^n te sputo V che t'amprofumo
+    )  ESCL ]
+;
+
+CHAILACAPOCCIA ::=
+    c'hai (la | 'na) (c^ [ ap^ ] occia | --testa)  tarmente grossa che
+    ( si tte vede
+     >( (++++mazzinga | gordrake)   [ te ] ce 'nfila dentro l'astronave
+     | 'n (pilota | autista)  de mongorfiere
+       ( t'^ (anfila | accenne)  subbito 'n bruciatore ner culo
+       | t'appenne subbito 'n cesto a le palle
+       )
+     )
+    | --er cappellaio tuo mo' s'e' messo a fa'  [ pure ] li tendoni pe'er circo  [ "Togni" ]
+    | ---da 'na recchia all'artra fanno dodic'ore  [ de differenza ]
+    )  ESCL
+;
+
+CHENASCA ::=
+    (anvedi | ammazzate | me cojoni)  che nasca che c'hai ESCL
+    (_ | --che dio te l'accresca V cosi' c'annamo a pesca ESCL)
+    ( c'hai er naso (+tarmente | cosi')
+    lungo,grosso che (_ | --scommetto)  SUCCEDEARNASOLUNGO,SUCCEDEARNASOGROSSO ESCL
+    | ma [ V sur serio V ] quello e'  [ popo ] er naso tuo o
+      ( +te stai a magna' 'na frappa
+      | te stai a esercita' ar sarto coll'asta
+      | --te 'o sei 'ncipriato cor viagra 'n porvere
+      )  Q3
+    )
+;
+
+SUCCEDEARNASOLUNGO ::=
+      +sur tram ({ (_ | --te)  ce se tiene} {la gente})
+    | si a tavola dici de si,no V sparecchi, (affetti er pane)
+    | si (nascevi | eri 'na)  pecora  [ te ] morivi de fame
+    | -si tte vede 'a balena te se magna n'artra vorta
+    | -quanno giochi a carc^(io|etto) stai sempre 'n fuoriggioco
+    | che 'e fototessere ta escono cor manico
+;
+
+SUCCEDEARNASOGROSSO ::=
+      +++nun te se chiude la patente
+    | 'e caccole se pensano da sta'n gita a "Frasassi"
+    | si tte vede batman ce nasconne subbito 'a batmobbile
+    | si tte vede spielberg nuota' a dorso t'assume subbito pe gira' er seguito de'o squalo
+;
+
+MAVAMORIAMMAZZATO ::=
+    ma ( va a mori' ammazzato P3
+       | perche' 'n te  >(dai 'na cortellata | la vai a pija' 'n ter culo (++_ | de retromarcia) ) Q3
+       )
+;
+
+CHETEFACCIO ::=
+    ( ++++ (vie'qqua' che | si tte pijo) >TECORCO1
+      >(>TECORCO2 | ----te (sfonno | spano) er culo  [ co' 'na supposta de carne ] ESCL)
+    | si tte metto le mano addosso
+      (V pe' riconoscete te devono pija' le impronte digitali | nun te riconosce piu' manco la scientifica)  ESCL
+       [ >TECORCO1 | >TECORCO2 ]
+    )
+;
+
+SEIPOPO ::=
+    sei  [ popo ] ( 'na testa de cazzo | 'no stronzo (_ | --cacato pe (forza | sfreggio) ) )
+;
+
+MHAIPOPO ::=
+    [ mobbasta P3 ] (+++_ | +gia' | mo) m'hai  [ popo ]
+    ( cacato er cazzo
+    |  >( (_ | --stra^) rotto | spaccato | sfragnato | sgarato)  >(er cazzo | +++li cojoni)
+    | scucito la fodera de >(^r cazzo | li cojoni)
+    )
+;
+
+TECORCO1 ::=
+    ( te corco
+    | --te (spacco | sfragno) er grugno
+    | +te sdrumo
+    | ---t'arovino
+    | te mischio come 'n mazzo de carte
+    | ---t'addobbo come 'n arbero de natale
+    | t'arivorto come ('n carzino | 'm pedalino)
+    | te smonto come ('na radiolina | 'n carburatore)
+    | te faccio casca' tutti li (nei | ++tatuaggi)
+    | te manno (all'arberi pizzuti | a guarda' li crisantemi da sotto)
+    )  ESCL
+;
+
+TECORCO2 ::=
+    ( te sfonno la testa e me te bevo come 'n ovetto fresco
+    | te (sporvero | ++sparecchio) la faccia
+    | anzi no P3 me te metto 'n tasca e te meno quanno cio' tempo
+    | te metto 'n dito 'n bocca V uno ar culo e te sciaqquo come 'na damiggiana
+    | te apro come  >( ++'na bolletta der gasse | ++++'na sdraio | +'n divano letto | 'na cozza | 'na tellina  )
+    | --te faccio du' occhi neri  [ cosi' P3 ] che si tte metti a mastica' le foje de bambu' er "WWF" te protegge
+    | --te ciancico e poi te sputo  [ che me fai schifo ]
+    | te  [ 'n^ ] cricco tarmente la spina dorsale che poi pe sta' dritto te devi
+      (fa' 'n clistere de cemento | +^'nficca'  >('n manico de scopa | 'na canna | 'n tubbo de fero) ar culo)
+    | >TEDONAPIZZA
+    | te pijo pe' (li buchi | le froce)  der naso e
+      ( ++me te porto 'n giro come 'na giacchetta a primavera
+      | t'aribbarto come  >('n porpo | ++'na frittata | +'na cotoletta)
+      )
+    | te pijo pe 'na rekkia e te sventolo come 'na bandierina
+    | te faccio 'n culo come  >('n cesto | +'na capanna | ++'n diriggibbile)
+    | ----te stacco le recchie
+    | te pijo pe le recchie e te (scarto come 'na (caramella | golia)  | arzo come la coppa (uefa|de' campioni))
+    | te do' ('na (pizza | --cinquina)  'n faccia | 'n cazzotto)  [ tarmente forte ]
+      che er dentista tuo poi me manna li cestini a natale | te stacco le palle e ce gioco a stecca
+    | te gonfio  >(come 'na zampogna | --ESCL t'abbotto er muso ar punto tale che
+      si vai allo stadio te pijano a carci 'n faccia)
+    | te (spezzo | stacco)  le gambe e poi te tengo 'n piedi a  [ forza de ] carci ('n | ner)  culo
+    | te'nfilo 'na mano ar culo e (me esercito a fa' er ventriloquo |  ++te faccio fa' er teatrino de li pupazzetti)
+    )  ESCL
+;
+
+TEDONAPIZZA ::=
+    (+te do' | --t'appoggio | -te parcheggio)
+    ('na (pizza | --cinquina)  [ 'n faccia ] | +'n carcio (++ar | +in | ^'n) culo | 'n cazzotto | 'no sganassone)
+     [ tarmente forte ]
+    che ( ++quanno ricaschi (li vestiti tua so'passati de moda | t'arestano pe' vagabondaggio)
+        | er telefonino tuo da "family" diventa "orfany"
+        | -se per aria nun te port^(i 'n panino|+eno da magna') te mori de fame
+        | pe veni' a ripijatte devono lancia' 'no sciattel
+        | t'arotolo come 'na girella
+        | --'a carta d'identita' che c'hai mo' nun te serve piu' a 'ncazzo
+        | -te piego come n'crumiro
+        | -pe' dattene n'artra te devo veni a cerca'
+        | domatina te sveja "San Pietro"
+        )
+;
+
+ERCOSO ::= [NANDO] er COSO co' la (fidanzata|su' rigazza|pischella) ESCL
+           ( +++me saluta (e|poi)
+           | me sona [cor clacson] P3 io ( pe' scherza' | scherzosamente | V visto ch'e' n'amico V )
+             je strillo AV SONAMMEZZO CV NL2 lui se (mette a ride|fa' na' risata) V poi
+           ) me (fa'|++dice) DP AV (+++_ | +aho') [s^]ciao
+             ([a'^](fra^[te^]'|[b^]bello)|trucido) V [come (te butta | --t'arza) Q]
+             [SAICORESONO] senti P3
+             CHAINAPAJA CV NL2
+             allora io je (dico|faccio) AV e ('o vedo [bene] (che|quanno)|cce credo [bene] che)
+             sei sficato V guarda (la'|qua) P3 ( STACIOSPA | STABALENA ) CV NL2
+             ah ah so' rimasti ('mpietriti|de sasso|demmerda) P3 purtroppo [e' cosi' V c'^]e' ggente
+             che [popo] nun capisce ({l'umorismo} der {l'esiralanza}) [de noartri] P3 NL2
+             che volete  [ da ] fa' P3 [ [ am^ ] modestamente ] 'so  [ popo ]
+             ( er _,mejo comico (nummero uno),_ de \roma )
+           ;
+
+SONAMMEZZO ::=
+    ({[aoh ESCL]} {[ma che cazzo te soni Q3]})
+    sona  ( 'n mezzo a le cosce de tu' moje ESCL
+           >( +++che ce sta piu' traffico
+            | ++V sentirai che eco che [te] fa
+            | vedrai quant'uccelli 'nfrattati te sbucheno fori)
+          | all'anima de li mortacci tua ) ESCL
+    [a ( +++stronzo | ^'mbecille | rottinculo | --sottosviluppato | (i | ^') ^mpotente ) ESCL]
+;
+
+SAICORESONO ::=
+    [che [gnente gnente]] sai che or^(e sono|a e') Q CV NL2
+    (e io [je risponno]) DP AV so' le (cinque|sette) e ('n quarto),venti P3
+    apri er culo (che te lo squarto),(e strigni i denti) ESCL ah ah ah CV
+    e lui DP AV eh eh (sempre a (scherza'|di' le fregnacce) stai |
+    beato te che scherzi sempre) P3;
+
+CHAINAPAJA ::=
+    nun e' che (---c'hai|me,_ poi (da'|allunga'|appoggia'),(damme|allungamme|appoggiamme))
+    ( na pietra focaia [V dai P3 vienime cor foco]
+      che me s'e' rotto l'accendi^(no|sticazzi)
+    | >('na paja | mpar de (scudi|piotte))
+      ca >(so' arovinato| sto a >(smarti'|strippa'|sbianca')) ) P3
+    [sai com'e' P3] 'sto periodo so' (+tarmente | cosi') sfi^(c|g)^ato che si
+    ( ++mme cascasse er cazzo per tera V m'arimbarzerebbe ('n | ++ner | ++ar) culo
+    | ce fossero l'olimpiadi de li sfigati t'arriverebbi secondo
+    | m'attraversa n'gatto nero e' lui che se (tocca|gratta)[le palle]
+    | la merda fosse oro V io sarebbi (stitico|senza [bucio de] culo)
+    | vennessi li cappelli V 'a gente nascerebbe senza (testa|capoccia)
+    )
+;
+
+STACIOSPA ::=
+    (quella | questa | 'sta >(++ciospa|+cozza|rana|+rospa|bestia) | 'sto cesso)
+    [che c'hai seduta (af^|de) fianco] P3 e' la tu' rigazza o
+    ( t^[e c^]'hanno (cacato|vomitato) sur sedile
+    | stai a fa' volontariato
+    | 'n esperimento de genetica
+    | l'antifurto da'a machina ) Q
+    [ammazza V] [me pare er mostro de (lochness| la (laguna|radura) nera) [V e che e']ESCL]
+    [ar posto delle zinne c'ha ddu' pedalini P3]
+    (_ | + (nun | 'an^) se po' guarda' ESCL)
+    (e' (+tarmente | cosi') brutta | fa' tarmente schifo)
+    che ( +++che quanno la madre stava pe' partorilla l'ostetrica j'ha detto DP no signo' V a caca' ce va dopo
+        | come anticoncezzionale [nun je serve 'a (++pillola|spirale)] je  [ab^] basta de tene' 'a luce accesa
+        | che 'na vota ha scritto a'n club de cuori solitari e quelli j'hanno risposto DP aho V nun semo cosi' solitari
+        | +su'a carta d'identita' c'ha scritto aprire con cautela
+        | ar firmino der battesimo je c'hanno messo la colonna sonora de (++"X-Files" | "Alien")
+        | -quanno ha chiamato li pompieri pe' segnala' 'na catastrofe V hanno portato via a lei
+        | quanno se fa 'na fototessera la macchinetta je rida' li sordi
+        | +l'ostetrica V quanno e' nata V 'nvece de da' 'no schiaffo a lei V l'ha dato a su' madre
+        | -su' madre (ha denunciato 'a | +voleva spara' a la) cicogna
+        | nun me la scoperebbi manco cor cazzo de'n artro
+        )  ESCL
+    [ anvedi poi che naso che c'ha ESCL
+      scommetto che
+      ( +sur tram ({ce se tiene} {la gente})
+      | se a tavola dice de si,no V sparecchia, (affetta er pane)
+      | si (nasceva | era 'na)  pecora  [se] moriva de fame ) ESCL
+      | pe dalle du ba^[s^]cetti se fa prima a passa' de dietro
+      [ ma [ V sur serio V ] quello e' [ popo ] er naso suo o
+      ( ++se sta a magna' 'na frappa | --s'e' 'ncipriata cor viagra 'n porvere ) Q3 ] ]
+;
+
+STABALENA ::=
+    'sta (++balena|sarciccia|panzona|mongorfiera) [vivente|ambulante]
+    [che c'hai seduta (af^|de) fianco] e' la tu' rigazza o
+    ( ++stai a (prova'|testa') 'e sospensioni (_|nove|da'a machina)
+    | stai a organizza' n'attentato
+    | --e' la custodia ) Q
+    [anvedi V] [c'ha 'n culo (+(che e'|come) 'na portaerei|che fa provincia) ESCL]
+    (e' (+tarmente | cosi') ( grassa | chiappona | obbesa) )
+    che ( se patric de gajardon ar posto der paracadute se metteva 'e mutanne sue V mo' era ancora vivo
+        | su' madre ( ar posto de compraje er girello [V pe' risparmia' V ] ha fatto mette {le rote} {direttamente} ar colosseo
+                    | quando e' nata V 'nvece de iscrivela all'anagrafe e' dovuta anna' ar catasto )
+        | pe' pija le misure la sarta je deve fa er giro der culo cor motorino
+        | si se butta in acqua arriveno li surfisti da tutt'italia
+        | se fa prima a sartalla che a giraje attorno
+        | si se veste de verde deve sta attenta a non apri' la bocca pe' strada V che la gente sinno' je ce
+          butta ((li sacchetti de [la]|la) monnezza | le bottiglie vote)
+        )  ESCL
+;
+
+MACCHETTERIDI ::=
+    ( ({ [ ma ] che tte ridi Q [ABBELLICAPELLI]} {aho' Q3})   [ DENTI ]
+       [ t'averto P3 stai a caca' fori (da'a tazzetta | dar vasetto)  P3 ]
+    | -- ( t'atteggi V t'atteggi P3 ma sur cazzo mio nun ce scureggi P3 )
+    | ( [ ridi ridi P3 ]
+        ( ha preso piu' cazzi TUSORELLA che 'n pappagallo d'ospedale ESCL
+        | --ma dimme V TUSORELLA fa ancora lo sconto (federta' | comitiva)  Q
+        | ++ma ({tu' madre} {'o sa}) che stanotte dormi (+all'ospedale | ar camposanto)  Q
+        | +++ridi  >(++'n faccia a | su)  'st^ ( >(o | a ceppa de) cazzo)
+        )
+      ) ESCL
+      [ sei simpatico come ( >('na mano | 'n dito)  ar culo | 'na secchiata de merda
+      quanno te la tirano 'n faccia mentre  [ che ] stai a sbadija') ] ESCL
+    | >MACHECHAI )
+    [ a STRONZO ESCL ]
+    MAVEDIDANNATTENE
+;
+
+ABBELLICAPELLI ::=
+    ah bellicapelli ESCL
+    ( ammazza V che t'asciughi 'a testa co' 'a carta de 'a pizza Q
+    | si tte fai 'na riga 'n mezzo pari 'n [popo] gettone
+    | ++++[ma che t'hanno trapiantato 'na chiappa 'n testa
+           [o sei (pelato|carvo) de tuo] Q ['a matina che te
+           pettini co' (lo sguardo|'a pelle de daino) Q]]
+    )
+;
+
+MAVEDIDANNATTENE ::=
+      [ ma ] vedi d'annattene va ESCL  [ stamme a 'n parmo dar culo ESCL ]
+    | [ [ li ] mortacci ESCL ] mantanavai  [ ancora ] Q3
+;
+
+TUSORELLA ::= tu' (+sorella | moje);
+
+DENTI ::=
+    MATTESEIVISTO
+    ( c'avessi armeno li denti boni  [ P3 CRUCIVERBA ]
+    | CRUCIVERBA V c'hai 'n dente ogni mezz'ora )  ESCL
+    [ che usi come filo 'nterdentale V
+    (+'na sciarpa | 'n pitone | +'na corda de canapa)  Q ]
+;
+
+CRUCIVERBA ::=
+    quanno ridi me pari (+++'n cruciverba | ++'na pianola | 'n strastrello)
+;
+
+MACHECHAI ::=
+    ma che c'hai
+    ( le pigne 'n testa
+    | ++'e caccole ar  [ posto der ] cervello
+    | +er  >(cervello | +teschio) disabbitato
+    | dentro a la capoccia V
+       >( ++'a cassetta de l'elemosina
+       | li neuroni (lazziali | da'a lazzio)
+       | 'n ciocco de tufo
+       )
+    )  Q3
+;
+
+STRONZO ::=
+    ( +++stronzo
+    | +disgrazzziato | -burino | -----buffone | ^'mbescille
+    | ^'nfame ({ [ ESCL a'nfamone ] }{ [ ESCL sei tarmente 'nfame che si te 'ncontra \giuda cambia marciapiede ] })
+    | ++fi^ [ j^ ] o da 'na mignotta | rottinculo  [ ESCL a frocio ] | --sottosviluppato
+    | (i | ^') ^mpotente
+       [ ESCL e' vero che
+      ( si te fai la doccia cor topexan ({te (sparisce | scompare) } {er cazzo})
+      | nun te s'arza piu' manco (cor  >(cric | montacarichi)  | co 'a gru)
+      )  Q ]
+    )
+;
+
+MATTESEIVISTO ::=
+    (_ | ---ma) te sei (visto | guardato (_ | ++mai) a'o specchio) Q3
+;
+
+NACRACCA ::=
+    (popo in pieno V aho' | ve dico)  P3'na ( >(++cracca | botta | +grezza) da  >(++paura | lassacce le penne) )  ESCL
+;
+
+POZZINAMMAZZA ::=
+    (li mortacci  [ sua ] | +pozzinammazza') P3
+;
+
+NANDO ::=
+   \ ( ++nando
+    | +romol^ [ ett^ ] o
+    | ++gigg^ (i | etto)
+    | arf^ (i | -ons) ^o
+    | -peppe
+    | -pippo
+    )
+;
+
+COSO ::=
+   \ ( +cipolla  | --cucuzzaro  | +++verterba
+    | marmitta  | +++modifica  | +++monnezza (_ | --^ro)
+    | +mollica  | siringa      | -p^ (i | +u) ^zzetta
+    | +patata   | ++pomata     | -ca^ (nn | pp) ^ella
+    | -faina    | coguaro
+    )
+;
+
+APALLA ::=
+   +a palla [ de foco ]
+   | --a cannonella
+   | --a piottella
+   | + (_ | --V come minimo) a (+++dducento | centottanta) (_ | ----V ma de ppiu' ESCL)
+   | ----da matto
+   | --V popo a  [ vole' ] sfonna' 'a bariera der sono V
+;
+
+FINE ::=
+    NL2 vabbe'  [ mo v^ ] ve saluto che me ne devo anna'
+    P3 NL2 (se vedemo | +s'aribbeccamo | +s'arisdraiamo | se semo visti | ciao  [ a tutti ] ) P3
+;
+
+
+AV := "\""^\ ;
+CV := ^"\"" ;
+DP := ^":" ;
+ESCL := ^ ("!" | -"!!!")  \ ;
+NL := ^"\n"^\ ;
+NL2 := ^"\n\n"^\ ;
+P ::= ^"."\ ;
+P3 := ^"..." ;
+Q ::= ^"?"\ ;
+Q3 := ^"???"\ ;
+SOSP ::= (^"...") + ;
+V := ^"," ;

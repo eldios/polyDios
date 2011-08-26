@@ -1,0 +1,46 @@
+I ::=   "title:    Allegria!\n"
+      ^ "author:   CUG &lt;cug@telcanet.it&gt;\n"
+      ^ "language: italian\n"
+      ^ "status:   mature\n"
+      ^ "topic:    misc\n"
+      ^ "comment:  in onore del suo ottantesimo compleanno, ecco una grammatica che genera le gloriose gaffes di Mike Bongiorno che, in un modo o nell'altro, ha cavalcato la storia della TV insieme a noi.\n"
+      ^ "created:  28/5/2004"
+;
+
+S::= DOMANDA | AFFERMAZIONE | -CAZZITUOI;
+
+DOMANDA ::= ((SOGGETTO SEGNO.V DOM OGGETTO).(M|F) ).(TU|LEI)  SEGNO.PI ;
+
+AFFERMAZIONE ::= ((SOGGETTO SEGNO.V AFF).(M|F)).(TU|LEI)  SEGNO.PUE ;
+
+CAZZITUOI ::= ((SOGGETTO SEGNO.V CT).(M|F)).(TU|LEI) SEGNO.(--PI|PUE);
+
+SOGGETTO ::= \ (TU:(M:(alvise | lodovico) | F:paol[^ett]^a) | LEI:(F:(signora \longari | signorina) | M:(turchetti | signor \no)));
+
+DOM ::= (che cos'e' | come funziona | (TU:ti|LEI:le) piace [molto] |  quanto misura | ci (TU:faresti|LEI:farebbe) vedere | ci (TU:mostri|LEI:mostrerebbe) | di che cosa si sa | (puzza | profuma) molto | (TU:(tu ti|mi) VERBO|LEI:(lei si|mi) VERBO) | (TU:(usi|maneggi)|LEI:(usa|maneggia|ha a che fare)) spesso ) ;
+
+AFF::=  ((TU: mi sei | LEI: lei mi e' ) (cadut | scivolat | venut | cascat | inciampat)^(M:o|F:a) SU) | 
+        (TU:(tu te ne intendi | tu ne sai qualcosa | tu sei un^(M:""|F:') espert^(M:o|F:a)) | LEI:(lei se ne intende | lei ne sa qualcosa | lei e' un^(M:""|F:') espert^(M:o|F:a))) DI |
+	(TU : ti piace | LEI : le piace) proprio OGGETTO.(M|F) |
+	io lo so (TU: che cosa fai | LEI: che cosa fa) con OGGETTOINV (M:(di (TU:tua|LEI:sua) moglie)| F:(di (TU:tuo|LEI:suo) marito)) | 
+	(TU:(dovresti VERBOINF | bisogna che tu (mi|ti) VERBO )| LEI: (dovrebbe VERBOINF | bisognerebbe che lei (mi|si) VERBO^sse) )MODO;
+
+OGGETTO ::= M:(il gazzo | (l'uccello | il (TU:tuo|LEI:suo) uccello) | il cippirimerlo) | F:( la [TU:tua|LEI:sua] topa | la fungia | la [TU:tua|LEI:sua] passera );
+
+OGGETTOINV ::= F:(il gazzo | l'uccello | il cippirimerlo | la fungia ) | M:( la topa |  la passera );
+
+SU ::= sull'uccello | sulle palle | sullo scroto | sulla topa ;
+
+DI ::= di uccelli | di palle | di scroti | di passere | di tope | di cippirimerli ;
+
+VERBOINF ::= darl(M:^o|F:^a) via | scopare | accarezzarmi | grattarmi | toccarmi | succhiare ;
+
+MODO ::= piu' spesso | con piu' gusto | di piu' | meglio;
+
+SEGNO ::= (PU0: ^".\n\n"^\ | PU1:^".\n"^\ | PU2: ^":"\ |  PU3: ^"."\ | PUE: ^"!"\ | V: ^"," | PI: ^"?"\ );
+
+VERBO::= TU:(gratti | sgrulli | lisci | accarezzi | mangi | lecchi | tocchi | succhi | inali | stimoli) | LEI:(gratta | sgrulla | liscia | accarezza | mangia | lecca | tocca | succhia | inala |  stimola);
+
+CT ::= [ma] (TU:( ([dimmi SEGNO.V] [tu] sei) | ti vedo | mi sembri ) |LEI:( ([mi dica SEGNO.V] [lei] e') | la vedo )) AGG;
+
+AGG ::= gai(M:^o|F:^a) | pur(M:^o|F:^a) e cast(M:^o|F:^a) | impotente | vedov(M:^o|F:^a) | invecchiat(M:^o|F:^a) | ingrassat(M:^o|F:^a) | [diventat(M:^o|F:^a)] piu' brutt(M:^o|F:^a) | ammalat(M:^o|F:^a) | ---trisomic(M:^o|F:^a);

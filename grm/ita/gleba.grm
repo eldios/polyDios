@@ -1,0 +1,73 @@
+I ::=   "title:    Fumetti della Gleba\n"
+      ^ "author:   Alan aka ^anakin^ &lt;alanzap@email.it&gt;\n"
+      ^ "language: bad italian\n"
+      ^ "status:   refinable\n"
+      ^ "topic:    fumetti\n"
+      ^ "audience: dementi\n"
+      ^ "comment:  basato sui <I>Fumetti della Gleba</I> del <I>Dr. Pira</I> (http://www.drpira.250x.com/)\n"
+      ^ "created:  31/10/2004\n"
+      ^ "modified: 4/9/2004";
+
+S ::= "<font face=\"Comic Sans MS\" size=1><table bgcolor=#FFFFFF width=340 height=266 cellspacing=0 cellpadding=12 style=border-collapse: collapse><tr><td colspan=2 width=340><p align=center>"^Titolo^"</p>"
+      "</tr><tr>" Vignetta Vignetta 
+      "</tr><tr>" Vignetta Vignetta 
+      "</tr><tr>" Vignetta Vignetta "</tr></table></span></font>";
+
+Titolo ::= "<b>"^
+           ([("IL" ("FANTASTICO"|"FANTASMAGORICO"|"MERAVIGLIOSO") "MONDO" | "LE" ["FANTASTICHE"] "AVVENTURE" | "LA VITA") ("DI"|"DELL'AMICO DI"|"DEL COMPAGNO DI")] Persone 
+            | "LA GENTE CHE" Azioni Luoghi ["CON" Oggetti]
+            | (["IL"] Persone|Oggetti) ("E"|"IN:") [("IL FANTASTICO MONDO" | "LE AVVENTURE" | "LA VITA" | "LE VICENDE") "DI"] ("IL" Persone|Oggetti) [Luoghi]
+            | (Persone | Oggetti)
+            | Persone Azioni
+            | [(Persone|Oggetti) "IN:"] "UNA GIORNATA" AggFS [Luoghi]
+            | AzioniInfinito (Oggetti|"IL" Persone)
+            | (Persone|Oggetti) ("IN:"|"CONTRO") (Persone|Oggetti) [Luoghi]
+           ) 
+            ["("^(("PRIMO"|"SECONDO"|"TERZO") ("TEMPO"|"INTERVALLO")|"VERSIONE ECONOMICA DEL FILM"|"TRAILER"|"RIMASTERIZZATO"|"VERSIONE ORIGINALE"|"REMAKE")^")"]
+           ^"</b>";
+
+URL ::= "http://alanzap.altervista.org/gleba/";
+
+Immagine ::= URL^(1|2|3|4|5|6|7|8|9|10|11|12|13|14|14|15|16|17|18|19|20|21)^".gif";
+
+Vignetta ::= "<td width=170 height=133 background="^Immagine^" valign=top><span style=\"font-size: 9px\">"^(+Frase | Esclamazione | Risposte | -Botte )^"</span></td>";
+
+Frase ::= ( ("E' PROPRIO UNA"|"OH CHE") "GIORNATA" AggFS
+           |(["EV"^]"VIVA"|"AMO"|"ODIO"|"CHE SCHIFO")("IL" Persone|Oggetti)
+           |("SPACCHIAMO"|"DISTRUGGIAMO"|"MANGIAMO"|"COLORIAMO"|"FACCIAMO OPERAZIONI SU"|"FACCIAMO ESPERIMENTI SU") Oggetti 
+           |("UCCIDIAMO"|"PARLIAMO CON"|"INSULTIAMO"|"STIRIAMO") "IL" Persone 
+           |["NON"] "MI PIACE" AzioniInfinito (Oggetti|"IL" Persone)
+           |("GUARDA"|"ASCOLTA"|"SENTI"|"OSSERVA") Oggetti^"!"
+           |"CIAO" ("AMICO"|Persone)
+           |("METTIAMO"|"INFILIAMO"|"APPOGGIAMO"|"CREIAMO") Oggetti "SU" Oggetti
+           |("A"|"DI"|"DA"|"DU") ("A"|"DI"|"DA"|"DU") ("A"|"DI"|"DA"|"DU")
+           |["GUARDA,"^] "E' POSSIBILE CHE" ("DOMANI"|"TRA UNA SETTIMANA") ("MUORI"|"SBOCCHI"|"STRIPPI"|"SCHIATTI")
+           |((((("D"|"B"|"L"|"F"|"G")^("A"|"E"|"I"|"O"|"U"))+)+)+)+
+           |("VEDO"|"NON VEDO" ["PIU'"]|"HO PERSO"|"VORREI"|"DATEMI"|"VOGLIO"|"INCENDIO"|"INVESTO") Oggetti 
+           |["CIAO,"^] "IO" ["NON"] "SONO IL" Persone
+           |-"DA QUANDO" ("ABITO"|"SONO STATO"|"SONO ANDATO") Luoghi "LA MIA" ("VITA"["SESSUALE"]|"ESISTENZA") "E'" AggFS 
+           |("OH NO"|"CHE BELLO"|"GUARDA"[^"TE"]) (^", C'E' IL" Persone|Oggetti)
+           |"TI INFILO" Oggetti ("NEL CULO"|"NEL SEDERE"|"NELLE NARICI"|"NEGLI OCCHI"|"NELLE ORECCHIE")
+           |"ME L'HA DETTO" ("UN MIO AMICO"|"IL" Persone) ["CHE DI SOLITO NON DICE" ("CAZZATE"|"MINCHIATE"|"STRONZATE")]
+           |("MI TROVO"|"VENITE"|"SONO") Luoghi
+           |("OGGI"|"DOMANI") ["NON"] "E' IL GIORNO" ("GIUSTO"|"ADATTO"|"IDEALE") "PER" AzioniInfinito ("IL" Persone|Oggetti)
+           ) [-^" .."^Esclamazione|_];
+
+AggFS ::= ("BELLA"|"SPLENDIDA"|"BRUTTA"|"MERAVIGLIOSA"|"ORRIBILE"|"ODIOSA"|"MERDOSA"|"DI MERDA"|"DI CACCA");
+
+Azioni ::= ("VA"|"MUORE"|"SI SIEDE"|"STRIPPA"|"CANTA"|"HA PAURA"|"SI TOGLIE LA VITA");
+
+AzioniInfinito ::= ("GUARDARE"|"UCCIDERE"|"PARLARE CON"|"OSSERVARE"|"FARE DISCORSI CON"|"GIOCARE CON"|"STRIPPARE CON");
+
+Luoghi  ::= ("NEL NASO DI" Persone | "NELLE SCARPE DI" Persone |"A ISTAMBUL" | "A DALLAS CITY" | "A LEGOLAND" | ("SU"|"DENTRO"|"SOPRA") Oggetti | "A DISNEYLAND" );
+
+Oggetti ::= ("IL NASO DI" Persone | "LE SEDIE" | "LE PANTOFOLE" | "L'ASTRONAVE" | "IL TELEFONO" | "LE CIPOLLE" | "I PANINI" | "I SASSI" | "LE FRITTATE" | "LE FAVE" | "LA BICICLETTA" | "I POSSESSORI DELLE SMART" | "LE VECCHIE" | "LE FOTO DEGLI ANZIANI" | "IL POLYGEN" | "IL TRATTORE" | "I FIORI" | "GLI ALBERI" | "I POMODORI" | "LE ZUCCHINE" | "I COMODINI" | "LE PENNE BIC" | "I SASSOLINI" | "I BUDINI" | "LA SMART" | "UN" ["MINI"^] ("CANE"|"GATTO"|"TOPO")^("CANE"|"GATTO"|"TOPO")| "I NEGRI" | "LE SCIMMIE"|"IL PYRAGEN");
+
+Persone ::= ("SIGNOR" | "MISTER" | "CAPITAN" | "COWBOY" | "PROFESSOR" | "DOTTOR") ("UOMO" | "YOUGHURT" | "BUDINO" | "BANANA" | "SCARPO" | "MARIONETTA" | "PATELLA" | "FIBBIA" | "BILLI" | "AMENDOLA" | "LAU TSU" | "SBADALUFFO" | "GIACOBBE" | "GABONZO" | "RUUUD GULLIT" | "ALAMBICCO" | "GIUSTIZIA" | "FRANCHINO" | "GIGI" | "JOHN TRAVOLTA" | "BATMAN" | "ROBIN" | "JIM" | "GESU'" | "PRIEBKE" | "OMINO" | "FUFFI" | "ORSO" | "PYROMAN" | "T" | "ARNOLFO" | "DAIGO" | "SPILIMBERGO" | "PIRA" | "PIERO ANGELA") 
+            [("STRIPPATO" | "IL ROBOT" | "IL SUPEREROE" ["GIUSTO"] | "DI MARZAPANE" | "GIGANTE" | "CHE SBOCCA" | "CHE STRIPPA" | "IL CONIGLIETTO" | "IL PANDA" | "MAGICO" |"DELLA GIUSTIZIA"|"BUONO"|"CATTIVO")];
+
+Esclamazione ::= ("SONO" ["PROPRIO"] ("ESTEREFATTO"|"STUPEFATTO")|"E' STUPEFACENTE"|"EVVIVA"|"CHE BELLO"|"VIVA" Oggetti|"VIVA IL" Persone|"CHE RIDERE"|(("HAHA"|"HAHAHA")+)+| Persone "E'" ("UN IDIOTA"|"UN IMBECILLE"|"UNO STRONZO"|"UN DEMENTE"|"UN PIPPAIOLO")|"GIUSTIZIA E' FATTA" | "CHE BEL TRAMONTO" | "SONO" ["PROPRIO"] ("SODDISFATTO"|"OTTIMISTA")|"E' INCREDIBILE") [^("!"|"!!")];
+
+Risposte ::= ("A"|"A OK"|"OK"|"VA BENE"|("SI'"|"NO") [(^",E' VERO"|"DAI")]|"IO CI CREDO")[+^",CIAO"]^("!"|"."|--_);
+
+Botte ::= ("PEM" | "CRAC" | "ZAC" | "SBAM" | "AI"^(^"A")+ | ("EE"^(^"E")+|"UU"^(^"U")+|"OO"^(^"O")+))^("!"|"!!");

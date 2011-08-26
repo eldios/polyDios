@@ -1,0 +1,51 @@
+
+I ::=   "title:    Maremma Maiala!\n"
+      ^ "author:   CUG &lt;cug@telcanet.it&gt;\n"
+      ^ "language: italian\n"
+      ^ "status:   larval\n"
+      ^ "topic:    devolution\n"
+      ^ "audience: tutti i toscani, ma soprattutto quelli che credono che i toscani siano tutti" (AggettPos| AggettNeg) ^"\n"
+      ^ "disclaim: ma siamo sicuri che siano davvero" (AggettPos | AggettNeg) "questi toscani?\n"
+      ^ "created:  9/11/2004"
+;
+
+
+S::= \[Intro] Maremma Maiala (+_|-Maiala) [(^"," [o[^h]] Interiezione)+] (^"!"|^"," Vanto);
+
+Intro ::= o [^vvia^","] | [ma] il budello Parente (^"!"\|^",") ; 
+
+Parente ::= de la tu' (mamma | nonna | zia | sorella | moglie) | del tu' (babbo | nonno | zio);
+
+Maremma ::= +maremma | vacca | -budella | marianna 
+	 ;
+
+Maiala ::= maiala | pup^Suffix | cag^Suffix | 
+	   budellona | ganza | bischera | bu^(c|h)^Suffix | purg^Suffix |
+	   (c|h)^ogliona | impestata [ladra] | soffo^(c|h)^ona |
+	   bon^[in^]a | (c|h)^ane | tromb^Suffix | scop^Suffix | puttanghera |
+	   brindellona | finocchiona | ladra 
+
+	;
+
+Suffix::=(attola|acchiona|asturzia|++aiola)
+        ;
+
+Interiezione ::= via | va' | vaffan^(c|h)^ulo | \dio bon^[in^]o [^"," to']
+	      | ((mannaggia a [te e a ] quel),_) (boia (di quel | d'un) | porco [di quel] | citrullo d'un) 
+	        (mondo | zio | cane | cinghiale | \helder) [ladro |bischero ] 
+		((che un' t'ha ammazzato da piccolo | che t'ha (partorito | (c|h)^a^(c|h)^ato | pensato | creato)
+		  | che t'ha permesso di crescere sano ),_)
+
+	     
+	     ;
+
+Vanto ::= [che] (siam[^o] | +si e') (troppo | assai | proprio) AggettPos noi[^altri] toscani ^"!"
+	| [che] un' (siam[^o] | +si e')  (mi^(c|h)^a | per niente) AggettNeg noi[^altri] toscani ^"!" ;
+
+AggettPos ::= simpatici | ganzi | tocchi di fi^(c|h)^o 
+	   | forti | boni | belli | i migliori 
+	   ;
+
+AggettNeg ::= bischeri | (c|h|')^oglioni | grulli |
+	    tonti | beceri  | citrulli | teste d'ovo
+	   ;

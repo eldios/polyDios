@@ -1,0 +1,26 @@
+I ::=   "title:    Miss Sarajevo\n"
+      ^ "author:   Serenase &lt;serenase@excite.com&gt;\n"
+      ^ "language: italian\n"
+      ^ "topic:    misc\n"
+      ^ "audience: per chi viaggia in metropolitana, ma anche in tram.\n"
+      ^ "created:  10/04/2004"
+;
+
+
+S ::= Saluto Provenienza Motivo Purtroppo Marito Figli Lei [Certificato] [Intrattenimento] Richiesta Ringraziamenti;
+
+Saluto ::= \[la] [mi] ((( es | ex ) ^cus ^( azi | a | i ) [^no]) di disturbar(^e|^i)| (perdon|ascolt)  (^atim >(^i | ^e) | ^o ) di disturbar(^e|^i) | (b[^u]^on (^asera | ^giorn(^o|^ata) | ^a pasqua  | ^a domenica | natale )))[^","] (( si[^g]^nior (^e | ^i) e si[^g]^nior ( ^e | ^i))  | [a|per] tuti) ^"..." ;
+Provenienza ::= [io] (vengo d | sono d) ^( a | i | el[^l]^a)  \ (bosnia [--erzegovina]| [ex] ( "J" | "Y") ^ugosla(^w|^v)^ia | albania | mostar| kos[^s]^ovo | sarajevo | macedonia | montenegro) ^( "." | "," ) ;
+Motivo ::= (noi | [io e ] mia fami[^g]^lia | io e mi[^o] marito | _ ) [[tanta]paura [(per|di) guera] e ] ( scapati | fugiti | profug[^h]^i | andat ^( i | a ) via | venut ^( i | a ) ( qui | [in] italia )) ([per] (rifugi (^o|^arci)|scapare|nascondere|lavorare)) ^"." ;
+Purtroppo ::= \ (ma|pero'|[ma] purtropo [pero']) (no [ce'] [niente] |nula|niente| manca[^re]|no eserci|no trova >(^to|^re|^mo|_)|no si trova|no facile|no dar >(^e |^ci)) (lavoro|d(^a|^e) lavorar(^e|^i)) [perche' [noi] ([e]^ (s|cs|x)^tracumunitari[^o]|profug[^h]^i|no italiani|senza casa|[esere][molto]bruti| no lavati|puzzare|scapati|malati|[tropo|molto] poveri|[tropo|molto] sporchi)] ^"...";
+Marito ::= \ [il] [mio] marito [--((m(^i|^e) pichia(_|^re) ^",")|rompe[^re] (denti|dita|unghie))][ha|e'] (malato|malatia|male) ^"," [lui][purtropo][ha|avere|es[^s]^ere]  Malattia  [e ([qualche volta|spesso|certi giorni|certe volte|i fine setimana|quando molto triste|quando mangia (agnelo|fagioli|semi di zuca|gelato|unghie)|quando beve (tropo[tavernelo|grapa|chinoto|brodo di polo])](pure|anche|avere|esere)) Malattia]^"," ;
+Figli ::= [noi|io] (avere|ho|abiamo|anche [con]) Numero (figli[picoli]|picoli|bambini|ragazini) (che|(^"," (loro|picini))) ((no|mai) (studiare|scuola|giocare|felici|soride|contenti|smete piange[^re]) [^"," no mangia[^re]] [(e|^","[poi loro])(sempre|molto|tanto|_) piange[^re]] ^"," avere [tanta] (fame|bisogno (mangiaria|[di]cibo)|sete [e fame]|fredo [e fame]) ^"," poi loro [esere|avere] [anche] [tanto|molt(^o|^isimo)|davero|grave|brut(^a|^isima)] malati[^a] ^"," Malattia [e([qualche volta](pure|anche|avere|esere)) Malattia]) ^"." ;
+Lei ::= \ [purtropo|[io]triste ma] (ne(^meno|^pure|^anche)) io (mi sento|sto[molto|tanto|tropo]) ben(^isimo|^e) (_|adeso|ogi|ormai) ^":" ho [un[^a|^o]] Malattia ^"." ;
+Certificato ::= \ (ecco[nostri]|guarda[^te][nostri]|[questi] | qui esere|qui sono[nostri] ) (certifica(^ti|^zio[^ni|^ne])|(document|certific)(^azio[^ni|^ne]|^i)|carte|fogli) [di] (medic(^o|^i)|ospedal(^i|^e)|do[^c]^tor(^i|^e)) (che ce|con) scrito [su|dentro|sopra] che malatie (vere|no false|no bugie|gravi|brute) [^":" (guardari|legete|"vedete?..")]^"." ;
+Intrattenimento ::= \ [io] (adeso|ora) [vi] (suono|fischi(^o|^etto)|dico|canto|facio sentire|balo) [una] [bel(^a|^isima)|famos(^a|^isima)] (musica|canzone|danza) (valacca|slava|rom|romena|di bosnia|albanese|kossovara|deli nostre montagne|[di] transilvan[^i]^a) (per farvi auguri che state bene|per vostra benedizione(su madona)|che madona [santisima] vi (salv(^a|^i|^era')|proteg(^a|^e|^era'))) ^("."|",") ;
+Richiesta ::= \ [vi] (grazi [grazi tuti]| rigrazi[tuti[quanti]]|tantigrazi[tuti[quanti]]|grazi mile[tuti[quanti]]) (che|se|quando) mi (date|regalate|ofrite) Numero eur(^o|^i) [per mangiare i bambini|per panini e medicine|per (piaceri|favori)] ^"..." ;
+Ringraziamenti ::= \ (grazi [^"," grazi tuti]|io virigrazi[tuti[quanti]]|voi [esere][molto|davero]gentili|tantigrazi[tuti[quanti]]|grazi mile[tuti[quanti]]) (di|dela) ([vostra] gentileza|[vostra] regalo|[vostra] oferta|[vostri] (monete|soldi)) i ([ancora][di nuovo][tantisimi]) (b[^u]^on (^asera | ^giorno | ^a pasqua  | ^a domenica | natale | capodano|^e feste|^a giornata)) ^"." ;
+Numero ::= due|tre|quatro|cinque|sei|sette|oto|nove ;
+Malattia ::= (tisi|seropositivo|tendinite|pubalgia|asma|aids|vaiolo|enfisema|peste bubonica|polmonite atipica|aerofagia|sempre rutare|sordo|alito(^si|cativo)|foruncoli[su chiape|su facia|su cosce]|alopecia[areata]|ascessi|celulite|colera|cirosi epatica|diabete|eczema|epatite|gengivite|orechioni|insonia|malaria|tifo|pidochi|piorea|sempre prurito|rachitico|stitico|vermi|tanto sangue[(da|quando sofio) naso|da culo|da boca|in catarro|e pus]|meteorismo|infarto|ebola|vaginite|muca paza|leptospirosi|strabico|cieco|acne|otite|sifilide|ernia[a pancia|a disco]|catarata|diarea|emoroidi|paralizato|(pochi|Numero) mesi vita|senza [una] gamba [e un bracio]|manca un bracio [e le gambe]|tropi brufoli|febre alta [e] tose [e mal di gola]|cancro[ai polmoni|a cuore|a testicolo|a utero|a ovaie|a tallone|a pancia|a stomaco|a gola|a schiena|a palato|a boca|a labra|a naso|a ginochio|dentro orechio]|roto (gamba|bracio|schiena|facia|mano|gomito|capeli|ombelico|narici|[tute sue] unghie|piedi|denti|osso di culo|
+spala|dita)|[sempre] vomito[con sangue]|scarlatina|morbilo|cimurro|ulcere dapertuto|scabbia|verme solitario| orchite|prepuzio gonfio) ;
+

@@ -1,0 +1,755 @@
+
+I ::=   "title:    Ritratto dell'autore da" (giovane |- vecchio | morto) "\n"
+      ^ "author:   Manta\n"
+      ^ "language: italian\n"
+      ^ "status:   mature\n"
+      ^ "topic:    misc\n"
+      ^ "comment:  grazie a <a href=\"http://manetti.homelinux.com/~maurizio\">"^
+      			   (Suff ::= etti | izio;
+      			    {"Maur" ^ Suff}
+      			    {["Gian" ^ (franzo | nizzero | nozzo | mauro | "-Baptiste")]}
+      			    {"Man" ^ Suff}
+      			   )^"</a>" per qualche idea ^ "\n"
+      ^ "created:  30/08/2002"
+;
+
+S ::= "Alvise Spano'" Nascita Infanzia ^"."\
+      ConclusioneInfanzia ^"."\
+      {Studio [e [poi] Studio]} ^"."\
+      {Affetti} ^"."\
+      {Cambiamento}
+      ^"," (ma Morte | e Vita) ^ "."\
+      (++ (Epilogo | Lapide) ^ "." | _)
+;
+
+Nascita ::= (X := {Luogo} {[improvvisamente | approssimativamente | all'incirca | verosimilmente]
+                  Tempo.nel} ;
+			  ^"," nato X^","
+			| >( nasce
+               | (si ritiene | si tramanda [da sempre] | si dice) sia nato
+               | fa la sua prima (apparizione | comparsa)
+               ) X e
+            )
+;
+
+Data ::= [(1 | 2)^] (2 | 3 | 4 | 5 | 6 | 7 | 8 | 9) Mese. Anno
+;
+
+Mese ::= M:  >(gennaio | febbraio | marzo | maggio | giugno | luglio | settembre | novembre | dicembre)
+      | voc: >(aprile | agosto | ottobre)
+;
+
+Anno ::= 19 ^ (0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9) ^ (0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)
+;
+
+Tempo ::= (Festa ::= "Natale" | "Pasqua" | "San Valentino" | "Ferragosto" | "Capodanno"
+       			  |  "Carnevale" ;
+		   Era ::= [tardo]
+		   		   ( giurassico | \[pre^]cambriano | (paleo | neo | meso)^litico
+                   | (meso | paleo | neo | ceno)^zoico | cretaceo | pleistocene
+                   ) [superiore | inferiore] ;
+            nel: ( il Data | nella notte dei tempi
+                 | nel Era | nel Anno | tra (Festa | Mese.) [del Anno] e (Mese. | Festa) del Anno
+                 | in data (da stabilirsi | ignota)
+                 | ((M: nel | voc: nell'^) Mese del Anno).(M|voc)
+                 | (nella primavera | nell'autunno | nell'estate | nell'inverno) del Anno
+                 )
+          | al:  ( al Data | al Festa del Anno | al Era | al Anno | ad una data ignota
+                 | ((M: al | voc: all'^) Mese del Anno).(M|voc)
+                 | (alla primavera | all'autunno | all'estate | all'inverno) del Anno
+                 )
+          | del: ( del Data | del Festa del Anno | del Era | del Anno
+                 | ((M: del | voc: dell'^) Mese del Anno).(M|voc)
+                 | (della primavera | dell'autunno | dell'estate | dell'inverno) del Anno
+          		 )
+          | per: ( per sempre | per (Num | innumerevoli | molti) (anni | settimane | giorni | inverni)
+                 | per ([tutta] >(l'estate | la primavera) | [tutto] >(l'inverno  | l'autunno))
+                   [del Anno]
+                 | per tutta la vita | per tutto il Era
+                 )
+		  )
+;
+
+Luogo ::= (InStato ::= in Stato [Card] | ((M:nel | F:nella | voc:nell'^) Stato).(M|F|voc) Card ;
+            (a | presso) Citta ["("^Stato^")" | >InStato]
+          | InStato
+          )
+;
+
+Card ::= meridionale | settentrionale | occidentale | orientale
+;
+
+Infanzia ::= (trascorre | spende | vive)
+			 (Agg ::= [in^]felice | mesta | infausta | spensierata | trista | lugubre ;
+			  X ::= giovinezza | adolescenza | infanzia ;
+              {la propria X | una {Agg} {X}} {Luogo} {fino Tempo.al})
+;
+
+ConclusioneInfanzia ::=
+	[Tempo.nel]
+	( lascia i luoghi (natali | natii | (m|p)^aterni | d'origine)
+	| abbandona il (t | l)^etto (coniugale | (m|p)^aterno)
+	| si (taglia | mangia) (le unghie | i calli) (dei | di ambo i) piedi
+	| (compie | commette| intraprende) FolleGesto
+	)
+	per ( >(recarsi | approdare | andare a vivere) a
+	    | raggiungere | conquistare | saccheggiare
+	    | mettere (a soqquadro | a ferro e fuoco | igni ferrique)
+	    )
+	\Citta^"," dove
+	( Studio
+	| (compie | commette| intraprende) FolleGesto
+	| {( >(si dedica | decide di consacrarsi | passa il suo tempo | si impegna) a
+	   | si occupa di
+	   ) Azione}
+	   {Tempo.per}
+    | si converte
+      [ (improvvisa | inaspettata)^mente
+	  | a seguito di un (trauma psichico | evento folgorante | incidente ParteCorpo.a)
+	  | dopo Evento
+	  ] Religione.a
+	)
+;
+
+Ragione ::= con >( malcelato stupore | dis^(incanto | interesse) | devozione | trasporto
+			     | passione | disappunto
+			     )
+	     |  ^"," per >(gioco | divertimento | sconfiggere Malattia.art | diletto | la disperazione) ^","
+;
+
+Religione ::= (a: al)
+			  >( buddhismo | cristianesimo bizantino | confucianesimo | brahamanesimo
+			   | vedaismo | taoismo | celtismo
+			   )
+		   |  (a: allo)
+		   	  >(shintoismo)
+		   |  (a: all'^)
+		      >(open source | islamismo | ebraismo)
+		   |  (a: alla)
+		   	  >(cucina (transgenica | macrobiotica | Nazionalita) | politica [Nazionalita])
+;
+
+Studio ::= (Studia ::= {studia} {[Ragione]} Materia
+					| [Ragione] (si iscrive ad | frequenta) un corso di Materia
+					| [Ragione] (si iscrive alla | frequenta la) facolta di Materia
+			   	      [dell'universita' di Citta]
+		   ;
+			  ({solo dopo Evento [Tempo.nel]} {decide di Azione})
+              ^"," mentre [contemporaneamente] Studia
+
+	       |  ( [dapprima] Studia [{Tempo.per}] ^"," ma {dopo Evento} {decide di Azione}
+              | Studia {Tempo.per}
+              )
+
+           |  (consegue | riesce a conseguire | conquista | riceve | ottiene)
+           	  [ poi | alla fine | infine | finalmente | ^", se Dio vuole,"
+           	  | ^", alla buon'ora," | ^", a Dio piacendo,"
+           	  ]
+              Risultato
+           )
+;
+
+Risultato ::= il diploma di Diploma | la laurea in Materia
+		   | il tirocinio in Materia
+		   | il titolo di ([gran^]maestro | specialista) in Materia
+		   | (il [tanto] desiderato | l'atteso | il sospirato | l'agognato | l'ambito | il prestigioso)
+		   	 ( rapporto sessuale [anale | orale] con Personaggio
+			 | riconoscimento di status di
+			   ( terrone | prigioniero politico | studente lavoratore | fricchettone
+			   | truzzo | tabbozzo [a quattro ruote motrici] | tamarro
+			   | (burino | buzzurro | zotico) [totale | a tutto tondo] | Nazionalita
+			   )
+			   [da parte
+			   	( dello "Stato" | dell'amministrazione (comunale | provinciale) di \Citta
+			   	| di Personaggio | "dell'Anonima" ("Alcolisti" | "Sequestri")
+			   	)]
+			 | (mestiere | posto fisso | apprendistato | contratto di "co.co.co" per l'attivita')
+			   di
+			   ( scafista | becchino | spazzacamino | operatore analogico | tagliagole
+			   | assaggiatore di Ortaggi | pirata della strada | pedone | arrotino
+			   | guardia^(coste | boschi)
+			   ) [Nazionalita]
+			)
+;
+
+Affetti ::= [( particolarmente | assai | decisamente | inspiegabilmente
+             | piuttosto | incredibilmente
+             )
+             [s^]fortunato
+             ( nei sentimenti | nei legami sentimentali | negli affetti
+             | nelle questioni di cuore | in amore
+             )^","]
+            ({Eta | nel Anno} {conosce})
+            ( (la donna | l'amore) della sua vita
+            | una [giovane [e bella]] (ragazza | donna) Nazionalita [di Citta | di Num anni]
+            ) ^","
+            ( Rel ::= che ( sposera' Tempo.nel
+                          | gli insegna
+                            ( [cosa sia] l'arte Attivita.di | AttivitaInf.a
+                            | >(cosa (significhi | voglia dire) | quanto sia piacevole) AttivitaInf.inf
+                  	        )
+                    		| lo converte Religione.a
+                    		| lo (inizia | introduce) ((al mondo | all'arte) Attivita.di | Attivita.a)
+                    		| rapisce deportandola Posto
+                    		)
+                   | con la quale (si trasferisce | va a vivere | scappa | fugge | si ritira)
+              		 (Luogo | Posto)
+              	   | (con la quale dara' alla luce | che gli donera') [Tempo.nel] Figlio
+             		   [e poi ancora Figlio [Tempo.nel]] ;
+
+            	Rel [e Rel])
+
+         |  ({si scopre ((etero | omo | bi | tran)^sessuale | uomo | donna)}
+             {Eta [nel Anno]}
+             {[dopo un (travagliato | intenso | terribile) conflitto interiore]})
+            e (scappa | fugge) (di casa | da [^lla sua [amata]] Citta
+            [^"," dove viveva assieme a Parente^","]) per ritirarsi Posto
+             [in compagnia di un (uomo | giovane) [conosciuto [Tempo.nel]
+              (durante un viaggio in Stato | Dove)]]
+;
+
+Dove ::= al mare | al cinema | in discoteca | al bowling
+      |  ad una festa [di compleanno]
+      |  a scuola | all'universita' | al circo | a [^lla "Santa"] messa | all'oratorio
+      |  in autobus | in corriera | al bar | in stazione | su internet [in chat]
+;
+
+Figlio ::= un [^o splendido] (figlio[^lo] | bambino)
+		   (_ | nano | obeso | demente | down | gay | negro | sordo | gobbo)
+		|  una [splendida] (figli^(a | ola) | bambina)
+		   (_ | Nazionalita | anoressica | negra | allergica | barbuta | musulmana | gobba | sorda)
+		|  Num [splendidi] gemelli [(etero | omo)^zigoti] [Razza]
+;
+
+Cambiamento ::= (Quando ::= ^"," (dopo | al termine di | in seguito a | a seguito di)
+		                    ( un (lungo | tristo | felice | interminabile) periodo
+		                      (trascorso | passato | intrapreso)
+		                    | una (meravigliosa | tormentata | gioiosa | lugubre)
+		                      (infanzia | giovinezza) (trascorsa | passata | intrapresa)
+		                    )
+				            [(serena | dolorosa | travagliata | consapevol)^mente]
+				            {Luogo} {AttivitaInf.a} ^"," ;
+
+				  {la sua (vita [sessuale | di coppia] | esistenza)} {[finalmente]}
+                  (- cambia
+                  |  (subisce | attraversa)
+                     un (improvviso | importante | decisivo | inquietante | repentino)
+                     (cambia | muta | sconvolgi)^mento
+                  )
+                  quando [Quando] (decide | ha modo) di Azione
+                  [e {realizzare} {quindi} il proprio sogno di Azione]
+
+		        | [ma]
+                  {il suo sogno di Azione viene [invece | infine] soddisfatto}
+                  {[solamente] quando [Quando] (decide | ha modo) di Azione}
+                  [e finalmente ha l'occasione di Azione]
+
+                | ({[tuttavia]} {non e' (che (Eta | Tempo.nel) | prima Tempo.del [^"," Eta^","])})
+                  [Quando] che ha ({[finalmente]} {modo | l'occasione})
+                  di Azione [e {finalmente} {realizzare} il proprio sogno di Azione]
+
+                | (Evento | il dramma che Dramma "("^ Evento ^")")
+                  lo (costringe | obbliga | persuade | convince | spinge [definitivamente]
+                     | invoglia | muove) a Azione
+             	)
+;
+
+Dramma ::= lo segnera' Tempo.per
+        |  ricordiamo tutti con >(sgomento | tormento | simpatia | sagacia)
+        |  lo >(affligge | affatica | sgomenta) Tempo.per
+;
+
+Sepolcro ::= ( (in: nel | il: il)
+			   >(cimitero | campo santo)
+			 | (in: nella | il: la)
+		       >(chiesa | cappella | cripta)
+		     | (in: nelle | il: le)
+		       >(catacombe)
+		     )
+		     di Santo
+;
+
+Morte ::= {^"," (stroncato | abbattuto | colpito | ucciso | consumato | distrutto) Malattia.da}
+	      {{(decede | muore | defunge | spira) [tragicamente | nel sonno]} {il Data [Eta]}}
+          [ ( ed e' {[[ad] oggi | ancora]} {sepolto} Sepolcro.in Luogo
+            | e riposa [ancora | in pace] Sepolcro.in Luogo
+            | e il suo (fantasma | spettro) infesta [ancora | tormentato] Sepolcro.il [Luogo]
+            )
+
+          | ^"," [solo al mondo e] compianto da
+            (tutti | molti | nessuno | pochi | molti |+ da Parente [soltanto])
+          ]
+       |  [non si hanno [piu'] sue notizie da quando ^","]
+          (scomparso | perdutosi) [misteriosamente | tragicamente | in circostanze ignote]
+          Tempo.nel [^"," Eta^","] Posto ^","
+          non (e' [mai] piu' tornato | ha [mai] piu' fatto ritorno) alla sua [casa di] Citta
+          [ ed il suo corpo non e' {mai} {stato} (ritrovato | rinvenuto)
+          | ^"," dove era atteso da Parente [e da Parente]
+          ]
+       |  Tempo.nel
+          {il suo corpo ( inerme
+                        | (privo di | senza) vita
+                        | gia' ([parzialmente] decomposto | in [{avanzato} {stadio} di]
+                                decomposizione)
+                        | mummificato
+                        | inanimato
+                        )}
+          {e' stato [tragicamente] (ritrovato | rinvenuto)}
+          Posto
+          [(ed e' stato [poi] sepolto | e si trova ora | e riposa ora) Sepolcro.in
+           della sua [amata] Citta]
+;
+
+Posto ::= ( nei mari | al largo | nei boschi | nei prati | nelle praterie | nei monti
+          | nei colli | nei ghiacciai | tra le nevi | nelle steppe | nella tajga | nella tundra
+          | nella foresta | nella jungla | nel deserto | nella savana | nelle paludi
+          )
+          ((M:del | F:della | voc:dell'^) Stato [Card]).(M|F|voc)
+          [nei pressi di Citta]
+;
+
+Vita ::= ancora [ad] oggi [non trova pace e]
+         ( non ha una residenza fissa
+           [e (si divide tra Stato [^"," Stato] e Stato
+              | {vaga} {[a bordo del suo Mezzo]}
+              | trascorre il resto della propria vita
+              ) [assieme a Parente [ed a Parente]] Posto]
+         | vive Luogo [assieme a Parente [ed a Parente]]
+         )
+;
+
+Mezzo ::= furgone | yacth | panfilo | camioncino | trattore | [moto^]carretto | panzer
+       |  carroarmato | deltaplano [a motore] | [wind^]surf | tandem
+;
+
+Parente ::= ^i figli | ^lla ["ex-"^]moglie | ^l padre | ^lla madre
+         |  ^i [bis^]nonni | ^i suoceri | ^lla nuora | ^gli zii | ^lle cugine | ^i cugini
+         |  (fidati amici | fidate amiche)
+         |  (un [fidato | intimo] amico | una [fidata | intima] amica)
+         |  ^lla sorella | ^l fratello | "Helder"
+;
+
+Eta ::= ((all'^ | alla tenera) eta' di | a) [soli] Num anni
+;
+
+Citta ::= "Roma" | "Treviso" | "Venezia" | "Tripoli" | "Citta' del Messico" | "Santiago del Cile" | "Calcutta"
+       |  ["Nuova"] "Delhi" | "Teheran" | "Timbuctu" | "Katmandu" | "Montevideo" | "Pozzuoli" | "Carbonera"
+       |  "Porcellengo" | "Oriago" | "Varsavia" | "Berlino" | "Reikjavik" | "Helsinki" | "Sparta" | "Rodi"
+       |  "Mileto" | "Santorini" | "Pantelleria" | "Roncade" | "Abbiategrasso" | "Frascati" | "Cinisello Balsamo"
+       |  "Ostia" ["lido"] | "Velletri" | "Vulci" | "Urbino" | "Gubbio" | "Spello" | "Termini Imerese" | "Melfi"
+       |  "Enna" | "Caltanissetta" | "Matera" | "Isernia" | "Teramo" | "San Gimignano" | "Trastevere" | "Colonnata"
+       |  "Roncobilaccio" | "Zacinto"
+;
+
+Stato ::= >>
+          voc: ( "Italia" | "Olanda" | "Uganda" | "Azerbaijan" | "Ecuador" | "Argentina"
+               | "Etruria" | "Uruguay"
+               )
+       |  F:   ( "Thailandia" | "Germania" | "Turchia" | "Slovenia" | "Micronesia" | "Polinesia"
+               | "Citta' del Vaticano" | "Slovenia" | "Dalmazia" | "Moldavia" | "Macedonia"
+               | "Kamcatka"
+               )
+       |  M:   ( "Rwanda" | "Cile" | "Ciad" | "Sudan" | "Messico" | "Turkmenistan" | "Burundi"
+               | "Tibet" | "Lichtenstein" | "Lussemburgo" | "Principato di Monaco" | "Paraguay"
+               | "Kurdistan"
+               )
+          <<
+;
+
+Num ::= (2 | 3 | 4 | 5 | 6 | 7 | 8 | 9) [^ (0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)]
+;
+
+Personaggio ::= "Saddam Houssein" | "Madre Teresa di Calcutta" | ["Osama"] "Bin Laden"
+             |	"Papa Wojtila" | "Suor Germana" | "Padre Pio" | "Ciccio e Franco"
+             |  "Paolo Limiti" | "Gigi Marzullo" | "Maria de Filippi" | "Fabrizio Frizzi"
+             |  "Corrado Augias" | "Mike Bongiorno" | ["Silvio"] "Berlusconi" | "Giulio Tremonti"
+             |  "Helder" | "Pippo" ("Baudo" | "Franco")
+;
+
+Evento ::= la [improvvisa | devastante | inattesa]
+           >( caduta del
+              >( muro di "Berlino"
+               | ^l'impero ("Romano" d'^("Oriente" | "Occidente") | ittita | mongolo | "Celeste" cinese | persiano)
+               | ^la dinastia ( "Ming" | "Huan" | carolingia | "Stuart" | "Tudor" | "Windsor" | di "Borbone"
+                              | "Berlusconi" | "Agnelli"
+                              )
+               | ^la torre "Eiffel" | ^la muraglia cinese | ^l'arco di trionfo | ^la torre di "Pisa"
+               | regime (austroungarico | borbone | castrista | normanno | saraceno)
+               )
+            | perdita
+              >( Car ::= a lui [paricolarmente] car^(M: o | F: a) ;
+                 Caro ::= Car.M. ;
+                 Cara ::= Car.F. ;
+
+              	 della verginita' [mascellare | podale | anale] [Cara]
+               | ParteCorpo.di
+               | dei capelli | del suo Animale NomeAnimale [Caro]
+               | della Coppa da parte del Squadra
+               | dell'orientamento
+               | dei peli (pubici | ascellari | pettorali | dorsali | incarniti)
+               | dell'arto (superiore | inferiore | destro | sinistro) [Caro]
+               | del suo fascino (carismatico | massonico | [un po'] ambiguo)
+               | del suo {"savoir-faire"} {discreto}
+               | del suo sapor "medio-orientale"
+               | del suo studiato aplomb
+               | del (pozzo petrolifero | ^l'impianto petrolchimico) Caro
+               | del (^l'autobus | treno | tram) ["(causa ritardo)"]
+               )
+            | rottura
+              >( del salvadanaio | con la ["ex-"^] (moglie | ragazza)
+               | delle tubature del (bagno | riscaldamento)
+               | dei sedili dell'auto | della sua [amata] carriola
+               )
+            )
+      	|  l'incidente ParteCorpo.a
+        |  (il tragico | l'acerrimo | il terribile | il celeberrimo) (scontro | duello) [finale]
+           tra Personaggio [^"," Personaggio] e Personaggio
+        |  l'incontro con Personaggio
+        |  Malattia.art che lo ha afflitto Tempo.per
+;
+
+Animale ::= gatto | criceto | cane | canarino | pesciolino | camaleonte | muflone | orbettino | pitone | furetto | ^la lontra
+         |  ^lo gnu | ^lo yak | ^lo yeti
+;
+
+NomeAnimale ::= ("F" | "B" | "D") ^ (i | o | e) ^ (d | b | d | f | p) ^ (i | o)
+;
+
+Coppa ::= coppa (dei campioni | del mondo | "Italia" | "Berlusconi" | "Europa" | "Sans Souci" | "Del Nonno")
+;
+
+Squadra ::= "Milan" | ^la "Juve" | ^l'"Inter" | "Mestre" | "Caltanissetta" | ^l'Aurora | "Real Boiago" | ^"l'Ardita Pero"
+;
+
+
+
+
+Materia ::= agraria | lettere (antiche | moderne | straniere) | web design
+         |  scienze (della comunicazione | dell'educazione | politiche | dell'ambiente e del territorio | forestali)
+         |  giurisprudenza | ingegneria (dei materiali | tessile | edile | dell'ambiente | dell'inquinamento)
+         |++  Disciplina
+;
+
+
+
+Diploma ::= tecnico (commerciale | industriale | turistico | odontoiatra | elettronico | informatico | ospedaliero)
+         |  maturita' (classica | scientifica | linguistica | "socio-psico-pedagogica" | artistica | magistrale)
+;
+
+Azione ::= (A ::= (Attivita | AttivitaInf) [e (Attivita | AttivitaInf)] ;
+
+				(dedicar | votar | rivolger)^
+           		(e ([tutta] la propria | l'intera) (vita | esistenza) | si)
+           		(all'arte A.di | A.a)
+        	  | entrare nel mondo Attivita.di [e Attivita.di]
+        	  | coltivare la [propria] passione per
+                (l'arte A.di | il mondo Attivita.di [e Attivita.di])
+        	  | (stabilirsi | emigrare | fuggire | andare a vivere) {a Citta}
+        	    {[fino Tempo.al | Tempo.per]}
+        	  | (compiere | commettere | intraprendere) FolleGesto
+        	  )
+;
+
+FolleGesto ::= (il folle | l'insano | l'^ >(inspiega | ingiustifica | esecra | igno)^bile)
+               (gesto | atto | cimento) AttivitaInf.di
+;
+
+Disciplina ::= ( porno | idro | piro | copro | logo | filo | fago | geo | aer[^e]^o | astro
+               | tele | omo | etero | psico | socio | pedo | onni | poli | agro | steno | eno
+               | oli | olo | fobo | emo | gastro | morfo | radio | megalo | stereo | mono
+               | foto | audio | video | teo | traumato | fenomeno | mito | tossico | topo
+               | merceo | reddito
+               )
+               ^ ( logia | gogia | piria | filia | mania | fagia | sofia | grafia | fobia
+                 | scopia | nomia | crazia | topia
+                 )
+;
+
+Attivita ::= (a: alla | di: della)
+			 >( coltivazione di Ortaggi [e Ortaggi]
+              | cucina [Nazionalita]
+                ( macrobiotica
+                | (ipo | iper)^(colesterolica | glicemica | lipidica | calorica)
+                )
+              | collezione di Oggetti
+              | musica ( jazz | hardcore
+			           | [(prog | death | black | street | heavy | gothic) ^ "-" ^] (rock | metal | pop | rap)
+                       | classica | barocca | medievale | rinascimentale | provenzale
+			           | folk [Nazionalita] | popolare [Nazionalita]
+                       )
+              | pesca [di frodo] di Pesci [e Pesci]
+              | caccia [grossa | di frodo] di Animali [e Animali]
+              | bracconeria | sodomia [di Animali]
+			  |+ Disciplina
+			  | clonazione di (X ::= Animali | Pesci; X [e X])
+			  )
+          | (a: al | di: del)
+            >( giardinaggio | [taglio e] cucito | safari | pilotaggio di Veicoli
+	         | "Web" | tantra | sesso [piu' sfrenato]
+             | (- commercio | contrabbando | traffico [illegale])
+               di (Veicoli | Pesci | Animali | Ortaggi)
+		     )
+          | (a: all'^ | di: dell'^)
+          	>( occult^(o | ismo) | esoterismo | alpinismo
+             | industria (tessile | manifatturiera | metallurgica | pornografica | cinematografica)
+             | avventura | (addestramento | allevamento) di (X ::= Animali | Pesci; X [e X])
+             )
+;
+
+AttivitaInf ::= (a: a | di: di | inf: _)
+			    ( >(spacciare | collezionare | commerciare | trafficare | contrabbandare)
+          	      (Veicoli | Oggetti)
+          	    | (incendiare | saccheggiare | devastare) (Veicoli | Luoghi)
+          	    | pescare Pesci
+          	    | cacciare Animali
+          	    | (X ::= Animali | Ortaggi | Pesci | Personaggi; >(far accoppiare |- incrociare) X e X)
+          	    | (clonare | addestrare | allevare | cucinare) (Ortaggi | Animali | Pesci)
+          	    | coltivare Ortaggi
+          	    | (incendiare | saccheggiare | devastare | profanare | riparare | restaturare)
+          	      (Veicoli | Luoghi) [Posto]
+          	    | (violentare | sodomizzare | rapire | abusare [sessualemte] di)
+          	      (Animali | Pesci | Personaggi) [di (nazionalita' | razza) Nazionalita]
+          	    | forgiare Oggetti
+			    | (irrompere | progettare l'irruzione) in Luoghi
+			    | (mangiare | ingozzarsi di | nutrirsi di | cucinare) Cibo
+                | trasformarsi in un razzo missile [con circuiti di mille valvole]
+                | giocare una schedina con tutti 2
+               	| radersi (le ascelle | i peli ParteCorpo.su)
+               	| ruttare a tavola [con dei Personaggi]
+               	| >(scrivere (libri | poesie ) in | imparare la) lingua Nazionalita
+               	| partecipare al festival canoro di \Citta ["("^ [perlatro] "vincendolo)"]
+                | comprare un dipinto di arte {Nazionalita} {[moderna | contemporanea]}
+                | pedalare in retromarcia
+                | assumere cibalgina [via endovenosa]
+                | iscriversi a un torneo di (freccette | trincetto)
+                | [tra^]scrivere la biografia di [un personaggio (quale | come)] Personaggio
+			    )
+;
+
+Cibo ::= ( riso[^tto] | lenticchie | pizza | fichi | krauti | pandoro | panettone
+         | mandorlato | cioccolata | uvetta | insalata [di Cibo] | rognoni | gelato
+         | budella | trippa | sarde | uova | pasta | cozze | porri | cavolfiore
+         )
+         [ in rosso | ai ferri | alla piastra | in salmi' | in umido | al sugo | al forno
+         | in bagnomaria | in decotto | in camicia | al dente | al burro
+         | sotto (sale | pepe | aceto | ^lio | vuoto)
+         ]
+;
+
+Luoghi ::= (X ::= F: (chiese | moschee | cripte | catacombe)
+               |  M: (cimiteri | loculi | villaggi | musei) ;
+            A ::= in terra Nazionalita | di antiche civilta' | della gloriosa civilta' Nazionalita
+               |  fatiscenti | decadenti | >(sconsacrat | ortodoss | bizantin)^(M: i | F: e) ;
+
+              (X [A]).(M|F))
+;
+
+Nazionalita ::= bulgara | irachena | rumena | cinese | paraguayana | uruguayana | turca
+             |  ostrogota | unna | svizzera | bergamasca | nipponica | aborigena | tibetana
+	         |  ugandese | pakistana | siberiana | retina | etrusca | russa | lappone
+	         |  (nuit | eschimese) | costaricana | portoricana | peruviana | maltese
+	         |  sarda | lucana | calabra | sicula | cilena | micronesiana | polacca | negra
+	         |  assira | babilonese | "assiro-babilonese"
+;
+
+Razza ::= negri | [indo^]cinesi | gay | bianchi | bulgaro | corsi | nani | obesi | dementi
+       |  sordomuti | sordi | muti | ciecchi | mongoli | mongoloidi | down | gobbi
+       |  handicappati | paralitici | marocchini | curdi | comunisti
+;
+
+Veicoli ::= (X ::= M: ( [auto^] bus | camper | trattori | velocipedi | (mono | tri) ^cicli
+                      | sesterzi | missili ("Scud" | "Cruise")
+                      )
+                |  F: ( roulotte | automobili | macchine agricole | (bici | moto) [^ciclette]
+                      | daghe romane | museruole
+                      ) ;
+             A ::= a pedali | da rottamare | >(usat | telecomandat)^(M: i | F: e) ;
+
+              (X [A]).(M|F))
+;
+
+Personaggi ::= ( caprari | orafi | spazzacamini | arrotini | calzolai | autisti | presentatori
+               | vigliacchi | attaccabrighe | ortolani | dittatori
+               ) [Razza]
+;
+
+Oggetti ::= (X ::= M: (soldatini | francobolli | panieri | cellulari)
+				|  F: (lattine | pizzette | calzascarpe | foto) ;
+			 A ::= (tele | radio)^comandat^(M: i | F: e) | industriali | automatic^(M: i | F: he)
+			    |  usat^(M: i | F: e) | porno | in tungsteno ;
+
+			   ([porta^]X [A]).(M|F))
+;
+
+Pesci ::= (X ::= M: ( sgombri | gamberi | scampi  | astici  | mitili | molluschi | platelminti
+                    | protozoi |  caparossoli
+                    ) [Razza]
+              |  F: (mazzancolle | cozze | ostriche [perlifere]) | nan^(M: i | F: e) ;
+           A ::= transgenic^(M: i | F: he) | d'acqua dolce ;
+
+             (X [A]).(M|F))
+;
+
+Animali ::= (X ::= M: ( cinghiali | cerbiatti | lupi | orsi [bruni | polari]
+					  | licantropi | vampiri | gatti
+					  ) [Razza]
+				|  F: (gnocche | mucche | farfalle | arpie | capre | pecore | muffette | volpi) ;
+    		 A ::= clonat^(M: i | F: e) | ruspanti | da cortile | nan^(M: i | F: e)
+    		    |  da (passeggio | guardia | compagnia) ;
+
+    		   (X [A]).(M|F))
+;
+
+Ortaggi ::= (X ::= M: ( S: (oppio | mango | sedano)
+                      | P: (legumi | piselli | tuberi | oppiacei)
+                      )
+                |  F: ( S: (marijuana | coca[^ina] | papaya)
+                      | P: (pannocchie | ortensie | patate | piante carnivore)
+                      ) ;
+             A ::= transgenic^(M: (S: o | P: i) | F: (S: a | P: he)) ;
+
+               (X [A]).(M|F).(S|P))
+;
+
+Malattia ::= (Una ::= (da: da | art: _ | a: ad) una (rara forma di | improvvisa | (terribile
+					   | grave | gravissima) [forma di]) ;
+
+             	(art: il | da: dal | a: al | Una)
+          	 	>( morbillo | vaiolo | verme solitario | tartaro | meteorismo | raffreddore
+          	  	 | colpo di (frusta | freddo | sole) | catarro [verde] | muco | morbo della mucca pazza
+          	  	 | prolasso ParteCorpo.di | singhiozzo [spastico]
+          	  	 ) [acuto | fulminante]
+          	 |  (art: la | da: dalla | a: alla | Una)
+          	 	>( varicella | lebbra | peste | tenia | calvizie | forfora | diarrea | dissenteria
+          	  	 | placca [batterica] | aereofagia | blenorragia | stempiatura [precoce] | gengivite
+          	  	 | congiuntivite | poliomelite | micosi | carie | (ferita | abrasione) ParteCorpo.a
+              	 | noia
+          	  	 ) [acuta | fulminante]
+          	 |  (art: gli | da: dagli | a: alla | Una)
+          	 	>(orecchioni | spasmi ParteCorpo.a) [acuti | fulminanti]
+          	 |  (art: le | da: dalle | a: alle | Una)
+             	>( emorroidi | ragadi (anali | ParteCorpo.a) | verruche
+		      	 | vesciche [ParteCorpo.a] | stigmate [ParteCorpo.su]
+		      	 ) [acute | fulminanti]
+          	 |  (art: i | da: dai | a: ai | Una)
+             	>(polipi anali | condilomi | brufoli | foruncoli) [acuti | fulminanti]
+          	 |  (art: l^ | da: dall'^ | a: all'^ | Una)	(* femminili *)
+             	>( indigestione | escoriazione ParteCorpo.a | ematoma ParteCorpo.su | emicrania
+             	 | artrosi | artrite
+             	 )
+             	[acuta | fulminante]
+             |  (art: l^ | da: dall'^ | a: all'^ | Una)	(* maschili *)
+             	>(herpes | acne | ascesso) [acuto | fulminante]
+             )
+;
+
+ParteCorpo ::= (a: alla | su: sulla | di: della)
+			   >( schiena | dentiera | mandibola | mascella | vescica
+                | >(natica | spalla | coscia | caviglia | meninge | tempia | guancia | rotula)
+                  [destra | sinistra]
+                )
+            |  (a: al | su: sul | di: del)
+               >( petto | glande | prepuzio | seno
+                | ( braccio | gomito | ginocchio | piede | alluce | mignolo | lobo | testicolo
+                  | [sopra^]ciglio | capezzolo | menisco
+                  )
+                  [sinistro | destro]
+                )
+;
+
+
+Santo ::= "San" >("Marco" | ^"t'Antonio" | "Matteo" | "Giuseppe")
+       |  "Santa" >("Caterina" | "Apollinare" | "Maria Teresa di Calcutta")
+;
+
+Epigrafe ::= ( Come ::= >> in miseria | sordo | cieco | da gay | balbo
+		                 | (povero | ricco | nobile) (nell'animo | nel cuore | nello spirito)
+		   		   	     | bello | brutto | negro | gobbo | virtuoso
+		   		   	     | all'insegna del (^l'^(omo |-- etero)^sessualita' | ^l'ambiguita' sessuale)
+		   		   	     | da re | attaccato al (^la (vita | gnocca) | denaro | sesso | potere)
+		   		   	    << ;
+
+		       [nacque Come ^","] (+++ visse Come ^"," | _) (mori' |-- crepo' | si spense) Come
+		   	 | (tanto Come quanto Come | cosi' Come come Come)
+		   	 )
+;
+
+Epiteto ::= ( X ::= down | coglione | gay | ricoglionito;
+
+			  "Helder" (^"," sei |- e') [veramente] [un] X [virgola X]
+			)
+		 |  ( Sessualita ::= ((l'^ | la mia) >(+++ omo | etero) | la [mia] >(bi | tran))^sessualita' ;
+		      Cosa ::= >> il mio ( vessillo | stendardo | scudo | grifone | gonfalone | stemma
+		                         | baluardo | destino | credo
+		                         )
+		                | (la mia [unica] | una)
+		                  ( bandiera | ragione di vita | casa | [unica] fonte di reddito
+		      			  | missione | fobia | dottrina | questione (di vita o di morte | di stato)
+		      			  | disciplina
+		      			  )
+		                | motivo di (<[approfonditi] studi | <[dettagliate] analisi | <[profondo] interesse)
+		               << ;
+
+		       (ho fatto | faro') del^Sessualita Cosa
+		    |- Sessualita sara' Cosa
+		    )
+		 |  ( Sessualmente ::= [+++ omo^ | etero^ | bi^ | tran^] sessualmente ;
+		 	  Sessuale ::= [+++ omo^ | etero^ | bi^ | tran^] sessuale ;
+		      Agg ::= spensierato | in declino | alla riscossa | trionfale | tenace | distrutto | [s^]contendo
+		           |  divelto | spavent^(ato | oso) | spiovente | cangiante | indisposto | [s^]finito
+		           |  stordito | stravolto | incustodito | gay | etero | alla moda | all'avanguardia
+		           |  incontentabile | antropomorfo | asettico | insoddisfatto | disinvolto
+		           |  [in^]soddisfabile | scoordinato | scombussolato | sregolato | indeciso | sconclusionato
+		           |  discordante | in delirio | [dis^]ordinato | sconfitto | altisonante | ridicolo
+		           |  retro' | retrattile | scorbutico | affranto | Sessuale | allo sbando | in rivolta ;
+
+		      (mi sento | [io] sono) (Sessualmente Agg | Agg dal punto di vista Sessuale)
+ 			)
+;
+
+Lapide ::= ( sulla [lapide della] sua (cripta | tomba) [Sepolcro.in] Luogo
+			 (trionfa | si legge [ancora] | fa capolino)
+           | la (sua lapide [Sepolcro.in] | lapide della sua (cripta | tomba)) Luogo recita
+           )
+		   ( (l'^ | la seguente) epigrafe ^": <I>"^Epigrafe^"</I>"
+		   | ( una delle sue {frasi} {[piu'] celebri}
+		     | uno dei suoi {epiteti |- detti} {[piu'] celebri}
+		     ) ^": <I>"^Epiteto^"</I>"
+		   )
+;
+
+Epilogo ::= ({(ancora oggi | a tutt'oggi)}
+			 {[ se ci e' concesso
+			  | >((a noi |+ ci) piace | possiamo) (dire | constatare | affermare) che
+			  | senza dubbio
+			  | certamente
+			  | al di la' di ogni altra considerazione
+			  ]})
+			({[sovente | spesso | volentieri]}
+			 {lo ( ricordiamo | rimembriamo | commemoriamo | portiamo nei nostri cuori | esaltiamo
+			     | >(additiamo | innalziamo) [agli occhi del mondo [intero]]
+			     | citiamo | prendiamo
+			     )}
+			 {[con [somm^(M: o | F: a) | grande | immens^(M: o | F: a)]
+			  	 ( F: >( gioia | allegria | osservanza | ottemperanza | sicumera | devozione
+			  	 	   | simpatia
+			  	 	   )
+			 	 | M: >(giubilo | rispetto | ostracismo)
+		 		 )].(M|F)})
+			(come | quale)
+			({[ agghiacciante | fulgido | eclatante | illuminante | sorprendente | raggiante
+			  | raro | eccezionale | chiaro | cangiante | altalenante | umile | sublime
+			  | sommo | brillante
+			  ]}
+			 {esempio |-- maestro |- modello} di
+			 ( >( castita' | carita' | (r|in)^ettitudine | cultura | serieta' | salvezza
+			    | eccentricita' | sincerita' | virtu^(' | te)
+			    )
+			   [ieratica | cristiana | musulmana | ebraica | Nazionalita | parlamentare]
+			 | (devozione | attaccamento)
+			   [ al denaro | alla vita | ai genitori | alla causa dei Personaggi | al cibo
+			   | al lavoro | ai valori [veri] della vita | ai sentimenti umani]
+			 | (deficienza | demenza) [senile | senza possibilita' di (recupero | ricorvero)]
+			 | immunita' [Malattia.a]
+			 ))
+;

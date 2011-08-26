@@ -1,0 +1,182 @@
+I ::=   "title:    Clerasil\n"
+      ^ "author:   Alan aka ^anakin^ &lt;alanzap@email.it&gt;\n"
+      ^ "language: italian\n"
+      ^ "status:   refinable\n"
+      ^ "topic:    pubblicita'\n"
+      ^ "audience: boh\n"
+      ^ "comment:  se non vi dovesse far ridere, provate a pensare a uno che impiega due giorni interi per fare sta cazzata\n"
+      ^ "created:  7/9/2004\n";
+
+S ::= TabellaTop
+       ImagePartenza
+      CellaTesto
+       "...e ora" (++[c'^]"ho anche"|non ho piu') Malattia ":(<br>"^
+       Esclamazione "C'e'" Prodotto^"!<br>"
+      FineCella
+      TabellaBottom
+
+      TabellaTop
+       ImageProdotto 
+      CellaTesto
+       "<i>Dicono</i> che con sole" Numero^" "^Applicazioni "di" Prodotto AzioneProdotto Malattia [Pero AzioneProdotto Malattia] "...<br>"^
+       "Proviamo ..."
+      FineCella
+      TabellaBottom
+
+      TabellaTop
+       ImageRisultato
+      CellaTesto
+       Hm
+      FineCella
+      TabellaBottom
+
+      TabellaTop
+       ImageRisultato
+      CellaTesto
+       Esclamazione \ Risultato
+      FineCella
+      TabellaBottom
+
+      TabellaTop
+       ImageNormale
+      CellaTesto
+       Esclamazione "Pronta per" Azione^"!"
+      FineCella
+      TabellaBottom;
+     
+
+Malattia ::= (
+              ++(la sars|l'onanismo|la [bronco^]polmonite|la peste [bubbonica]|la lebbra|l'aids|il cancro|il raffreddore|la tosse|le mie cose|la rabbia|il tetano|la congiuntivite|la gastrite|la diarrea|il vomito
+                |la nausea|l'epatite|il morbillo|la rosolia|le emorroidi|la dissenteria|l'incontinenza|la dislessia|il ciclo mestruale|la cellulite|la polygenite|la depressione|la tristezza|l'ansia|la carie|il tartaro
+                ) [DoveCorpo]
+              |(CosaCorpo.M [Aggettivo.M] | CosaCorpo.F [Aggettivo.F])
+              |una malattia Aggettivo.F [come Malattia]
+              |una malattia che [non] mi fa venire (la paura|il terrore|la voglia|il bisogno [fisiologico]|la paranoia) di (me stessa|+Prodotto|usare Prodotto DoveCorpo|++Azione|[non](contrarre|avere|milgiorare|peggiorare) (Malattia|CosaCorpo))
+              |la (PrefissoProdotto|Aggettivo.M)^(s|n|t|l)^ite [acuta|in fase terminale]
+             );
+
+Hm ::= ([u^]h^(((m^)+)+)+
+       |(("..."^)+)+ 
+       |-((( (ah|eh|ih|oh|uh|"Ah"|"Eh"|"Ih"|"Oh"|"Uh")^ )+)+)+
+       |(a|e|i|o|u)^(((h^)+)+)+
+       |w^((( (o|"O"|au)^ )+)+)+^w
+       |((( (ahah)^ )+)+)+
+       )^(("?"^|"!"^)+)+ [^" "^Esclamazione^"!"];
+
+
+Esclamazione ::= \(guarda|toh|ma pensa["un po'"]|chi l'avrebbe mai detto|cazzo|w^(o^)+w|oh no|oddio|bella li'|da paura|che figata|incredibile|da non crederci|stupefacente|assurdo|non ci credo
+                  |non e' possibile|nessun problema|stai tranqui|che storia|minkia|caspita|[ma] porca troia|[ma] zio (cane|fringuello)|[ma] porca zoccola|[ma] porca mignotta|eccheccazzo|evvai
+                  |ma vieni|si^(i^)+"'"|al^(e^)+"e'"|a^(pp^)+"ero'"|h^(m^)+^|fermi tutti|che bello|[ma] vaffanculo [Prodotto]|Prodotto di merda|ma che cazzo [di Prodotto]|grazie (Prodotto|"a Dio")
+                  |che culo|che [s^]fortuna| Prodotto ".." (ti amo|ti adoro|ti voglio bene|ti ringrazio|[vaf^]fanculo|fottiti|muori|accipicchia|cribbio|mi consenta|al^((eE^)+)+^((oO^)+)+)
+                  |era ora|finalmente|porco il polygen
+                  )^"!";
+
+Applicazioni ::= (applicazioni [DoveCorpo]| assunzioni per via (anale|rettale|orale|endovenosa)|supposte|aspirine|sniffate|leccate|sfregiate [DoveCorpo]|scatole [di (confetti|caramelle|cioccolatini)]|confezioni [formato (famiglia|convenienza)]|(cene|portate|bevande|colazioni|spaghettate) a base|spruzzate|inalate|porzioni per Numero^" persone"|bottiglie|pentole|tonnellate|scatolette|puffate);
+
+PrefissoProdotto ::= ([s^](minkio|cippo|brufo|puffo|fuffo|puntonero|frocio|cipollo|fungo|finocchio|pippo|puzzo|fumo|canna|pizzul|molko|pizza|fotti|topo|cassano|pinguino|pongo)
+                     |Aggettivo
+                     |PartiCorpo);
+
+Prodotto := "<b>"\PrefissoProdotto^sil^"<sup>&reg;</sup></b>";
+
+AzioneProdotto ::= (riduce|aumenta|mette in risalto|rinvigorisce|valorizza|rassoda|stimola|aiuta a farmi venire|combatte|annienta|polverizza|rade al suolo|distrugge) [Quanto];
+
+Numero ::= ((1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)^)+; 
+
+
+TD1  ::= "<td width=15 align="^(center|left|right)^"valign="^(tob|bottom)^">"; 
+TD2   := "</td>";
+TR1   := "<tr>";
+TR2   := "</tr>";
+N     := "&nbsp;";
+
+URL         := "http://alanzap.altervista.org/clerasil/";
+ImgSfondo   ::= URL^(1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19);
+ImgBrufolo  ::= URL^b^(+1|2|3|4|5|6|7|8|9|10|11|12|13|14|15);
+ImgMaschera ::= URL^m^(1|2|3|4|5);
+ImgProdotto ::= URL^p^(1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18);
+(* URL^ *)
+
+
+TabellaTop    := "<table border=0 cellpadding=5 cellspacing=0 width=100% height=200><tr><td width=155>";
+CellaTesto    := "</td><td valign=bottom>";
+FineCella     := "</td></tr>";
+TabellaBottom := "</table>";
+
+ImgTopPartenza ::= "<table border=0 cellpadding=0 cellspacing=0 width=150 height=188 background="^(+++ImgSfondo  |---ImgProdotto)^".jpg><tr><td colspan=10 height=40 bgcolor=#000000 align=center><font color=#FFFFFF><b>Ho avuto la parte!</b></font></td></tr><tr>";
+ImgTopProdotto ::= "<table border=0 cellpadding=0 cellspacing=0 width=150 height=188 background="^(+++ImgProdotto|---ImgSfondo  )^".jpg><tr><td colspan=10 height=40 bgcolor=#000000 align=center><font color=#FFFFFF><b>"Prodotto        "</b></font></td></tr><tr>";
+ImgTopFoto     ::= "<table border=0 cellpadding=0 cellspacing=0 width=150 height=188 background="^(+++ImgSfondo  |---ImgProdotto)^".jpg><tr><td colspan=10 height=40 bgcolor=#000000 align=center><font color=#FFFFFF><b>"Tempo           "</b></font></td></tr><tr>";
+ImgBottom       := "<tr></table>";
+
+
+ImagePartenza  ::= ImgTopPartenza Brufoli ImgBottom;
+
+ImageProdotto  ::= ImgTopProdotto ImgBottom;
+
+ImageRisultato ::=  ImgTopFoto Brufoli ImgBottom;
+
+ImageNormale   ::= ImgTopFoto
+                   ["<td colspan=10 align=center valign=top><img border=0 src="^ImgMaschera^".gif></td>"]
+                   ImgBottom;
+
+Brufoli ::= TD1 N TD2 TD1 N       TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 N       TD2 TD1 TD2   TR2 TR1
+            TD1 N TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 TD2   TR2 TR1
+            TD1 N TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 TD2   TR2 TR1
+            TD1 N TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 TD2   TR2 TR1
+            TD1 N TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 TD2   TR2 TR1
+            TD1 N TD2 TD1 N       TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 Brufolo TD2 TD1 N       TD2 TD1 TD2   TR2 TR1
+            TD1 N TD2 TD1 N       TD2 TD1 N       TD2 TD1 N       TD2 TD1 N       TD2 TD1 N       TD2 TD1 N       TD2 TD1 N       TD2 TD1 N       TD2 TD1 TD2          ;
+ 
+
+Hex ::= (0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | "A" | "B" | "C" | "D" | "E" | "F");
+
+Brufolo ::= [++(+++"<font color=#"^Hex^Hex^"0000 size="^(1|2|3|4)^">&#9679"|---"<img border=0 src="^ImgBrufolo^".gif>")];
+
+
+Azione ::= (entrare in (scena|"Europa"|"Africa"|"Asia"|pizzeria|officina|bagno|un manicomio|una discarica|scivolata|piscina|garage|soggiorno|stalla|campo|depressione|ansia|paranoia)
+           |(buttarmi|tuffarmi|lanciarmi|cadere|precipitare) (da un ponte|dal marciapiede|di sotto|dal balcone|sotto a (una macchina|un treno|un tir|un triciclo|un apecar|uno schiaccia^(sassi|PartiCorpo)))
+           |(schiattare|morire|vivere|suicidarmi|vomitare|andare a cagare|fottermi|scopare|fottere|una botta|una scopata|giocare (coi lego|col pongo|a briscola|a canasta|a rubamazzetto)|strippare)
+           |+(candidarmi come|partecipare a|fare la giuria di) ("Miss"|"Mister") "'"^\(-italia|muretto|lampione|marciapiede|-"casa Bianca"|-"presidente del Consiglio"|++PartiCorpo|++Aggettivo|++Malattia)^"'"
+           |(staccarmi|palparmi|ammirarmi|drogarmi|radermi|colorarmi|tagliarmi|leccarmi|farmi leccare|massaggiarmi) [Quanto] CosaCorpo
+           |farmi ((ammirare|leccare|scopare|inculare|sculacciare|sgridare|ammanettare|arrestare|struprare|violentare|frustare|sputare|massaggiare)[Quanto][CosaCorpo|DoveCorpo]
+                  |(sputare addosso|una doccia|un bagno|una nuotata|una passeggiata|una corsa|una flebo))
+           );
+
+Tempo ::= Numero^" "^(decenni|anni|mesi|settimane|giorni|ore|minuti|secondi|(decimi|centesimi|millesimi) di secondo|nanosecondi) dopo^":";
+
+PartiCorpo ::= M:(naso|ginocchio|pene|neo|brufolo|cervello|culo|testicolo|gluteo|piede|dito|gomito|pelo|fianco|polso|dente|cazzo|labbro)
+              |F:(tetta|costola|gamba|pelle|mano|[soprac^]ciglia|schiena|colonna vertebrale|spalla|narice|figa|vagina|ascella|fronte|lingua|gola|vena|gobba);
+
+Dove       ::= sopra|sotto|dentro;
+
+DoveCorpo  ::= [soprattutto|anche|[non] solo] (M:([Dove] al|nel) PartiCorpo.M|F:([Dove] alla|nella) PartiCorpo.F) [(e [anche|pure]|ma non) (Dove|DoveCorpo) ];
+
+CosaCorpo  ::= (M:(il) PartiCorpo.M|F:(la) PartiCorpo.F);
+
+Quanto ::= ( Avverbio|[Avverbio](a dismisura|di (poco|molto|pochissimo|moltissimo)|da paura|'na cifra|di botto|un casino|di (brutto^)+^" ") );
+
+Avverbio ::= [Aggettiv^amente|in modo Aggettiv^o];
+
+Aggettiv  ::= (anzian|stronz|fig|fic|negr|gross|pompinar|troi|zoccol|lesbic|mignott|brutt|schiacciat|allungat|accorciat|cozz|gnocc
+               |paralitic|simpatic|antipatic|sfigat|nan|nevrotic|mestruat|puffos|inkazzat|assurd|carin|vanitos|egocentric|distrutt[^iv]|esplos[^iv]|deformat
+               |depress|stort|piccin|bellin|bruttin|dolcios|alcolizzat|drogat|metallar|gothic|perpless|agitat|preoccupat|terrorizzat|cess|oppress
+               |tormentat|dannat|tremend|ottim|dotat|puzzos|addormentat|indolenzit
+               |ross|giall|ner|bianc);
+
+Aggettivo ::= [(-puff|stra|super|mega)^]
+              ( Aggettiv(M:^o|F:^a)
+               |-(giovane|idiota|demente|imbecille|intelligente|nazista|comunista|nichilista|deforme|deprimente|dolce|triste|dark|rosa|viola|verde)
+              );
+
+Pero ::= (ma|pero'|anche se) [^","(in compenso|oltre a questo|oltretutto|in aggiunta|in ogni caso)^","];
+Ho   ::= (non ho piu'|ho [ancora|di nuovo]);
+
+Risultato ::= [(guarda[^te]^","|ved^(i|ete)^"?"\|(hai|avete) "visto?"\)]
+              [(+_ | (come se non (bastasse|fosse (sufficiente|abbastanza)))^",") ]
+              ( [Ho Malattia "..." Pero] Ho Malattia
+               |(mi si sta|sento che sta) (migliorando|peggiorando|aumentando|diminuendo|crescendo) [Quanto] (Malattia|CosaCorpo)
+               |[sento che] sto (migliorando|peggiorando|invecchiando|regredendo|facendo progressi|ringiovanendo|rincretinendo|rimbecillendo|impazzendo) [Quanto]
+               |[sento che] (sto diventando|son diventata|mi sento) [Quanto] (piu'|meno) Aggettivo.F
+               |(((come|ora|quanto) ((sono|sembro))| prima (ero|sembravo)) [Quanto] (piu'|meno)) Aggettivo.F
+               |(mi sento|sto) ((ben|mal)^(e|issimo)|da cani|da schifo|di merda|ottimamente|a mio agio) Pero Risultato
+               )^"!";

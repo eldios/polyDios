@@ -1,0 +1,82 @@
+I ::= "title:    Prodotti Meliconi\n"
+    ^ "author:   Er Poly &lt;mogkogk@hotmail.com&gt;\n"
+    ^ "language: italian\n"
+    ^ "status:   refinable\n"
+    ^ "topic:    misc\n"
+    ^ "audience: anybody\n"
+    ^ "disclaim: " ^ [ >( ( mi sembra | e' ) incredibile | troppo bello
+                        | wow | [ vi | ve lo ] giuro | ah ) ^ ","
+                     | [ forse ]non ci crederete ^ "," ma ]
+                     da quando ( uso | c'ho | ho [ comprato | acquistato ] )
+                     PRODOTTO.art \meliconi
+                     ( niente piu' | non ho ( { [ mai ] piu' } { avuto } ) )
+                     ( casini | +++problemi | guai | impicci | inconvenienti
+                     | fastidi | scocciature | seccature | -rogne )
+                     con COSE.art ^ "!!!\n"
+    ^ "created:  19/09/2004"
+;
+S ::= \
+    ( GUSCIO.art ( _ | ++++PRODOTTO.raw )
+    | PRODOTTO.art ( _ | -----GUMBODY )
+    ) \meliconi ( _ | --- "(" ^ con accessori ^ ")" )
+;
+PRODOTTO ::=
+    ( GIRA ^ \ ( >COSE | -->TELECOMANDO ).raw.
+    | --( art: "il" | raw: _ ) \ salva ^ \ TELECOMANDO
+    )
+;
+GIRA ::=
+       ( art: il | raw: _ ) \
+          >( +++++++++gira | +++++++porta | ++solleva
+           | bagna | batti | caga | calpesta | camuffa
+           | ---dissotterra | divarica | piega | ---plasma
+           | prolunga | pulisci | raccatta | +cattura
+           | +deturpa | +disattiva | ++++capovolgi | ++muovi
+           | ++pigia | ++prendi | ++pressa | ++contorci
+           | +++copri | ++deforma | ++gonfia | ++lancia
+           | ++manovra | ++recupera | ++ridimensiona
+           | ++rinforza | ++rotea | ++rovescia | proteggi
+           | ++ruota | ++torci | +++++trova | --pizzica
+           )
+    | ( art: l' ^ | raw: _ ) \
+          >( ++++alza | +++allunga | +++allarga | ++impugna
+           | ++acchiappa | ++accendi | ++accavalla | ++accascia
+           | ++accartoccia | ++abbassa | +innalza | abitua
+           | +incurva | +incastra | +incarta | +incappuccia
+           | +imbavaglia | +avvolgi | +afferra | +addrizza
+           | +addomestica | +adatta | +accresci | +accomoda
+           | +acciacca | inforca | inchioda | inceppa | imburra
+           | espelli | attizza | arriccia | ammortizza
+           | ammacca | affila | affetta | adorna | ammazza
+           | accorda | accentra | accarezza | accantona
+           | ++accalappia | avviluppa
+           )
+    | ( art: lo | raw: _ ) \
+          >( +++storci | +++sposta | ++smonta | +++svuota
+           | +++svita | ++sgonfia | ++scuoti | ++schiaccia
+           | +spingi | +spacca | +sdraia | spalma | sciacqua
+           | sblocca | -stura | -srotola | ++++scopa | --sbrina
+           )
+;
+TELECOMANDO ::=
+    telecomando | tivu' | tutto | bicchieri | tastiera | computer | gomma | bottiglie | stereo
+;
+COSE ::=
+    ( ( art: il  | raw: \ ) >( preservativo | prepuzio | culo | cefalo | cerume | frigo | cervello )
+    | ( art: lo  | raw: \ ) >( sperma | scroto | stronzo | sterzo )
+    | ( art: la  | raw: \ ) >( ++plastica | ++stufetta | cannuccia | panza | patacca | sporcizia | cotica )
+    | ( art: i   | raw: \ ) >( +rotoli | testicoli | profilattici | fiammiferi | foruncoli | maroni )
+    | ( art: gli | raw: \ ) >( ++++oggetti | ombrelli | stupefacenti | ---insetti | orifizi )
+    | ( art: le  | raw: \ ) >( ++++cose | mutande | cicche | cagate | persone | ++palle | budella | emorroidi | gonadi | canne )
+    | ( art: l'^ | raw: \ ) >( immondizia | antenna | eczema | ernia | oliera | uranio )
+    )
+;
+GUSCIO ::=
+    ( art: il | raw: _ ) \ >( +++++++++++++++++++++++++++++ > ( guscio | ++GUMBODY )
+                            | derviscio | manrovescio | subconscio | gancio )
+  | ( art: lo | raw: _ ) \ >( scamoscio | ++++++sguscio )
+;
+GUMBODY ::=
+    \ >( ++++++++++++gum | boom | gundam | ++++cum | -----gay | ben | +cul ) ^
+    \ >( ++++++++++body | boy | +++++++gody | boris | kiody | splody | poly )
+;

@@ -1,0 +1,115 @@
+I ::=   "title:    Studio Aperto\n"
+      ^ "author:   CUG &lt;cug@telcanet.it&gt;\n"
+      ^ "language: italian\n"
+      ^ "status:   mature\n"
+      ^ "topic:    misc\n"
+      ^ "comment:  Studio Aperto" e' il telegiornale piu' inutile d'\italia SEGNO.PU3 come si poteva non sbeffeggiarlo ^"?" \chiedo scusa a quel INSULTO di \manta per essermi ispirato alle "DPS" nelle interviste e spero che capira' SEGNO.PU3 ^"\n"
+      ^ "created:  07/04/2004"
+;
+
+
+S::= BUONASERA BUONASERA2 SEGNO.PU0 APERTURA SEGNO.PU3 NOTIZIA e ora (passiamo al ^ARGOMENTO.AA | ARGOMENTO.A) SEGNO.PU3 NOTIZIA e ora (passiamo al ^ARGOMENTO.AA | ARGOMENTO.A) SEGNO.PU3 NOTIZIA [e ora (passiamo al ^ARGOMENTO.AA | ARGOMENTO.A) SEGNO.PU3 NOTIZIA] [e ora (passiamo al ^ARGOMENTO.AA | ARGOMENTO.A) SEGNO.PU3 NOTIZIA] [e ora (passiamo al ^ARGOMENTO.AA | ARGOMENTO.A) SEGNO.PU3 NOTIZIA] bene SEGNO.V per oggi e' tutto SEGNO.V dopo di noi andra' in onda \studio \sport SEGNO.V  poi le previsioni del tempo SEGNO.PU0 BUONASERA e a domani SEGNO.PU3;
+
+BUONASERA ::= \( buonasera | buongiorno | buon pomeriggio | buonanotte | buondi' | vaffanculo | salve ) [ a tutti [ [tranne] R2]] ;
+
+SEGNO ::= (PU0: ^".\n\n"^\ | PU1:^".\n"^\ | PU2: ^":"\ | PU3: ^"."\ | V: ^"," | VT: ^"\""\ );
+
+EOL := ^"\n"^\ ;
+
+BUONASERA2 ::= e benvenuti a questa [nuova] EDIZIONE di \studio \aperto ;
+
+EDIZIONE ::= edizione | --stronzata | accozzaglia di (cazzate | minchiate | idiozie | stupidagini | ignoranza ) | puntata ;
+
+APERTURA ::= ( apriamo | cominciamo | iniziamo | tergiversiamo ) [subito | immediatamente | istantaneamente ] con ARGOMENTO.A ;
+
+ARGOMENTO ::= (A:la|AA:^la) ( politica | cronaca | scienza ) | (A:il|AA:" ") (gossip | calcio) | (A:una|AA:^le strane storie di \studio \aperto che oggi ci propongono una) (tragedia | buona notizia) ;
+
+NOTIZIA ::= TITOLO.S | TITOLO.B | TITOLO.G | TITOLO.F ;
+
+TITOLO ::= F:FACETO | S:SERIO | B:BESTIA | G: GOSSIP ;
+
+FACETO ::= che tratta un argomento (piu' divertente del | meno impegnato del | completamente diverso dal | decisamente piu' inutile del) solito SEGNO.PU3 sembra che ESPERTI abbiano scoperto che OGGETTO (CAUSA OGGETTO | TERROR) [e che OGGETTO (CAUSA OGGETTO | TERROR)] [e che OGGETTO (CAUSA OGGETTO | TERROR)] SEGNO.PU3 ebbene si' SEGNO.V gli amanti del^OGGETTO [non] avranno di che (temere | preoccuparsi | divertirsi | piangere | rassegnarsi) SEGNO.PU2 abbiamo chiesto alla nostra inviata NOMEF COGNOME di chiedere le opinioni degli abitanti di LOCALITA SEGNO.PU3 sentiamo (che cosa | le stronzate che) hanno detto SEGNO.PU0 INTERVISTA [INTERVISTA] [INTERVISTA] [INTERVISTA] [INTERVISTA] [INTERVISTA] EOL;
+
+ESPERTI::= (+gli esperti | +gli studiosi | +gli scienziati | gli imbecilli | i nullafacenti) dell'universita' di LOCALITA [SEGNO.V in STATO];
+
+GOSSIP ::= il mondo (dello spettacolo | del calcio) e' in (subbuglio | fermento | orgasmo) da quando la SHOWGIRL NOMEF COGNOME(((ha fatto coppia fissa con il | l'ha data al | e' stata vista in compagnia del | -ha sgrullato la fungia al ) MAN NOME COGNOME (alle feste | all'orgia | al drogaparty | al puttantour) di NOME COGNOME SEGNO.V MAN e (viveur | playboy | uxoricida | coprofago)) | (ha posato [ig^]nuda per il calendario della rivista [per onanisti | per camionisti | per barbieri | per immigrati [clandestini] | per politici | per dittatori | per [fra^]massoni | DELLASSOCIAZ ] " "(SEGNO.VT^\helder SEGNO.VT|SEGNO.VT ^\vision^"-"^\x SEGNO.VT | SEGNO.VT^\max SEGNO.VT | SEGNO.VT^\le \ore^SEGNO.VT | SEGNO.VT^\onanismo \oggi SEGNO.VT  )))SEGNO.PU3 la nostra inviata NOMEF COGNOME l'ha fermata al party (di una discoteca | di un ristorante | di un [disco^]pub | di un bordello) di LOCALITA [SEGNO.V in STATO] SEGNO.PU0 INTERVISTA [INTERVISTA] [INTERVISTA] [INTERVISTA] [INTERVISTA] [INTERVISTA] EOL;
+
+SERIO ::= [grande | importante] ( tragedia [sfiorata] | incontro | attentato | ---onanismo ) QUANDO a LOCALITA [SEGNO.V in STATO] SEGNO.PU2 (il APP.M NOME COGNOME AZIONE1.M | la APP.F NOMEF COGNOME AZIONE1.F ) (NOME COGNOME SEGNO.V APP.M | NOMEF COGNOME SEGNO.V APP.F) SEGNO.PU3 CONS1 SEGNO.PU3 il APP.M COGNOME (ha definito | ritiene | considera) tale (comportamento | provvedimento | attacco | incontro) AVV INSULTO  SEGNO.PU1;
+
+BESTIA ::= una (storia | vicenda | stronzata) (strappalacrime | commovente | tragica | ---di cui non ce ne puo' fregare di meno) quella che vede per (protagonista | interprete | ---rompicoglioni) il [(piccolo [esemplare] | cucciolo) di] ANIMALE NOMEBESTIA SEGNO.V (orgoglio| vergogna| terrore) (degli abitanti di LOCALITA [SEGNO.V in STATO])SEGNO.PU1 il TENERO (animaletto | cucciolo) e' (nato | morto | stato cucinato | andato a cagare | entrato in calore | stato onanizzato | basito) grazie a (NOME| NOMEF) COGNOME che lavora al ( rettilario | crematorio | ^lo zoo | ^la macelleria | macero | lupanare ) di LOCALITA e che ha ( curato | guarito | onanizzato | divorato | sbranato | dissanguato | derubato ) il TENERO (animaletto | cucciolo | bestiolo) per ben CIFRA^CIFRA[^CIFRA][^CIFRA][^CIFRA] UNITATEMPO SEGNO.PU1 \passiamo la linea alla nostra inviata NOMEF COGNOME per l'intervista SEGNO.PU0 INTERVISTA [INTERVISTA] [INTERVISTA] [INTERVISTA] EOL \bene SEGNO.V ringraziamo la nostra inviata;
+
+QUANDO ::= oggi | ieri | l'altro ieri | il mese scorso | CIFRA[^CIFRA][^CIFRA][^CIFRA] UNITATEMPO fa ;
+
+CIFRA ::= "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+
+UNITATEMPO ::= mesi | anni | lustri | settimane | decenni | secoli | millenni ;
+
+LOCALITA ::= \>(addis \abeba | [porto | parco] san NOME | nukualofa | timbuctu' | cantu' | tripoli | stalingrado | klagenfurt | crespellano | rho | bazzano | rio de \janeiro | [porto | parco] santa NOMEF );
+
+NOME ::= \[-gian^|-pier^]( franco | puzzo[^lo] | b^(a|o)^rtolo[^meo] | filippo | umberto | ermete | ubaldo | carlo | helder | manta | cug | zeff[^o] | trogolo | piero | viscardo | babbaleo | alvise );
+
+NOMEF ::= [-\maria]\( franca | filippa | berta | enrica | kati[^usci]^a |-helder | viscarda | ifigonia | ubalda | magonza | crocefissa | pecora | bernarda | sara[(^(^h)+)+]);
+
+STATO ::= \(libia | romagna | jacuzia | kamchatka | barbagia | padania | tuvalu | baviera | mauritania | [i^]svezia | tripolitania | libia | [i^]spagna | [i^]svizzera | cecenia | grecia );
+
+APP ::= M: ( ( portavoce | [vice^]presidente ) DELLASSOCIAZ | dottore | terrorista [RAZZA.GLI.S | RAZZA.I.S] | ragioniere | nullafacente | disoccupato | mariuolo | sindacalista | parassita | deputato | senatore ) | F: (presidentessa DELLASSOCIAZ | femminista | terrorista | suffragetta | prostituta | attrice | neonata );
+
+DELLASSOCIAZ ::=  (del \consiglio dei ministri | [del potere temporale] della \chiesa | della \camera | del \senato | dell'arcigay | dell'associazione amici de^(R2) | della \p2 | [della setta] degli \illuminati di STATO ) ;
+
+CONSONANTE ::= b|c|d|f|g|+l|+m|n|p|qu|+r|+s|t|-v|--z;
+
+VOCALE ::= a|e|i|o|-u;
+
+COGNOME ::= \[CONSONANTE^VOCALE^][CONSONANTE^VOCALE^][CONSONANTE^VOCALE^][CONSONANTE^VOCALE^][CONSONANTE^VOCALE^]CONSONANTE^(+++i|--a|--o');
+
+ANIMALE ::= cane | gatto | delfino | panda | asino | cavallo | tapiro | bruco | coleottero ;
+
+AZIONE1 ::= ( si e' fatt(M:^o|F:^a) ( esplodere | saltare | slinguazzare | onanizzare | scacazzare ) (davanti | dietro | dentro) al POSTO SEGNO.V (colpendo|uccidendo|facendo fuori|inchiappettando) anche | ha [duramente|barbaramente] (criticato | attaccato | sodomizzato) );
+
+CONS1 ::= ( dure | roventi | incazzate ) [le] (ingiurie | stronzate | repliche  )[da parte] (dell'opposizione | DELLASSOCIAZ | de^R2);
+
+POSTO ::= ( consolato di STATO | palazzo DELLASSOCIAZ ) ;
+
+NOMEBESTIA ::= \[CONSONANTE^VOCALE^][CONSONANTE^VOCALE^][CONSONANTE^][CONSONANTE^VOCALE^][CONSONANTE^][CONSONANTE^VOCALE^][CONSONANTE^VOCALE^][CONSONANTE^]^(CONSONANTE^VOCALE);
+
+R2 ::= (gli RAZZA.GLI.PL | i RAZZA.I.PL) ;
+
+RAZZA::=GLI:((italian | ebre | arian | stronz | zingar | zigan )(PL:^i | S:^o) | (omosessual | eschimes | albanes) (PL:^i | S:^e) | abitant(PL:^i | S:^e) di LOCALITA | onanist  (PL:^i | S:^a)) | I:((polacc | lanzichenecc) (PL:^hi | S:^o) | buddist  (PL:^i | S:^a) | (marocchin | negr ) (PL:^i | S:^o) | \testimon(PL:^i | S:^e) di \geova);
+
+INSULTO ::= (incostituzionale | fascista | fazioso | comunista | -anale | -onanista | degno del noto dittatore (COGNOME | --\helder) | inconcepibile | ridicolo | spaventoso | assuefacente | ---inebriante) [SEGNO.V senza SEMA e senza SEMA] ;
+
+TENERO ::= tenero | caro | piccolo | morbido | ---saporito ;
+
+DOMANDA ::= \(INTRD COMPLD | WHY | HOW | WHEN | WHAT)^"?";
+
+INTRD ::= (ti piace | com' e' | come funziona | chi ha vinto | a chi hai concesso favori carnali per raggiungere | cosa si prova ad (aver fatto | essere));
+
+COMPLD ::= >(il tuo lavoro | il mangiare carne di ANIMALE | la capitale della STATO | la posizione di APP.M | il \nirvana | l'onanismo | l'orecchio | il rutto  | il peto | il cerume | il naso | l'unghia del piede | la felicita' | il sindaco di LOCALITA );
+
+COMPLD2 ::= ( nascono i bambini | esistiamo | hai mangiato [oggi] | rutto | ti prude la fungia | fai uso illegale di polygen | hai un fidanzato | hai una fidanzata | pratichi la dendrofilia | ti rende incline alla coprofagia | assomigli a NOME | si calcola (l'integrale generalizzato | la derivata | il quadrato | il cubo | la mantissa | il minimo comune divisore | la radice cubica) di CIFRA[^CIFRA][^CIFRA]x | viviamo | sei gay | poserai nuda per un calendario | hai una relazione | hai su per il culo | ti lavi dietro le orecchie | ti mangi le unghie | fai onanismo | sniffi la colla );
+
+WHY ::= perche' COMPLD2;
+
+HOW ::= in che modo COMPLD2;
+
+WHAT ::= [con] [che] cosa COMPLD2;
+
+WHEN ::= quando COMPLD2;
+
+RISPOSTA ::= \(([penso di | credo di | mi sa di | forse] (si' | no) | non lo so | CIFRA[^CIFRA][^CIFRA][^CIFRA] | lunedi' | martedi' | rosso | mio (cugino [di (secondo | terzo | quarto | quindo | sesto | settimo ) grado]| [pro^]zio | [bis^]nonno) NOME | perche' e' cosi' | ieri | domani | LOCALITA | un ANIMALE)) ;
+
+INTERVISTA ::= SEGNO.VT ^DOMANDA SEGNO.VT ^" " SEGNO.VT ^RISPOSTA SEGNO.VT SEGNO.PU1 ;
+
+SHOWGIRL ::= (vel | letter | ---merd | ---puttan )^(ina | ona | accia | onza) | valletta di \colpo \grosso | showgirl | pornostar;
+
+MAN ::= calciatore | milionario | magnate | tycoon | manager;
+
+OGGETTO ::= la primavera | +l'ondata di maltempo | l'onanismo | la calvizie | la diarrea | la stitichezza | la carne di ANIMALE | la scureggia | l'autunno | l'inverno | l'estate | lo scroto | " "^\polygen ;
+
+CAUSA ::= causa | non causa | impedisce ;
+
+TERROR ::= (non esistera' piu' | cessera' di esistere | esplodera' | finira' | si vaporizzera') (nel | prima del | dopo il) 20^CIFRA^CIFRA ;
+
+AVV::= (schifosamente | vergognosamente | omosessualmente | infelicemente | tremendamente | orribilmente | spaventosamente | estremamente | pedissequamente );
+
+SEMA ::= se | ma | pero' | [or^]dunque | quindi | percio' | perche' | di | si' | no ;

@@ -1,0 +1,421 @@
+I ::= "title:    intervista a calciatore\n"
+    ^ "author:   gigiriva\n"
+    ^ "language: italian\n"
+    ^ "status:   " Velina "\n"
+    ^ "topic:    interviste argute\n"
+    ^ "audience: nessuno\n"
+    ^ "comment:  " (Calciatore|+++Velina) " dichiara di non essere in possesso del"
+                 Corpo " di " (+++Calciatore|Velina) " e si scusa per i problemi derivanti da cio' \n"
+    ^ "created:  05/09/2005"
+;
+
+S ::= \     "<i><font size=2 color=gray>" \intervista a CalciatoreF  
+"</font></i><br><br>" Postdomandasq Postsq "<br><br>" Postdomandasq Postsq 
+"<br><br>" Postdomandaper Postper  "<br><br>" [Postdomandasing Postsing 
+"<br><br>"]
+            "<b>" Mercdom "</b>" \Mercrisp "<br><br>"
+            Gossip
+
+
+;
+
+
+Postsq::= \[[sicuramente|_] penso che] abbiamo (giocato | fatto) (una 
+partita | -----un match) [sicuramente|_] importante [^"," e' mancato solo il 
+(gol | risultato)]^".<br>"
+        \[sicuramente|_] abbiamo dimostrato (+(che siamo | di essere) 
+[sicuramente|_] (una squadra | un gruppo) (importante | che ha [tanta] 
+voglia di (far[^e] bene | vincere | dimostrare (_ | il suo valore | la sua 
+forza |  di sapere fare gruppo | tutto | niente) [ _ | ai tifosi | alla 
+gente | a noi stessi | al mister ]))| di avere (+gli attributi | +i 
+cosiddetti attributi |---- le palle| le capacita' per fare bene | un po' di 
+fortuna | sfortuna | -sfiga | vinto | una grande squadra | un grande gruppo 
+| un (gruppo| allenatore) vincente ))^"."
+        \(ma [sicuramente|_]l'importante e' | -(si deve | bisogna)) (fare 
+(gruppo | bene [il campionato | la coppa] | una buona (prestazione | 
+partita) [sempre | domenica | mercoledi | la prossima volta] | una {partita 
+| prestazione}{importante | buona}))
+
+        ^".<br>"
+;
+
+Postper::= \[non mi parlare (francese | inglese | aramaico | italiano | 
+esperanto | graco | latino | farfallese | strano | spagnolo | ostrogoto | 
+sardo | difficile | complicato | male | piano | veloce | cinese | russo) che 
+non [ti] capisco^"."|+++_] \[io] [penso che] [sicuramente|_] ho (dimostrato 
+| fatto vedere) (a tutti | al mister | ai giornalisti | a voi | ai tifosi | 
+a chi [non] credeva in me | agli italiani | agli appassionati | al 
+presidente | alla commissione europea | a me stesso) che 
+[sicuramente|+++_](sono un giocatore importante [per questa squadra | per il 
+mister] | sono tornato | l'infortunio al Corpo e' (recuperato | [solo] un 
+[brutto] ricordo) | so fare ([auto^|_] gol | gruppo | la differenza | 
+autocritica) | posso essere ancora (importante | utile) [per la squadra | 
+per il mister] )
+           [^"." \[sicuramente|_] (dedico | vorrei dedicare) quest
+                                                                  (
+                                                                   ^o 
+(++++++gol | errore | momento | -----albero | pareggio | "Grammy" | premio 
+(oscar | di migliore in campo ("Sky" | "Telepiu") | di miglior 
+barzellettiere di"Italia") | scudetto | pallone d'oro | riconoscimento | 
+Corpo | trofeo | esperimento) [[sicuramente|_]importante|+_]
+                                                                  | ^a 
+(doppietta | "Champ"^(+++ions | son | sons | rons | on | ion[^z] | sun ) 
+"League" | prestazione | giornata | tripletta |vittorie | sconfitta | 
+carriera | espulsione |ammonizione|guerra mediatica| buffonata 
+)[[sicuramente|_]importante|+_]
+                                                                  | --- ^i 
+(attributi | riconoscimenti | ++gol | premi | punti | scudetti | infortuni 
+)[[sicuramente|_]importanti[^ssimi|+_]|+_]
+                                                                  )
+                 a (
+        (* sing M *)  (Dich | ^l mio (presidente | procuratore | fan[^s] 
+club | allenatore | massaggiarore | servo | amore | uccello | Corpo | mago | 
+coraggio | ragazzo | maestro (di vita | delle elementari | di tennis)) | ^l 
+"<i>''"^ (CalciatoreF ("Fan Club" | nel cuore | uno di noi | supporters | 
+"Vergogna" | supporters e parenti) | (Sq | -------Pers | ----(VelinaF | 
+Velina)) "Club" (CalciatoreF | -----(Calciatore |--Dich |Velina | VelinaF))| 
+\(daje |forza| grande|dagli a) CalciatoreF  ) ^"''</i>" di 
+\(milano|barcellona|reggio\(calabria|emilia|toscana)|roma|(lambr|l[^a]in|boll|segr|scus)^ate
+|"Busto Arsizio"|"San Vittore"|baghdad|chicago|bogota'| Corpo "sul Naviglio"|
+samarcanda | atene | stromboli | 
+stoccarda|atalanta|pechino|georgetown|fonopoli|paperopoli|topolinia|altrove|muggia|rebibbia|guantanamo|atlantide)| 
+qualcuno )
+                      che  (ImpS | e' stato molto male | e' stato licenziato 
+| ha litigato con Velina | ha appena avuto un figlio con Velina | e' stato 
+disonesto con me | e' stato arrestato | e' un amico | e' piu' bello di 
+Velina)
+        (* sing F *)| (--(Velina | VelinaF) | ^lla mia (sfortuna | badante | 
+sfortuna | ragazza | polmonite| servitu' | squadra| accompagnatrice | voglia 
+di (qualcosa di buono | dimostrare | vincere | perdere | affermarmi )) | mia 
+(figlia | nipote | nonna | madre | sorella | consuocera | zia )| ^lla 
+(squadra | risoluzione "ONU" | televisione | famiglia di (Dich | Velina) | 
+fame nel mondo | vita | tragedia))
+                      che (ImpS | e' stata molto male | mi ha regalato (un 
+figlio | (due|tre|quattro|dodici) figli) | e' incinta | e' morta ieri | e' 
+stata sempre diffidente nei miei confronti | mi e' stata vicina | e' stata 
+importante per me quasi quanto (VelinaF | Velina | Dich) )
+        (* plur M *)| ( (^i miei 
+(compagni|amici|fans|creditori|animali|cani|gatti|maiali|attributi|detrattori|parenti|figli|nonni|nipoti))| 
+(^i tanti | tutti gli) (poveracci|morti di fame | perditempo | fannulloni 
+|giornalisti |rompicoglioni| africani | presidenti | allenatori) | -- Dich 
+(^"," Dich|_)+ e (Dich|Velina)|^i (fans | giocatori (Del Sq).(M|F|V)| 
+ragazzi della curva | tifosi|vandali|bifolchi|burini|cani) |^gli 
+(avversari|ultras[(Del Sq).(M|F|V)]|amici| unici (amici|tifosi) che ho| 
+attentatori | esattori | altri)   )
+                      che (muoiono tutti i giorni | hanno bisogno di me| 
+stanno morendo | mi perseguitano [tramite una fattucchiera]|avevano previsto 
+(il mio gol | il mio infortunio | la fine della mia carriera | la mia 
+morte)|hanno sempre creduto in me | avevano ragione | voglio ringraziare | 
+sono importanti per me | amo | non mollano mai | mi sostengono nelle 
+avversita' | mi hanno sempre (difeso|incitato|fermato|trascurato|telefonato) 
+| mi hanno querelato | mi vogliono (bene|male) | mi hanno (curato | guarito) 
+il Corpo | sono [sempre] con me | sono in difficolta' finanziarie | ho 
+sentito al telefono ieri)
+                   )
+            ]
+            ^".<br>"
+;
+
+Corpo::= (tallone d'^"Achille"| ginocchio | menisco | costato | ^l'osso | 
+cervello | piede [destro | sinistro | --- di mezzo] | setto nasale | membro 
+| ^lo zigomo  | fegato | polmone artificiale| muscolo [rosso] | ^l'osso 
+sacro )
+;
+
+ImpS::= (sta morendo | mi perseguita [tramite una fattucchiera]|aveva 
+previsto (il mio gol | il mio infortunio | la fine della mia carriera | la 
+mia morte)|ha sempre creduto in me | aveva ragione | voglio ringraziare | e' 
+una persona importante | amo | non molla mai | e' molto importante per me [ 
+e per la squadra]| mi ha sempre difeso | mi ha querelato | mi vuole 
+(bene|male) | mi ha (curato | guarito) il Corpo | e' [sempre] con me | e' in 
+difficolta' finanziarie | ho sentito al telefono ieri)
+;
+
+Postdomandasq::= "<b>"\[CalciatoreF^","] (cosa ne pens^(i|a) della (partita 
+| vittoria | batosta | sconfitta) di oggi
+                                        | pens^(i|a) che (la (vittoria | 
+sconfitta | batosta | debacle | disfatta) | il (trionfo | clamoroso passo 
+indietro | tracollo | clamoroso finale)) sia dovuto (alla tattica suicida 
+[dell'avversario | dell'allenatore [avversario]] | alla scarsa preparazione 
+della squadra [avverasaria]| alle condizioni (del campo | fisiche generali) 
+| all'arbitraggio discutibile | alla preparazione (tardiva | affrettata |  
+anticipata) | all'infortunio di Calciatore)
+                                        | ha[^i] voglia di commentare  [la 
+(partita | sconfitta | vittoria ) | l'ammonizione | l'espulsione | il 
+risultato | le proteste degli avversari]
+                                        | un commento
+                                        | cred^(e|i) che il nuovo (modulo | 
+schema a tre | sistema difensivo | schema offensivo) abbia giovato (al gioco 
+della squadra | agli automatismi tra i giocatori | al risultato| all'intesa 
+con Calciatore)
+                                        | Dich ha (dichiarato | detto | 
+affermato) (di essersi annoiato | che non meritravate (la vittoria | la 
+sconfitta| una (vittoria | sconfitta) di tali dimensioni | il pareggio | la 
+vostra attuale posizione in classifica | di partecipare alla sua mensa | di 
+vincere) | che al ritorno non finira' cosi' | vendetta | che  non e' stato 
+giusto un finale del genere | che l'arbitro e' stato dalla vostra parte)^"," 
+cosa rispond^(e [CalciatoreF]| i)
+                                        | [sei | e'] soddisfatto del 
+risultato
+                                        | la squadra e' sembrata (annebbiata 
+| annoiata | impreparata | molto determianata | pietosa | imbarazzante | 
+alticcia | allo sbando | col pensiero a \(parigi | istambul | nizza | monaco 
+| "Porto Cervo" | lugano | panarea | ibiza | milano)  | vogliosa | in 
+imbarazzo | dimessa | altezzosa | eretta | affettata | oligarchica | 
+assetata di (sangue | vittoria | vino | gol) | [troppo] [poco] interessata 
+ai risultati delle altre partite | inutile | sorprendente | magica | per un 
+attimo (il grande "Brasile" | quella di un tempo | quella che tutti si 
+aspettavano))^"," [poi (c'e' stata la svolta | e' successo(quello che hanno 
+visto tutti | il fattaccio | cio' che nessuno si sarebbe mai 
+aspettato))^","] ((sei | e') d'accordo con me | cosa e' successo [tra primo 
+e secondo tempo| nei minuti finali | allo scadere])
+                                        | potevate fare (meglio | di piu')
+                                        )"? <br><br></b>"
+;
+
+Postdomandaper::= "<b>"\[CalciatoreF^","]( come giudic^(hi la tua |a la sua) 
+prestazione
+                                         | (ti sei | si e') trovato bene con 
+i nuovi schemi (difensivi | offensivi)
+                                         | come ha[^i] fatto a sbagliare 
+quel gol
+                                         | soddisfatto di come (ti sei | si 
+e') presentato (ai tifosi | al mister | agli avversari)
+                                         | contento per (il gol | la 
+tripletta | il rigore (sbagliato | parato | realizzato) | la ratifica del 
+protocollo di "Kyoto" | i complimenti del mister [aversario] | il pareggio 
+in extremis | il premio del (migliore | peggiore) in campo)
+                                         )"? <br><br></b>"
+;
+
+Postdomandasing::= "<b>"\cosa ne pens^(i|a) (della (partita|prestazione| 
+sostituzione |gufata |parata | espulsione ) |del (gol | ^l'assist | ^lo 
+sputo | comportamento | rigore)) di Calciatore ^"? <br><br></b>"
+;
+
+Postsing::= \non (amo |+++ voglio | posso) parlare dei singoli^"." Postsq
+;
+
+Mercdom::=  \(sono vere le voci che vogliono CalciatoreF (Al Sq).(M|F|V)
+             |vedi il tuo futuro (Al Sq).(M|F|V)
+             |possiamo dire ufficialmente che CalciatoreF e' (un giocatore| 
+ufficialmente) (Del Sq).(M|F|V) [insieme a Calciatore]
+             |(Il Sq).(M|F|V) ti vuole^"," cosa rispondi
+             |tentazione Sq
+             |Calciatore andra' (Al Sq).(M|F|V)^"," lo seguira^('|i)
+             |conferm^(a|i) l'interessamento (Del Sq).(M|F|V)
+             | ti vogliono "tutti:" 
+Sq^","Sq^","Sq^","Sq^","Sq^","Sq^","Sq^","Sq^","Sq^","Sq^","Sq^","(Sq^",")+ 
+(dove andr^(a'|ai)| dove vedremo giocare CalciatoreF la prossima stagione| 
+non (ti senti | si sente) (imbarazzato | lusingato | inadeguato | trascurato 
+| abbandonato | idiota | forte | poco considerato | troppo sopravvalutato | 
+condannato | il piu' grande di tutti i tempi) | che succedera' )
+            )"? <br><br></b>"
+;
+
+Mercrisp::=  (ho un contratto fino al 20^(00|" luglio"|07|08|09|10|11|12|13|14|15|20|25|28|36|92) ["a.c."|++++++_] e
+intendo (rispettarlo | annullarlo | portarlo a termine)^".<br>"
+             |non ne so niente^"," chiedete (a (Dich | ---Velina) | al mio 
+procuratore | al presidente | al mister |-- all'oracolo di "Delfi" )^".<br>"
+             |no comment [^"." Postper|+_"<br>"]
+             |sono in silenzio stampa [^"." Postper|+_"<br>"]
+             |non sono io a decidere^"," decidera' (Dich | ---Velina) 
+^".<br>"
+             |(++si | +++no |forse|di sicuro | c'e' una possibilita')^"." 
+\Mercrisp
+             |io non ne so niente^"," chi ve l'ha detto^"? <br><br><b>" \PF 
+".<br><br></b>" \(non (conosco | ho mai sentito nominare) PF | PF non dice 
+la verita' | PF si interessi delle sue cose^"," a CalciatoreF ci penso io | 
+parlero' con PF | PF fa gli interessi (Del Sq).(M|F|V)^","non credete a 
+queste cose | voi giornalisti credete a qualsiasi (cosa | stronzata)^"," non 
+importa che a dirla sia PF o Dich (o (Dich |Velina))+ [^". Ma io sono piu' uomo di tutti voi messi assieme"|+_] | smentisco (assolutamente |
+categoricamente | una volta per tutte))
+                                                                             
+              |---------------(allora e' vero| PF (ha ragione| dice sempre 
+la verita' [^"," ma non questa volta] | sa tutto | morira') | io ho sentito 
+PF dire altre cose | dite a PF che (mi vendichero'| non e' nessuno | che 
+pensi per se'| dice le bugie) | e' tutto vero | la verita' sta nel mezzo | 
+sara' quel che sara' | arrivederci)  ^".<br>"
+             |io dico sempre^":" (mai dire mai | decidera' il tempo | 
+l'importante e' fare bene | gallina vecchia fa buon brodo | forse si forse 
+no | la notte porta consiglio | non sono queste le cose importanti | puo' 
+darsi)^".<br>"
+             | dipende tutto dal mio Corpo^".<br>"
+             |come concordato con (Pers| Velina)^"," andro' (Al 
+Sq).(M|F|V)^".<br>"
+             |giocare nella squadra di (Calciatore|-Velina|---Pers) e' 
+sempre stato il mio sogno^"." \[(ma | pero' | ma pero') (non e' tempo di 
+fare previsioni | non si sa mai | ho un contratto che mi lega (Al 
+Sq).(M|F|V) | Pers mi ha assicurato un posto da (titolare | dirigente | 
+apprendista | maniscalco | panchinaro | terzo portiere | capitano | 
+ciarlatano) (Nel Sq).(M|F|V) [e penso (di (accettare | rifiutare) | che e' 
+una proposta importante)] |  \Mercrisp) | (d'altra parte | ovviamente | per 
+giunta) (Il Sq).(M|F|V) (mi ha sempre (cercato|voluto)| ha sempre creduto in 
+me | e' la squadra per cui facevo il tifo da piccolo | e' la squadra che 
+tutti amano | nessuno puo' rifiutare l'offerta di una squadra cosi' gloriosa 
+| ho sempre sognato di giocare in una squadra importante)^"."]  ^"<br>"
+             |Sq e Sq sono in vantaggio^"," (ma | comunque | l'importante e' 
+che | ho dimostrato che ) Mercrisp
+             |sto bene (Al Sq).(M|F|V)^".<br>"
+             )
+;
+
+
+Gossip::= ("<b>" \GossipdomFi "</b>" \GossiprispFi \[-GossiprispFiEnd|_] 
+"<br><br>"  )
+;
+
+GossipdomFi::=  (dicono che la (sua| tua) storia (d'amore | di sesso | di 
+mero interesse |platonica) con VelinaF non e' vera ma e' solo una (trovata 
+pubblicitaria | unione di comodo | invenzione dei media | storia di pochi 
+giorni | voce smentita)^"," cosa rispond^(i|e [CalciatoreF])
+                | VelinaF
+                | VelinaF ha dichiarato ((^": <i>''"^ \(a letto CalciatoreF 
+non vale niente | CalciatoreF soffre di eiaculazione precoce | ---- ((sono 
+[sempre stata]| devo essere ) me stessa| l'importante e' essere se stessi | 
+CalciatoreF non e' se stesso | io sono una persona vera [e questo da' 
+fastidio a (molti| CalciatoreF)])  |(Calciatore|CalciatoreF) e' (+++gay | 
+impotente | bravo solo a scopare | vergine | lesbica | superdotato | checca 
+| omosessuale | ambiguo |fallocentrico) | sono stata a letto con Calciatore 
+(^"," Calciatore)+ ^"," anche con Pers e Velina^"," ma CalciatoreF (non lo 
+batte nessuno | e' di gran lunga il (migliore|peggiore)|mai^"," piuttosto 
+(Pers|con gli animali dello zoo)))^".''</i>" \conferma ) |
+                                         (che la storia fra voi due e' 
+finita | di essere vergine [ancora da qualche parte] | di aspettare un 
+figlio da (lei | te | CalciatoreF [o da Calciatore|_] | Dich) | di fare 
+sesso con (te | lei | Dich) prima di ogni partita | di voler^(ti|la) 
+(++incontrare|++sposare|prostituire|vendere|comprare|baciare|diseredare|scopare|spogliare)| 
+che fara' un (+++calendario| almanacco| poster)  (nuda | vestita | senza 
+veli)  | che non c'e' due senza tre)
+                                              ^"," (cosa rispond^(i|e 
+[CalciatoreF])| conferma |smentisce| cos'ha da dire in proposito | intende 
+(+++querelarla|denunciarla|castigarla|ucciderla|sposarla|prostituirla|appellarsi 
+al "T.A.R. del Lazio"| parlarne con (il presidente | la societa' | Dich | 
+Velina)))
+                                        )
+                | cosa ne pensa di VelinaF [e della sua storia con Dich]
+                | preferisc^(e|i) VelinaF o Velina
+                | cosa rispond^(i a chi ti| e a chi la) accusa di giocare 
+male a causa (della sua relazione con VelinaF [e Velina |--- e Dich|+_]| 
+delle notti brave con Calciatore e VelinaF | delle distrazioni dovtre a 
+VelinaF | delle tette di VelinaF | del troppo sesso con (VelinaF | Dich^"," 
+come denunciato da VelinaF) | della sua relazione con una donna (pretenziosa 
+| impegnata | distrata | assetata (di sesso | di sangue | di vino | di amore 
+| di televisone | di successo | di calciatori | di personaggi famosi | di 
+notorieta'|---- di cazzo) | di spettacolo | bella | vecchia | giovane | 
+attempata | brutta | trascurata | lavoratrice | maleducata) come VelinaF)
+              )"? <br><br></b>"
+;
+
+GossiprispFi::= ( \VelinaF e' una (([gran] bella (donna|fi^(g|c)^a)) | 
+(puttana | troia | donna di facili costumi) | falsa | gran donna | delle mie 
+migliori amiche | strega | (ragazza|donna) importante) ^"."
+                  |+ \[(ehm^"...")+] (si| no| non lo so | sono in silenzio 
+stampa | chiedete a Dich | certo | per nulla | assolutamente (si|no) | sono 
+completamente d'accordo a meta' con VelinaF)^"." \GossiprispFi
+                  | la mia relazione con VelinaF [e Velina|_] non (e' in 
+discussione | influenza (la mia carriera di calciatore | il mio impegno per 
+la squadra | il mio rendimento | il mio Corpo)| finira' mai | e' influenzato 
+dal Corpo di (Dich|Velina)) ^"."
+                  | (non rilascio dichiarazioni su | non parlo di| chiedete 
+queste cose a Dich^"," io non parlo di | non voglio parlare di [Dich e| 
+Velina e] ) VelinaF ^"." [_|GossiprispFi]
+                  | non (conosco | ho mai sentito nominare | ho mai avuto 
+rapporti sessuali[di alcun tipo] con | ho mai detto queste cose di | credete 
+a | c'e' due senza | guardate | credete a quello che la "Gazzetta" dice di) 
+(VelinaF^"." | ----Velina^"..." "Ah, parlavate di" VelinaF^"? Scusate, e'"(la stanchezza | la tensione)^"." [Postsq] \GossiprispFi )
+                  | \VelinaF (ha la cellulite | e' vergine | e' obesa | 
+pensa solo al cazzo | sta con Dich | e' morta  | ha (delle belle tette | un 
+bel seno)| fa dei (dolci | pompini | calendari | discorsi) deliziosi| sa 
+solo (parlare | mentire | spogliarsi | dire | essere | fare calendari | 
+ballare | queste cose | chi e' | intervistare) | e' mia (figlia | sorella| 
+cognata | nonna) | vuole rovinare (Il Sq).(M|F|V) | e' una donna importante 
+| farebbe meglio a stare (in casa | dietro ai fornelli | in televisione [a 
+fare la puttana] | zitta)| non deve parlare | non si tocca ) ^"." 
+[GossiprispFi|++_]
+                )
+
+;
+
+GossiprispFiEnd::= CalciatoreF (e' sempre | ha dimostrato di essere (sempre| 
+rimasto)) CalciatoreF^"," (a prescindere da (VelinaF | -Velina)| nonostante 
+([vo^]i giornalisti | VelinaF) |-VelinaF o non VelinaF | e (Il Sq).(M|F|V) 
+ne e' (la dimostrazione | testimone)| e VelinaF lo sa bene | me l'ha detto 
+(il mister | il presidente | Dich))^".<br>"
+;
+
+
+
+
+
+PF:= (Calciatore|Pers|Velina)
+;
+
+Dich::= (Calciatore | Pers)
+;
+
+CalciatoreF:= Calciatore
+;
+
+
+Calciatore::= \( vieri | gilardino | gattuso | turci | zaccardo | bonera | 
+totti | cassano | peruzzi | cannavaro | zambrotta | garzya | toldo | 
+camoranesi | iaquinta | bettarini | toni | pirlo | ronaldo | cudicini | 
+zampagna | caracciolo | abbiati | ambrosini | giannichedda | "Di Canio" | 
+signori | inzaghi | nedved | veron | centofanti | materazzi | mastrapasqua | 
+figo | flachi | volpi | diana | "Olarticoechea" | adriano | kaka' | ganz | 
+fontolan | montella | boninsegna | shalimov | marazzina | bertotto | 
+quagliarella| luciano | cordoba | magallanes | locatelli | cozza | signori | 
+bellucci | ferrante | ravanelli   )
+;
+
+Pers::= \(moggi | galliani | carraro | zamparini | preziosi | tanzi | 
+ferlaino | moratti | pozzo | ("Valentino"| "Vasco" | "Paolo") "Rossi"| 
+vespa| "Della Valle" | "Guido Meda"| lotito | cragnotti | ciarrapico | 
+liedholm | sensi | tosatti | cannavo' | "Bruno Longhi" | "maurizio Mosca" | 
+biscardi | pizzul | bizzotto |  berlusconi | "Pippo Franco" | "Ezio Greggio" 
+| platinette | blatter | bush | matarrese | gaucci |  mentana | costanzo| 
+fassino | prodi | bertinotti | pele' | "Plinio Fernando" | "Guido Nicheli"| 
+manfredonia|"Lele Mora"|biatore| 
+["Diego"["Armando"]|----"Hugo"]"Maradona"["Jr."|+++_]| montezemolo ["Luca Cordero Di"|_] | schumacher | alesi | "Ugo Francica Nava" | "Osama Bin Laden" | clinton | pupo | bonolis | abramovich | bergomi | altafini)
+;
+
+VelinaF:= Velina
+;
+
+Velina::= ("Elisabetta Canalis" | "Alessia Marcuzzi" | "Sabrina Ferilli" | 
+"Rita Levi Montalcini" | "Maddalena Corvaglia" | una 
+(++misteriosa|+famosa|avvenente|straripante|---stagionata|-----ormai 
+defunta) 
+(++++letter|++++vel|paper|sorell|ment|peper|fratell|obitor|cagnol|conigl[^iett[^ator[^ezz[^an[^tol]]]]]|+baller|aspir|ketam)^ina 
+|  "Emanuela Folliero" | "Mara Venier" | "Mascia Ferri" | "Alessia Merz" | 
+"Platinette" | "Claudia Schiffer" | "Naomi Campbell" | "Alena Seredova" | 
+(la | "Maria Grazia") "Cucinotta" |"Monica Bellucci" | "Giorgia Palmas" | 
+"Aida Yespica" | "Jessica Rizzo"| "Rosi Bindi" | "Claudia Peroni" | "Lilli Gruber"
+          | "Rosella Sensi" | +(la | "Manuel"^(a|ona))"Arcuri"|"Heidi Klum" 
+| "Simona Ventura" | "Michelle Hunziker" | (+++la moglie | l'amante | la 
+figlia [segreta] | la sorella | una fan di | la concubina | la serva | la 
+cameriera personale | la schiava | l'erede | la cugina ) di Dich | "Eva Henger" | "Selen" | "Carolina Marconi" | "Sofia Loren" | "Angelina Jolie"
+|"Maria De Filippi"| "Letizia Moratti" | "Maurizia Paradiso"| "Moira Orfei" 
+| "Anna Falchi" | ("Carolina" | "Stephanie") di "Monaco" | "Maria Mutola" | 
+"Adriana Lima" | "Ronaldinha" | la regina (++++"d'Inghilterra" | "di Spagna" 
+| "d'Italia" | "del Brunei"| "del tortellino"))
+;
+
+Il::= M: il | F: la| V: l'^
+;
+Del::= M: del | F: della| V: dell'^
+;
+Al::= M:al | F: alla | V: all'^
+;
+Nel::= M: nel | F: nella | V: nell'^
+;
+
+Sq::= M: \(milan | "Real Madrid" | "Boca Junior" | chelsea | barcellona | 
+pizzighettone | napoli | genoa | manchester | liverpool | "Castel Di Sangro" 
+| palermo | licata |bayern) | F: \(juve[^ntus] | samp[^doria] | roma | lazio 
+| reggina | steaua | "Stella Rossa"| "Real Sociedad" | fiorentina | 
+samb[^enedettese]) | V: \(inter | udinese | ascoli | empoli | atalanta | 
+"Arminia Bielefeld" | avellino)
+;
+

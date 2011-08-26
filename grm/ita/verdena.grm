@@ -1,0 +1,114 @@
+I ::=   "title:      Testi dei Verdena\n"
+      ^ "author:     Alan aka ^anakin^ &lt;alanzap@email.it&gt;\n"
+      ^ "language:   italian (credo)\n"
+      ^ "status:     refinable\n"
+      ^ "topic:      musica\n"
+      ^ "scoop:      finalmente disponibile la grammatica originale usata dai Verdena per scrivere i loro testi\n"
+      ^ "created:    10/11/2004";
+
+S ::= "<b>"^Titolo^"</b>\n\n"^
+      \((Strofa)+)+
+       Rit
+       ((Strofa)+)+
+       Rit
+       [(Strofa)+]
+       (Strofa | +((F^"..."^)+)+);
+
+F := (Cosa|Dove|Verb.(Imp|P1|P3)|Nome|Altro);
+
+Rit := "\n<i>Ritornello:</i>\n"^Strofa [Strofa]"\n"^;
+
+Titolo ::= \( (valvo|ultra)(^Nome.(M|F).NoArt) 
+             |(Nome.(M|F).NoArt)^drama
+             |il suicidio Nome.(M|F).Di  
+             |Cosa
+             |Aggettivo.F
+             |Dove
+             |Numero^" "^(secondi|minuti|ore|giorni|mesi|anni|tir|tricli|apecar) (+Dove|di (niente|nulla|vuoto)|con Persone)
+             |-Persone
+            );
+
+Strofa ::=[+_|(e|ma) (ora|adesso)]
+          (Verb.(P1|P3|Imp) Cosa [Dove] [Come]
+           |[mi] Verb.P1 Cosa [Dove]
+           |-se Cosa [mi] Verb.P3^"," Cosa [mi] Verb.P3 [Dove]
+           |(non c'e' [piu']|c'e') Cosa [(e|senza) Cosa] 
+           |[non] sei Cosa che [mi] Verb.P3 [Cosa]
+           |Cosa che [mi] Verb.P3 [Dove]
+           |[perche'] [Verb.P1] Cosa [Dove]
+           |perche' (Cosa|Persone) (non c'e'|[non] Verb.P3)
+           |Verb.Imp Dove [Come]
+           |contro di ME
+           |sono Aggettivo.M Dove [Come]
+           |(questo|Cosa) non e' Cosa
+           |(credo di essere|mi Verb.P1 cosi') Aggettivo.M
+           |lei [(mi|si)] Verb.P3 [Dove] [Come]
+           |(vedi|Verb.Imp) Aggettivo.M e [non] ti senti Aggettivo.M
+           |saro' Aggettivo.M quanto vuoi
+           |(tu non ti senti|io non mi Verb.P1) piu' cosi' Aggettivo.F
+           |(tu sei|lei e'|Verb.P1) Dove
+           |io con ME so che ci (sei|sono) quando non (mi|ti) Verb.(P1|P3)
+           |mi sembra Aggettivo.M (dirti|Verb.Inf) di piu'
+           |((non so (super^(sfogo|Aggettivo.M)) che non (-c'e'|Verb.P3))+)+
+           |(niente|nulla) Verb.P3
+           |--Persone
+           |(+Verb.P1|Verb.P3|Verb.Inf|+Verb.Imp)
+           |Altro
+           |Cosa (mi|ci) portera' via con (se|ME)
+           |non mi (importa|frega|Verb.P3) se [Persone] Verb.P3 o (no|Verb.P3)
+           |(perdo|Verb.P1) spesso un po' di ME in ME
+           |Verb.P1 che dovrei (Persone|Cosa) Verb.Inf (* questa parte sembra totalmente nonsense anche dal punto di vista "logico", dovrebbe simulare qualcosa simile a un verso che fa: "sento che dovrei lei vomitare" (giuro che è così)*)
+           |non c'e' da Verb.Inf
+           |(non mi (spiego|Verb.P1)|mi (chiedo|Verb.P1)|non so) perche' tu sei (+Aggettivo.F|Cosa|Dove)
+           |ogni io e ME che (sei|Verb.P1) ( +Turutu | Aggettivo.F | Cosa)
+           |io [e ME] Dove
+           )[+_|^"," Altro [+_|^"," Altro]]["(x"^Cifra^")"\]^"\n"^;
+
+Verb ::= ((offend|strid|cad|diping|offend|resping|perd|corregg|insist|[s^]corr)(P1:^o|P3:^e|Imp:^imi|Inf:^ere)
+         |(+sgomm|sud|gett|spar|soffi|manc|croll|provoc|soffoc|cont|bruci|trov|condens|sfid|precipit|+incoll|gratt|vomit|sud|vol|affog|cur|cull)(P1:^o|P3:^a|Imp:^ami|Inf:^are)
+         |(dorm|sent)(P1:^o|P3:^e|Imp:^imi|Inf:^ire)
+         );
+
+Persone ::= ("Spaceman"|"Mina"|"Luna"|"Henry Bahus"|"Elide"|bambina Aggettivo.F|lei);
+
+Come ::= come Cosa;
+
+Cifra ::= (2 | 3 | 4 | 5 | 6 | 7 | 8 | 9);
+
+Numero ::= ((Cifra^)+)+;
+
+Aggettivo ::=( (distort|onest|scur|ferm|compost|innoqu|fint|insan|infinit|ner|sol|lent|cretin|lesbic)(^(M:o|F:a))
+             |([a^]normale|uguale|+blu|giu'|debole|reale|fragile|semplice|in nero|color porpora)
+             );
+
+Cosa ::= (Nome.F.Art [Aggettivo.F] | Nome.M.Art [Aggettivo.M]);
+
+ME ::= (me|te)[e (ME|-Persone)];
+
+Dove ::= ovunque|qui|giu'|nel blu|in volo|nel nulla|nel niente|dentro (Cosa|[di] ME|Persone)|(su|fuori) di ME
+         |cosi' (vicino a|lontano da) ME|(nel|sul) (mio|tuo) Nome.M.NoArt|(nella|sulla) (mia|tua) Nome.F.NoArt|in vena;
+
+Nome ::=(M: (Art:(il|un) [mio|tuo] |Di: del   |NoArt:_) (mare|niente|nulla|crimine|controllo|cielo|fiore|letto|buio|seno|tappeto|creme caramel|Turutu|cortile)
+        |M: (Art:(l'^|un [mio|tuo])|Di: dell'^|NoArt:_) (angelo|impero|orrore|elefante)
+        |F: (Art:(la|una)[mia|tua] |Di: della |NoArt:_) (gioia|paura|pelle|satira|pioggia|calma|noia|fretta|vertigine|fine|roccia|follia|gola|bambina|libidine|schiuma|medusa|centrifuga)
+        )[++_|^"-fan"];
+Ebbene ::= [ebbene];
+
+Turutu ::= ((( (t)^(a|e|i|o|+u)^(r)^(a|e|i|o|+u)^(t)^(a|e|i|o|+u) )^)+)+^" "^;
+
+Altro ::= fa (male|bene)[ancora]
+         |in fondo
+         |con ME
+         |come non [(hai|ho) fatto] mai
+         |Ebbene io lo Verb.P1 [per ME] 
+         |ancora
+         |prima o poi
+         |Ebbene non lo so
+         |e' tutto Aggettivo.M
+         |+(o forse|+ma anche) (+no|si')
+         |Ebbene [non] mi (importa|frega|Verb.P3)
+         |(che|e) non (c'e'|Verb.P3)
+         |(a|e|i|o|u)^hhh
+         |non e' (facile|difficile|Aggettivo.M)
+         |[per] ME
+         |-Turutu;

@@ -1,0 +1,68 @@
+I ::=   "title:    I casini che succedono in MontePandoro\n"
+      ^ "author:   Vision-X.it\n"
+      ^ "language: italian\n"
+      ^ "status:   final\n"
+      ^ "topic:    misc\n"
+      ^ "audience: dedicato a tutti quelli di monte e ricordiamo che" Fuck ^"\n"
+      ^ "created:  10/12/2002"
+;
+
+S ::= \Atto
+;
+
+Y ::= pez | faq | generale | "vision-x" | cellofan | aenigma | kubrik | orso
+   |  dayz | irreale | flydown | hellgate | beppe | mestesso | artist
+;
+
+X ::= leilaz | gawanana | cherubina | futura | flygirl | vanilla | cerbiatta
+   |  vale78 | xz | manthissa | ery
+;
+
+Z ::= X | Y
+;
+
+Fuck ::= X Fck Y | X Fck Y | Z Fck Z
+;
+
+Fuck2 ::= X Fck2 Y | X Fck2 Y | Z Fck2 Z
+;
+
+Fuck3 ::= X Fck3 Y | X Fck3 Y | Z Fck3 Z
+;
+
+Fck ::= si fa | si scopa | si tromba
+;
+
+Fck2 ::= si faceva | si scopava | si trombava
+;
+
+Fck3 ::= si facesse | si scopasse | si trombasse
+;
+
+Talk ::= X Tlk Y | Y Tlk X | Z Tlk Z
+;
+
+Tlk ::= ha (detto a | smsato | scritto in mail a)
+;
+
+Nk ::= non (sapeva | immaginava | credeva possibile)
+;
+
+Blv ::= credeva | supponeva | aveva la certezza
+;
+
+Sy ::= (dice | sostiene | afferma) che
+;
+
+Agg1 ::= troia | puttana | vacca
+;
+
+Agg2 ::= stronzo | bastardo | coglione
+;
+
+Atto ::= Talk che Fuck^".\n"^\
+         quello che Z Nk e' che Fuck3 mentre Blv che Fuck3^"."\
+         percio' Z Sy X e' Agg1 perche' Fck Z invece di Z^"."\
+         all'improvviso salta fuori che Fuck^"," quando tutti credevano che Fuck3^".\n"^\
+         nonostante tutto cio' Z non Fck nessuno^"."\
+;

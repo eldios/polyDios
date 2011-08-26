@@ -1,0 +1,713 @@
+I ::=   "title:    Recensioni Indiesnob\n"
+      ^ "author:   gigiriva &lt;derivaandrea@hotmail.com&gt;\n"
+      ^ "language: italian\n"
+      ^ "status:"   Aggettivo.M.S "\n"
+      ^ "topic:    musica\n"
+      ^ "audience:" Nazionalita.(M|F).P VI Nazionalita.(M|F).P VI Giapponese 
+[VI lettori di "Blow Up" PA1 e delle sue imitazioni PA2|_] e chiunque possa 
+definirsi AggettivoS (+TR AggettivoS TR AggettivoS|_)+  "\n"
+      ^ "disclaim:" un mondo senza parentesi sarebbe un mondo [Avverbio] 
+AggettivoDopo.M.S "\n"
+      ^ "created:  01/10/2005"
+;
+
+S ::= "<b>" Titolo "</b>" "(" ^Formato ^"," EtichettaF ^"," Anno ^")"
+
+      AC AC
+
+      Pippe
+
+      \DescrIntr PU
+
+      AC
+
+      \ Descrizione1
+
+      AC
+
+      (
+      {\ Descrizione2}
+
+      AC
+
+      {\ Confronto}
+      )
+      AC
+
+      (++++GiudizioFinale|_)
+
+      AC
+
+      Voto
+
+
+
+
+
+
+
+
+
+
+
+;
+
+
+(************************************** FRASI 
+********************************************************************)
+
+(*----------- TITOLO------------- *)
+
+Titolo::= GruppoF "-" "<i>" NomeAlbum "</i>"
+;
+
+Formato::= [(+++2|3|4|5|10)^"X"^] (++"CD" | "LP" | "EP" | "mini-CD" | 
+(8|12|10)^'')
+;
+
+Etichetta::= \(tzadik  | anticon | "ReR" | future | self  | past | antimusic 
+| "World Circuit") | \(green | blue |black | white| naked | 
+neo)^(_|kraft|disc|lable| sonic| 7| sonora| bitch| wide|world) ( _|"Records" 
+| "Music" | ----"Grammofon")
+;
+EtichettaF:=Etichetta
+;
+
+Anno:= (200^(4|5|6|-7))
+;
+
+GruppoF:= ArtistaInv
+;
+
+NomeAlbum:=AlbumInv
+;
+
+(*-----------------VOTO FINALE---------------------*)
+
+Voto::= (++Decimi | Decimi per (il disco | la musica)^"," Decimi per 
+Motivo2^"."| "(10)" per Motivo2^"," "(0)" per (il disco | la musica)^".")
+;
+
+Decimi::="(" ^(0|3|4|5|6|"6/7"|7|"7/8"|+++8|"8/9"|9|10|-------11 )^")"
+;
+
+Motivo2::= i testi | il coraggio | la lunghezza |^che' si'| la confezione | 
+la copertina | l'idea | il prezzo | il digipack | la EtichettaF
+;
+
+
+(*---------------Pippe Iniziali------------------------------*)
+
+Pippe::= {[(\(GenereC | Genere) PU)+]} {[(\(Carat 
+(Aggettivo|AggettivoS)).(M|F).(S|+++P) PU )+]} ([(\Aggettivo.M.S PU)+] | 
+[(\(Carat |-(City [nel proprio salotto]|AggettivoS TR City|"Il Rock e'" 
+(+++morto|vivo|bello)|si'| no)) PU)+]) AC
+;
+
+
+(*----------- Presentazione introduttiva gruppo------------- *)
+
+DescrIntr::=  (album d'esordio| (ennesima | seconda | terza | decima | 
+quindicesima) uscita) per (questo| (questo | il)(celebre | misconosciuto)) 
+DescrGruppo
+         | (esordio sulla lunga distanza|nuovo [_|capo^|PA1 capo PA2 
+^]lavoro) per i GruppoF VI DescrGruppo
+         | ci (ri^|"(ri)"^|_)prova ancora il [solito|collaudato] DescrGruppo
+         | [puntuale] nuova uscita della EtichettaF ^"," che (ci 
+(ri^|"(ri)"^|_)prova | mette a segno un nuovo colpo | sorprende ancora) con 
+questo DescrGruppo
+         | c'e' lo zampino di ArtistaF [^"," AppArtista^","] (nel | in 
+questo) [nuovo | collaudato |_] DescrGruppo
+         | e' la scommessa (di ArtistaF [^"," AppArtista^","]|della 
+EtichettaF ["(non a caso in crisi di" (+++vendite| identita')")"]) questo 
+DescrGruppo
+         | ++IntroArtista
+
+;
+
+IntroArtista::= ArtistaF VI AppArtista VI ci riprova con (i GruppoF VI| (un 
+| questo)) DescrGruppo
+                | ArtistaF [VI AppArtista VI] ci sorprende (sempre | 
+[puntualmente]da (dieci|vent'^) anni | raramente) PU
+                     \non questa volta PU \i GruppoF sono infatti un 
+DescrGruppo
+                | [ammettiamolo VI[nonostante tutto[e tutti]]] ci 
+aspettavamo (molto | di piu') da ArtistaF [VI AppArtista] PU  \e (invece | 
+infatti) ci tocca ascoltare questo DescrGruppo
+;
+
+
+DescrGruppo::= (
+                 gruppo [AggettivoS|+++_] (nato da un'idea di Musicista| 
+prodotto da [^l (solito | ^l'onnipresente)]("Steve Albini" |--- "Brian Eno" 
+|++ Musicista.M.S | --- ArtistaV.M.S )) e che vanta nomi quali Musicista 
+(^"," Musicista)+
+                | gruppo [AggettivoS|+++_] che gravita intorno ( (Al 
+Strumento).(M|F).S di Musicista | (Al Strumento).(M|F).P (di Musicista e 
+Musicista | della coppia Musicista ^"/"^ Musicista) )
+                | trio formato da (ArtistaF "(" ^Strumento.(M|F).S^ ")" ^"," 
+Musicista "(" ^Strumento.(M|F).S^ ")" e Musicista "(" ^Strumento.(M|F).S^ 
+")" | Musicista ^"," Musicista e Musicista)
+                | progetto di Musicista "(" ^Strumento.(M|F).S^ ")" e 
+Musicista "("^Strumento.(M|F).S^")"
+                | gruppo [AggettivoS|+++_] nato dall'incontro tra ArtistaF e 
+Musicista
+                | 
+["mini-"^|-"meta-"^|"proto-"^|--"post-"^|++_](collettivo|gruppo 
+d'improvvisazione|("mini-"^|-"meta-"^|"proto-"^|--"post-"^)(ensemble|orchestrone)) 
+di (8|9|6|-- (1|2|3|-8)^(0|2|6)) elementi
+               )
+
+                [_| VI che in quest'occasione si fa accompagnare da 
+(un'orchestra|un gruppo | un collettivo | un gruppetto) di (8|9|6|- 
+(1|2|3|-8)^(0|2|6)) (++++Strumento.(M|F).P [e (8|9|6|- (1|2|3|-8)^(0|2|6)) 
+Strumento.(M|F).P ]|  musicisti | elettricisti | impiegati del catasto)]
+;
+
+
+ArtistaF:= Musicista.M
+;
+
+
+(*----------- Descrizione Disco ------------- *)
+
+Descrizione1::= (
+                  (+++ "<i>" NomeAlbum "</i>"| l'album | il disco) e' ([Un] 
+[Aggettivo] Carat2 [Avverbio|_] AggettivoDopo (e [Avverbio|_] 
+AggettivoDopo|-_)).(M|F).S che VerboTr [Avverbio|_] (una serie 
+di|---eserciti di|_) (CaratM AggettivoDopo e [Avverbio] 
+AggettivoDopo).(M|F).P
+                  | Strumentazione VI per un (disco | album) 
+AggettivoDopo.M.S
+                  | (+++ "<i>" NomeAlbum "</i>"| l'album | il disco) crea 
+(il suono adatto a | la situazione perfetta per) Infinito (CaratM 
+AggettivoDopo [e [Avverbio] AggettivoDopo]).(M|F).P
+                  | (+++ "<i>" NomeAlbum "</i>"| l'album | il disco) (+++e' 
+in grado di mettere d'accordo | mettera' d'accordo | stimolera' soprattutto) 
+i fan[_|^s] (Del ArtistaV piu' AggettivoDopo).(M|F).(S|P) e (Del ArtistaV 
+piu' AggettivoDopo).(M|F).(S|P)
+                  | (+++ "<i>" NomeAlbum "</i>"| l'album | il disco) affonda 
+le sue radici (Nel (GenereC|+++Genere)).(M|F).S
+                  | [(eclettico|AggettivoDopo.M.S) fino alla nausea VI] (+++ 
+"<i>" NomeAlbum "</i>"| l'album | il disco) (mescola| 
+centrifuga|amalgama|mischia|confonde|sovrappone) [Avverbio] ((Genere | 
+GenereC | (Strumento AggettivoDopo).(M|F).P) VI)+
+                                                                             
+                                                                             
+                   ((Genere | GenereC | (Strumento AggettivoDopo).(M|F).P) 
+VI)+
+                                                                             
+                                                                             
+                   ((Genere | GenereC | (Strumento AggettivoDopo).(M|F).P) 
+VI)+
+                                                                             
+                                                                             
+                   e ((Genere | GenereC | (Strumento AggettivoDopo).(M|F).P) 
+)
+                )
+                VI (perfetto per | adatto a | ideale per) Azioni PU
+
+;
+
+
+Descrizione2::= ++[suoni di matrice] (GenereC).(M|F) VI (Carat (Aggettivo) 
+[(e|ma|----dunque) (Avverbio Aggettivo)] ).(M|F).(S|P) VI per un disco che 
+(inserisce| VerboTr) un (Fin2 Genere Aggettivo e Aggettivo).(M|F).S in 
+(+++un contesto| una situazione | un mondo | un evolversi | un percorso) 
+(prettamente| assolutamente|marcatamente|esclusivamente|Avverbio) GenereC PU
+                | --(GenereC [Aggettivo|_]).(M|F).S [VI] dunque PU 
+\Descrizione2
+                | ({(CaratM |--Genere)} {[Aggettivo]}).(M|F).(S|P) e 
+({(CaratM |--Genere)} {[Aggettivo]}).(M|F).(S|P) (si alternano| gareggiano 
+tra loro | combattono| si sovrappongono| lottano [(tra|fra) loro]| si 
+osservano) Gerundio [Avverbio|_](
+                                                                             
+                                                                             
+                                                                             
+                   (una serie di|---eserciti di|_) (CaratM AggettivoDopo [e 
+[Avverbio|_] AggettivoDopo]).(M|F).P
+                                                                             
+                                                                             
+                                                                             
+                   | (Un CaratM [Avverbio|+_] AggettivoDopo [e 
+AggettivoDopo|++_]).(M|F).(S|P)
+                                                                             
+                                                                             
+                                                                             
+                  ) PU
+                |- (la si voglia definire (Genere [AggettivoDopo]| GenereC) 
+o (Genere [AggettivoDopo]| GenereC)).(M|F).S VI la musica proposta VerboTr 
+ogni possibile CaratM.(M|F).S ((per Infinito | Gerundio) 
+({CaratM}{Aggettivo}).(M|F).P| rivelandosi (come| nella forma di| sotto 
+forma di| +_) (Un Aggettivo Carat2).(M|F).S) PU
+
+
+
+;
+
+Confronto::=
+              il riferimento (potrebbe essere| immediato e') (
+                                                               uno solo DP 
+(++++ArtistaV|ArtistaInv) PU
+                                                              |(un incrocio 
+| uno scontro | in incontro | una via di mezzo) tra 
+(++++ArtistaV|ArtistaInv) e (++++ArtistaV|ArtistaInv) PU
+                                                             )
+             |il gruppo (si presenta|-lo si puo' immaginare) [quindi] come 
+(un incrocio | uno scontro | in incontro | una via di mezzo) tra 
+(++++ArtistaV|ArtistaInv) e (++++ArtistaV|ArtistaInv) PU
+             |(ogni|il) riferimento (APers ArtistaV).(M|F).(S|P) (e' 
+puramente casuale | e' scontato | viene naturale | e' obbligatorio | non e' 
+casuale | va evitato | e' Aggettivo.M.S | e' oggettivamente ridicolo) PU
+             | (Il ArtistaV).(M|F).P (del nuovo millennio | del 2000 | 
+dell'era digitale) PU
+
+;
+
+Strumentazione::= strumentazione (Aggettivo|AggettivoDopo).F.S PA1 Strumento 
+(-(soltanto | e poco altro| solamente)| ++(VI Strumento)+ | (VI Strumento VI 
+Strumento VI Strumento)+) PA2  [VI (voce AggettivoDopo.F.S |--- voci 
+AggettivoDopo.F.P)] [VI ((Strumento AggettivoDopo).(M|F).P| (Un Strumento 
+AggettivoDopo).(M|F).S) ]
+                  | (Un Strumento (AggettivoDopo)).M.S [VI 
+[Avverbio](ostinato|cocciuto|radicale) nel Infinito ({CaratM} 
+{Aggettivo}).(M|F).P [Gerundio (Un {CaratM} {Aggettivo}).(M|F).(S|P)] ]
+;
+
+
+(*----------- GIUDIZIO SINTETICO FINALE------------- *)
+
+GiudizioFinale::=\(sottovalutato | sopravvalutato | (uno dei migliori album| 
+una delle [poche|tante] perle | miglior album) ((+++del|di questo [ottimo | 
+deludente | drammatico]) Anno| --dell'anno)|Aggettivo.M.(++S|P) | un (disco| 
+album) per (intellettuali | i seguaci di ("Vincenzo Mollica"| "Vincenso Isidoro Mollica")| soli fan | Nazionalita.M.P| incompetenti | ciarlatani |
+[gli] appassionati (del genere |(Del Genere).(M|F).S|(Del 
+Strumento).(M|F).(S|----P) ) | (appassionati|fan[^s]|ammiratori)(DiPers 
+ArtistaV).(M|F).(S|P))) PU
+                  [++_|--\(santi subito| pensione|no|verra' ricordato| ce ne 
+ricorderemo | dritti nel dimenticatoio) (QM|PU)|\(e|ma) speriamo (sia 
+l'ultimo|non abbia seguito|rappresenti il tanto sperato punto di svolta| 
+ArtistaF (vada in pensione|muoia|smetta|cambi mestiere)PU)  ]
+                  AC
+;
+
+(********************************** AGGETTIVI E PAROLE 
+********************************************************************)
+
+
+Aggettivo ::=
+              (AggettivoO)^(M: (S: o | P: i) | F: (S: a | P: e))
+             |(AggettivoC)^(M: (S: o | P: i) | F: (S: a | P: he))
+             |(AggettivoE)^(S: e | P: i)
+             |-----(AggettivoCH)^(M: (S: o | P: hi) | F: (S: a | P: he))
+             |-----(AggettivoA)^(M: (S: a | P: i) | F: (S: a | P: e))
+
+;
+
+AggettivoDopo::= (Aggettivo |-------Nazionalita | ---AggettivoS[^"-"^ 
+(AggettivoS|--Aggettivo)|_] )
+;
+
+AggettivoO::=  (sussurrat | amar | paracolt  | zingar | nud | immediat | 
+acut |complet | assolut| pregn |voluminos| etere|lussuos| lussurios | sfasat 
+| compatt | ignav|  tenu | glamouros| alat |coev | acid | libertin | scordat 
+| inquiet | spontane | ambizios| sghemb| obliqu| nitid | [dis^]intossicat| 
+liquid | funere| forzat| slintian|oscur| alien | burrascos| estiv | 
+beatlesian| indifes | ellingtonian| amar | ruvid | american
+                | eccessiv| contadin| distaccat| sonor|  pigr| vertiginos| 
+misconosciut|redent| acid | infuocat | catramos | lucid | melmos  | depress 
+| vellutat| alien| estrane | concret| assassin | rotond | rozz |quadrat | 
+stilos | [(post|neo|ultra)^("-"|_)^]contamporane |  "in(de)terminat" | 
+"in(d(i)e)terminat" |androgin |derivativ | diafan | fulmine | 
+[("de-"|"(de)")^](e|--in)^volut |rarefatt | disinvolt | perfett | sanguign
+                | miracolos | sboccat | masturbatori | morriconian | coatt | 
+"definit(iv)" | evocativ | ombros | iperrealistic|arcan| acut | ottus  | cup 
+|gelid  | incantat | deterritorializzat | irretit | esorcizzat | freudian | 
+algid | urban | estrem | genuin | scarn | immacolat| ebre |postmodern | 
+"post-modern"| ultramodern| kraut | arrugginit| sgangherat| urlat | ululat | 
+blaterat |  auster | dirett| improvvis | superb  )
+;
+AggettivoC::=  ( psichedelic | melodic|caleidoscopic | enfatic | lisergic | 
+cinematic| eccentric | scheletric | balcanic | nostalgic | celtic |britannic 
+| antifrastic | melancolic| apocalittic | romantic| liric| chirurgic | 
+manieristic | salvific|intimistic| canonic| parossistic | politic 
+|epilettic| drammatic| metallurgic| scismatic | nevrotic | automatic | unic 
+| mantric | elettric | "(ana)"^logic | analogic | elettronic | magnific
+               | immaginific  | cosmic | autistic | [elettro^]magnetic | 
+tonic | conic | selvatic | "(anti)estetic" | cubic | ludic| quantic | 
+magnetic | magmatic| claustrofobic | storic)
+;
+AggettivoCH::= (fanciullesc| fresc | fosc | ciec | tedesc | ricc | farsesc 
+|bianc | burlesc | giullaresc | barocc )
+;
+AggettivoE::= (  cangiant | "ragiona(n)t"|marzial | demenzial | casual | 
+cortes | specular| monumental| lancinant | rinascimental| attual| sgargiant 
+| surreal| paradossal |claudicant | indipendent|  radical | autunnal| 
+invernal| primaveril| popolar | scioccant| spettral| esistenzial| soffic
+              | circolar| sideral | palpitant| android | pedant | irriverent 
+| spettral | vibrant| sinusoidal | ancestral | volgar |trist | gestual | 
+letal|ignorant |disturbant| brillant|mutant| minmal|"(av)"^vincent| frances 
+| celestial |fort| digital | orchestral| banal | orecchiabil | seminal | 
+personal | "(in)"^confondibil | "dilania(n)t" | ridondant | sottil | 
+urgent|newyorkes | covant | berlines | esorcizzant | ingles
+              | suadent | autoreferenzial | "(pre)potent" | chiaroscural | 
+filiform | spumeggiant | dolent | miniatural | raggiant | cantabil | 
+apparent | sfavillant | lunar | solar | stellar | ghiandolar | angolar | 
+debol |"(in)coscient"| (in|--"(in)")^credibil | (im|--"(im)")^possibil  )
+;
+AggettivoA::=  (maschilist |realist| fascist| ambientalist |pessimist| 
+nazist | comunist| sodomit | komenist| progressist| cosmopolit | femminist | 
+futurist | manierist | espressionist | impressionist | solist | feticist | 
+solipsist | "sol(ips)"^ist | massimalist | minimalist | terrorist|ottimist | 
+fancazzist| razzist|interist|pessimist | tabagist)
+;
+
+(* ricorda che gli aggettivi stranieri vanno solo DOPO il nome!!!       *)
+(* ricorda di non mettere articoli prima di aggettivi: alcuni che iniziano 
+per vocale vengono sbagliati!    *)
+AggettivoS::= (freak | kraut| deep | casual | sci | math| emo|mainstream | 
+kitsch| gay| anni ((1|2|3|4|5|6|7|8|9|200)^0)  | "home-made" | virtual| free 
+| kinky | unplugged | jazzy| cool | nerd| british| chic|lesbo | underground 
+| space | world| postundicisettembre | vintage | indie | arsty| minimal | 
+deepy | bohemienne | dada | out | pop )
+;
+
+Nazionalita::=  
+(italian|spagnol|brasilian|argentin|texan|californian|american|venet|roman|marocchin|magiar|ostrogot|israelian|arab|afgan|egizian|australian|croat|slav|russ|lombard|african|sudafrican|sudamerican)^(M: 
+(S: o | P: i) | F: (S: a | P: e))
+               
+|(frances|ingles|scozzes|giappones|irlandes|islandes|newyorkes|finlandes|svedes|milanes|galles|cines|cingales|males|plates|canades|pechines)^(S: 
+e | P: i)
+
+;
+
+Avverbio::= ((++++AggettivoO|AggettivoC|AggettivoCH)^amente)
+;
+
+
+(* NO M singolari che iniziano per vocale*)
+Carat::= M: (S: (clima| paesaggio| suono|karma |cabaret| monologo | 
+umorismo| esorcismo| taglio| olocausto| fatalismo| distacco|immaginario| 
+mantra | vomito | cuore | nocciolo| stomaco | pathos | taglio | 
+(-s^|"(s)"^|_)trip | colore | fantasma| tocco| tornado| mood)
+            |P: (ambienti | ritmi | suoni |paesaggi|lampi|territori| lampi 
+|virtuosismi|tagli| spettri|esorcismi| fraseggi|tratti |luoghi| spasmi| 
+conati|mantra|"non-luoghi"| "non/luoghi"| "(non) luoghi"|  guizzi | 
+rapimenti | colori| tocchi | fantasmi | viaggi)
+            )
+        |F: (S: (melodia | deflagrazione | tinta | comunicativita' | 
+naturalezza | armonia | gemma| simpatia| innocenza| ["(pre)"^]potenza 
+|psichedelia| fragranza|colpevolezza| pancia | creativita'| sincerita'| 
+tensione |negritudine | spossatezza| alienazione| dolcezza | spirale | 
+["(im)"^]perfezione | ansia | liberta' | sensualita')
+            |P: (melodie | deflagrazioni | tinte | espressioni | 
+elucubrazioni | atmosfere | urla | acrobazie |concessioni| sentenze | gemme| 
+stanze| lande| tragedie | sentenze| storie | spirali| 
+fragranze|persecuzioni|incursioni | torture | tragedie| creature | commedie 
+| bombe )
+            )
+;
+
+Carat2::= M: (S: (paesaggio| cabaret| monologo | esorcismo| taglio| 
+olocausto| mantra | vomito | cuore | nocciolo| pathos | trip | colore | 
+fantasma| tocco| tornado| mood)
+            |P: (ambienti | ritmi | suoni |paesaggi|lampi|territori| lampi 
+|virtuosismi|tagli| spettri|esorcismi| fraseggi|tratti |luoghi| spasmi| 
+conati|mantra|"non-luoghi"| "non/luoghi"| "(non) luoghi"|  guizzi | 
+rapimenti | colori| tocchi | fantasmi | viaggi)
+            )
+        |F: (S: (deflagrazione | tinta | gemma| innocenza|comunicativita'| 
+["(pre)"^]potenza|pancia | creativita'| tensione | alienazione|  spirale | 
+["(im)"^]perfezione | liberta' | sensualita')
+            |P: (melodie | deflagrazioni | tinte | espressioni | 
+elucubrazioni | atmosfere | urla | acrobazie |concessioni| sentenze | gemme| 
+stanze| lande| tragedie | sentenze| storie | spirali| 
+fragranze|persecuzioni|incursioni | torture | tragedie| creature | commedie 
+| bombe )
+            )
+;
+
+CaratM::= M: (S: (clima| paesaggio| suono | umorismo| taglio|  fatalismo| 
+distacco| cuore | nocciolo| stomaco | pathos |  trip | colore |  tocco| 
+tornado| mood)
+            |P: (ambienti | ritmi | suoni |paesaggi|lampi|territori| lampi 
+|virtuosismi|tagli| esorcismi| fraseggi|tratti |luoghi| spasmi| 
+conati|mantra|"non-luoghi"| "non/luoghi"| "(non) luoghi"|  guizzi | 
+rapimenti | colori|  viaggi)
+            )
+        |F: (S: (melodia |  tinta | armonia | gemma| ["(pre)"^]potenza 
+|psichedelia|comunicativita'| fragranza| pancia | creativita'| sincerita'| 
+tensione | alienazione|  spirale | ["(im)"^]perfezione |  sensualita')
+            |P: (melodie |  tinte | espressioni | elucubrazioni | atmosfere 
+| urla | acrobazie |concessioni| sentenze | gemme| stanze| storie | spirali| 
+fragranze|persecuzioni|incursioni | torture | tragedie| creature | commedie 
+| bombe )
+            )
+;
+
+Azioni::= (camminate | viaggi | sogni | funerali | cerimonie | comizi  | 
+percorsi | innamoramenti | omicidi | riunioni | scampagnate | stupri | 
+scalate ) [interiori|++++++++_] (in riva al (mare | lago | ^lo stagno ) | 
+(d|n)^ella mente | nella nebbia | nella propria camer^[ett|"(ett)" |-_]^a | 
+in cantina | nella periferia di City | senza meta | nel deserto [della 
+propria mente | del cuore | di City]| on the road [again]| lungo argini 
+AggettivoDopo.M.P | attraverso lande (solitarie| desolate | 
+AggettivoDopo.F.P))
+;
+
+
+AppArtista::= ([vera e propria] leggenda|inventore |padre| pioniere | 
+scopritore)  (Del Genere).(M|F).S
+             | virtuoso (Del Strumento).(M|F).(S|----P) ["(oltre che della bottiglia)"|+++_]
+             | [leggendario| storico | poco conosciuto | stimato | 
+sottovalutato| sopravvalutato]["non-"^| "(non)"|+_ ](artista| musicista) che 
+ha (inventato| re^(_|"-")^inventato | rivoluzionato | 
+"(ri)"^(formato|trattato|posato|nnovato|proposto)| innovato) [per 
+sempre|++_] (il concetto di ((Strumento).(M|F).(S|-----P)|Genere) | (Il 
+Strumento).(M|F).S | (Il Genere).(M|F).S )
+                 [con l'album "<i>" AlbumInv "</i>"| suonando nei 
+"<i>"(ArtistaInv|--(ArtistaV).(M).P)"</i>"]
+             | considerato (da tutti | dalla critica | dal sottsocritto | da 
+Musicista) l'^[unico [vero]] erede (DiPers ArtistaV).(M|F).(S|--P)
+             | (pupillo| allievo | --erede | --amico) (di Musicista | ["(e non solo...)"] di ArtistaV.(M|F).S)
+             | ultima scommessa della \EtichettaF
+             | ---nostra vecchia conoscenza
+             | ----ritornato dall'esilio [["(auto)"^]forzato]
+             | artista di punta della [nuova|-prolifica] scena 
+Nazionalita.F.S
+             | [primo| secondo|terzo| quarto] figlio (segreto|illegittimo) 
+di (ArtistaV.F.S e ArtistaV.M.S| ArtistaV.(M|F).S)
+             | famoso ai piu' per avere scoperto (IlOgg 
+ArtistaV).(M|F).(S|P)
+             | PA1 si' VI proprio "QUEL" ArtistaF PA2
+;
+
+
+(************************************** VERBI 
+********************************************************************)
+
+VerboTr::= (dipana | presenta | replica | accelera | gonfia | regala | 
+distorce | annuncia | libera | aggiunge | scioglie | inculca | pennella| 
+controlla | vomita | affronta | allontana | avvicina | cavalca | indica | 
+distrugge | sradica | promulga| promuove| elabora | erige | suona | annuncia 
+| denuncia | aliena | incute | dipinge | abbozza)
+;
+
+Gerundio::= VerboTr^ndo
+;
+
+Infinito::= VerboTr^re
+;
+
+
+
+
+
+
+(************************************** Elenco GENERI 
+********************************************************************)
+
+
+
+
+GenereC::= [(Pref)+|+_][GenereF^("-"| ----"/")^]Genere [(isolazionista| 
+rurale | (cosmic | psichedelic |etnic |epic |ne^[g^]r | melodic| concret | 
+apocalittic)^(M: o | F: a ) | tradizionalista | riduzionista |  decadente |  
+orientaleggiante | sperimentale| strumentale | da (+++camera| tavolo | 
+giardino| teatrino di vaudeville| garage| denuncia [penale]| film porno 
+[anni 70]| orgasmo)
+                                                        | popolare | revival 
+|vocale| accademico | orchestrale | digitale| sperimentale | [a^]tonale | 
+modale | del delta )
+                                                        |+_ ]
+;
+
+Pref::=(+++++post |neoclassic | classic | anti | trip | dream | gay| old 
+|electro| psych|  acid | proto | easy | cocktail| City[^"-style"] | digital| 
+"neo-con" | synth | tribal | surf| spaghetti| nu | neo |"down-under" | wub | 
+dark| hard |cow| indie| italo| freak| heavy| free |art | alt | weird | 
+improv| southern | avant| noise |minimal|etno |prewar| underground| 
+vintage)^"-"^
+;
+
+Genere::= >>
+            M:(punk | ++++rock | glitch |  valzer | vaudeville |  mantra | 
+raga |gospel|  "grass-roots" | "Canterbury"| dub | rockabilly| 
+"shock-a-billy" |bluegrass | dubstep| country |  noise | metal | grindcore | 
+prog[^ressive] | jazz | funk | ragtime| rhythm'n'blues | soul | folk | bop| 
+(slo^[_|w]|hard)^(_|"-"^)core| blues | (++++lo|sci|de|low)^"-"^fi| kraut | 
+reggae | ++++pop |"hip-hop" | rap  )
+          | F:( house |techno| disco| lounge | "chill-out" | (+++++++Wave | 
+"(" ^Wave^ ")") wave |  ambient | new age | jungle | "drum'n'bass" )
+          <<
+;
+
+GenereF:=Genere
+;
+
+Wave::= ++++no | now | "no(w)" | nao | dark | +++++++new | post | yes | nu | 
+sao
+;
+
+City::= \ (detroit | chicago | "New York" | "L.A." | kabul| darmstadt | 
+tokyo | canterbury | bristol | "Tin Pan Alley" | broadway | "New Orleans")
+;
+
+
+
+(************************************** Elenco ARTISTI E STRUMENTAZIONE 
+********************************************************************)
+
+
+
+
+
+Strumento::=  M: (
+                  S: (sitar | triangolo | banjo | giradischi | violino | 
+violoncello | tavolo da biliardo |grammofono | sax | clavicembalo [_|--ben 
+temperato]|piano[^forte] | fortepiano | laptop |turntable | basso | 
+contrabbasso| vibrafono | mixer | mandolino | cimbalo | corno inglese  | 
+clarinetto )
+                  |P: (sitar | violini | cimbali | sax | pianoforti | 
+turntable | bassi | contrabbassi | mixer | mandolini | cimbali | corni 
+inglesi | fiati | vibrafoni| clarinetti | rumori)
+                 )
+             |F: (
+                  S: (chitarra [elettrica | acustica | classica] | batteria 
+| grancassa | roncola|-- batteria di pentole | tromba | drum machine | viola 
+| cinghia di trasmissione |  tuba | pianola | tastiera | voce | prostata)
+                 |P: (chitarre [elettriche | acustiche | classiche] | 
+manipolazioni elettroacustiche |batterie | trombe | viole | cinghie di 
+trasmissione | pianole | tastiere | voci | percussioni | frequenze 
+sinusoidali)
+                 )
+;
+
+Musicista::= (
+              M: ("Otomo Yoshihide" | "John Zorn" | "Devendra Banhart" | 
+"Steve Albini" | "Mark E. Smith" | "Christian Fennesz" | "Simon Nabatov" | 
+"Aphex Twin" | "Taku Sugimoto" | "Dj Hell" | "Matt Elliott" | "Tom Yorke" 
+|++ Giapponese| "Keith Jarrett" | "Paul McCartney" | "Alex Von Schlippenbach" | "Anthony Braxton" | "Fred Frith" | "Greg Davis" | "Franz Hautzinger" | "Deathprod" | "Jacob Kirkegaard" |"Jack Rose"
+| "Michael Stipe" | "Al Bano" |"Mike Patton" | "Mauro Repetto" | "Billy Corgan" |
+"Prefuse 73" | "Beans" | "Keiji Haino" | "Elvis Costello" | "Yann Tiersen" | 
+  "Fat Boy Slim" |  "Jandek" | "Eminem" |  "Pharaoah Sanders"
+                 )
+             |------F:  ("Ikue Mori"| "Susie Ibarra" | "Bjork" |  "PJ Harvey" | "Diamanda Galas")
+             )
+;
+
+Giapponese ::= \(toru | aki| otomo |  idetoshi | nobukazu | franco | somei | 
+satoshi) ("Isidoro"|+++++++_) \(mita | take | toma | mishi | oyu | koma| 
+honda | --b[^r]^uca |zingo | buddha | neko | naka | tote)^("\032" |mura 
+|hide | kuma | jima | [ko^]ta| ruki)
+;
+
+ArtistaV::= (M: ( S: ("Iggy Pop" | "John Coltrane" | "Stravinsky" | "Yustol Dispage" | "Captain Beefheart" | "David Bowie" | "Brian Eno"|"Frank Zappa" |
+"Bob Dylan" | "Brian Ferry"| "Bruce Springsteen" | "Lou Reed" | "Muddy Waters" | "Beethoven" | "John" \(cale | cage)| "Edgar Varese" |
+"Stockhausen" | "Ennio Morricone" )
+                | P: ("Beatles" | "Rolling Stones" |++"Velvet Underground" | 
+"Matmos" |"New York Dolls" | "Gun Club" | "Tottemo Godzilla Riders" | 
+"Cure"| "Kinks" | "Joy Division" | "Talking Heads" | "Pink Floyd" | "Faust" 
+| "Popol Vuh" | "Troggs" | "Nomadi"| "Grateful Dead" | "Doors" | "Led Zeppelin" | "Van Pelt")
+                )
+
+            |F: ( S: ("Madonna" | "Bessie Smith" | "Rita Pavone" | "Blondie" 
+| "Jo Squillo" | "Aretha Franklin" | "Marianne Faithfull" | "Yoko Ono" | 
+"Laurie Anderson" | "Alice Coltrane")
+                | P: ("Bangles" | "Supremes" | "Spice Girls" | "Shaggs" | 
+"Bananarama")
+                )
+            )
+;
+
+ArtistaInv::= \[the|---a]\[naked | blind | dead | burned | sophisticated | 
+sweet | ruby | telemarket | weird | gay | winning | polygen | washing | 
+counting | uwen | fucking | 16 | droning | super^ | old ["Time"] | public | 
+american | iraqi]
+              \(hand | city | nation | enemy | hitlers | death | enemies | 
+nicotines | scaruffs | communazists | americans | fabers | bitols | rents | 
+ramones | jefferson | explorers | "Indiana Jones" | dogs | soldplay | 
+blowjob | christs | popes | wagners)
+              [\(of | in | beyond | over ) ("The" \(roof | medicine | city 
+of City | block | wolf | prision | supermarket | zulu)| \(mammeta | victory 
+| sex | sax | eskimo | america | state | City ))]
+;
+
+AlbumInv::= (+++++[AlAg[(^"-"^AlAg)+|_]\AlPa[^s] AlPr \(the | a)] 
+(+{[AlAg]}{\AlPa}|AlAg|\AlPa) [\in [\the](City | \AlPa | AlAg)] 
+[+++++++_|^"/"^AlbumInv]| "S/t")
+;
+AlAg::= \(sucked | fucking | blue | green | white | black | yellow | pink | 
+naked | true | right | left | deep | immeasurable | easy | low | lower | 
+lowest | binding | blind | deaf | dumb | red | ruby | sleepy | candy | tiny 
+| pippy | wonderful | arab | japanese | improvised | free | bloody | new | 
+old | dead | alive | pretty | mooooooooonty)
+;
+AlPa::= (music | mind | heart | wire | stomp | fuck | bull | eye | blowjob | 
+dance | gang "Bang" | dick | riot | pussycat | punk | sea | heat | skate | 
+ballerina | pipe | mars | twix | forrest | wolf | cat | dog | human | 
+sentence | america | egg | motion | funk | biafra | mentadent | baba | 
+soundcheck | session | desert | fufi | pupu | room | gin | eldorado | 
+AlPr^AlPa )
+;
+AlPr::= \(with | into | over | under | in | at | of | from | through | 
+between | beyond)
+;
+
+
+(************************************** Elementi grammaticali 
+********************************************************************)
+
+
+
+Fin2::= M:_ | F: ^a
+;
+Sul ::=  M: (S: sul | P: sui)
+        |F: (S: sulla | P: sulle)
+;
+
+Un ::=  M: (S: un | P: dei)
+        |F: (S: una | P: delle)
+;
+
+Del ::=  M: (S: del | P: dei)
+        |F: (S: della | P: delle)
+;
+
+Nel ::=  M: (S: nel | P: nei)
+        |F: (S: nella | P: nelle)
+;
+
+DiPers ::=  M: (S: di | P: dei)
+        |F: (S: di | P: delle)
+;
+
+APers ::=  M: (S: a | P: ai)
+        |F: (S: a | P: alle)
+;
+
+Al ::=  M: (S: al | P: ai)
+        |F: (S: alla | P: alle)
+;
+
+Il ::= M: (S: il | P: i)
+        |F: (S: la | P: le)
+;
+
+IlOgg ::= M: (S: _ | P: i)
+        |F: (S: _ | P: le)
+;
+
+Lo ::= M: (S: lo | P: li)
+        |F: (S: la | P: le)
+;
+
+VI:= ^",";
+QM:= ^"?";
+PU:= ^".";
+TR:= ^"-"^;
+PA1:= "("^;
+PA2:= ^")";
+AC:="\n";
+DP:= ^":";
+

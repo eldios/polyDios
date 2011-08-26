@@ -1,0 +1,257 @@
+
+I ::=   "title:    Titoli di americanate hollywoodiane\n"
+      ^ "author:   Manta\n"
+      ^ "language: italian\n"
+      ^ "status:   mature\n"
+      ^ "topic:    misc\n"
+      ^ "audience: anybody\n"
+      ^ "comment:  il motivo per cui il PolyGen e' stato inventato\n"
+      ^ "disclaim: non si serba rancore per alcuna minoranza ("
+        ^ ( negri | cinesi | gay | ebrei | arabi | pellerossa | eschimesi
+          | zingari | serbi | [serbo^]croati | bianchi | bambini | anziani
+          | sordi | muti | ciechi | mongoloidi | portatori di handicap
+          | montenegrini | magrebini | paralitici | barboni | tunisini
+          | algerini | marocchini | curdi | turchi | rom | palestinesi
+          )
+        ^ " esclusi)\n"
+      ^ "created:  18/07/2002"
+;
+
+S ::= \ ( + Film [Sequel ["-" Film]]
+        | - (Movie [Sequel] "-" Film | Film [Sequel ["-" Movie]])
+        )
+;
+
+Film ::= Sostantivo1 Aggettivo1 (_ |- Luogo)
+     |   [Anno^":"] Sostantivo2 (Verbo1 | Verbo2) Avverbio [Luogo]
+     |   (Sostantivo1 di Sostantivo1 | Sostantivo3 di Verbo3)
+     |   Aggettivo2.P.NOart si Verbo2 [^"," Aggettivo2.P.NOart si Verbo2]
+     |   nati per Verbo3
+     |   Num Sostantivo4 per Num Sostantivo4
+     |   se Verbo4 ti Verbo5
+     |   (+ Luogo | Tempo) con Chi
+     |   (vedi | ascolta | controlla |+ senti |++ indovina |- pensa | guarda)
+           chi Verbo6 [Avverbio | Luogo]
+     |   non Verbo7 Sostantivo5
+     |   un Personaggio a Citta
+     |-- Consonante ^ "-" ^ Consonante ^ (a | e | i | o | u) ^ x
+     |   Cifra [^Cifra] (ore | minuti | secondi | giorni) per Verbo3a
+     |   Parente^"," mi sono Azione [Luogo]
+     |-  (Aggettivo2^"," Aggettivo2 e Aggettivo2).art.S
+     |   non Verbo8^"," non ti Verbo5
+     |   (Professione | Sostantivo6.(NOart|art)) a Num ParteCorpo
+     |   ( oltre Sostantivo6.art
+         | >( al >(vertice | limite | culmine | massimo | minimo)
+            | >(nel segno | all'insegna)
+            ) del Sostantivo6.del
+         )
+     |   (professione | missione) [^":"] Sostantivo6.NOart
+;
+
+Parente ::= mamma | papa' | (nonn | zi | cugin)^(a | o | i)
+;
+
+Azione ::= >(smarrito | perso | perduto | pentito | svegliato | impiccato | sbagliato)
+        |  >(pisciato | cagato | sboccato | vomitato | urinato) >(sotto | addosso)
+        |  >(trovato | trombato | cercato | mangiato | sfondrato) Chi
+        |  >(sbucciato | escoriato | squartato | tranciato | tagliato | cambiato)
+            ( la testa | il culo | il pene | i capelli | i denti | i piedi | le dita
+            | i calzini | le mutande | la maglia | la felpa | una banana | un occhio
+            )
+;
+
+Professione ::= poliziotto |- carabiniere | giustiziere | sbirro | piedipiatti
+             |  web designer | "Helder"
+;
+
+ParteCorpo ::= zampe | braccia | mani | code | teste | piedi | gambe | chiappe
+            |  spalle | ganasce | reni
+;
+
+Consonante ::= "B" | "C" | "D" | "F" | "G" | "H" | "L" | "M" | "N" | "P" | "Q" | "R" | "S"
+            |  "T" | "J" | "K" | "V" | "W" | "X" | "Y" | "Z"
+;
+
+Movie ::= [the] (+ RadixVoc^((er | ing) [^ly] | ers)
+                |  RadixCons^(less | full | ness) [^y]
+                )
+;
+
+Cifra ::= 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+;
+
+Anno ::=  (2 | 3) ^ 00 ^ (0 | >Cifra)
+;
+
+Num ::= due | tre | quattro | cinque | sei | sette | otto | nove
+;
+
+Sequel ::= "II" | "III" | "IV" | "V" | "VI" | "VII" | "VIII" | "IX"
+;
+
+
+Radix1 ::= contend | held | hold | crawl | crypt | rain
+;
+
+Radix2 ::= nam | lam | blam | rul | hid | settl
+;
+
+RadixVoc ::= Radix1 | Radix2
+;
+
+RadixCons ::= Radix1 | Radix2^e
+;
+
+Nome ::= "Alien" | "Terminator" | "Rambo" | "Rocky" | "Dracula" [il vampiro]
+      |  "Frankenstein" | "Predator" | "Nosferatu" | "Lessie"
+;
+
+Sostantivo1 ::= >Sostantivo3
+             |  complotto | verdetto | impatto | arma | innocenza | distruzione
+             |  verita' | trappola | vanita' | scontro | colpa | reato | virus
+             |  reazione | fuga | lacerazione | coalizione | relazione
+             |  sabotaggio | attacco | difesa | affezione | sensazione
+             |  [in^]certezza | assassinio | identita' | riscatto | intenzione
+             |  tensione | entita' | pazzia | scandalo
+;
+
+Sostantivo2 ::= >Nome
+             |  l'arma | l'impero | la galassia | l'universo | "la Terra"
+             |  "Marte" | la morte [nera]
+;
+
+Sostantivo3 ::= paura | ipotesi | licenza | desiderio | follia | intenzione
+             |  tentativo | sensazione | pensiero
+;
+
+Sostantivo4 ::= matrimoni | funerali | bassotti | danesi | dalmata | marmotte
+             |  cerimonie | comunioni | divorzi | cinesi | negri | "Helder"
+             |  pastori [maremmani | tedeschi] | fi[^a]^schi
+             |  alani | persiani | siamesi | manicomi | ospedali | ospizi
+;
+
+Sostantivo5 ::= >(lavello | bidet | cancello | televisore | garage)
+             |  ^la >(porta | giacca | macchina | roulotte | maniglia | maglia)
+;
+
+Sostantivo6 ::= (del: ^la | art: la | NOart: _)
+                >( paura | sopportazione | follia | pazzia | decenza | frenesia
+                 | tensione | fobia | prudenza | morte
+                 )
+             |  (del: ^lo | art: lo | NOart: _)
+                >(scontro | spasmo | sleale | scandalo | splendore)
+             |  (del: ^l'^ | art: l'^ | NOart: _)
+                >( inverosimile | incredibile | indecenza | orrore | incontinenza
+                 | intercessione | impossibile | internet [cafe']
+                 )
+             |  (del: _ | art: il | NOart: _)
+                >( verosimile | ripugnante | rivoltante | terro^(r | n)^e | terribile
+                 | mirino | possibile | pericolo | web | riscatto | rimorso | rimpianto
+                 | giallo | losco
+                 )
+;
+
+Aggettivo1 ::= letale | fatale | finale | globale | totale | apparente
+            |  imminente | a catena | omicida | avvincente | avvenente
+            |  [in^]formale | [s^]leale | criminale | latente
+;
+
+Aggettivo2 ::= (art: il | NOart: _)
+						 >( >( bass | bell | buon | furb | brutt | pelos | cattiv
+                             | negr | giall | grass | magr | calv
+                             | bull | fiapp | gobb | nan | sord | mut | rimbambit
+                             ) ^ (S: o | P: i)
+                         | >(selvaggi | vecchi | tirchi | guerci) (S: ^o | P: _)
+                         | >(secc | ciec | larg | ricc) ^ (S: o | P: hi)
+                         | cines ^ (S: e | P: i)
+                         )
+            |  (art: lo | NOart: _)
+            			 >( >(scem | zopp | stempiat | stordit) ^ (S: o | P: i)
+                          | (S: storpio | P: storpi)
+                          )
+            |  "Helder"
+;
+
+Verbo1 ::= colpisce | >(uccide | massacra | stermina) [tutti]
+        |  distrugge [[tutto e] tutti] | impazzisce
+;
+
+Verbo2 ::= nasce | muore | cresce | crepa | invecchia | campa
+;
+
+Verbo3 ::= >Verbo3a
+        |  nascere | crescere | distruggere | inghiottire | alzarsi
+        |  litigare | bere | guidare | impazzire | rompere
+        |  insultare | gridare
+;
+
+Verbo3a ::= uccidere | morire | colpire | mangiare | dormire | colpire
+         |  schiantarsi | perire | fuggire | sparire | crepare | schiattare
+;
+
+Verbo4 ::= mangi | bevi | scappi | poltrisci | rutti | salti | caschi | cadi
+        |  parli | taci | canti | rompi | bussi	| paghi | campi | crepi
+;
+
+Verbo5 ::= sposo | prendo | pesco | legno | piglio | pesto | parlo | salto
+        |  spacco | mangio | sparo | pago | mollo | uccido | becco | vedo
+        |  sento | stango | leggo | scrivo | lego
+;
+
+Verbo6 ::= + viene | mangia | beve | rutta | parla | canta | casca | rompe
+        |  bussa | ciarla
+;
+
+Verbo7 ::= >(gridate | pescate | giurate | sparate) dal
+        |  >(aprite | chiudete | mangiate | lavate | girate) quel
+        |  >(ridete | [s^]parlate[^(gli | le)] | cantate) del
+;
+
+Verbo8 ::= guardarmi | pestarmi | pescarmi | ascoltarmi | telefornarmi
+        |  chiamarmi | cercarmi | legnarmi | ammalarmi | parlarmi | saltarmi
+        |  cucinarmi | mangiarmi | spararmi | leggermi | pagarmi | beccarmi
+        |  addormentarmi | svegliarmi | trovarmi | pensarmi | applaudirmi
+        |  giocarmi | calpestarmi | sgridarmi | deridermi | colpirmi | legarmi
+        |  scrivermi
+;
+
+Avverbio ::= ancora | adesso | ora | oggi | domani
+;
+
+Citta ::= "Venezia" | "Londra" | "New York" | "Pechino" | "Roma" | "Parigi"
+       |  "Mestre" | "Carbonera" | "Pezzan"
+;
+
+Luogo ::= a >( Citta | letto | casa | scuola | merenda | pranzo | pasto
+             | cena | colazione | spasso | pasto | ^ll'oratorio
+             | ^l >( fresco | [super^]mercato | ristorante | bar | mare | sole
+                   | branch | grest
+                   )
+             )
+       |  in >( camera | parrocchia | cucina | vacanza | chiesa | forno | frigo
+              | salotto | pizzeria | fuga | trappola | ritardo | montagna
+              | citta' | guerra | alto mare | spiaggia | macchina | tenda
+              | campeggio | barca | nave | aereo | treno
+              )
+       |  negli abissi
+       |  tra i ghiacci
+       |  nei >(cieli | boschi)
+       |  nel >(blu | deserto)
+       |  nell'oscurita'
+       |  nella jungla
+       |  da "Helder"
+;
+
+Tempo ::= weekend | inverno | estate | primavera | autunno | serata | notte
+       |  giornata | mattinata | pomeriggio
+;
+
+Chi ::= + il morto | papa' | mamma |- il [bis^]nonno |- [la bis^]nonna
+     |  - i nonni |+ il nemico | "Helder"
+;
+
+Personaggio ::= americano | cinese | negro | italiano | veneziano | francese
+             |  inglese | giapponese | turco | cretino | parigino
+;
+
+

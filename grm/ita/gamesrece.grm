@@ -1,0 +1,72 @@
+I ::= "title:    Il recensore di VideoGiochi\n"
+    ^ "author:   Anonimo giocatore <\n"
+    ^ "language: italian\n"
+    ^ "status:   no bonus\n"
+    ^ "topic:    Vg\n"
+    ^ "audience: Vgfanboy\n"
+    ^ "comment:  Quando tutto ebbe inizio esistevano dei recensori, snob, mbriaconi, sempre tristi, ci inondavano con i loro cazzi non richiesti mentre si leggeva un loro articolo e senza mai venira al succo, sono recensori di videogiochi che parlavano di tutto, ma proprio tutto meno che del gioco, che veniva liquidato con due parole, erano un po' snob, riccaccioni, ma alla fine ci siamo cresciuti...\nSe notate il codice sono stato un po' bruto..., mica posso stare un mese a ragionare su su sta grammatica ;) \n"
+    ^ "created:  15/12/2004"
+;
+
+
+
+S ::= VITAPRIVATA . ACQUISIZIONE . AGGTITOLO . "-"TITOLO"-"",". CONOSCENZA"," LIVELLO"," . SUCCESSTYPE . SUCCESS".\nMa"INIZIORECE"," . RECE1"," RECE2 .","ma come sempre","MA . RECE3","MA2"\n\n""Trama""\n\n"TRAMA"\n\nVoto"VOTO"\n\nFINE"
+;
+
+VITAPRIVATA ::= "La" mia vita e'un cesso"," sono completamente fuso dovrei essere all'universita' ma sono anni che sono fuori corso e nessuno mi vuole bene"," | "La" mia ragazza mi ha lasciato per colpa di questa vita e l'unica cosa che mi e' rimasta e' fare questo mestiere"," mi alieno dal mondo ma in fondo sono felice"," sono meglio di voi e mi piace scriverlo"," | "Risvegliatomi"da una sbronza a base di BEVANDA riesco a capire che ;
+ACQUISIZIONE ::= comunque bando alle ciance"," proprio or ora SPEDIZIONE | da  cinque minuti SPEDIZIONE | poco fa' SPEDIZIONE| da pochi minuti SPEDIZIONE| un oretta fa' SPEDIZIONE'
+;
+BEVANDA ::= porto | whiske | lambrusco
+;
+SPEDIZIONE ::= il postino ha bussato alla porta e mi ha consegnato | mi e"'"arrivato | sono andato a prendere alla posta | uno schiavo mi ha portato |la redazione mi ha spedito| il mio filippino ha ritirato
+;
+AGGTITOLO ::= lo stupendo | il magnifico | the infamous | il rarissimo | il terrorizzante | il magico | il cassico | il conosciutissmo | il consigliatissimo | il galvanizzante | il noiosissimo ma intenso
+;
+TITOLO ::= "Karma" cribbio limited edition versione jap | "Tromb" "Raider" the beginning supino edition | "Suchiokki" litum tram edition | "Mayesky""Driver" zapata edition | "Pippin""Megamix" santana edition | "La" sora "Lella" quanto e bella"," trastevere limited | "SAKUWUCCI" super limited e quando dico limited","dico limited edition
+;
+LIVELLO ::= allora siete dei perdenti | non siete al mio livello |non avete mai preso sul serio il videogioco | cambiate hobby | distruggete le console che avete e fate penitenza
+;
+CONOSCENZA ::= non lo conoscete"?,"io si e' questo mi basta | se non lo conoscete siete completamente out | non lo conoscete"?" e allora che vivete a fare | come non conoscerlo"!"se non lo conoscete | se non lo conoscete potete anche smettere di leggere","come non sapere"!"
+;
+SUCCESSTYPE ::= questo gioco e' stato un successo | ha fatto mambassa | ha saturato il mercato | praticamente si venduto solo quello | ha venduto a valange | si e' venduto un fottio | ha esaurito i magazzini","i venditori e li pescatori | si e' venduto piu' della trippa | li pokemom ie facevano na pippa | lo spezzatino di pesce gatto nonera nulla a confronto | li hanno ristampati a rullo
+;
+SUCCESS ::=in "Burundi"|in "Corsica"|a "Zanzibar" |nelle isole "Salomone" | a "Corcolle"| a "Manduria" e zone limitrofe| a "Guantanamo" | nelle isole "Falkland"
+;
+INIZIORECE ::= passiamo alla recensione |cominciamo a far funziare i miei due neuroni rimasti | iniziamo le danze | diamo fuoco alla polveri| iniziamo a rendervi piu' sapienti grazie alle informazioni che vi vomitero'addosso facendovi sentire anche un po' coglioni
+;
+QUALCOSA ::= profondo|superficiale|slegato dall'oggi| contrario in ogni pixel|decisamente diverso|decisamente ispirato INSPIRATO|contrariamente controverso|delicatemente inconcludente|sicuramente rivoluzionario|ovviamente calcolato
+;
+INSPIRATO ::= alla controcultura giovanile|alla cultura anni 80|alla cultura hippie di "Sapporo"|a quelle serie underground olandese|all tressette mistico "Tibetano"|ai pizzi e lazzi di trastevere|alla festa di noialtri|alla corazzata "Potemkin" | al bidone ducatesco di "Dodo'"|alla nappia di "Inky"
+;
+ROVISTARE ::=nel torbido della sottocultura napoleonica|nel subconscio trito e ritrito| nella linea segnata dal "Prigioniero"|nell'onda lunga di "Evangelion"
+;
+RECE1 ::= "Allora" il gioco in se stesso non deve far pensare a qualcosa di QUALCOSA ma comunque cerca di rovistare ROVISTARE
+;
+RECE2 ::= come non capire gli sforzi SFORZI|si evince dalla fattura del titolo tutta la fatica SFORZI
+;
+SFORZI ::= del programmatore|di tutta l'unita produttiva|del cazzo di sviluppatore|dello staff sviluppatorio|dello sviluppante staffico|della manica de pezzenti|della squisita software house|dell' editore pazzoide
+;
+MA ::= si fanno i conti senza l'oste | si fa il tappeto prima di aver inchiappetato l'orso | si fanno i progetti senza aver parlato con "Flavia Vento" e avergli dato una botta che tanto e meglio che sta zitta|si colgono le margherite senza aver prima seminato merda| si cerca la recensione buona senza prima avermi smazzettato a dovere |si acchiappa il gatto per la coda senza avergli prima dato una mazzata int'a capa|si mette il dito in culo alla tigre e poi la tigre giustamente si incazza","oddio negli ultimi tempi potrebbe anche non incazzarsi","ma probabilente si incazza"," io mi incazzerei
+;
+TORNANDO ::= tornando a bomba|tornando a noi|tornando a parlare di quello per cui sono pagato e poi mi riduco a scrivere na marea di cazzi miei e 4 righe sul gioco
+; 
+IO ::= un recensore fuori da comune | uno sfigato senza fine | uno spocchioso che crede di essere quello che non e' ma fa figo pensare di essere sto cazzo | uno stronzo |il migliore su questa terra ludica
+;
+DECIFRARE ::= il fine di tutta l'operazione | lo scopo de st'ammasso de codice | il motivo ultimo di questo inconcludente ghirigori di luci e colori | la matassa di eventi che mi portano a pensare che nell'ultima fumata me so dato via le ultime sinapsi funzionanti, che gia' erano tre | la rimebranza sinottica dell'ultimo "Pascoli" che si intravvede in alcuni passaggi onirici
+;
+MA2 ::= esporro' i miei dubbi nella sviscerazione tecnica | agitero' le mie membra cercando di spiegare soprattutto a me stesso che cazzo sto a di'","tanto appena qualcuno vede la divisione in sezioni pensa che io so abbastanza per fare questo lavoro| buttero li quattro frasi fatte in grafica"/"sonoro"/"trama tanto sta recensione non la legge nessuno e saltano tutti al voto","secondo voi perche' li hanno tolti i voti eh"?" minchioni"," perche' poi ci sentiamo ancora piu' inutili di quelli che siamo","|vi comunichero' le mie conclusioni ammassando sti quattro caratteri pagati in modo che mi si spalanchino i cancelli del gionalista publicista
+;
+RECE3 ::= ","comunque TORNANDO cosa mi e' rimasto dentro del gioco"?" chi puo' dirlo"?"nonostante io sia IO continuo a pensare che qualcosa e' andato storto","infatti non riesco a decifrare DECIFRARE
+;
+MONDO ::= e' finito | e' risorto | sta per finire | e' in guerra | e' sopravvissuto alla guerra | e' morto | e' in pace
+;
+PERS ::=  il mitico eroe | il deficente di turno | un cretino clonato | la gnoccona con le curve ma cattiva | un mago potente | un elfo senziente | una pianta intelligente | un guerriero paladino delle genti | un uomo comune |un viandante perfido | un nano cazzuto | un malato immaginario | un soldato disertore ma patriota |un frocione come pochi | un derelitto senza tetto | una derelitta senza una tetta 
+;
+PERS2 ::= "Peppe" il ladro e sua cugina "Pina"|tutti e sei i sette nani|lo scorpione cieco e zazzera selvaggia |la banda bassotti d'oriente|"Geppo" detto er tanica e sua sorella | "Kiashan" e il suo cagnone |"Belle" e "Sebastienne"
+;
+MISSIONE ::= la missione della vostra vita | una missione di cui non ve ne po' frega'de meno ma siete pagati| na scampagnata a "Frascati" ma pericolosa
+;
+TRAMA ::="Il" mondo MONDO","tu sei PERS","insieme ai tuoi compagni PERS2 partirete verso MISSIONE
+;
+VOTO ::= 5 | "4--" | 3 e mezz | "6--" | "7--"| "Dimenticalo" | "Dimenticami" | 8 | 2  | "6+-" | "5+" | "10-------------" | "9 quasi"| "Brucialo" | "Spezzalo" | 1 | "Maroooonn!"
+;

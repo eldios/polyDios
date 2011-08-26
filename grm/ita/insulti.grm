@@ -1,0 +1,103 @@
+
+I ::=   "title:    Insulti d'autore\n"
+      ^ "author:   Manta\n"
+      ^ "language: italian\n"
+      ^ "status:   mature\n"
+      ^ "topic:    misc\n"
+      ^ "audience: tutti quanti\n"
+      ^ "disclaim: si serba rancore solamente nei confronti"
+        (+ di "Vision-X" | dei >(down | mongoloidi | tetraplegici | gay)
+        |  degli >(handicappati | spastici)
+        ) ^"\n"
+      ^ "created:  01/08/2002"
+;
+
+S ::= [(vecchio^"," | (- [la] madonna | [p^]orcoddue) se)]
+      (Frase.(rifl|NOrifl) [2: Virgola | 3: Quello].NOindet.(rifl|NOrifl)).(2|-3)
+      ^ (+ "!" | "?")
+;
+
+Frase ::= >(non Essere [Nega] | >(a momenti | (un altro | ancora un) po' e) Essere)
+          [Completamente] Insulto.(NOindet|indet)
+       |  Fare [Davvero] [da [stra^["-da"]]] Cagare
+       |  Avere [Davvero | Completamente] Rotto Minchia
+       |  Avere [Davvero]
+          ( Merda.art (nel | dentro il |- all'interno del) Teschio
+          | il Teschio (pieno | [in^]farcito | riempito | guarnito) di Merda.NOart
+          )
+;
+
+Quello ::= quel (^lo | Insulto) [la']
+        |  (que | ')^sto [Insulto] qua
+        |  quell'altro [Insulto] [la']
+;
+
+Virgola ::= "(virgola)" Insulto ["(punto)"]
+;
+
+Essere ::= [mi] (2: (rifl: ti | NOrifl: _) sei | 3: (rifl: si | NOrifl: _) e')
+;
+
+Avere ::= [mi] (2: hai | 3: ha)
+;
+
+Fare ::= [mi] (2: fai | 3: fa)
+;
+
+Rotto ::= rotto | sbregato | divelto | sfilacciato | spaccato | distrutto | rovinato
+       |  scassato | sfasciato | fracassato | spappolato | scucito
+;
+
+Completamente ::= completamente |- del tutto | definitivamente
+               |  (leggermente | lievemente) | [giusto] un attim^[in^]o
+;
+
+Davvero ::= davvero | veramente | (leggermente | lievemente)
+         |  [giusto] un attim^[in^]o
+;
+
+Merda ::= (art: la | NOart: _) >(merda |- cacca) | (art: il | NOart: _) guano
+;
+
+Teschio ::= + teschio | cranio
+;
+
+Nega ::= + neanche |+ mica | per niente | assolutamente
+;
+
+Cagare ::= >(ca^(c |+ g)^are | sboccare |-- vomitare) [Minchia]
+        |- venire (la diarrea | il cagotto)
+;
+
+Minchia ::= la minchia | il prepuzio | il glande | il cazzo | la renga | il frenulo
+         |  lo scroto | i coglioni | le palle | le gonadi | l'inguine | la cappella
+         |  il filetto
+;
+
+Insulto ::= NOrifl: (indet: un | NOindet: _)
+                    ( Super ^"-"^ (Pre^Post | [Pre^] Unico).NOindet.
+                    | Pre^(Post | Unico).NOindet.
+                    | Unico
+                    )
+         |  rifl:   ([Super^"-"^] rin^Med^ito).NOindet.
+;
+
+Med ::= spastich | coglion | goldon | ebetit | down | froc | mongol | bamb
+;
+
+Pre ::= (indet: ^o | NOindet: _) spasti | [rin^]coglio[^n] | handi | mongo[^l] | goldon
+     |  (tri | tetra | penta | deca
+        | (indet: ^'^ | NOindet: _) >(esa | epta | octa | endeca)
+        ) [^ginta]
+;
+
+Post ::= down | cappato | gay | frocio | plegico | somico
+;
+
+Unico ::= (indet: ^o | NOindet: _) spastico | rincoglionito | (indet: ^'^ | NOindet: _) handicappato
+       |  mongolo[^ide] | down | frocio | gay | coglione
+;
+
+Super ::= ((indet: ^'^ | NOindet: _) >(ultra | iper) | mega[^lo] | super | turbo)
+          [^Super.NOindet.]
+;

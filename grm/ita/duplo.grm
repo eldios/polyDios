@@ -1,0 +1,187 @@
+I ::= "title:     Dentale-Labiale\n"
+    ^ "author:    Er Poly &lt;mogkogk@hotmail.com&gt;\n"
+    ^ "language:  italian\n"
+    ^ "status:    refinable\n"
+    ^ "topic:     pubblicita'\n"
+    ^ "nostalgia: ... mi vuoi tutta" Ciccia "e brufoli ???\n"
+    ^ "created:   31/10/2004"
+;
+S ::=
+  ViMancaLApproccio
+  NL [ adesso ] vi ( +++ spiego | delucido | + insegno | erudisco ) [ io ] ^":" NL2
+  [ [ [ [ ( posso Q | ++++ permetti Q | me ne date uno [ per cortesia ] P3 ) grazie P3
+     [ e ( dammi qua | dammelo ) stronza ESCL ] NL ] ] ] ]
+  [ [ [ [ ( allora | +++++ [ oh [ ecco V ] ] vedete | dunque ) P3 ] ] ] ]
+  Dentale.art Mimpettina il Wafer tipo Caimano P3 NL
+  ma e' Labiale.art SullaCrema che mi Masterizza LEvento ESCL NL
+  [ [ [ capite P3 ] [ perche' ] ] ]
+  altrimenti LaNocciola Spasma P3 e LaLeggerezza Deraglia ESCL NL2
+  "<i>"
+  Piumistico ESCL ESCL ESCL DL P3 P3 P3
+  "</i>"
+;
+ViMancaLApproccio ::=
+  (  ( 1: ( ++ ( eh no [ ragazzi ] P3 ) | ( ragazzi [ V che cazzo fate ] ESCL ) ) )
+   { ( 2: ( ++ ( { non ci siamo } { proprio } ) | ( cosi' non va ) ) P3 NL ) }
+   { ( 3: [ [ [ ma [ vi siete ( guardati | visti ) Q ] ]
+          come [ [ [ [ ( cazzo | cacchio ) [ me ] ] ] ] ] lo
+          ma ^ ( ngi | ---- gn ) ^ ate ( il | 'sto ) \duplo Q NL ] ] ) }
+     ( 4: [ e' che | --- secondo me | si vede che ] ( non avete | + vi manca | dimenticate )
+          [ [ [ ancora ] ] ] l'approccio ( Dentale | ++ Labiale ).raw
+    ESCL NL )
+  ).(1|2|3|+++++4).(1|2|3|4).(1|+++2|3|4).(1|2|3|4)
+;
+Mimpettina ::=
+    ( "m'" ^ im ^ | mi s ^ | mi )pettina
+  | mi ( ( ri | co | dis ) ^ ord | [ de ^ ]contam | conf | discrim | mac | procrast
+       | rimug | rinom | riprist | rum | sbocch | scard | scompag | sgom | sgua
+       | spomp | sterm | strof | sviol | tra | unc ) ^ ina
+  | "m'" ^ ( illum | imp ^ > ( ag | app | oll ) | in ^ > ( card | cr | crim | far | sangu | sem ) ) ^ ina
+  | mi ( disin ^ ( nesca | tossica ) | estrinseca | reindirizza | rinforza | sincronizza | slingua[ ^ zza ] )
+  | "m'in" ^ ( cappera | capsula | cespica | chioda | cornicia | curva | dicizza
+             | fagotta | fervora | fiocchetta | gravida | guanta | izializza
+             | tercetta | terroga | terseca | tonaca | tossica | vestiga | saliva )
+;
+Wafer ::=
+     wafer
+  | ( welfare | water | software | cracker | buffer | server | geyser | laser | driver | cazzo )
+;
+Caimano ::=
+    ----- caimano
+  | ( pellic | tuc | gabbi | fagi | altopi | aeropl | sciam
+    | controm | talism | catamar | pastr | marzi | pant ) ^ ano
+  | ( gabbana | + puttana | carovana | caciotta | calvario | bandana
+    | catrame | gavettone | lavabo | zerbino | menagramo | duodeno
+    | avantreno | ++ calamaro | clitoride | babbuino | pinguino
+    | licantropo | metacarpo | abbaino | giaguaro | autocarro
+    | ramarro | merolone | scappellamento a ( +++ de | sini ) ^ stra )
+;
+SullaCrema ::=
+    - sulla crema
+  | ( sulla > ( + crepa | + fica | -- gleba | grana | nerchia
+              | ceppa | piuma | sega | --- balena | + iena | fregna )
+    | "sull'" ^ > ( ecz | ed | erit ) ^ ema | sullo scroto | su "D'Alema" )
+;
+Masterizza ::=
+    ----- mast ^ ( ++++++ erizza | urba )
+  | ( +++ memor | sonor | vapor | terror | motor | pastor | cicatr | valor
+    | focal | ospedal | scandal | legal | commercial | smaterial | industrial
+    | formal | normal | psicanal | razional | istituzional | personal | municipal
+    | liberal | catal | capital | strumental | brutal | spiritual | visual
+    | gamb | rate | atrof | catech | contabil | potabil | stabil | steril
+    | ottim | +++++++ sodom | organ | vulcan | sincron | sinton | polar
+    | raddr | caratter | cauter | computer | polver | ipnot | martir
+    | elettr | magnet | concret | anestet | narcot | ammort | scanner ) ^ izza
+;
+LEvento ::=
+    - "l'evento"
+  | ( "l'" ^ >( antenna | >( au | avveni | ele | escre ) ^ mento | utente )
+    | il >( cemento | convento | dividendo | fetente | flamenco | frangivento | frumento
+          | lamento | movente | pavimento | pigmento | reverendo | serpente | talento
+          | trapianto | tremendo | weekend | buco del culo | buonsenso )
+    | la >( ventola | canna | (m|g)^ente | droga | supercazzola )
+    | lo > ( spavento | stronzo ) | controvento | i proventi | \flavia \vento
+    )
+;
+LaNocciola ::=
+    ---- la nocciola
+  | ( ++ la > ( bagnarola | bocciofila | braciola | capriola | carriola
+              | casseruola | cazzuola | cipolla | moviola | museruola
+              | pistola | pummarola | robiola | scarola | \seredova
+              | stagnola | supposta | tagliola )
+    | -- il > ( gorgonzola | barcarolo | cannolo | crogiolo | cuculo
+              | fagiolo | lenzuolo | metanolo | pinolo | tovagliolo
+              | vaiolo | vetriolo )
+    )
+;
+Spasma ::=
+    --- spasma
+  | ( + orgasma | sbianca | scappa | scopa | scoppia | sgama
+    | + smamma | ++ [ s ^ ]balla | spacca | + spalma | spara | sgrassa
+    | sparla | spasima | amalgama | caga | entusiasma | sbafa
+    | + sbanda | +++ sbava )
+;
+LaLeggerezza ::=
+    ------ la leggerezza
+  | ( la > ( >( +++++ monn | ++ stitich | destr | limpid | nitid
+              | pur | scellerat | sciocch | tener | trist | pesant ) ^ ezza
+           | pagliuzza | deficienza | madre badessa | puzza | scamorza )
+    | il parabrezza | "l'" ^ > ( amar | ebbr | ubriach ) ^ ezza
+    )
+;
+Deraglia ::=
+    ---- deraglia
+  | ( sferraglia | si ( anno | sbagl | squagl ) ^ ia | sparpaglia | tartaglia
+    | "s'" ^ in ^ ( caglia | troia ) | ( ti | si ) sdraia | attanaglia | bisbiglia
+    | conguaglia | deflette | derapa | farfuglia | gorgoglia | ingoia
+    | mitraglia | ritaglia | sbadiglia )
+;
+Piumistico ::=
+  ( piumi
+  | ( orgia | scola | ( fet | sempl ) ^ ici | p[ ^ ar ] ^ odi | pacifi  | catechi | scii
+    | >( [ ca ^ ]ba | scanda | surrea | capita | motocic | pugi | nichi | sti | ocu ) ^ li
+    | >( eufe | estre | enig | alchi | trasfor ) ^ mi | alpini | agno
+    | >( [ ant ^ ]ag | spi | illusi | inflazi | esibizi | nozi ) ^ oni
+    | anacroni | infortuni | opportuni | utopi | lingui | altrui
+    | >( euca | caratte | avveni | folclo | umo | futu ) ^ ri
+    | parossi | ( spiri | occul | quan | den | ar | paracadu ) ^ ti
+    )
+  ) ^ sticooooo
+;
+DL ::=
+  ( "dentaleee"    Labiale
+  |  Dentale^"ee" "labiale"
+  |  Dentale^"ee"  Labiale
+  ).raw ^ "ee"
+;
+Dentale ::=
+  ( ( ++++ ( +++++ IL | -- L inci ^ | ++ IL trascen ^ | L (a|o)^cci ^ )dent
+    | ( +++ IL | L orna ^ | + IL rudi ^ | IL monu ^ )ment
+    | IL >( ++ rett | mai | cinghi | let | + brut | front | tot | pap
+          | ventr | genit | --- centr | mort | duoden | ++ vagin )
+    )
+  | -- ( ( IL dog | L artigi | IL settim ) ^ an
+       | IL > ( geni | vertic | gradu | ( lit | pett ) ^ or
+              | micidi | digit | surre | fisc
+              | demani | post | pedon | trionf | mestru
+              | cervic | ----- labi | prematrimoni )
+       | L > ( infinitesim | ( intercontin | ori ) ^ ent
+             | orizzont | inguin | inte ^ ( st | r ) ^ in )
+       | LO > ( spettr | stat )
+       | ( IL commer | ---- LO spe ) ^ ci
+       )
+  ) ^ ale
+;
+Labiale ::=
+  ( ( IL > ( +++++ labi | facci | ++ nas | palat | ren
+           | pen | glob | ++ tomb | lingu | pap | ++ besti )
+    | ( L imm ^ | L elett ^ | LO spaziotemp ^ | L ) or | + LO spazi
+    | ( +++ L | IL (b|f|c) ^ )an
+    )
+  | -- ( IL > ( nuzi | nav | teatr | sindac
+              | ( ( p | f ) ^ lu | tri | gio ) ^ vi
+              | ( cru | guan | provin | gla ) ^ ci
+              | ( ra | mon | cor | primor | ++++ multime ) ^ di
+              | larv | rate | vettori | flore | neutr
+              | pasqu | virtu | trache | cerebr
+              | longitudin | ----- dent )
+       | L > ( unilater | uninomin | antigravitazion
+             | oligominer | illeg | extra ^ ( sensori | coniug ) )
+       | ( IL bi | L omo | ++ IL tran ) ^ sessu
+       | ( L a | IL sub ) ^ norm | LO sle
+       )
+  ) ^ ale
+;
+Ciccia ::=
+  > ( ++++++ ci | umidi | molli | ri | fe | pelli | +++ sar^(s|c)^i | + malati ) ^ ccia | +++ cispa | cicca
+;
+IL ::= ( art: "il"   | prep: "del"     | raw: _ );
+L  ::= ( art: "l'" ^ | prep: "dell'" ^ | raw: _ );
+LO ::= ( art: "lo"   | prep: "dello"   | raw: _ );
+NL ::= ^ "\n" ^ ;
+NL2 ::= NL NL ;
+P ::= ^ "." ;
+P3 ::= ^ "...";
+ESCL ::= ^ "!";
+Q ::= ^ "?";
+V ::= ^ ",";

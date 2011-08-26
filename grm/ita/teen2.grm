@@ -1,0 +1,258 @@
+
+I ::=   "title:    Domande da teen\n"
+      ^ "author:   Manta\n"
+      ^ "language: italian\n"
+      ^ "status:   refinable\n"
+      ^ "topic:    misc\n"
+      ^ "audience: anybody\n"
+      ^ "created:  07/06/2003"
+;
+
+S ::= \Saluto^","
+        [PresentazioniIniziali^","] [Scuse^"," Cong]
+        ([PrimaPersona (S: ho | P: abbiamo) provato a Azione (>Cong | e)]
+         ( Chiesta ^":" (S: Domanda | P: Domanda | Domanda.imp.(S|P) ).avv. QM
+         | Dicono (S: Dubbio | P: Dubbio | Dubbio.imp.(S|P) ) PM
+           (e' vero | (Cosa | Come) (S: faccio | P: facciamo)) QM
+         )
+        ).(S|P)
+;
+
+Come ::= (c | k)^ome ;
+Cosa ::= (c | k)^osa ;
+Non ::= n^(_ |- o)^n ;
+Cong ::= ma [pero'] | pero' | eppure ;
+Problema ::= dubbio | prob[^lema] ;
+Troppo ::= (X ::= (--- stra^ | _) troppo; X | [X] stra^) ;
+Cazzo ::= (c | k)^a^(xx | zz)^o ;
+Sesso ::= se^(xx | ss)^o ;
+Scuola ::= s^(q | c | k)^uola ;
+Catechismo ::= (c | k)^ate (+ ^(k | ch)^ismo | _) ;
+Fighe ::= fi^(gh | k)^e ;
+Cozze ::= (c | k)^o^(xx | zz)^e ;
+Questo ::= (k | q)^uesto ;
+QM ::= ^"?"\ ;
+EM ::= ^"!"\ ;
+PM ::= ^"."\ ;
+
+Scuse ::= scusate (l'ignoranza | l'ingenuita')
+       |  ( sembrero' [anche | pure] una
+          | faro' [anche | pure] la figura della
+          )
+          [raga[^zz^(ina | etta)] | girl | bambina]
+          (stupid^(a | ina | otta) | ingenu^(otta | a))
+;
+
+PrimaPersona ::= S: [io] | P: io [^"," Conosciente.F.poss.art.] e Conosciente.F.poss.art.
+;
+
+Chiesta ::= PrimaPersona
+            ( (S: mi sono | P: ci siamo) sempre (ch | k)^iest ^ (S: a | P: e)
+            |  (S: ho | P: abbiamo)
+               >> una (curiosita' | domanda) | un Problema <<
+            |  un [bel] giorno (S: mi sono | P: ci siamo) chiest ^ (S: a | P: e)
+            |  [a Questo punto | alla fine]
+               (S: mi (sono chiesta | chiedo) | P: ci (siamo chieste | chiediamo))
+            )
+;
+
+Dicono ::=  (S: [PrimaPersona] ho | P: PrimaPersona abbiamo) sentito dire
+            [da Conosciente.(M|F).poss.art.] che
+         |  [[(i | le) raga] a Attivita]
+            ( [mi] dicono [sempre]
+            | Conosciente.(M|F).poss.art. (S: _ | P: e Conosciente.(M|F).art.poss.)
+              mi (S: ha | P: hanno) [Troppo] (detto | giurato)
+            ) che
+;
+
+Domanda ::= (avv: (quando | perche' | dove | Come) | NOavv: _)
+            mi (vengono | verranno | sono venute) le mestrua[^zioni]
+            [lunedi' | martedi' | mercoledi' | giovedi' | venerdi' | sabato
+             [scorso | pro^(ssimo |+ x) ]]
+         |  (avv: (quando | perche' | Come) | NOavv: _)
+            (sono rimasta | rimarro') >(incinta | vergi[^ne])
+         |  (avv: (Come | dove | perche' | quando) | NOavv: _)
+            (ho perso | perdero') la mia verginita' (orale | vaginale |+ anale)
+         |  (avv: (quanto | perche') | NOavv: _) bisogna Azione.imp. per (- Non | _) Azione.imp.
+         |  Come si fa a (-- Non | _) (rimanere | diventare) Agg [senza Azione]
+         |  e' vero che Domanda.NOavv.imp.
+         	[Come (dicono | ho [sempre] sentito dire) [a Attivita | Conosciente.da.poss.(M|F).]]
+         |  [a Attivita] ho provato a (cercare | trovare | toccare | palpare | guardare)
+            il Organo Conosciente.(di|a).poss.(M|F).
+            ma (Domanda | Non (funziona | l'ho trovato | ho capito dov^('^ | e kazzo) era))
+;
+
+Dubbio ::= >( per [Non] Azione [Non] bisogna Azione
+            | a [Non] Azione [vuol dire che] [Non] si (diventa | rimane) Agg
+            | [Non] Azione e' Come Azione
+            )
+        |  Presentazione.1.F
+        |  il Organo e' AggOrgano [[^"," AggOrgano] e AggOrgano]
+;
+
+Organo ::= vis^(o | ino) |++ seno | pene |- Cazzo |+ culo | naso | prepuzio | glande | clito[^ride]
+        |  cuoio capelluto | Sesso
+;
+
+AggOrgano ::= [Troppo]
+              ( enorme | abnorme | impercettibile | minuscolo | viscido
+              | in^[di^]visibile | orribile | esagerato | grande | piccolo
+              | lugubre | altezzoso | abbacchiato | irrilevante | unto | appiccicoso
+              | irritato | irriverente | abominevole | caustico | tossico | velenoso
+              | a forma di >Ogg
+              )
+;
+
+Agg ::= [Troppo]
+		( ninfomani | cieche | grasse | magre | obese | troie | bambi[^ne] | giovani
+        | vecchie | matte | calve | brufolose | belle | Fighe | Cozze
+        | brutte | basse | alte | rinco | negre | zitelle
+        )
+;
+
+Azione ::= far^(S: mi | P: ci | imp: si) crescere il Organo
+        |  far venire [subito] un raga[^zzo]
+        |  masturbar^( S: mi [con Conosciente.poss.art.(M|F).]
+                     | P: ci [con Conosciente.poss.art.(M|F).]
+                     | imp: si [con Conosciente.imp.art.(M|F).]
+                     )
+        |  mastu[^rbare] Conosciente.imp.art.(M|F).
+        |  >( >> andare a letto | fare (<Sesso | [al^]l'amore) << con Conosciente.poss.art.(M|F).
+            | (far | scopar)^( S: mi Conosciente.poss.art.(M|F).
+                             | P: ci Conosciente.poss.art.(M|F).
+                             | imp: si Conosciente.imp.art.(M|F).
+                             )
+            )
+        |  diventare Agg
+        |  (essere [ancora] | rimanere)
+           >( vergin^(S: e | P: i | imp: i)
+            | incint^(S: a | P: e | imp: a)
+            )
+        |  avere un rita[^rdo] di Num (giorni | settimane | mesi | anni)
+        |  Non avere [piu'] (figli | bambini | il >(boy | moroso | raga))
+;
+
+Ogg ::= spirale | trottola | capra | girandola | muflone | muffetta | "Helder"
+     |  vaso da notte | calzascarpe | lavabo | pizzetta | folletto
+     |  pinguino "De'Longhi"
+;
+
+Num ::= Cifra^Cifra
+;
+
+Cifra ::= 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+;
+
+Ord ::= "I" | "II" | "III" | "IV" | "V" | "VI" | "VII"
+;
+
+Reggiseno ::= ( prima | seconda | terza | quarta | quinta | sesta | settima
+              | ottava | nona
+              )
+              [coppa \(a | b | c | d | e | f)]
+;
+
+Attivita ::= Scuola | danza | ricreazione | Catechismo | scout | pianoforte | equitazione
+          |  [mini^]basket | pallavolo | tennis | cricket | squash | [mini^]golf
+;
+
+
+(*
+ * presentazioni
+ *)
+
+PresentazioniIniziali ::= Presentazioni.1.F
+                          [^"," PresentazioniConosciente.(M|F)
+                           [^"," PresentazioniConosciente.(M|F)]]
+;
+
+PresentazioniConosciente ::= [ma] Conosciente.poss.art [invece | al contrario | pero'] Presentazioni.3
+;
+
+Presentazioni ::= Presentazione [[^"," Presentazione] e Presentazione]
+;
+
+Presentazione ::= (1: ho | 3: ha) Num anni
+               |  (1: sono | 3: e') alt^(M: o | F: a) (Num cm | 1^"."^Num m)
+               |  (1: ho | 3: ha) la Reggiseno [di [reggi^]seno]
+               |  (1: ho | 3: ha) (solo una tetta | >(2 | 3 | 4) tette)
+               |  port^(1: o | 3: a) (il Num Come taglia | la taglia Num)
+               |  (1: sono | 3: e') [Troppo] (poco | ben | sotto^ | iper^) sviluppat^(M: o | F: a)
+               |  (1: sono | 3: e') (Troppo | molto | tanto) (magr | grass | obes)^(M: o | F: a)
+               |  (1: ho | 3: ha) un Organo AggOrgano
+;
+
+(*
+ * parenti/amici
+ *)
+
+Conosciente ::= M: ( >( ( imp: (da: dal | art: il | di: del | a: al) [proprio]
+                        | poss: (da: da | art: _ | di: di | a: a) mio
+                        )
+                        >( nonno [paterno | materno] | suocero | papy | cognato | genero
+                         | cugi[^no] [di Ord grado]
+                         )
+                      | ( imp: (da: dallo | art: lo | di: dello | a: allo)
+                        | poss: (da: da | art: _ | di: di | a: a) mio
+                        ) zio
+                      )
+
+                   | ( poss: (da: da | art: _ | di: di | a: a) un mio
+                     | imp: (da: dal | art: il | di: del | a: al) [proprio]
+                     )
+                     >(compagno [di (>Attivita | banco)])
+
+                   | ( poss: (da: da | art: _ | di: di | a: a) un
+                     | imp: ( da: (dall'^ | dal proprio) | art: (l'^ | il proprio)
+                            | di: (dell'^ | del proprio) | a: (all'^ | al proprio)
+                            )
+                     )
+                     >(ami[^c^(hetto | o)] [del cuore])
+
+                   | (da: dal | art: il | di: del | a: al) (poss: mio | imp: [proprio])
+                     >(raga[^zzo] | boy[^friend] | cane | coiffeur | dentista | lattaio | giardiniere)
+                   )
+
+             |  F: ( ( poss: (da: da | art: _ | di: di | a: a) mia
+                     | imp: (da: dalla | art: la | di: della | a: alla) [propria]
+                     )
+                     >( nonna [paterna | materna] | mamy | cognata | suocera | nuora
+                      | >([pro^]zia | cugi[^na]) [di Ord grado]
+                      )
+
+                   | ( poss: (da: da | art: _ | di: di | a: a) una mia
+                     | imp: (da: dalla | art: la | di: della | a: alla) [propria]
+                     )
+                     >(compagna [di (>Attivita | banco)])
+
+                   | ( poss: (da: da | art: _ | di: di | a: a) un'^
+                     | imp: ( da: (dall'^ | dalla propria) | art: (l'^ | la propria)
+                            | di: (dell'^ | della propria) | a: (all'^ | alla propria)
+                            )
+                     )
+                     >(ami[^c^(hetta | a)] [del cuore])
+
+                   | (da: dalla | art: la | di: della | a: alla) (poss: mia | imp: [propria])
+                     >(parrucchiera | vici | gatta | ginecologa | badante)
+            )
+;
+
+
+(*
+ * saluti
+ *)
+
+Saluto ::= cara Mag | caro "Dott." Dott | care Amiche | ciao Amiche
+;
+
+Mag ::= "Top Girl" | "Cioe'" | "Girl Power" | "Teen" | "Marta Flavi" | "Maria De Filippi"
+     |  "Alda" ["D'Eusanio"]
+;
+
+Dott ::= "Willy Pasini"
+;
+
+Amiche ::= amiche | girls | friends | raga
+;
+
+

@@ -1,0 +1,531 @@
+
+I ::=   "title:    L'Oroscopo del Polygen\n"
+      ^ "author:   Manta\n"
+      ^ "language: italian\n"
+      ^ "status:   refinable\n"
+      ^ "topic:    misc\n"
+      ^ "audience: anybody\n"
+      ^ "created:  17/12/2002"
+;
+
+S ::= "<B>" \SegnoLatino ":</B> <I>" Mese "</I>"
+      "\n\n" \Oroscopo
+;
+
+PM ::= ^"."\ ;
+
+SegnoLatino ::= ariete:     aries
+             |  toro:       taurus
+             |  gemelli:    gemini
+             |  cancro:     cancer
+             |  leone:      leo
+             |  vergine:    virgo
+             |  bilancia:   libra
+             |  scorpione:  scorpio
+             |  sagittario: sagittarius
+             |  capricorno: capricornus
+             |  acquario:   aquarius
+             |  pesci:      pisces
+;
+
+Segno ::= ariete:     (art: (M: gli | F: le) | NOart: _) ariet^(std: e | vezz: in^(M: i | F: e))
+       |  toro:       (art: (M: i | F: le) | NOart: _) tor^(std: o | vezz: ell^(M: i | F: e))
+       |  gemelli:    (art: (M: i | F: le) | NOart: _) gemell^(std: i | vezz: in^(M: i | F: e))
+       |  cancro:     (art: (M: i | F: le) | NOart: _) cancr^(std: o | vezz: (ett | ucc)^(M: i | F: e))
+       |  leone:      (art: (M: i | F: le) | NOart: _) leon^(std: e | vezz: cin^(M: i | F: e))
+       |  vergine:    (art: (M: i | F: le) | NOart: _) vergin^(std: e | vezz: ell^(M: i | F: e))
+       |  bilancia:   (art: (M: i | F: le) | NOart: _) bilanci^(std: a | vezz: n^(M: i | F: e))
+       |  scorpione:  (art: (M: gli | F: le) | NOart: _) scorpion^(std: e | vezz: cin^(M: i | F: e))
+       |  sagittario: (art: (M: i | F: le) | NOart: _) sagittari^(std: o | vezz: ett^(M: i | F: e))
+       |  capricorno: (art: (M: i | F: le) | NOart: _) capricorn^(std: o | vezz: in^(M: i | F: e))
+       |  acquario:   (art: (M: gli | F: le) | NOart: _) acquari^(std: o | vezz: ucc^(M: i | F: e))
+       |  pesci:      (art: (M: i | F: le) | NOart: _) pesc^(std: i | vezz: iolin^(M: i | F: e))
+;
+
+Mese ::= ariete:     "21 Marzo - 20 Aprile"
+       | toro:       "21 Aprile - 20 Maggio"
+       | gemelli:    "21 Maggio - 21 Giugno"
+       | cancro:     "22 Giugno - 22 Luglio"
+       | leone:      "23 Luglio - 23 Agosto"
+       | vergine:    "24 Agosto - 21 Settembre"
+       | bilancia:   "22 Settembre - 23 Ottobre"
+       | scorpione:  "24 Ottobre - 22 Novembre"
+       | sagittario: "23 Novembre - 21 Dicembre"
+       | capricorno: "22 Dicembre - 20 Gennaio"
+       | acquario:   "21 Gennaio - 18 Febbraio"
+       | pesci:      "19 Febbraio - 20 Marzo"
+;
+
+Oroscopo ::= [cari (Segno.std | Segno.vezz.M [e [care] Segno.vezz.F]).NOart ^","]
+
+             ({[Decade^","]} {Sostegno^","} Difficolta [^"," Eulogia])
+
+             [^";" {(a tal[^e] (fine | proposito) | tuttavia | indi)^","}
+              {[Decade^","]} [Sostegno^","] Consiglio] PM
+
+             ({Lavoro}^";" {Salute}^";" {Affari} e^"," {Affetti} PM)
+
+             {[[Decade^","] Compatibilita PM]}
+
+             {[[per (accaparrarvi | guadagnarvi) il (sostegno | supporto | conforto)
+              (delle stelle | degli astri)^","]
+              ( (acquistate | procuratevi | regalatevi) Amuleto
+              | (compite | organizzate | partecipate ad | datevi ad | concedetevi)
+                Rito ( (in onore | come invocazione) Dio.del
+                     | in (sacrificio | grazia) Dio.al
+                     )
+              ) PM]}
+
+             {[((di: (curatevi | proccupatevi | badate) di | dal: guardatevi dal)
+               ( sacrificare un
+                 ((M: _ | F: ^a) (bambin | anzian | fanciull | impuber)^(M: o | F: a)).(M|F)
+                 [in un Rito] in onore Dio.al
+               | ((dal: ^l'^ | di: _) >((e | in)^vocare | onorare) | pregare) Dio.art
+               | ( (dal: ^l'^ | di: _) essere (devoti | [in^]fedeli)
+                 | rendere (onore | grazia)
+                 | rivolgere (i vostri pensieri | le vostre preghiere)
+                 ) Dio.al
+               | ((dal: ^l'^ | di: _) >(acquistare | indossare) | procurarvi) Pietra
+              )).(di|dal)
+              per (assicurarvi | accaparrarvi | garantirvi)
+              (il favore | l'ira | l'odio | la devozione | l'appoggio) Dio.del PM]}
+;
+
+Rito ::= un [sano | bel | serio | sacro] rito
+         ( orgiastico | esoterico | divinatorio | settario | sacrificale
+         | massonico | enochiano | ["pre-"^]noaico | diabolico | infernale | zoroastriano
+         | qabalistico | alchemico | tantrico | magico | stigmatico
+         )
+         [ propiziatorio | di buon auspicio | di malaugurio | iniziatico | di sangue
+         | simbolico | infedele
+         ]
+;
+
+Dio ::= >> <(al: a | del: di | art: _)
+            ( "San" ( "Giovanni" | "Paolo" | "Gennaro" | ^"t'Antonio" | "Padre Pio"
+                    | ^ta "Madre Teresa" [di "Calcutta"] | "Tommaso" ["d'Aquino"]
+                    | "Zaccaria" | ^"nt'Agostino" | ^"nta Rosa da Lima" | "Pietro"
+                    ) [apostolo]
+            | "Helder" | "Allah"
+            )
+         | <(al: alla | del: della | art: la)
+            ( "Madonna" del ("Carmine" | \[sacro]^cuore | "Gesu'")
+            | dea ("Kali" | "Shiva" | "Iside" | "Visnu" | "Giunone" | "Hera")
+            )
+         | <(al: al | del: del | art: il)
+            ( profeta ("Isaia" | "Geremia" | "Ezechiele" | "Abramo" | "Elia")
+            | maestro ("Baba Bedi" | "Sai Baba" | "Buddha" | "Jukey" | "Ryuken")
+            | "Dalai Lama"
+            |+ mago ( "Alexander" | "du Nacimiento" <[^"," maestro di vita]
+                    | "Othelma" | "Oronzo" | "Silvan" | "Oudini'" | "Gabriel"
+                    | "Zurli'" <["("^il mago del (lune | marte | mercole | giove | vener)^"di')"]
+                    | "Galbusera" <["(il mago della sera)"] | "Giucas Casella"
+                    )
+            | dio ( Astro.NOart | "Zeus" | "Osiride" | "Zoroastro" | "Ade" | "Apollo"
+                  | "Apelle" [figlio di "Apollo"
+                    [che^"," non dimenticate^"," fece un palla di pelle di pollo]]
+                  | "Oberon" | "Balo" | "Mabelrode"
+                  )
+            | demone ( "Aamon" | "Astaroth" | "Astarte" | "Shemazai" | "Samael" | "Aiwass"
+                     | "Belzebub" | "Arioch" | "Baal"
+                     )
+            )
+         | <(al: all'^ | del: dell'^ | art: l'^)
+            ( [arc^]angelo ("Michele" | "Gabriele" | "Uriel" | "Raffaele")
+            | apostolo ( "Paolo" | "Simon" (^e | "Pietro") | "Pietro" | "Giuda" | "Giovanni"
+                       | "Giacomo"
+                       )
+            )
+        <<
+;
+
+Compatibilita ::= (notevole | forte | scarsa | debole | infima)
+                  ([in^]compatibilita' | affinita')
+                  [zodiacale | ormonale | spirituale | dentale]
+                  [ in amore | nel lavoro | nella vita | nelle questioni di cuore
+                  | negli affari | nelle amicizie | nelle inimicizie
+                  ]
+                  con Nati
+;
+
+Amuleto ::= Pietra
+            ( che ( vi accompagnera' [fino alla morte |- per tutta la vita]
+                  | vi portera' [tanta] [s^]fortuna
+                  | vi donera' [molto | soprattutto | in particolare] [DoveIndossare]
+                  )
+            | per (scacciare | allontanare) (gli spiriti | il malocchio | i demoni)
+            | ( da (indossare | mettere | mettere in mostra | sfoggiare) [DoveIndossare]
+              | con cui uscire
+              )
+              {[InCompagnia]}
+              { nelle (occasioni | serate | notti) [piu' | meno]
+                ( di gala | uggiose | limacciose | [s^]gradevoli | umide | avventurose
+                | speciali | di classe
+                )
+              | DoveAndare
+              }
+            )
+;
+
+DoveAndare ::= >> al ( ( "pic-nic" | ballo | pranzo | ritrovo
+                       | ^la (festa | rimpatriata | cena | sagra)
+                       )
+                       < >> della (scuola | parocchia | chiesa | "pro-loco")
+                          | del (paese | villaggio)
+                          | dell'^ (oratorio | azienda)
+                          | di (classe | mezza (estate | primavera))
+                         <<
+                     | parco | [super^]mercato | duomo | pattinodromo
+                     )
+                | in ( palestra | piscina | cucina | soggiorno | camera [da letto]
+                     | sauna | pizzeria | ristorante | piazza | parcheggio
+                     )
+               <<
+;
+
+InCompagnia ::= ((di: in compagnia | con: con | a: assieme)
+                 >> <(di: di | a: agli | con: gli) (amici | "Helder")
+                  | <(di: del | a: al | con: il)
+                    ( [vostro] ( capo | maggiordono | domestico | fidanzato | direttore
+                               | DiFiducia.(M|F)
+                               )
+                    | marito | moroso | partner
+                    )
+                  | <(di: dell'^ | a: all'^ | con: l'^)
+                    (amante | (antagonista | avversario) (nel lavoro | in affari | in amore))
+                  | <(di: dei | a: ai | con: i)
+                    (genitori | figli)
+                  | <(di: della | a: alla | con: la)
+                    ( [vostra] ( findanzata | domestica | colf | badante | governante
+                               | DiFiducia.(M|F)
+                               )
+                    | famiglia | moglie | figlia
+                    )
+                 <<).(di|con|a)
+;
+
+DiFiducia ::= ( cassier^(M: e | F: a)
+              | >(fattorin | lattai | pescivendol | spazzacamin)^(M: o | F: a)
+              | negoziante | rivenditore | commerciante | mercante | medico | farmacista
+              ) di fiducia
+;
+
+DoveIndossare ::= al collo [del piede] | in testa | al polso | sulle ginocchia
+               |  alle dita [dei piedi] | tra i capelli | in bocca | tra i denti
+               |  sulle unghie [dei piedi] | all'inguine | sulla schiena
+;
+
+Pietra ::= un >( rubino | lapislazzulo | topazio | ^'^>(acquamarina | ametista) | diamante
+               | amuleto di ( giada | terracotta | porcellana | cemento [armato] | cristallo
+                            | vetro
+                            )
+               | brillante | sasso [di colore (rosso | ciano | magenta | argento | oro)]
+               )
+        |  una >(pietra [focaia | preziosa])
+        |  uno smeraldo
+;
+
+Decade ::= {[solamente | unicamente | soltanto]} {per} Nati
+;
+
+Nati ::= ([M: tutti | F: tutte] (Segno.art.(vezz|-std) | (M: i | F: le))
+          [M: "Lui" | F: "Lei"] nat^(M: i | F: e)
+          ( nella NumDecade  [(e |o) [nella] NumDecade] decade
+          | nel [^l (^a primavera | ^'^ >(estate | inverno | autunno)) del] Anno
+          | (nel solstizio | all'equinozio)
+            d^ (i primavera | '^ >(estate | inverno | autunno))
+          )
+          [(con | di | aventi) ascendente \Segno.NOart.std.(ariete|toro|gemelli|cancro|leone|vergine|bilancia|scorpione|sagittario|acquario|pesci).]
+         ).(M|F)
+;
+
+NumDecade ::= prima | seconda | terza
+;
+
+Anno ::= 19 ^ (0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9) ^ (0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)
+;
+
+Num ::= (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9) ^ (0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)
+;
+
+Astro ::= (di: del | art: il | NOart: _) "Sole"
+	   |  (di: della | art: la | NOart: _) "Luna"
+       |  (di: di | art: _ | NOart: _)
+       	  >("Marte" | "Mercurio" | "Venere" | "Giove" | "Saturno" | "Nettuno" | "Urano")
+;
+
+Sostegno ::= ( ( >(a causa del | grazie al) (il: _ | lo: ^lo | l: ^l'^)
+               | con (il: il | lo: lo | l: l'^)
+               )
+               {[[il: (comunque | sempre | quanto mai) | lo: _ | l: _]
+                ( il: >(favorevole | sentito | notevole | piacevole)
+                | lo: >(sfavorevole | scanzonato | soddisfacente | spiacente | spiacevole)
+                | l: _
+                )]}
+               { il: >(sostegno | favore | contributo | supporto | conforto)
+               | lo: >(sforzo)
+               | l: >( ingresso in \Segno.std.NOart | accanimento | appoggio
+                     | inferocimento | inaridimento | inasprimento
+                     )
+               }
+             ).(il|lo|l)
+             ( (degli astri | delle stelle) [Astro.NOart e Astro.NOart]
+             | [da parte] Astro.di [e Astro.di]
+             | [da parte] di [importanti | influenti] pianeti (quali | come)
+               Astro.art [e Astro.art]
+             )
+;
+
+Difficolta ::= [non]
+               ( avrete [grosse] difficolta' a
+               | potrete [facilmente | agilmente | comodamente]
+               | sarete [certo]
+                 >> (nelle condizioni | in grado | capaci) di
+                  | in forma per
+                 <<
+               )
+               ( (risolvere | gestire | affrontare | superare)
+                 ( qualunque Situazione.S.NOart
+                 | [anche | perfino]
+                   Situazione.P.art piu' (imprevedibili | incredibili | imbarazzanti)
+                 )
+               | ( (avere la (meglio |+ peggio) | averla vinta)
+                   [con (chiunque | tutti) | col [vostro] prossimo]
+                 | (portare (sfiga | pegola | rogna) | piantare (grane | rogne))
+                   [a (chiunque | tutti) | al [vostro] prossimo]
+                 | fallire [miseramente | clamorosamente]
+                 )
+                 in (ogni | qualunque) (>Situazione.S.NOart | campo | settore)
+               )
+;
+
+Situazione ::= (art: (S: la | P: le) | NOart: _)
+               ( >(situazion)^(S: e | P: i)
+               | >(evenienz | circostanz)^(S: a | P: e)
+               | avversita' | eventualita'
+               )
+            |  (art: (S: l'^ | P: gli) | NOart: _)
+               >(ostacol | event)^(S: o | P: i)
+;
+
+Eulogia ::= {[esattamente | proprio]} {come}
+            ( ( [solo | soltanto | unicamente] voi [Segno.vezz.M [e Segno.vezz.F]].NOart (sapete | potete)
+              | {[soltanto]} {Segno.std.art.M} (sanno | possono)
+              )
+              fare
+            | (desideravate | volevate | avevate (pianificato | preventivato))
+            )
+;
+
+SePossibile ::= se (vi (riesce | e' (possibile | concesso)) | potete)
+;
+
+Lavoro ::= (per quanto riguarda il | nel) lavoro^"," [Sforzo^","]
+           ( {[SePossibile]} {Consiglio}
+           | ( la vostra (segretaria | direttrice | compagna di ufficio)
+             | il vostro (capo [reparto] | direttore | compagno di ufficio)
+             )
+             ( si ( ammalera' [di Malattia] [(infettando | impestando) [tutto] l'ufficio]
+                  | innamorera' di (voi | >Corna)
+                  )
+             | vi ( fara' >( diventare (matti | pazzi)
+                           | le corna [con Corna]
+                           | uno scherzo
+                             ((sim | anti)^patico | [poco] divertente
+                             | di (buon | cattivo) gusto
+                             )
+                           | un [bel | brutto] regalo
+                           )
+                  | (invitera' | portera') a (cena | pranzo | colazione | merenda) fuori
+                    [a mangiare un [bel] piatto di Cibo]
+                  | offrira' un (^a cenetta | pranzetto) a base di Cibo
+                  )
+             )
+           )
+;
+
+Malattia ::= un [^a rara forma di | improvviso | terribile]
+                >( raffreddore | herpes | colpo di (frusta | freddo | sole) | ascesso
+		         | ematoma sul ParteCorpo | acne
+		         ) [acuto | fulminante]
+          |  una [rara forma di | improvvisa | terribile]
+                 >( gengivite | congiuntivite | poliomelite | micosi | indigestione | carie
+                  | (escoriazione | ferita | abrasione) al ParteCorpo
+                  ) [acuta | fulminante]
+          |  >(morbillo | vaiolo | verme solitario | tartaro | meteorismo)
+          |  >( varicella | lebbra | peste | tenia | calvizie | forfora | diarrea | dissenteria | placca [batterica]
+              | aereofagia | blenorragia | stempiatura [precoce]
+              )
+          |  >(orecchioni | spasmi al ParteCorpo)
+          |  >( emorroidi | ragadi (anali | al ParteCorpo) | verruche
+		      | vesciche [al ParteCorpo] | stigmate [sul ParteCorpo]
+		      )
+          |  >(polipi anali | condilomi | brufoli | foruncoli)
+;
+
+ParteCorpo ::= >> ^la ( schiena | dentiera
+                      | (natica | spalla | coscia | caviglia | meninge | tempia)
+                        <[destra | sinistra]
+                      | mandibola
+                      )
+                | (petto | (braccio | gomito | ginocchio | piede | alluce | mignolo | lobo)
+                           <[sinistro | destro]
+                  )
+               <<
+;
+
+Corna ::= >(vostr^(M: o | F: a)
+            ( >(suocer | cognat | [pro^]zi | [bis^]nonn)^(M: o | F: a)
+            | M: >(marito | fratello)
+            | F: >(moglie | sorella)
+            )
+           ).(M|F)
+       |  "Helder"
+;
+
+Salute ::= (per quanto riguarda la | nella) salute^"," [Sforzo^","]
+           ( {[SePossibile]} {Consiglio}
+           | (soffrirete | vi ammalerete) di Malattia
+             [senza [alcuna] (chance | possibilita') di (recupero | salvezza | ricovero)]
+           )
+;
+
+Affari ::= (per quanto riguarda gli | negli) affari^"," [Sforzo^","]
+           ( {[SePossibile]} {Consiglio}
+           | la vostra (azienda | attivita')
+             ( conoscera' un momento (di stasi | [in^]felice | catastrofico | luttuoso)
+             | {fallira' | crollera'} {[clamorosamente | misteriosamente]}
+               [lasciandovi (nella {>(merda | poverta')} {[piu' nera]} | sul lastrico)]
+             )
+           )
+;
+
+Affetti ::= (negli affetti | nelle questioni di cuore | in amore)^"," [Sforzo^","]
+            ( {[SePossibile]} {Consiglio}
+            | ( (non avrete [certo] |- avrete (significative | ottime | buone))
+                (speranze | opportunita') di
+              | (fate di tutto | non fate nulla) per
+              )
+              ( ( [ri^]conquistare
+                | (fare | rendere) [in^]felice
+                | essere [finalmente] [in^]felice con
+                )
+                ( il partner [perduto | [in^]dimenticato]
+                | > >> l'amante
+                     | la (babbiona | sgualdrina | mignotta | donnaccia | bagascia)
+                     | il (mignottone | frocio | pappa | maledetto | partner)
+                    <<
+                    che (vi ha | avete) Lasciato.S
+                )
+              | (essere | venir[^e]) Lasciato.P
+              )
+            | (sarete | verrete) Lasciato.P
+            )
+;
+
+Lasciato ::= [crudelmente | cinicamente | [in^]giustamente | bellamente]
+             (>(lasciat | scaricat)^(S: o | P: i) | fatt^(S: o | P: i) fessi)
+             [senza (merce' | pieta')]
+             [ con (i suoceri | un bambino | la figlia | "Helder") (da mantenere | a carico)
+             | senza il becco di un quattrino
+             | in un (oceano | mare) di debiti
+             | dopo una relazione
+               ( che accusava stanchezza
+               | di oltre Num anni
+               | non piu' verde
+               )
+             ]
+;
+
+Sforzo ::= per quanto (vi (sforziate | impegniate) | ci proviate)
+           [con (veemenza | fervore) | seriamente | sinceramente]
+        |  nonostante ( i vostri [costanti | seri | continui] (sforzi | [buoni] propositi)
+                      | la vostra (costanza | determinazione | passione)
+                      | il vostro [costante | serio | continuo] (impegno | sforzo)
+                      )
+;
+
+Consiglio ::= ([non] >(evitate | cercate) di | fate a meno di [non])
+              ( ( >(utilizzare | usare) il
+                | fare [troppo] sfoggio del
+                | dar [eccessivo] sfogo al
+                )
+                (- vostro [tipico | grande | enorme]
+                   (buon (senso | umore) | [buon] cuore)
+                   [di Segno.vezz.M.NOart [o Segno.vezz.F.NOart]]
+                | vostro [irresistibile | misterioso | dirompente | incredibile]
+                  ( (fascino | corpo | sorriso | sex appeal)
+                    [[un po'] (sexy | ammiccante | noir | segreto | bohemien | traditore)]
+                  | ( portafogli | giubbotto | scaldaletto | spazzolino [da denti]
+                    | salvagente | costumino | profumo | paio di sandali
+                    )
+                    (nuovo | appena acquistato)
+                  )
+                )
+              | innamorarvi del primo
+                ( (venuto | arrivato | incontrato)
+                | >( [s^]fortunato | sfigato | farlocco | beduino | scaricatore di porto
+                   | allocco | temerario | accattone
+                   )
+                   [che >(incontrate | trovate) | in cui vi imbattete]
+                )
+              | (investire | spendere | scialacquare)
+                [senza (criterio | misura | limiti)] in Investimento
+              | lasciare
+                ( l'iniziativa
+                  (al >(partner | caso | caos | [vostro] prossimo) | agli altri)
+                | perdere i (consigli | sentimenti) altrui
+                )
+              )
+          |   ( >( concedetevi | godetevi | preparatevi | mangiatevi | regalatevi
+                 | procuratevi
+                 ) [Pure]
+              | >( sollazzatevi | gozzovigliate | ristoratevi | riconciliatevi
+                 | consolatevi
+                 ) [Pure] con
+              )
+              ( un ([bel | buon | sano] (piatto | paio di piatti) | [bel] po' [di piatti])
+                di Cibo [(e | o | con) Cibo]
+              | un (oggetto | acquisto)
+                ( di lusso | goloso | erotico | piccante | esagerato | blasfemo
+                | intrigante | lussu[^ri]^oso | costoso | prezioso | esotico
+                )
+              | ( (F: una (pozione | tisana) | M: un (decotto | infuso))
+                  [balsamic^(M: o | F: a) | [ri^]tonificante]
+                ).(M|F)
+                [di Cibo]
+              )
+;
+
+Pure ::= pure | magari | senza rimpianti
+;
+
+Cibo ::= ( riso[^tto] | lenticchie | pizza | fichi | krauti | pandoro | panettone
+         | mandorlato | cioccolata | uvetta | insalata [di Cibo] | rognoni | gelato
+         | budella | trippa | sarde | uova | pasta | cozze | porri | cavolfiore
+         )
+         [Cottura [o Cottura]]
+;
+
+Cottura ::= in rosso | ai ferri | alla piastra | in salmi' | in umido | al sugo | al forno
+         |  in bagnomaria | in decotto | in camicia | al dente | al burro
+         |  sotto (sale | pepe | aceto | ^lio | vuoto)
+;
+
+Investimento ::= ( "BOT" | "CCT" | "Fondi" [comuni] di investimeno
+                 | assegni [circolari | [non] trasferiti]
+                 | borsa | azioni ("TIM" | "Seat Pagine Gialle" | "FIAT" | "Generali")
+                 ) [al portatore]
+              |  macchinari [vari] per (le industrie | l'agricoltura | l'azienda)
+              |  mercati [azionari]
+                 ( della \(web | new | [inter^]net) "Economy"
+                 | alternativi
+                 | delle nuove tecnologie
+                 )
+              | [porta^] >( pizzette [riscaldate] | caramelle | dolciumi | frittelle
+                          | ciabatte | accendini [per pipa] | ricariche ["Bic" | telefoniche]
+                          | boccette [di inchiostro]
+                          )
+;
+
+

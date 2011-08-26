@@ -1,0 +1,96 @@
+I ::=   "title:    "^TELECRONISTA"\n"
+      ^ "author:   CUG &lt;cug@telcanet.it&gt;\n"
+      ^ "language: italian\n"
+      ^ "status:   mature\n"
+      ^ "topic:    basket\n"
+      ^ "comment:  io odio il giuoco del basket e tutti quelli che lo praticano, specialmente "^NOME COGNOME [detto APPELLATIVO di CITTA]^", nonche' i telecronisti che urlano, come " TELECRONISTA^". Anche se in effetti bisogna dire che Dan Peterson mi sta simpatico. E da quello che ho capito Franco Lauro non urla. Oh beh.\n"
+      ^ "created:  13/04/2004"
+;
+
+S::= BEGIN WHERE URLO ES TEMPO e SITUAZ ES URLO ES PLAYER AZIONE SEGNO.PU1 FINE ;
+
+BEGIN ::= \(amici [sportivi] | amanti della bella pallacanestro | amici estimatori del basket ) SEGNO.V (bentornati | benvenuti | rieccoci qui) a NBA SEGNO.V {TELECRONISTA} {con voi} SEGNO.V ;
+
+NBA ::= "NBA" ({\(action | [super^]basket | jam | [\i (love | hate | despise | ^'d like to kill | hangtime | showtime) this] game )})+ ;
+
+WHERE ::= (siamo in diretta dal | ci troviamo al | vi parliamo dal | eccoci di nuovo in collegamento dal ) CITTA  STADIO e;
+
+STADIO ::= \[square | round | big | useless | small | ugly] \(garden | palace | bowl | coliseum);
+
+TEMPO ::= mancano ancora NUMERO secondi alla fine dell'ultimo quarto ;
+
+ES ::= (SEGNO.ESC^SEGNO.ESC^)+ ^" ";
+
+AZIONE ::= AZIONE1 [ES URLO] ES AZIONE2 [ES URLO] [ES IPERBOLE] ES OUTCOME [ES COGNOME] ES COMMENTO ES [SEGNO.PU1 CONG ([NOME] COGNOME |APPELLATIVO di CITTA )AZIONE] ;
+
+CONG ::= \(ma attenzione perche' | ecco che | guardate ES  | ed ora | ma incredibile ES ) ;
+
+AZIONE1 ::=    (tenta l' azione personale | 
+		 solo contro tutti  |			
+		 si smarca  |
+		 attraversa la difesa  |
+		 fa fuori COGNOME [che ci resta di sasso | che non crede ai suoi occhi] |
+		 prende il volo [sulla fascia | al centro] |
+		 passa (la palla | la sfera | la boccia) a [NOME] COGNOME [APPELLATIVO [di CITTA]] 
+		 ) ;
+		
+AZIONE2 ::=	\(e' libero ES [prosegue ES] [va (al tiro|alla schiacciata) ES] |
+		 grandissima azione di COGNOME che va a schiacciare |
+		 NOME COGNOME detto APPELLATIVO [di CITTA] continua la (cavalcata | sua corsa) verso il (canestro | cesto) |
+		 IPERBOLE [ES IPERBOLE] | 
+		 grandissima partita di NOME COGNOME detto APPELLATIVO di CITTA [ES \quest'anno per lui ben NUMERO punti SEGNO.V NUMERO rimbalzi e NUMERO assist [ES e scusate se e' poco]] | 
+		 ma ecco che [NOME] COGNOME va (al tiro | alla schiacciata | verso il cesto) e SEGNO.PU3 OUTCOME |
+		 NOME COGNOME sotto al cesto tenta un DUNK
+
+
+		) [ES CONG OUTCOME] ;
+
+FINE ::= CONG (la sirena sta per suonare | il tempo sta scadendo | siamo al countdown finale | e' quasi finita la partita ) ES \cinque SEGNO.PU3 \quattro SEGNO.PU3 \tre SEGNO.PU3 \due SEGNO.PU3 (COGNOME (tenta la bomba | al tiro | alla schiacciata) SEGNO.PU3 OUTCOME | \uno SEGNO.PU3 ) ^ES (++\suona la sirena  | \pooooooooooo ) ES \e la partita finisce  (sul risultato di NUMERO a NUMERO per i (SQUADRA1|SQUADRA2) | vedendo i {SQUADRA1} trionfare sui {SQUADRA2} per NUMERO a NUMERO | con la vittoria dei {SQUADRA1} sui {SQUADRA2} per NUMERO a NUMERO) ES\ grazie a tutti (gli amici [sportivi] |  i fan del grande basket | gli amanti della grande pallacesta) SEGNO.V un saluto da TELECRONISTA e (alla prossima settimana | al prossimo mese | a domani | al prossimo anno) con NBA ES;
+
+OUTCOME ::= URLO ES  \(cesto ES [\[ha eseguito] un DUNK ES] | tabella ES [\ma arriva COGNOME al rimbalzo che (pero' sbaglia | la mette dentro)] | fuori ES [\pessima giornata per i (SQUADRA1|SQUADRA2)] | subisce fallo da [NOME] COGNOME  [ES detto APPELLATIVO di CITTA  [ES \se l'e' proprio meritato quel soprannome]] ES );
+
+DUNK ::= \(360 | shove^"-"^it [^"-"^to^"-"^the^"-"^boneless] | late | early | axle | dr^"."^LETTERA | dunk | jam | slam | funk | windmill | junk | trunk | toss | hammer | two^"-"^handed ) [^"-"^DUNK] ; 
+
+LETTERA ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "X" | "Y" | "W" | "Z";
+
+IPERBOLE ::= \(b^(e^)+ll | f^(a^)+ntastic |  m^(e^)+raviglios | st^(u^)+pend | gr^(a^)+ndissim | (o^)+nanistic | f^(a^)+llic )([(^issim|^errim)+]^o);
+
+TELECRONISTA := \dan \peterson | \guido \bagatta | \roberto \martini | \franco \lauro ;
+
+COMMENTO ::= \(che partita [SEGNO.V (ragazzi| amici [sportivi])] | 
+		la gente per strada mi fermera' dicendo ^" " SEGNO.VT ^ehi TELECRONISTA SEGNO.V e' stata una grande partita quella tra i SQUADRA1 ed i SQUADRA2 SEGNO.VT [ e io diro' ^" " SEGNO.VT^eh si' SEGNO.VT ] [e potrete dire con me ^" " SEGNO.VT^ io c'ero SEGNO.VT ]|
+		questo SEGNO.V "QUESTO" SEGNO.V e' basket spetta^(a^)+colo [e sfido chiunque a dirmi di no] |
+		questa SEGNO.V amici SEGNO.V e' una partita che rimarra' (nella storia | negli annali | nel manuale) del gr^(a^)+nde basket |
+		amici [sportivi] SEGNO.V questo giuocatore [spesso] tira fuori [dai calzoncini] qualcosa di IPERBOLE
+		
+		);
+
+
+
+SITUAZ ::= (i SQUADRA1 stanno battendo i SQUADRA2 per NUMERO a NUMERO) | (i SQUADRA1 stanno sopra di NUMERO) ;
+
+SEGNO ::= (PU0: ^".\n\n"^\ | PU1:^"\n\n"^\ | PU2: ^":"\ | PU3: ^"..."\ | V: ^"," | VT: ^"\""\ | ESC: ^"!"\ );
+
+URLO ::= \((u^)+(u^)+(u^)+h | (a^)+(a^)+(a^)+h | (a^)+ttenzione)  [ES URLO2];
+
+URLO2 ::= \( bbbum [ES \sciaca laca] | (a^)+lley (o^)+op | from d^(o^)+wnt^(o^)+wn | (i^)+s on f^(i^)+re );
+
+PLAYER ::= [NOME] COGNOME;
+
+NOME ::= \(john | calogero | michael | shaquille | magic | mobuto | abdul | pasquale | phil | charles | oswald | ivan );
+
+COGNOME ::= \[(o'|mc)^\](smerding | jordan | mobutu | salam | helder | nihilism | manta | vision | zeff | calogero | esposito );
+
+NUMERO ::= CIFRA^CIFRA[^CIFRA];
+
+CIFRA ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+
+SQUADRA1 := CITTA ANIMALE ;
+
+SQUADRA2 := CITTA ANIMALE ;
+
+CITTA ::= \(chicago | detroit | washington | los \angeles | toronto | san \antonio | new \york | seattle );
+
+ANIMALE ::= \( frogs | cows | pigs | assholes | idiots | monkeys | camels | bulls[^hit] );
+
+APPELLATIVO ::= \( l'\anguilla | il \cane | il \lupo | il \rutto | la \motosega | il \folle | il \cecchino | il \deficiente | l'\onanista | il \cretino | il \ritardato | lo \squalo | il \gay );

@@ -1,0 +1,291 @@
+
+I ::=   "title:    Lettere a riviste per teen\n"
+      ^ "author:   Manta, Vision-X.it\n"
+      ^ "language: italian\n"
+      ^ "status:   mature\n"
+      ^ "topic:    misc\n"
+      ^ "audience: anybody\n"
+      ^ "disclaim: non si serba rancore per alcuna minoranza ("
+        ^ ( negri | cinesi | gay | ebrei | arabi | pellerossa | eschimesi
+          | zingari | serbi | [serbo^]croati | bianchi | bambini | anziani
+          | sordi | muti | ciechi | mongoloidi | portatori di handicap
+          | montenegrini | magrebini | paralitici | barboni | tunisini
+          | algerini | marocchini | curdi | turchi | rom | palestinesi
+          )
+        ^ " esclusi)\n"
+      ^ "created:  28/08/2002"
+;
+
+S ::= (N := Nick;
+	    \Saluto
+        ({[(sono | mi chiamo) N (e | ^",")]}
+         {[ho Numero^Numero anni (e | ^",")]})
+        Prologo^"."\
+        [[Esclam]
+         [c amiamo tant[^issim]^o e oggi facciamo Tempo ke s[^t]^iamo assieme^"."\]]
+        ({[Esclam] Problema^"."\}
+         {[Esclam] Disperazione^"."\})
+        [Epilogo^"."\ [Esclam]]
+        "\n"^\Saluti^","
+        N^'^Numero^Numero)
+;
+
+Esclam ::= { {[vi prego]} { aiuto | aiutatemi | rispondetemi
+                          | datemi una mano | cercate di capirmi
+                          }
+           | ke [mega | super] ([s^]fi^(g | k)^ata | merda | kasino | manikomio
+                               | bordello | storia
+                               )
+           | [kuesto] e' troppo
+           } {[Amiche]} ^PuntiEsclam\
+;
+
+PuntiEsclam ::= "!" (_ |+ ^PuntiEsclam)
+;
+
+Saluto ::=  cara Mag^"," | care Amiche^"," | ciao Amiche^"!"\ [tutto rego^"?"\]
+;
+
+Mag ::= "Top Girl" | "Cioe'" | "Girl Power" | "Teen"
+;
+
+Amiche ::= amiche | girls | friends | raga
+;
+
+Boy ::= boy | raga[^zzo] | tipo | moroso
+;
+
+Nome ::= >Lettera^"." | "Beppe" | "Kekko" | "Gianbortolo" | "Ermenegildo" | "Ernesto"
+      |  "Ennio" | "Filiberto" | "Asdrubale" |+ "Helder"
+;
+
+Prologo ::= ({sono (insieme | assieme) | ho una [love^]story} {da Tempo})
+            con (il mio Boy | Nome) ke
+            e' Aggettivo1 (-- _ | e Aggettivo1) ^","
+            se devo dirla tutta e' anche Aggettivo2 (-- _ | e Aggettivo2)
+            [xo'] [sa anche essere Aggettivo1 (-- _ | e Aggettivo1)]
+
+         |  {Tempo fa ho conosciuto} {Dove} (un Boy | Nome)^"," Aggettivo1^","
+            era anche Aggettivo1 [e Aggettivo1] ma un po' Aggettivo2 [xo']
+
+         |  {da Tempo} {mi piace [un kasino]} (un Boy | Nome)
+            [che ho bekkato Dove] ma Vittima non vuole Azione
+;
+
+Dove ::= al mare | al "Piave" | al cinema | in disko | al bowling
+      |  (al compleanno | alla festa) (Morosa | della mia friend Nick)
+      |  a skuola | all'uni | al cirko | a messa | all'oratorio
+      |  in autobus | in korriera | al bar | in stazione | (in | su) internet
+      |  in chat | "on-line" | in gelateria
+;
+
+Problema ::= (il mio prob[^lema] e' ke | ho un problema [Amiche]^":")
+             Problema1 [e Problema1] [^"," ma nn vuole Azione]
+             [e (come se nn bastasse | oltretutto | in "+" | tra l'altro) Problema2]
+             [e nn gliel'ho ancora detto | e nn lo sa | e nn ho coraggio di dirglielo]
+;
+
+Disperazione ::= sono (disperatissima | preokkupatissima) [anke] xke'
+                 [dopo essermi Operazione^","]
+                 Problema2
+                 [^"," (e | ma) nn so come dirgli Risposta
+                 [^"," anke se vorrei tanto farlo]]
+;
+
+Epilogo ::= [beh^","] (penso | mi sa [tanto]) ke alla fine
+            andro' a (scoparmi | cercarmi) Lavoro.indet Razza.M^","
+            tanto Vittima Problema1 [e Problema2]
+;
+
+Saluti ::= Ciao [e Ciao]
+;
+
+Ciao ::= "T."^TVB^"B." | ciao | bye [bye] | [tanti] baci[^(oni | ni | otti)]
+;
+
+TVB ::= ("T." | "V." | "B.") (_ |+++ ^TVB)
+;
+
+Aggettivo1  ::= Agg.super | [tanto | proprio] Agg.agg ;
+Agg ::= bell^(super:issim | agg: _)^o
+     |  affascinant^(super:issimo | agg:e)
+     |  fig^(super:hissim | agg: _)^o
+     |  fik^(super:issim | agg: _)^o
+     |  giovan^(super:issimo | agg:e)
+     |  fort^(super:issimo | agg:e)
+     |  determinat^(super:issim | agg: _)^o
+     |  seri^(super:ssim | agg: _)^o
+     |  protettiv^(super:issim | agg: _)^o
+     |  stupendo
+     |  karin^(super:issim | agg: _)^o
+     |  dolc^(super:issimo | agg: e)
+     |  amorevol^(super:issimo | agg: e)
+     |  premuros^(super:issim | agg: _)^o
+     |  romantic^(super:issim | agg: _)^o
+     |  divertent^(super:issimo | agg: e)
+;
+
+Aggettivo2 ::= stronzo | bastardo | traditore | malato di aids | tossicodipendente
+            |  figlio di puttana | puttaniere | impestato di merda | necrofilo
+            |  pedofilo | coprofago | farabutto
+;
+
+Tempo ::= Numero^Numero Unita
+;
+
+Numero ::= 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+;
+
+Unita ::= >Unita2 | settimane | mesi | anni
+;
+
+Unita2 ::= minuti | ore | giorni
+;
+
+Azione ::= ke lo faccia anch'io | ke lo aiuti a (farlo | smettere)
+        |  ke lo dica a tutti | ke ne parli con (i miei | i suoi) [amici | friends]
+        |  ke ne discutiamo [tra [di] noi] | ke lo scriva sul diario
+        |  (farlo sapere | ke si sappia) [in giro]
+;
+
+Problema1 ::= si fa in vena di cibalgina
+           |  spaccia crack alle elementari
+           |  gestisce un giro di prostituzione Razza.F
+           |  ha un cancro ai testicoli
+           |  (fa Lavoro.det | e' Lavoro.indet)
+           |  e' (gay | negro | ebreo | croato | marocchino | zingaro
+                 | cinese | algerino | vergine | terrone
+                 )
+           |  ammazza le vecchiette [ke fanno la spesa | ke vanno a messa]
+           |  scoreggia a catechismo
+           |  vomita sulla skodella del cane ogni Numero Unita
+           |  se lo mena in classe [davanti a tutti]
+           |  ha le emorroidi anke davanti
+           |  si rade le ascelle
+           |  da' fuoko agli (zingari | albanesi)
+           |  stupra i bidelli della skuola
+           |  ruba i fiori (in cimitero | in chiesa)
+           |  mi ha toccata con ParteCorpo e ho [tanta] paura di essere [rimasta] incinta
+;
+
+ParteCorpo ::= >> la ( (natica | spalla | coscia | caviglia | meninge | tempia)
+                       <[destra | sinistra]
+                     | mandibola | schiena | dentiera
+                     )
+                | il ( petto | ( braccio | gomito | ginocchio | piede | alluce | mignolo
+                               | lobo
+                               ) <[sinistro | destro]
+                     )
+               <<
+;
+
+Problema2 ::= sono incinta {da Numero mesi}
+              {di Lavoro.indet Razza.M
+               [ke prende ("-" | meno) di Numero ^ Numero ^ Numero euro al mese]}
+           |  ho appena ucciso {Vittima} {con Arma [Colpito]} [mentre scopavamo Luogo]
+           |  mi restano Numero Unita di vita dopo ke mi sono Operazione
+              [e per questo continuo ad amare Vittima]
+           |  >( sono insieme con 1 compagna Scuola
+               | ho appena conosciuto Lavoro.indet Razza.M
+               )
+              [e c facciamo Luogo ogni Numero Unita2]
+           |  mi sono innamorata di Lavoro.indet Razza.M
+              [ke vuole [a tutti i costi] Desiderio]
+;
+
+Vittima ::= il mio ex | il mio cane | la mia vici | la mia amika del cuore
+         |  il Boy Morosa | l'ex Morosa
+;
+
+Arma ::= 1 paletta per il gelato | un rullino da Numero^00 "ASA"
+      |  un "M60" scarico | il pettine della barbie | lo spazzolone per il cesso
+      |  1 latrina piena di merda | un "Leopard" della seconda guerra mondiale
+      |  1 shuriken | l'uccello d'acqua di "Nanto"
+;
+
+Colpito ::= sui coglioni | negli okki | nelle gengive | alla testa | in culo
+         |  sulla pancia | sul mento
+;
+
+Morosa ::= della mia >( vici | amika del cuore | parrucchiera | kugi
+                      | dermatologa | cagna | gatta | ginecologa
+                      )
+        |  di mia >(mamma | nonna | sorella | zia |+ suocera | nuora)
+;
+
+Lavoro ::= >> <(det: lo | indet: uno)
+              (spazzino | spazzacamino | scafista)
+            | <(det: il | indet: un)
+              ( carpentiere | ciabattino | web designer | becchino | salumiere
+              | funzionario del "Cepu" | tombarolo | minatore | calzolaio | capraro
+              | sarto | (rivenditore | riparatore) di Prodotti | contadino
+              )
+            | <(det: l'^ | indet: un)
+              ( arrotino | operatore ecologico | ombrellaio
+              | (allevatore | addestratore) di Animali
+              )
+           <<
+;
+
+Animali ::= camaleonti | mufloni | orbettini | pitoni | lontre | macachi | piovre
+         |  gnu | yak | tucani | sanguisughe | ramarri | zebre | facoceri
+;
+
+Prodotti ::= scopettoni per il cesso | laminati plastici | stupefacenti | armi [usate]
+          |  articoli per l'igiene | parrucche | toupet | profilattici [scaduti]
+          |  mangimi per Animali | comcimi
+;
+
+Razza ::= >> ([indo^]cinese | keniota | malese | thailandese | cipriota)
+           | ( mongol | caucasic | nigerian | arab | moldav | russ | cambogian
+             | cec[^en] | tartar | sard | cors
+             ) ^ <(M: o | F: a)
+          <<
+;
+
+Scuola ::= delle >(medie | elementari | superiori) | dell'uni |- del "Cepu"
+;
+
+Luogo ::= nel garage della mia home | in cantina | in obitorio | nel bagno degli uomini
+       |  in mezzo alla tangenziale di "Mestre" | al parco | ai cessi pubblici
+       |  in (autobus | corriera | bicicletta) | al [super^]mercato | dal parrucchiere
+       |  dall'estetista | in palestra | al "Grest" | al kampo skuola | in piazza
+       |  a kasa del mio ex | a kasa dell'ex Morosa
+;
+
+Operazione ::= tolta ( 1 ciste | il dente del giudizio | un neo | un'ernia | un herpes
+                     | 1 verruca | un fungo | 1 vertebra | 1 costola
+                     |+ l'apparekkio | il gesso | i peli pubici
+                     )
+;
+
+Desiderio ::= (mettermi | infilarmi) Arma in (kulo | bocca | figa | testa)
+           |  (sposare | picchiare) (il moroso | l'ex) Morosa [che fa Lavoro.det]
+           |  sodomizzarmi Luogo
+;
+
+Risposta ::= di si | di no | ke mi piacerebbe [un sakko | kasino]
+          |  ke mi intrippa [un kasino] | ke mi prende bene
+;
+
+Nick ::= \
+         ( ( >(k | p | f | g | c) [^r] | j | b | l)
+           ^ (i |- u | e | A)
+           ^ (++ kk | n | nc | pp | tt | ss | ll | st)
+           ^ (A | y | e)
+         | ( >(s^A^ilor | trinity | l^A^r^A | britney | venere | iside | osiride)
+           | >( cucciol | collol | g^A^tt | c^A^gn | lup | f^A^rf^a^ll | tener
+              | c^A^r^A^mell | dolc | conigl | fr^A^gol | monell | birikk | moll
+              | imbr^A^n^A^t
+              ) ^ (ett | in) ^ A
+           )
+         | (Lettera^"." | "*"^Lettera^"*" | "@"^Lettera^"@")
+         )
+;
+
+A ::= a |- "@"
+;
+
+Lettera ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "J" | "L" | "M" | "N" | "P"
+         |  "R" | "S" | "T" | "V"
+;
