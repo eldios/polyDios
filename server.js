@@ -7,9 +7,9 @@ var findGrm = exports.findGrm = function(grmName, cbk, cbk2ndlvl){
   exec('find . -iname \''+grmName+'\.grm\' -type f' ,
     function (err, stdout, stderr){
       stdout = stdout.replace(/^\s+|\s+$/g,'').split("\n")[0];
-      if (cbk != undefined && cbk != null && cbk2ndlvl != undefined && cbk2ndlvl != null  && stdout != ''){
+      if (typeof cbk == 'function' && typeof cbk2ndlvl == 'function' && stdout != ''){
         cbk(stdout,cbk2ndlvl);
-      } else if (cbk != undefined && cbk != null && stdout != ''){
+      } else  if (typeof cbk == 'function' && stdout != ''){
         cbk(stdout);
       };
   });
@@ -17,23 +17,23 @@ var findGrm = exports.findGrm = function(grmName, cbk, cbk2ndlvl){
 
 //  stdout = HTMLparser.htmlToText(stdout);
 var callPolygen = exports.callPolygen = function(grm,cbk){
-  var callIt = function (grm_file,cbk){
-    exec('bin/polygen ' + grm_file, 
+  var callIt = function (grmFile,cbk){
+    exec('bin/polygen ' + grmFile, 
       function (error,stdout,stderr){
         stdout = HTMLparser.htmlToText(stdout);
-        if (cbk != undefined && cbk != null){
+        if (typeof cbk == 'function' && stdout != ''){
           cbk(stdout);
         };
       })
   };
-  findGrm(grm,callIt,console.log);
+  findGrm(grm,callIt,cbk);
 };
 
 var listGrms = exports.listGrms = function(cbk){
   exec('find . -iname \'*grm\' -type f' ,
     function (error, stdout, stderr){
       stdout=stdout.replace(/^\s+|\s+$/g, '').split("\n"); 
-      if (cbk != undefined && cbk != null){
+      if (typeof cbk == 'function' && stdout != ''){
         cbk(stdout);
       };
   });
@@ -53,13 +53,13 @@ if (module.parent == null){
   };
 
   var listOpt = process.ARGV.indexOf('-l') ,
-    findOpt = process.ARGV.indexOf('-f') ,
-    callOpt = process.ARGV.indexOf('-x') ; 
+      findOpt = process.ARGV.indexOf('-f') ,
+      callOpt = process.ARGV.indexOf('-x') ; 
   if ( findOpt > -1 ) {
     findGrm(process.ARGV[findOpt+1],console.log);
   } else if ( listOpt > -1 ) {
     listGrms(console.log);
   } else if ( callOpt > -1 ) {
-    callPolygen(process.ARGV[callOpt+1]);
+    callPolygen(process.ARGV[callOpt+1],console.log);
   };
 };
