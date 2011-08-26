@@ -8,10 +8,8 @@ var findGrm = exports.findGrm = function(grmName, cbk){
     function (err, stdout, stderr){
       stdout = stdout.replace(/^\s+|\s+$/g,'').split("\n")[0];
       if (cbk != undefined && cbk != null){
-        console.log('cbk:' + cbk);
         cbk(stdout);
       } else {
-        console.log('undefined cbk:' + cbk);
         return stdout;
       };
   });
@@ -21,7 +19,7 @@ var callPolygen = exports.callPolygen = function(grm){
   var grm_file ;
   async.series([
     function(cbk) {
-      cbk(null,findGrm(grm,console.log));
+      cbk(null,findGrm(grm));
     } ,
     function(cbk) {
       exec('bin/polygen ' + grm_file ,
@@ -36,12 +34,9 @@ var callPolygen = exports.callPolygen = function(grm){
 var listGrms = exports.listGrms = function(cbk){
   exec('find . -iname \'*grm\' -type f' ,
     function (error, stdout, stderr){
-      console.log('cbk:' + cbk);
       if (cbk != undefined && cbk != null){
-              console.log('cbk:' + cbk);
         cbk(stdout.replace(/^\s+|\s+$/g, '').split("\n"));
       } else {
-              console.log('cbk:' + cbk);
         return stdout.replace(/^\s+|\s+$/g, '').split("\n");
       };
   });
