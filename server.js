@@ -1,4 +1,4 @@
-var HTMLparser = require('../ht/htmlToText'),
+var HTMLparser = require('./htmlToText'),
     exec = require('child_process').exec ,
     async = require('async'),
     exports = module.exports ;
